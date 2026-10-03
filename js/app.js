@@ -453,6 +453,7 @@
             '<input type="hidden" name="_subject" value="New specimen">' +
             '<input type="hidden" name="_next" value="' + esc(next) + '">' +
             '<input type="hidden" name="_template" value="table">' +
+            '<input type="hidden" name="Photo info" value="">' +
             '<div class="honey" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>' +
 
             '<div class="field"><label for="f-type">What are you submitting?</label>' +
@@ -506,6 +507,44 @@
     }
     var prefix = { 'New food': 'New specimen', 'Dispute a ruling': 'Dispute', 'Add a photo': 'Photo' }[type] || 'New specimen';
     return { ok: true, subject: prefix + ': ' + food };
+  }
+
+  // Draws the photo onto a canvas and returns it as a JPEG File, at most
+  // 1600 px on the long side. Resolves null if the browser can't do it.
+  function preparePhoto(file) {
+    return new Promise(function (resolve) {
+      try {
+        if (!window.URL || !URL.createObjectURL || !document.createElement('canvas').getContext) return resolve(null);
+        var url = URL.createObjectURL(file);
+        var img = new Image();
+        var done = false;
+        var timer = setTimeout(function () { if (!done) { done = true; resolve(null); } }, 15000);
+        img.onload = function () {
+          try {
+            var max = 1600, w = img.naturalWidth, h = img.naturalHeight;
+            if (!w || !h) throw new Error('empty image');
+            var scale = Math.min(1, max / Math.max(w, h));
+            var c = document.createElement('canvas');
+            c.width = Math.round(w * scale);
+            c.height = Math.round(h * scale);
+            var ctx = c.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, c.width, c.height);
+            ctx.drawImage(img, 0, 0, c.width, c.height);
+            c.toBlob(function (blob) {
+              URL.revokeObjectURL(url);
+              if (done) return;
+              done = true; clearTimeout(timer);
+              if (!blob) return resolve(null);
+              var base = (file.name || 'specimen').replace(/\.[^.]+$/, '').replace(/[^\w-]+/g, '-').slice(0, 40) || 'specimen';
+              resolve(new File([blob], base + '.jpg', { type: 'image/jpeg' }));
+            }, 'image/jpeg', 0.85);
+          } catch (x) { if (!done) { done = true; clearTimeout(timer); resolve(null); } }
+        };
+        img.onerror = function () { if (!done) { done = true; clearTimeout(timer); resolve(null); } };
+        img.src = url;
+      } catch (x) { resolve(null); }
+    });
   }
 
   function pageThanks() {
@@ -623,12 +662,34 @@
     var hasPhoto = !!(photo.files && photo.files.length);
 
     // With a photo: FormSubmit's background (ajax) endpoint drops attachments,
-    // so let the browser submit the page normally. FormSubmit may show a
-    // "not a robot" check, then sends the visitor back to the thanks page.
-    if (hasPhoto || typeof window.fetch !== 'function' || typeof window.FormData !== 'function') {
-      btn.textContent = 'Sending…';
-      return; // no preventDefault: the normal form post goes ahead
+    // so the page is submitted normally. First the photo is converted to a
+    // ~1600 px JPEG: phones hand over HEIC or huge files that FormSubmit drops,
+    // and re-drawing it also strips location data.
+    if (hasPhoto) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Preparing photo…';
+      var original = photo.files[0];
+      preparePhoto(original).then(function (jpeg) {
+        var info = 'Original: ' + (original.name || '?') + ', ' + (original.type || 'unknown type') + ', ' +
+          Math.round(original.size / 1024) + ' KB';
+        if (jpeg) {
+          try {
+            var dt = new DataTransfer();
+            dt.items.add(jpeg);
+            photo.files = dt.files;
+            info += ' → sent as JPEG, ' + Math.round(jpeg.size / 1024) + ' KB';
+          } catch (x) { info += ' → sent unchanged (could not swap file)'; }
+        } else {
+          info += ' → sent unchanged (could not convert)';
+        }
+        form.querySelector('input[name="Photo info"]').value = info;
+        btn.textContent = 'Sending…';
+        HTMLFormElement.prototype.submit.call(form);
+      });
+      return;
     }
+    if (typeof window.fetch !== 'function' || typeof window.FormData !== 'function') return;
 
     // Without a photo: send in the background so we can show what happened.
     e.preventDefault();
@@ -637,6 +698,7 @@
     var data = new FormData(form);
     data.delete('_next');
     data.delete('attachment');
+    data.delete('Photo info');
     if (!form.querySelector('#f-consent').checked) data.delete('Photo license');
     // iPhone browsers reject some multipart requests sent in the background,
     // so send the plainest format there is: URL-encoded text.

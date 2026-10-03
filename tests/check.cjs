@@ -213,11 +213,14 @@ async function go(hash) {
     const fakeFile = new w.File(['x'], 'dog.jpg', { type: 'image/jpeg' });
     Object.defineProperty(f.querySelector('#f-photo'), 'files', { value: [fakeFile] });
     f.querySelector('#f-consent').checked = true;
+    let posted = false;
+    w.HTMLFormElement.prototype.submit = function () { posted = true; };
     const ev = new w.Event('submit', { bubbles: true, cancelable: true });
     f.dispatchEvent(ev);
-    await tick();
-    ok(!ev.defaultPrevented, 'photo entries use the normal page post');
+    for (let i = 0; i < 20 && !posted; i++) await new Promise(r => setTimeout(r, 25));
+    ok(posted, 'photo entries use the normal page post (after preparing the photo)');
     ok(lastPost === null, 'photo entries skip the ajax endpoint');
+    ok(/Original: dog\.jpg, image\/jpeg/.test(f.querySelector('[name="Photo info"]').value), 'photo info recorded for the email');
     ok(f.querySelector('[name="_next"]').value.endsWith('#/thanks'), 'photo post returns to thanks page');
     ok(f.querySelector('[name="_subject"]').value === 'Photo: Hot dog', 'photo post subject set');
   }
