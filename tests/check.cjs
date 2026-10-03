@@ -75,7 +75,7 @@ const vc = new VirtualConsole();
 vc.on('jsdomError', e => errors.push(String(e && (e.stack || e.message || e))));
 vc.on('error', e => errors.push(String(e)));
 
-const dom = new JSDOM(html.replace('<script src="js/app.js"></script>', ''), {
+const dom = new JSDOM(html.replace(/<script src="js/app.js(\?v=\d+)?"><\/script>/, ''), {
   url: 'https://jeffsonlinepersona.github.io/HotDogsAreSandwiches/',
   runScripts: 'outside-only', pretendToBeVisual: true, virtualConsole: vc
 });
