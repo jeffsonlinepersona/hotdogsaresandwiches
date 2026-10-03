@@ -625,6 +625,10 @@
     btn.textContent = 'Sending…';
     var data = new FormData(form);
     data.delete('_next');
+    // Safari on iPhone fails the whole request if an empty file field is sent
+    var photo = form.querySelector('#f-photo');
+    if (!photo.files || !photo.files.length) data.delete('attachment');
+    if (!form.querySelector('#f-consent').checked) data.delete('Photo license');
 
     function fail(msg) {
       btn.disabled = false;
@@ -647,8 +651,9 @@
           fail('The mail service turned this away' + (m ? ': ' + m : '.') + ' Please try again.');
         }
       })
-      .catch(function () {
-        fail('Could not reach the mail service. Check your connection and try again.');
+      .catch(function (x) {
+        fail('Could not reach the mail service. Check your connection and try again.' +
+          (x && x.message ? ' (' + x.message + ')' : ''));
       });
   });
 

@@ -199,6 +199,7 @@ async function go(hash) {
   ok(lastPost.opts.body.get('Food') === 'Pop-Tart', 'sends the food name');
   ok(lastPost.opts.body.get('_subject') === 'New specimen: Pop-Tart', 'sends the subject');
   ok(lastPost.opts.body.get('_next') === null, 'drops the redirect field');
+  ok(!lastPost.opts.body.has('attachment'), 'drops the empty photo field (iPhone Safari bug)');
   ok(w.location.hash === '#/thanks', 'success lands on the thanks page');
   f2 = await send({ success: 'false', message: 'This form needs Activation. We sent you an email.' });
   ok(/still being set up/.test(f2.querySelector('#form-error').textContent) && !f2.querySelector('#form-error').hidden, 'activation message shown');
