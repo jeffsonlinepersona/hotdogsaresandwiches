@@ -1,0 +1,142 @@
+{
+  "_readme": "rules: shown on The Rules page, in order. classifier: the Classify a Food questions. Each option either points to the next question (next) or ends on a taxonomy node id (result). Adding a question here changes the classifier; no code changes needed.",
+  "rules": [
+    {
+      "id": "key",
+      "title": "The placement key",
+      "summary": "Five kingdoms, checked in order. The first one that matches wins.",
+      "points": [
+        "Condimenta: exists to make other food better, never the star.",
+        "Liquida: has a beverage role (hydrate, refresh, stimulate, intoxicate).",
+        "Naturalia: one food, bossed around but still recognizable.",
+        "Constructa: assembled food, where the originals can't recognize themselves or several foods share the job.",
+        "Incertae sedis: nobody can place it. Pending review, indefinitely."
+      ],
+      "example": "Orange juice is a single ingredient, but it is drunk, so Liquida wins before Naturalia is checked."
+    },
+    {
+      "id": "lineup",
+      "title": "The police lineup test",
+      "summary": "Could the original food pick the result out of a police lineup? If yes, it is Naturalia. If no, it is Constructa.",
+      "points": [
+        "A cucumber can identify a pickle, so pickles are Naturalia.",
+        "Flour cannot identify toast, so toast is Constructa."
+      ],
+      "example": "A raisin is a grape with life experience. The grape would know."
+    },
+    {
+      "id": "role",
+      "title": "Role beats ingredients",
+      "summary": "The role a food plays at the table decides drink versus food, not whether you sip it or spoon it.",
+      "points": [
+        "Food role (meal, course, snack, dessert): Constructa, even if drunk.",
+        "Beverage role (hydrate, refresh, stimulate, intoxicate): Liquida, even if assembled."
+      ],
+      "example": "A milkshake is a dessert wearing a straw. A cocktail is assembled, but it is still a drink."
+    },
+    {
+      "id": "sandwich",
+      "title": "The sandwich test",
+      "summary": "A sandwich is a container made from Formata (anything that was dough) touching the filling on two or more sides.",
+      "points": [
+        "Two sides (top and bottom): Bifaciformes, the classic.",
+        "Three sides (hinged bun, split roll, fold): Trifaciformes. The hot dog lives here.",
+        "All sides, sealed: Totiformes. The burrito lives here.",
+        "One side: not a sandwich. It is a topped food in Apertae.",
+        "A container that was never dough (lettuce, banana): Pseudosandwichae. Nice try."
+      ],
+      "example": "Frying does not matter. A hard-shell taco is still built from dough, so it is still a sandwich."
+    },
+    {
+      "id": "stand-or-fall",
+      "title": "They stand or fall together",
+      "summary": "Foods with the same structure get the same ruling. You cannot accept one and reject the other.",
+      "points": [
+        "Hot dogs and tacos share the three-sided shape. Expel one and the other goes too.",
+        "Open-faced sandwiches and thin-crust pizza share the one-sided shape. Neither is a sandwich."
+      ],
+      "example": "A court once ruled that one tortilla is not two slices of bread. A hot dog bun is one piece, too."
+    },
+    {
+      "id": "soup",
+      "title": "The soup test",
+      "summary": "Soup is solids and liquid that were cooked together after being assembled. It may be served cold afterward.",
+      "points": [
+        "Cooked together: Decocta. Soup.",
+        "Only ever combined cold: Cruda. Not soup."
+      ],
+      "example": "Cereal: the flakes were toasted and the milk pasteurized, but never together. Not soup. Gazpacho falls the same way, and the Board accepts the consequences."
+    },
+    {
+      "id": "variety",
+      "title": "Add-ins make varieties, not species",
+      "summary": "If you would still order it by its base name, an add-in creates a variety, not a new species.",
+      "points": [
+        "Coffee with cream and sugar is still coffee: a variety.",
+        "A latte is ordered by a different name: a separate species.",
+        "An affogato changes role to dessert: it leaves Liquida entirely."
+      ],
+      "example": "A Costco hot dog is still ordered as \"a hot dog,\" so it is a variety of Canis farcitus."
+    }
+  ],
+  "classifier": {
+    "start": "kingdom",
+    "questions": {
+      "kingdom": {
+        "question": "What job does it do at the table?",
+        "help": "Pick the first one that fits. Order matters.",
+        "options": [
+          { "label": "It makes other food better: a seasoning, sauce, dip or spread", "result": "condimenta" },
+          { "label": "You drink it to hydrate, refresh, wake up or unwind", "result": "liquida" },
+          { "label": "It is one food, maybe dried, salted, pickled or grilled, but still recognizable", "result": "naturalia" },
+          { "label": "Several foods combined, or ingredients turned into something new", "next": "phylum" },
+          { "label": "It defies explanation", "result": "incertae-sedis" }
+        ]
+      },
+      "phylum": {
+        "question": "What holds it together?",
+        "help": "Constructa is sorted by architecture.",
+        "options": [
+          { "label": "Ingredients fused into one new mass (bread, pasta, sausage, cheese)", "result": "formata" },
+          { "label": "One food is the container and holds a filling", "next": "container" },
+          { "label": "Layers or toppings on a base, with no container", "next": "layers" },
+          { "label": "Solids sitting in a liquid", "next": "liquid" },
+          { "label": "Tossed together, no architecture", "result": "mixta" }
+        ]
+      },
+      "container": {
+        "question": "What is the container made of?",
+        "help": "Anything that was ever dough counts, fried or not.",
+        "options": [
+          { "label": "Bread, a bun, a tortilla or other dough", "next": "sides" },
+          { "label": "A whole food: lettuce, a pepper, a banana", "result": "pseudosandwichae" }
+        ]
+      },
+      "sides": {
+        "question": "How many sides does the container touch the filling on?",
+        "help": "Look at it from the end, like a cross-section.",
+        "options": [
+          { "label": "Two: a top and a bottom", "result": "bifaciformes" },
+          { "label": "Three: hinged, split or folded", "result": "trifaciformes" },
+          { "label": "All of them: fully sealed", "result": "totiformes" }
+        ]
+      },
+      "layers": {
+        "question": "One base, or several layers?",
+        "help": "",
+        "options": [
+          { "label": "One base with toppings on top", "result": "apertae" },
+          { "label": "Several stacked layers", "result": "laminatae" }
+        ]
+      },
+      "liquid": {
+        "question": "Were the solids and liquid cooked together after they were combined?",
+        "help": "Serving it cold later is fine. What matters is whether they were ever cooked together.",
+        "options": [
+          { "label": "Yes, cooked together", "result": "decocta" },
+          { "label": "No, only ever combined cold", "result": "cruda" }
+        ]
+      }
+    }
+  }
+}
