@@ -38,8 +38,8 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 ### Photos dropped by FormSubmit's ajax endpoint (fixed)
 - **Logged:** 2026-10-03
 - **Symptom:** a phone submission with a photo arrived by email without the attachment.
-- **Cause:** FormSubmit's ajax endpoint delivers form fields but drops file attachments.
-- **Fix:** entries with a photo now use a normal full-page form post, which keeps attachments; FormSubmit may show its CAPTCHA, then returns to the thanks page.
+- **Cause:** two problems stacked. FormSubmit's ajax endpoint drops file attachments, and iPhone photos (HEIC and/or very large originals) were also dropped even on a normal post, while desktop JPEGs went through.
+- **Fix:** entries with a photo use a normal full-page form post, and the page first redraws the photo as a JPEG of at most 1600 px (which also strips location data). Confirmed working from Jeff's iPhone, including FormSubmit's CAPTCHA step. The email's "Photo info" row records the original file and what was sent.
 
 ### Owner email visible in page source
 - **Logged:** 2026-10-03
