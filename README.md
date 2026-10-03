@@ -4,7 +4,9 @@ A field guide to **Taxonomia Ediblis**: every food classified from kingdom to va
 
 The hot dog is a sandwich. This is settled science.
 
-Live site: https://jeffsonlinepersona.github.io/HotDogsAreSandwiches/
+Live site: https://jeffsonlinepersona.github.io/hotdogsaresandwiches/
+
+Planned work lives in [BACKLOG.md](BACKLOG.md).
 
 ## How the site is built
 

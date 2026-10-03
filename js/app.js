@@ -10,9 +10,13 @@
   // Where the Submit form sends entries. FormSubmit emails them to this address.
   // After the first confirmation email, FormSubmit gives a random code: replace the
   // email part with that code to keep the address out of the public source.
-  var FORM_ENDPOINT = 'https://formsubmit.co/jeffsonlinepersona@gmail.com';
+  var FORM_ADDRESS = 'jeffsonlinepersona@gmail.com';
+  var FORM_ENDPOINT = 'https://formsubmit.co/' + FORM_ADDRESS;        // fallback if scripts are off
+  var FORM_AJAX_ENDPOINT = 'https://formsubmit.co/ajax/' + FORM_ADDRESS; // used by the page
   var MAX_PHOTO_BYTES = 10 * 1024 * 1024; // FormSubmit's limit per submission
-  var PHOTO_TYPES = ['image/jpeg', 'image/png'];
+  // Phones often hand over HEIC (iPhone) or WebP photos; accept those too.
+  var PHOTO_TYPES = ['image/jpeg', 'image/png', 'image/heic', 'image/heif', 'image/webp'];
+  var PHOTO_EXT = /\.(jpe?g|png|heic|heif|webp)$/i;
 
   var RANKS = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species', 'variety'];
   var PLURAL = {
@@ -465,8 +469,8 @@
             '<textarea id="f-why" name="Reasoning" placeholder="Make your case. The Board appreciates confidence and is unmoved by volume."></textarea></div>' +
 
             '<div class="field"><label for="f-photo">Photo (optional)</label>' +
-            '<input type="file" id="f-photo" name="attachment" accept="image/jpeg,image/png">' +
-            '<span class="hint">JPG or PNG, up to 10 MB. Wild photos only: you must have taken it yourself.</span></div>' +
+            '<input type="file" id="f-photo" name="attachment" accept="image/*">' +
+            '<span class="hint">Any phone photo, up to 10 MB. Wild photos only: you must have taken it yourself.</span></div>' +
 
             '<label class="check"><input type="checkbox" id="f-consent" name="Photo license" value="I took this photo myself and license it to HotDogsAreSandwiches under CC BY 4.0, credited to the name below.">' +
             '<span>I took this photo myself and license it to HotDogsAreSandwiches under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, credited to the name below. <span class="hint">(Required with a photo.)</span></span></label>' +
@@ -479,7 +483,7 @@
 
             '<p class="error" id="form-error" role="alert" hidden></p>' +
             '<div class="btn-row"><button class="btn btn-accent" type="submit">Send to the Review Board</button></div>' +
-            '<p class="license-note">Submissions are emailed to the Review Board through FormSubmit. You may be asked to confirm you are not a robot. Accepted photos have location data removed before they are posted.</p>' +
+            '<p class="license-note">Submissions are emailed to the Review Board through FormSubmit. Accepted photos have location data removed before they are posted.</p>' +
           '</form>' +
         '</div>'
     };
@@ -493,7 +497,9 @@
     if (!food) return { error: 'Please name the food.', field: '#f-food' };
     if (type === 'Add a photo' && !file) return { error: 'Attach the photo you want to add.', field: '#f-photo' };
     if (file) {
-      if (PHOTO_TYPES.indexOf(file.type) < 0) return { error: 'Photos must be JPG or PNG.', field: '#f-photo' };
+      if (PHOTO_TYPES.indexOf(file.type) < 0 && !PHOTO_EXT.test(file.name || '')) {
+        return { error: 'That file does not look like a photo. Try a JPG, PNG or HEIC.', field: '#f-photo' };
+      }
       if (file.size > MAX_PHOTO_BYTES) return { error: 'That photo is over 10 MB. Try a smaller version.', field: '#f-photo' };
       if (!consent) return { error: 'Please confirm you took the photo and agree to the CC BY 4.0 license.', field: '#f-consent' };
     }
@@ -610,6 +616,40 @@
     }
     err.hidden = true;
     form.querySelector('input[name="_subject"]').value = res.subject;
+
+    // Send in the background so we can show exactly what happened
+    e.preventDefault();
+    if (typeof window.fetch !== 'function' || typeof window.FormData !== 'function') return form.submit();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    var data = new FormData(form);
+    data.delete('_next');
+
+    function fail(msg) {
+      btn.disabled = false;
+      btn.textContent = 'Send to the Review Board';
+      err.textContent = msg;
+      err.hidden = false;
+      if (err.scrollIntoView) err.scrollIntoView({ block: 'center' });
+    }
+
+    window.fetch(FORM_AJAX_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return { success: r.ok ? 'true' : 'false', message: 'HTTP ' + r.status }; });
+      })
+      .then(function (j) {
+        if (String(j.success) === 'true') { location.hash = '#/thanks'; return; }
+        var m = String(j.message || '');
+        if (/activat/i.test(m)) {
+          fail('The Review Board\'s mailbox is still being set up, so this was not delivered. Please try again later.');
+        } else {
+          fail('The mail service turned this away' + (m ? ': ' + m : '.') + ' Please try again.');
+        }
+      })
+      .catch(function () {
+        fail('Could not reach the mail service. Check your connection and try again.');
+      });
   });
 
   window.addEventListener('hashchange', render);

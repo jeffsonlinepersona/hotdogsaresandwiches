@@ -81,10 +81,19 @@ const dom = new JSDOM(html.replace('<script src="js/app.js"></script>', ''), {
 });
 const w = dom.window;
 w.scrollTo = () => {};
-w.fetch = (url) => Promise.resolve({
-  ok: true, status: 200,
-  json: () => Promise.resolve(JSON.parse(fs.readFileSync(path.join(ROOT, url), 'utf8')))
-});
+let formReply = { success: 'true', message: 'The form was submitted successfully.' };
+let lastPost = null;
+w.fetch = (url, opts) => {
+  if (/^https:\/\/formsubmit\.co\/ajax\//.test(url)) {
+    lastPost = { url, opts };
+    if (formReply === 'network') return Promise.reject(new Error('offline'));
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(formReply) });
+  }
+  return Promise.resolve({
+    ok: true, status: 200,
+    json: () => Promise.resolve(JSON.parse(fs.readFileSync(path.join(ROOT, url), 'utf8')))
+  });
+};
 w.eval(appJs);
 
 const tick = () => new Promise(r => setTimeout(r, 0));
@@ -175,6 +184,27 @@ async function go(hash) {
   form.querySelector('#f-food').value = 'Pop-Tart';
   form.querySelector('#f-type').value = 'Add a photo';
   ok(!v(form).ok, 'photo request without a photo is rejected');
+
+  // Sending: success goes to the thanks page; failures stay and explain
+  async function send(reply) {
+    formReply = reply;
+    const mm = await go('#/submit?type=new&food=Pop-Tart');
+    const f = mm.querySelector('#submit-form');
+    f.dispatchEvent(new w.Event('submit', { bubbles: true, cancelable: true }));
+    for (let i = 0; i < 5; i++) await tick();
+    return f;
+  }
+  let f2 = await send({ success: 'true', message: 'ok' });
+  ok(lastPost && /formsubmit\.co\/ajax\/jeffsonlinepersona@gmail\.com$/.test(lastPost.url), 'posts to the FormSubmit ajax endpoint');
+  ok(lastPost.opts.body.get('Food') === 'Pop-Tart', 'sends the food name');
+  ok(lastPost.opts.body.get('_subject') === 'New specimen: Pop-Tart', 'sends the subject');
+  ok(lastPost.opts.body.get('_next') === null, 'drops the redirect field');
+  ok(w.location.hash === '#/thanks', 'success lands on the thanks page');
+  f2 = await send({ success: 'false', message: 'This form needs Activation. We sent you an email.' });
+  ok(/still being set up/.test(f2.querySelector('#form-error').textContent) && !f2.querySelector('#form-error').hidden, 'activation message shown');
+  ok(!f2.querySelector('button[type="submit"]').disabled, 'button re-enabled after failure');
+  f2 = await send('network');
+  ok(/Could not reach/.test(f2.querySelector('#form-error').textContent), 'network failure message shown');
 
   ok(errors.length === 0, 'no script errors' + (errors.length ? ':\n' + errors.join('\n') : ''));
   finish();
