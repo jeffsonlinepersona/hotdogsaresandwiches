@@ -205,6 +205,23 @@ async function go(hash) {
   ok(/still being set up/.test(f2.querySelector('#form-error').textContent) && !f2.querySelector('#form-error').hidden, 'activation message shown');
   ok(!f2.querySelector('button[type="submit"]').disabled, 'button re-enabled after failure');
   ok(typeof lastPost.opts.body.toString === 'function' && /Food=Pop-Tart/.test(lastPost.opts.body.toString()), 'no-photo entries go URL-encoded');
+  // With a photo, the normal page post goes ahead (ajax drops attachments)
+  {
+    lastPost = null;
+    const mm = await go('#/submit?type=photo&food=Hot%20dog');
+    const f = mm.querySelector('#submit-form');
+    const fakeFile = new w.File(['x'], 'dog.jpg', { type: 'image/jpeg' });
+    Object.defineProperty(f.querySelector('#f-photo'), 'files', { value: [fakeFile] });
+    f.querySelector('#f-consent').checked = true;
+    const ev = new w.Event('submit', { bubbles: true, cancelable: true });
+    f.dispatchEvent(ev);
+    await tick();
+    ok(!ev.defaultPrevented, 'photo entries use the normal page post');
+    ok(lastPost === null, 'photo entries skip the ajax endpoint');
+    ok(f.querySelector('[name="_next"]').value.endsWith('#/thanks'), 'photo post returns to thanks page');
+    ok(f.querySelector('[name="_subject"]').value === 'Photo: Hot dog', 'photo post subject set');
+  }
+
   f2 = await send('network');
   ok(/could not reach/.test(f2.querySelector('#form-error').textContent), 'network failure explained');
   const alt = f2.querySelector('#form-alt a');

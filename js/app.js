@@ -484,7 +484,7 @@
             '<p class="error" id="form-error" role="alert" hidden></p>' +
             '<div class="btn-row" id="form-alt" style="align-items:center" hidden></div>' +
             '<div class="btn-row"><button class="btn btn-accent" type="submit">Send to the Review Board</button></div>' +
-            '<p class="license-note">Submissions are emailed to the Review Board through FormSubmit. Accepted photos have location data removed before they are posted.</p>' +
+            '<p class="license-note">Submissions are emailed to the Review Board through FormSubmit. With a photo attached, FormSubmit may ask you to confirm you are not a robot before returning you here. Accepted photos have location data removed before they are posted.</p>' +
           '</form>' +
         '</div>'
     };
@@ -618,25 +618,30 @@
     err.hidden = true;
     form.querySelector('input[name="_subject"]').value = res.subject;
 
-    // Send in the background so we can show exactly what happened
-    e.preventDefault();
-    if (typeof window.fetch !== 'function' || typeof window.FormData !== 'function') return form.submit();
     var btn = form.querySelector('button[type="submit"]');
+    var photo = form.querySelector('#f-photo');
+    var hasPhoto = !!(photo.files && photo.files.length);
+
+    // With a photo: FormSubmit's background (ajax) endpoint drops attachments,
+    // so let the browser submit the page normally. FormSubmit may show a
+    // "not a robot" check, then sends the visitor back to the thanks page.
+    if (hasPhoto || typeof window.fetch !== 'function' || typeof window.FormData !== 'function') {
+      btn.textContent = 'Sending…';
+      return; // no preventDefault: the normal form post goes ahead
+    }
+
+    // Without a photo: send in the background so we can show what happened.
+    e.preventDefault();
     btn.disabled = true;
     btn.textContent = 'Sending…';
     var data = new FormData(form);
     data.delete('_next');
-    var photo = form.querySelector('#f-photo');
-    var hasPhoto = !!(photo.files && photo.files.length);
+    data.delete('attachment');
     if (!form.querySelector('#f-consent').checked) data.delete('Photo license');
-    var body = data;
-    if (!hasPhoto) {
-      // iPhone browsers reject some multipart requests sent in the background.
-      // Without a photo, send the plainest format there is: URL-encoded text.
-      data.delete('attachment');
-      body = new URLSearchParams();
-      data.forEach(function (v, k) { body.append(k, v); });
-    }
+    // iPhone browsers reject some multipart requests sent in the background,
+    // so send the plainest format there is: URL-encoded text.
+    var body = new URLSearchParams();
+    data.forEach(function (v, k) { body.append(k, v); });
 
     // If FormSubmit can't be reached (some networks and ad blockers block it),
     // offer a pre-filled email instead so the entry still reaches the Board.
@@ -646,7 +651,6 @@
         if (k.charAt(0) === '_' || typeof v !== 'string' || !v) return;
         lines.push(k + ': ' + v);
       });
-      if (hasPhoto) lines.push('', '(Please attach your photo to this email.)');
       return 'mailto:' + FORM_ADDRESS + '?subject=' + encodeURIComponent(res.subject) +
         '&body=' + encodeURIComponent(lines.join('\n'));
     }

@@ -30,10 +30,16 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Mitigation:** when FormSubmit can't be reached, the form now offers "Email it instead" with the entry pre-filled.
 - **Possible fix:** if friends hit this often, switch to a service less likely to be on blocklists (for example Formspree or Web3Forms). Only `FORM_ADDRESS`/the endpoint in `js/app.js` would change.
 
-### Form has no CAPTCHA
+### Photo-less entries have no CAPTCHA
 - **Logged:** 2026-10-03
-- **Cause:** the form now sends in the background (FormSubmit's ajax endpoint) so it can report success or failure on the page. FormSubmit only shows its CAPTCHA on full-page submissions.
+- **Cause:** entries without a photo send in the background (FormSubmit's ajax endpoint) so the page can report success or failure. FormSubmit only shows its CAPTCHA on full-page submissions.
 - **Mitigation:** the hidden honeypot field still catches simple bots. Revisit if spam shows up.
+
+### Photos dropped by FormSubmit's ajax endpoint (fixed)
+- **Logged:** 2026-10-03
+- **Symptom:** a phone submission with a photo arrived by email without the attachment.
+- **Cause:** FormSubmit's ajax endpoint delivers form fields but drops file attachments.
+- **Fix:** entries with a photo now use a normal full-page form post, which keeps attachments; FormSubmit may show its CAPTCHA, then returns to the thanks page.
 
 ### Owner email visible in page source
 - **Logged:** 2026-10-03
