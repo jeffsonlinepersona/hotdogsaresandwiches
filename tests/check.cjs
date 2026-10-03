@@ -204,8 +204,12 @@ async function go(hash) {
   f2 = await send({ success: 'false', message: 'This form needs Activation. We sent you an email.' });
   ok(/still being set up/.test(f2.querySelector('#form-error').textContent) && !f2.querySelector('#form-error').hidden, 'activation message shown');
   ok(!f2.querySelector('button[type="submit"]').disabled, 'button re-enabled after failure');
+  ok(typeof lastPost.opts.body.toString === 'function' && /Food=Pop-Tart/.test(lastPost.opts.body.toString()), 'no-photo entries go URL-encoded');
+  let classic = null;
+  w.HTMLFormElement.prototype.submit = function () { classic = this.getAttribute('enctype'); };
   f2 = await send('network');
-  ok(/Could not reach/.test(f2.querySelector('#form-error').textContent), 'network failure message shown');
+  ok(classic === 'application/x-www-form-urlencoded', 'network failure falls back to a normal page submit');
+  ok(/another way/.test(f2.querySelector('button[type="submit"]').textContent), 'button says it is retrying');
 
   ok(errors.length === 0, 'no script errors' + (errors.length ? ':\n' + errors.join('\n') : ''));
   finish();

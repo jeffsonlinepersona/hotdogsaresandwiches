@@ -625,10 +625,24 @@
     btn.textContent = 'Sending…';
     var data = new FormData(form);
     data.delete('_next');
-    // Safari on iPhone fails the whole request if an empty file field is sent
     var photo = form.querySelector('#f-photo');
-    if (!photo.files || !photo.files.length) data.delete('attachment');
+    var hasPhoto = !!(photo.files && photo.files.length);
     if (!form.querySelector('#f-consent').checked) data.delete('Photo license');
+    var body = data;
+    if (!hasPhoto) {
+      // iPhone browsers reject some multipart requests sent in the background.
+      // Without a photo, send the plainest format there is: URL-encoded text.
+      data.delete('attachment');
+      body = new URLSearchParams();
+      data.forEach(function (v, k) { body.append(k, v); });
+    }
+
+    // If the background send fails, submit the page the old-fashioned way so
+    // the entry still reaches the Board (FormSubmit then shows its own pages).
+    function fallback() {
+      if (!hasPhoto) form.setAttribute('enctype', 'application/x-www-form-urlencoded');
+      HTMLFormElement.prototype.submit.call(form);
+    }
 
     function fail(msg) {
       btn.disabled = false;
@@ -638,7 +652,7 @@
       if (err.scrollIntoView) err.scrollIntoView({ block: 'center' });
     }
 
-    window.fetch(FORM_AJAX_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+    window.fetch(FORM_AJAX_ENDPOINT, { method: 'POST', body: body, headers: { Accept: 'application/json' } })
       .then(function (r) {
         return r.json().catch(function () { return { success: r.ok ? 'true' : 'false', message: 'HTTP ' + r.status }; });
       })
@@ -652,8 +666,12 @@
         }
       })
       .catch(function (x) {
-        fail('Could not reach the mail service. Check your connection and try again.' +
-          (x && x.message ? ' (' + x.message + ')' : ''));
+        btn.textContent = 'Sending another way…';
+        try { window.sessionStorage.setItem('hds-last-send-error', String(x && x.message || x)); } catch (e2) { /* storage off */ }
+        try { fallback(); } catch (e3) {
+          fail('Could not reach the mail service. Check your connection and try again.' +
+            (x && x.message ? ' (' + x.message + ')' : ''));
+        }
       });
   });
 
