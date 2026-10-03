@@ -482,6 +482,7 @@
             '<input type="email" id="f-email" name="email" placeholder="Only if you want a reply" autocomplete="email"></div>' +
 
             '<p class="error" id="form-error" role="alert" hidden></p>' +
+            '<div class="btn-row" id="form-alt" style="align-items:center" hidden></div>' +
             '<div class="btn-row"><button class="btn btn-accent" type="submit">Send to the Review Board</button></div>' +
             '<p class="license-note">Submissions are emailed to the Review Board through FormSubmit. Accepted photos have location data removed before they are posted.</p>' +
           '</form>' +
@@ -637,11 +638,17 @@
       data.forEach(function (v, k) { body.append(k, v); });
     }
 
-    // If the background send fails, submit the page the old-fashioned way so
-    // the entry still reaches the Board (FormSubmit then shows its own pages).
-    function fallback() {
-      if (!hasPhoto) form.setAttribute('enctype', 'application/x-www-form-urlencoded');
-      HTMLFormElement.prototype.submit.call(form);
+    // If FormSubmit can't be reached (some networks and ad blockers block it),
+    // offer a pre-filled email instead so the entry still reaches the Board.
+    function mailtoLink() {
+      var lines = [];
+      data.forEach(function (v, k) {
+        if (k.charAt(0) === '_' || typeof v !== 'string' || !v) return;
+        lines.push(k + ': ' + v);
+      });
+      if (hasPhoto) lines.push('', '(Please attach your photo to this email.)');
+      return 'mailto:' + FORM_ADDRESS + '?subject=' + encodeURIComponent(res.subject) +
+        '&body=' + encodeURIComponent(lines.join('\n'));
     }
 
     function fail(msg) {
@@ -665,13 +672,12 @@
           fail('The mail service turned this away' + (m ? ': ' + m : '.') + ' Please try again.');
         }
       })
-      .catch(function (x) {
-        btn.textContent = 'Sending another way…';
-        try { window.sessionStorage.setItem('hds-last-send-error', String(x && x.message || x)); } catch (e2) { /* storage off */ }
-        try { fallback(); } catch (e3) {
-          fail('Could not reach the mail service. Check your connection and try again.' +
-            (x && x.message ? ' (' + x.message + ')' : ''));
-        }
+      .catch(function () {
+        fail('Your network could not reach the mail service. Some ad blockers, VPNs and Wi-Fi filters block it.');
+        var alt = form.querySelector('#form-alt');
+        alt.innerHTML = '<a class="btn btn-ink" href="' + esc(mailtoLink()) + '">Email it instead</a>' +
+          '<span class="hint">Opens your email app with everything filled in.</span>';
+        alt.hidden = false;
       });
   });
 

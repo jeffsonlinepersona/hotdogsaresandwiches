@@ -23,6 +23,13 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 ## Known issues
 
+### FormSubmit blocked on some networks
+- **Logged:** 2026-10-03
+- **Symptom:** on Jeff's iPhone the form failed; opening formsubmit.co directly gave `ERR_NAME_NOT_RESOLVED`.
+- **Cause:** the phone's network could not look up formsubmit.co at all, so a DNS filter, ad blocker, VPN or Wi-Fi filter is blocking the domain. Not a site bug: the same form works from desktop and from other browsers.
+- **Mitigation:** when FormSubmit can't be reached, the form now offers "Email it instead" with the entry pre-filled.
+- **Possible fix:** if friends hit this often, switch to a service less likely to be on blocklists (for example Formspree or Web3Forms). Only `FORM_ADDRESS`/the endpoint in `js/app.js` would change.
+
 ### Form has no CAPTCHA
 - **Logged:** 2026-10-03
 - **Cause:** the form now sends in the background (FormSubmit's ajax endpoint) so it can report success or failure on the page. FormSubmit only shows its CAPTCHA on full-page submissions.
