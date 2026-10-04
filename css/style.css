@@ -146,7 +146,7 @@ em, .sci { font-style: italic; }
 
 @media (max-width: 760px) {
   .site-header { padding-top: 16px; padding-bottom: 0; }
-  .site-search { order: 2; max-width: none; }
+  .site-search { order: 2; max-width: none; margin-bottom: 14px; }
   .brand-name { font-size: 22px; }
   .site-nav {
     width: calc(100% + 2 * var(--gutter));

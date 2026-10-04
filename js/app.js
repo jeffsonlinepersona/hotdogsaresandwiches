@@ -635,7 +635,7 @@
     } else {
       logSearchHit(q, results.length);
       body =
-        '<p class="lede" style="margin-bottom:24px">' + results.length + ' specimen' + (results.length === 1 ? '' : 's') + ' match “' + esc(q) + '”.</p>' +
+        '<p class="lede" style="margin-bottom:24px">' + results.length + (results.length === 1 ? ' specimen matches' : ' specimens match') + ' “' + esc(q) + '”.</p>' +
         '<ul class="results">' + results.map(function (n) {
           var path = lineage(n.id).filter(function (x) { return x.rank !== 'domain' && x.id !== n.id; })
             .map(function (x) { return x.scientific; }).join(' › ');
