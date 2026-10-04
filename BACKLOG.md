@@ -16,6 +16,7 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.
 - Analytics: live 2026-10-03 at hotdogsaresandwiches.goatcounter.com (page views, searches, not-found searches).
 - Taxonomy: container test adopted 2026-10-03 (Sandwichae needs bread; new Dumplingae, Sushiae, Pieae; casseroles sort by structure). Broth clause adopted 2026-10-03: restaurant ramen and pho are soup; cereal and gazpacho still are not.
+- Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03). Next: Constructa outside Sandwichae, Naturalia, Condimenta, Incertae sedis.
 - Link previews with an image when a card link is texted.
 
 ### Version 3 items

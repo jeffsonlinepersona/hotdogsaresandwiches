@@ -29,10 +29,25 @@
       "title": "Role beats ingredients",
       "summary": "The role a food plays at the table decides drink versus food, not whether you sip it or spoon it.",
       "points": [
-        "Food role (meal, course, snack, dessert): Constructa, even if drunk.",
+        "Food role (meal, course, snack, dessert): Constructa, even if drunk through a straw.",
         "Beverage role (hydrate, refresh, stimulate, intoxicate): Liquida, even if assembled."
       ],
-      "example": "A milkshake is a dessert wearing a straw. A cocktail is assembled, but it is still a drink."
+      "example": "A milkshake is a dessert wearing a straw, so it sits with gazpacho in Immersa. A cocktail is assembled, but it is still a drink."
+    },
+    {
+      "id": "drinks",
+      "title": "The drink test",
+      "summary": "Drinks are sorted by how they were made, not by why you drink them or what they come in.",
+      "points": [
+        "Ready-made by nature (water, animal milk): Nativa.",
+        "Squeezed, pressed or strained from a plant (juice, oat milk): Expressa.",
+        "Steeped, then strained (coffee, tea): Infusa.",
+        "Things dissolved into water (soda, lemonade, sports drinks): Soluta.",
+        "Microbes did the work (beer, wine): Fermentata.",
+        "Two finished drinks mixed into a new one (latte, cocktails): Miscellae.",
+        "Still or sparkling is decided one level down, at order."
+      ],
+      "example": "Lemonade is not juice: it is mostly water with things dissolved in. Oat milk is not milk: it is pressed from a plant. A latte is not coffee: it is two drinks mixed. A milkshake is not a drink at all."
     },
     {
       "id": "sandwich",
@@ -108,7 +123,7 @@
           },
           {
             "label": "You drink it to hydrate, refresh, wake up or unwind",
-            "result": "liquida"
+            "next": "drink"
           },
           {
             "label": "It is one food, maybe dried, salted, pickled or grilled, but still recognizable",
@@ -223,6 +238,36 @@
           {
             "label": "Neither: a plain liquid like milk, juice or a raw blend",
             "result": "cruda"
+          }
+        ]
+      },
+      "drink": {
+        "question": "How was the drink made?",
+        "help": "Ignore the container and why you drink it. Only how it was made matters.",
+        "options": [
+          {
+            "label": "Nature made it ready to drink: water, animal milk",
+            "result": "nativa"
+          },
+          {
+            "label": "Squeezed, pressed or strained from a plant: juice, oat milk",
+            "result": "expressa"
+          },
+          {
+            "label": "Steeped in hot water, then strained: coffee, tea",
+            "result": "infusa"
+          },
+          {
+            "label": "Sugar, flavor or salts dissolved into water: soda, lemonade, sports drinks",
+            "result": "soluta"
+          },
+          {
+            "label": "Fermented by yeast or bacteria: beer, wine",
+            "result": "fermentata"
+          },
+          {
+            "label": "Two finished drinks mixed together: latte, cocktail",
+            "result": "miscellae"
           }
         ]
       }

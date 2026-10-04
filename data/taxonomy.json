@@ -10,7 +10,8 @@
       "trait": "Is it food?",
       "short": "Everything that can be eaten or drunk. Gas station sushi is included under protest.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 1
     },
     {
       "id": "condimenta",
@@ -21,7 +22,8 @@
       "trait": "Exists to make other food better, never the star",
       "short": "Seasonings, sauces, dips and spreads. Checked first, because ketchup will try to claim it is a meal.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 2
     },
     {
       "id": "ketchup",
@@ -35,7 +37,8 @@
       "aliases": [
         "ketchup",
         "catsup"
-      ]
+      ],
+      "catalog": 3
     },
     {
       "id": "salt",
@@ -45,7 +48,8 @@
       "common": "Salt",
       "short": "A seasoning. Salting a steak does not make the steak a constructed food; the salt is merely visiting.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 4
     },
     {
       "id": "msg",
@@ -55,7 +59,8 @@
       "common": "MSG",
       "short": "Made by fermentation and chemically the same glutamate found in tomatoes. Supporting cast with an unfair reputation.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 5
     },
     {
       "status": "ruled",
@@ -69,7 +74,8 @@
       "aliases": [
         "caesar dressing",
         "caesar"
-      ]
+      ],
+      "catalog": 6
     },
     {
       "status": "ruled",
@@ -83,7 +89,8 @@
       "aliases": [
         "soy sauce",
         "shoyu"
-      ]
+      ],
+      "catalog": 7
     },
     {
       "id": "liquida",
@@ -92,58 +99,554 @@
       "scientific": "Liquida",
       "common": "Drinks",
       "trait": "Has a beverage role: hydrate, refresh, stimulate or intoxicate",
-      "short": "Decided by the role it plays at the table, not by whether you sip it. A milkshake is a dessert wearing a straw.",
+      "short": "Drinks, sorted by how they were made: ready-made by nature, pressed, steeped, dissolved, fermented, or mixed from other drinks. A milkshake is a dessert wearing a straw, and lives in Constructa.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 8
     },
     {
-      "id": "hydrata",
-      "rank": "class",
+      "id": "nativa",
+      "rank": "phylum",
       "parent": "liquida",
-      "scientific": "Hydrata",
-      "common": "Water drinks",
-      "trait": "Drunk to hydrate",
-      "short": "Water and sparkling water.",
+      "scientific": "Nativa",
+      "common": "Ready-made by nature",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "trait": "Comes out of nature ready to drink",
+      "short": "Nothing was squeezed, steeped, dissolved or fermented. Filtering and pasteurizing do not count.",
+      "catalog": 9
     },
     {
-      "id": "dulcia",
+      "id": "aquae",
       "rank": "class",
-      "parent": "liquida",
-      "scientific": "Dulcia",
-      "common": "Sweet refreshers",
-      "trait": "Drunk to refresh",
-      "short": "Soda, juice and lemonade.",
+      "parent": "nativa",
+      "scientific": "Aquae",
+      "common": "Waters",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "trait": "Water itself",
+      "short": "Water, with or without bubbles.",
+      "catalog": 10
     },
     {
-      "id": "excitata",
-      "rank": "class",
-      "parent": "liquida",
-      "scientific": "Excitata",
-      "common": "Stimulants",
-      "trait": "Drunk to stay awake",
-      "short": "Coffee, tea and energy drinks.",
+      "id": "aquae-tranquilliformes",
+      "rank": "order",
+      "parent": "aquae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 11
+    },
+    {
+      "id": "aquidae",
+      "rank": "family",
+      "parent": "aquae-tranquilliformes",
+      "scientific": "Aquidae",
+      "common": "Plain waters",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Nothing added",
+      "short": "Water.",
+      "catalog": 12
+    },
+    {
+      "id": "aqua",
+      "rank": "genus",
+      "parent": "aquidae",
+      "scientific": "Aqua",
+      "common": "Water",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "The control group.",
+      "catalog": 13
+    },
+    {
+      "id": "aqua-pura",
+      "rank": "species",
+      "parent": "aqua",
+      "scientific": "Aqua pura",
+      "common": "Water",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "The baseline every other drink is measured against. Tap or bottled is a vessel question, and the vessel does not count.",
+      "aliases": [
+        "water",
+        "tap water",
+        "still water",
+        "bottled water",
+        "h2o"
+      ],
+      "catalog": 14
+    },
+    {
+      "id": "aquae-spumiformes",
+      "rank": "order",
+      "parent": "aquae",
+      "scientific": "Spumiformes",
+      "common": "Sparkling",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Carbonated, naturally or not",
+      "short": "Bubbles. The only thing separating these from their still relatives.",
+      "catalog": 15
+    },
+    {
+      "id": "bullidae",
+      "rank": "family",
+      "parent": "aquae-spumiformes",
+      "scientific": "Bullidae",
+      "common": "Bubbly waters",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Water plus carbon dioxide",
+      "short": "Water that fizzes.",
+      "catalog": 16
+    },
+    {
+      "id": "gasosa",
+      "rank": "genus",
+      "parent": "bullidae",
+      "scientific": "Gasosa",
+      "common": "Sparkling waters",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Seltzer, club soda, mineral water with bubbles.",
+      "catalog": 17
+    },
+    {
+      "id": "gasosa-aquatica",
+      "rank": "species",
+      "parent": "gasosa",
+      "scientific": "Gasosa aquatica",
+      "common": "Sparkling water",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Water with bubbles. One order away from tap water, and it will not let you forget it.",
+      "aliases": [
+        "sparkling water",
+        "seltzer",
+        "club soda",
+        "soda water",
+        "carbonated water",
+        "fizzy water",
+        "mineral water",
+        "la croix"
+      ],
+      "catalog": 18
+    },
+    {
+      "id": "lactae",
+      "rank": "class",
+      "parent": "nativa",
+      "scientific": "Lactae",
+      "common": "Milks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Milk from a mammal",
+      "short": "From an animal, as nature intended. Plant milks are elsewhere, and they know why.",
+      "catalog": 19
+    },
+    {
+      "id": "lactae-tranquilliformes",
+      "rank": "order",
+      "parent": "lactae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 20
+    },
+    {
+      "id": "lactidae",
+      "rank": "family",
+      "parent": "lactae-tranquilliformes",
+      "scientific": "Lactidae",
+      "common": "Mammal milks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Milk from an animal",
+      "short": "Species sorted by animal.",
+      "catalog": 21
+    },
+    {
+      "id": "lac",
+      "rank": "genus",
+      "parent": "lactidae",
+      "scientific": "Lac",
+      "common": "Milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Fat percentage makes a variety, not a species.",
+      "catalog": 22
+    },
+    {
+      "id": "lac-bovinum",
+      "rank": "species",
+      "parent": "lac",
+      "scientific": "Lac bovinum",
+      "common": "Cow's milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "The default milk. Whole, 2% and skim are varieties: you still order it as milk.",
+      "aliases": [
+        "milk",
+        "cow's milk",
+        "cows milk",
+        "whole milk",
+        "2% milk",
+        "skim milk",
+        "glass of milk"
+      ],
+      "catalog": 23
+    },
+    {
+      "id": "lac-bovinum-integrum",
+      "rank": "variety",
+      "parent": "lac-bovinum",
+      "scientific": "L. b. integrum",
+      "common": "Whole milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Nothing removed.",
+      "aliases": [
+        "whole milk"
+      ],
+      "catalog": 24
+    },
+    {
+      "id": "lac-bovinum-tenue",
+      "rank": "variety",
+      "parent": "lac-bovinum",
+      "scientific": "L. b. tenue",
+      "common": "Skim milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Most of the fat removed. Most of the joy, some argue.",
+      "aliases": [
+        "skim milk",
+        "nonfat milk",
+        "fat free milk"
+      ],
+      "catalog": 25
+    },
+    {
+      "id": "lac-caprinum",
+      "rank": "species",
+      "parent": "lac",
+      "scientific": "Lac caprinum",
+      "common": "Goat's milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "A different animal, so a different species of milk.",
+      "aliases": [
+        "goat's milk",
+        "goat milk"
+      ],
+      "catalog": 26
+    },
+    {
+      "id": "lac-ovinum",
+      "rank": "species",
+      "parent": "lac",
+      "scientific": "Lac ovinum",
+      "common": "Sheep's milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Rarely drunk, frequently turned into cheese.",
+      "aliases": [
+        "sheep's milk",
+        "sheep milk"
+      ],
+      "catalog": 27
+    },
+    {
+      "id": "expressa",
+      "rank": "phylum",
+      "parent": "liquida",
+      "scientific": "Expressa",
+      "common": "Pressed drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Squeezed, pressed or strained from a plant",
+      "short": "Juices and plant milks: the liquid was already inside the plant, or close to it.",
+      "catalog": 28
+    },
+    {
+      "id": "fructuosae",
+      "rank": "class",
+      "parent": "expressa",
+      "scientific": "Fructuosae",
+      "common": "Juices",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Squeezed from fruit",
+      "short": "Mostly squeezed fruit by volume. Lemonade fails this test.",
+      "catalog": 29
+    },
+    {
+      "id": "fructuosae-tranquilliformes",
+      "rank": "order",
+      "parent": "fructuosae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 30
+    },
+    {
+      "id": "citridae",
+      "rank": "family",
+      "parent": "fructuosae-tranquilliformes",
+      "scientific": "Citridae",
+      "common": "Citrus juices",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Citrus fruit",
+      "short": "Oranges, grapefruit and relatives.",
+      "catalog": 31
+    },
+    {
+      "id": "citrisuccus",
+      "rank": "genus",
+      "parent": "citridae",
+      "scientific": "Citrisuccus",
+      "common": "Citrus juices",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "The breakfast table genus.",
+      "catalog": 32
+    },
+    {
+      "id": "orange-juice",
+      "rank": "species",
+      "parent": "citrisuccus",
+      "scientific": "Citrisuccus aurantii",
+      "common": "Orange juice",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Squeezed oranges. Pulp is a variety question the Board refuses to take up.",
+      "aliases": [
+        "orange juice",
+        "oj",
+        "juice"
+      ],
+      "catalog": 33
+    },
+    {
+      "id": "pomidae",
+      "rank": "family",
+      "parent": "fructuosae-tranquilliformes",
+      "scientific": "Pomidae",
+      "common": "Orchard juices",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Apples and pears",
+      "short": "Pressed orchard fruit.",
+      "catalog": 34
+    },
+    {
+      "id": "pomisuccus",
+      "rank": "genus",
+      "parent": "pomidae",
+      "scientific": "Pomisuccus",
+      "common": "Apple juices",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Pressed apples.",
+      "catalog": 35
+    },
+    {
+      "id": "apple-juice",
+      "rank": "species",
+      "parent": "pomisuccus",
+      "scientific": "Pomisuccus mali",
+      "common": "Apple juice",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Pressed apples. Once fermented it becomes cider and leaves for Fermentata.",
+      "aliases": [
+        "apple juice",
+        "apple cider",
+        "cider"
+      ],
+      "catalog": 36
+    },
+    {
+      "id": "pseudolactae",
+      "rank": "class",
+      "parent": "expressa",
+      "scientific": "Pseudolactae",
+      "common": "Pseudo-milks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Strained from grains, nuts or beans, and sold as milk",
+      "short": "Pressed and strained from a plant, so not milk. Oat milk is, technically, oat juice. Same idea as Pseudosandwichae, different material.",
+      "catalog": 37
+    },
+    {
+      "id": "pseudolactae-tranquilliformes",
+      "rank": "order",
+      "parent": "pseudolactae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 38
+    },
+    {
+      "id": "pseudolactidae",
+      "rank": "family",
+      "parent": "pseudolactae-tranquilliformes",
+      "scientific": "Pseudolactidae",
+      "common": "Plant milks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "A plant soaked, blended and strained",
+      "short": "The family that drew the strongest letters.",
+      "catalog": 39
+    },
+    {
+      "id": "pseudolac",
+      "rank": "genus",
+      "parent": "pseudolactidae",
+      "scientific": "Pseudolac",
+      "common": "Plant milks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Oat, almond, soy and whatever comes next.",
+      "catalog": 40
+    },
+    {
+      "id": "oat-milk",
+      "rank": "species",
+      "parent": "pseudolac",
+      "scientific": "Pseudolac avenae",
+      "common": "Oat milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Not milk. Oats soaked, blended and strained: oat juice with excellent marketing.",
+      "aliases": [
+        "oat milk",
+        "oatmilk",
+        "oatly",
+        "plant milk",
+        "non-dairy milk"
+      ],
+      "catalog": 41
+    },
+    {
+      "id": "almond-milk",
+      "rank": "species",
+      "parent": "pseudolac",
+      "scientific": "Pseudolac amygdali",
+      "common": "Almond milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Not milk. Almonds, water and confidence.",
+      "aliases": [
+        "almond milk"
+      ],
+      "catalog": 42
+    },
+    {
+      "id": "soy-milk",
+      "rank": "species",
+      "parent": "pseudolac",
+      "scientific": "Pseudolac glycines",
+      "common": "Soy milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Not milk. Soybeans soaked, ground and strained.",
+      "aliases": [
+        "soy milk",
+        "soymilk"
+      ],
+      "catalog": 43
+    },
+    {
+      "id": "infusa",
+      "rank": "phylum",
+      "parent": "liquida",
+      "scientific": "Infusa",
+      "common": "Steeped drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Steeped in hot water, then the solids removed",
+      "short": "Coffee and tea: the flavor was pulled out of something that is then thrown away.",
+      "catalog": 44
+    },
+    {
+      "id": "fabae",
+      "rank": "class",
+      "parent": "infusa",
+      "scientific": "Fabae",
+      "common": "Bean infusions",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Steeped from roasted beans",
+      "short": "Coffee.",
+      "catalog": 45
+    },
+    {
+      "id": "fabae-tranquilliformes",
+      "rank": "order",
+      "parent": "fabae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 46
+    },
+    {
+      "id": "coffeidae",
+      "rank": "family",
+      "parent": "fabae-tranquilliformes",
+      "scientific": "Coffeidae",
+      "common": "Coffees",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Roasted coffee beans",
+      "short": "The family most responsible for this website existing past midnight.",
+      "catalog": 47
+    },
+    {
+      "id": "cafeus",
+      "rank": "genus",
+      "parent": "coffeidae",
+      "scientific": "Cafeus",
+      "common": "Coffee",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Brewed coffee and espresso.",
+      "catalog": 48
     },
     {
       "id": "cafeus-potus",
       "rank": "species",
-      "parent": "excitata",
+      "parent": "cafeus",
       "scientific": "Cafeus potus",
       "common": "Coffee",
-      "short": "Add-ins make varieties, not new species: you still order it as coffee. A latte is ordered by a different name, so it is a separate species.",
       "status": "ruled",
       "ruled_on": "2026-10-03",
+      "short": "Add-ins make varieties, not new species: you still order it as coffee. A latte is ordered by a different name, so it is a separate species.",
       "aliases": [
         "coffee",
         "drip coffee",
         "cup of joe",
         "joe"
-      ]
+      ],
+      "catalog": 49
     },
     {
       "id": "cafeus-potus-niger",
@@ -151,12 +654,13 @@
       "parent": "cafeus-potus",
       "scientific": "C. p. niger",
       "common": "Coffee, black",
-      "short": "Coffee as intended.",
       "status": "ruled",
       "ruled_on": "2026-10-03",
+      "short": "Coffee as intended.",
       "aliases": [
         "black coffee"
-      ]
+      ],
+      "catalog": 50
     },
     {
       "id": "cafeus-potus-novaeboracensis",
@@ -164,38 +668,86 @@
       "parent": "cafeus-potus",
       "scientific": "C. p. novaeboracensis",
       "common": "Coffee, regular (New York)",
-      "short": "Cream and sugar, by New York definition. Listing a variety is not an endorsement of it.",
       "status": "ruled",
       "ruled_on": "2026-10-03",
+      "short": "Cream and sugar, by New York definition. Listing a variety is not an endorsement of it.",
       "aliases": [
         "regular coffee",
         "coffee regular",
         "cream and sugar"
-      ]
+      ],
+      "catalog": 51
     },
     {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "id": "cafeus-lacteus",
+      "id": "espresso",
       "rank": "species",
-      "parent": "excitata",
-      "scientific": "Cafeus lacteus",
-      "common": "Latte",
-      "short": "Espresso and steamed milk. Ordered by its own name, so it is its own species, not a variety of coffee.",
-      "aliases": [
-        "latte",
-        "cafe latte",
-        "caffe latte"
-      ]
-    },
-    {
+      "parent": "cafeus",
+      "scientific": "Cafeus pressus",
+      "common": "Espresso",
       "status": "ruled",
       "ruled_on": "2026-10-03",
+      "short": "Coffee forced through finely ground beans under pressure. Ordered by its own name, so its own species.",
+      "aliases": [
+        "espresso",
+        "shot of espresso"
+      ],
+      "catalog": 52
+    },
+    {
+      "id": "foliae",
+      "rank": "class",
+      "parent": "infusa",
+      "scientific": "Foliae",
+      "common": "Leaf infusions",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Steeped from leaves",
+      "short": "Tea.",
+      "catalog": 53
+    },
+    {
+      "id": "foliae-tranquilliformes",
+      "rank": "order",
+      "parent": "foliae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 54
+    },
+    {
+      "id": "theidae",
+      "rank": "family",
+      "parent": "foliae-tranquilliformes",
+      "scientific": "Theidae",
+      "common": "Teas",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "The tea plant, Camellia sinensis",
+      "short": "Black, green and everything between.",
+      "catalog": 55
+    },
+    {
+      "id": "camellia",
+      "rank": "genus",
+      "parent": "theidae",
+      "scientific": "Camellia",
+      "common": "Tea",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Tea from the tea plant. Herbal teas would need a family of their own.",
+      "catalog": 56
+    },
+    {
       "id": "camellia-infusa",
       "rank": "species",
-      "parent": "excitata",
+      "parent": "camellia",
       "scientific": "Camellia infusa",
       "common": "Tea",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
       "short": "Leaves steeped in hot water. Additions make varieties: you still order it as tea.",
       "aliases": [
         "tea",
@@ -203,69 +755,395 @@
         "black tea",
         "green tea",
         "cup of tea"
-      ]
+      ],
+      "catalog": 57
     },
     {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
       "id": "camellia-infusa-britannica",
       "rank": "variety",
       "parent": "camellia-infusa",
       "scientific": "C. i. britannica",
       "common": "Tea with milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
       "short": "Strong black tea with a splash of milk. Steeping time is a matter of national security.",
       "aliases": [
         "english tea",
         "builders tea",
         "builder's tea",
         "tea with milk"
-      ]
+      ],
+      "catalog": 58
     },
     {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
       "id": "camellia-infusa-australis",
       "rank": "variety",
       "parent": "camellia-infusa",
       "scientific": "C. i. australis",
       "common": "Sweet tea",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
       "short": "Iced tea sweetened past the point of debate. Southern variety; served by the gallon.",
       "aliases": [
         "sweet tea",
         "iced tea",
         "southern sweet tea"
-      ]
+      ],
+      "catalog": 59
     },
     {
-      "id": "inebriata",
-      "rank": "class",
+      "id": "soluta",
+      "rank": "phylum",
       "parent": "liquida",
-      "scientific": "Inebriata",
-      "common": "Intoxicants",
-      "trait": "Drunk to unwind",
-      "short": "Beer, wine, spirits and cocktails. A cocktail is assembled, but its beverage role wins.",
-      "status": "ruled",
-      "ruled_on": "2026-10-03"
-    },
-    {
+      "scientific": "Soluta",
+      "common": "Mixed drinks of water",
       "status": "ruled",
       "ruled_on": "2026-10-03",
+      "trait": "Things dissolved into water",
+      "short": "Sugar, flavor, salts or syrup dissolved into water. Where the syrup meets the water, in a factory or a fountain, does not matter.",
+      "catalog": 60
+    },
+    {
+      "id": "saccharatae",
+      "rank": "class",
+      "parent": "soluta",
+      "scientific": "Saccharatae",
+      "common": "Sweet drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Sugar and flavor dissolved in water",
+      "short": "Soda and lemonade.",
+      "catalog": 61
+    },
+    {
+      "id": "saccharatae-spumiformes",
+      "rank": "order",
+      "parent": "saccharatae",
+      "scientific": "Spumiformes",
+      "common": "Sparkling",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Carbonated, naturally or not",
+      "short": "Bubbles. The only thing separating these from their still relatives.",
+      "catalog": 62
+    },
+    {
+      "id": "colidae",
+      "rank": "family",
+      "parent": "saccharatae-spumiformes",
+      "scientific": "Colidae",
+      "common": "Colas",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Cola flavor",
+      "short": "Caramel-colored, kola-flavored, endlessly argued over.",
+      "catalog": 63
+    },
+    {
+      "id": "cola",
+      "rank": "genus",
+      "parent": "colidae",
+      "scientific": "Cola",
+      "common": "Colas",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "The brown sodas.",
+      "catalog": 64
+    },
+    {
+      "id": "cola-vulgaris",
+      "rank": "species",
+      "parent": "cola",
+      "scientific": "Cola vulgaris",
+      "common": "Cola",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Can, bottle or 2-liter: same species. The vessel does not count.",
+      "aliases": [
+        "cola",
+        "coke",
+        "coca-cola",
+        "pepsi",
+        "soda",
+        "pop",
+        "soda pop",
+        "soft drink"
+      ],
+      "catalog": 65
+    },
+    {
+      "id": "cola-vulgaris-dietetica",
+      "rank": "variety",
+      "parent": "cola-vulgaris",
+      "scientific": "C. v. dietetica",
+      "common": "Diet cola",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Sweetened without sugar. Still ordered as a cola.",
+      "aliases": [
+        "diet coke",
+        "diet cola",
+        "coke zero",
+        "diet pepsi"
+      ],
+      "catalog": 66
+    },
+    {
+      "id": "cola-vulgaris-cerasina",
+      "rank": "variety",
+      "parent": "cola-vulgaris",
+      "scientific": "C. v. cerasina",
+      "common": "Cherry cola",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Cola with cherry. A variety, not a new species.",
+      "aliases": [
+        "cherry coke",
+        "cherry cola"
+      ],
+      "catalog": 67
+    },
+    {
+      "id": "cola-vulgaris-fontana",
+      "rank": "variety",
+      "parent": "cola-vulgaris",
+      "scientific": "C. v. fontana",
+      "common": "Fountain cola",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Syrup and carbonated water combined at the moment of pouring. Same species as the can; recognized as a variety in honor of everyone who insists the fast-food version tastes better.",
+      "aliases": [
+        "fountain soda",
+        "fountain coke",
+        "fountain drink",
+        "mcdonalds coke"
+      ],
+      "catalog": 68
+    },
+    {
+      "id": "limonidae",
+      "rank": "family",
+      "parent": "saccharatae-spumiformes",
+      "scientific": "Limonidae",
+      "common": "Lemon-lime sodas",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Citrus flavor, clear",
+      "short": "The clear sodas.",
+      "catalog": 69
+    },
+    {
+      "id": "limona",
+      "rank": "genus",
+      "parent": "limonidae",
+      "scientific": "Limona",
+      "common": "Lemon-lime sodas",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Clear and citrusy.",
+      "catalog": 70
+    },
+    {
+      "id": "limona-viridis",
+      "rank": "species",
+      "parent": "limona",
+      "scientific": "Limona viridis",
+      "common": "Lemon-lime soda",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Clear citrus soda.",
+      "aliases": [
+        "lemon-lime soda",
+        "sprite",
+        "7up",
+        "7 up",
+        "sierra mist"
+      ],
+      "catalog": 71
+    },
+    {
+      "id": "saccharatae-tranquilliformes",
+      "rank": "order",
+      "parent": "saccharatae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 72
+    },
+    {
+      "id": "limonatidae",
+      "rank": "family",
+      "parent": "saccharatae-tranquilliformes",
+      "scientific": "Limonatidae",
+      "common": "Lemonades",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Lemon, sugar and water",
+      "short": "Mostly water by volume, which is why it is not juice.",
+      "catalog": 73
+    },
+    {
+      "id": "limonata",
+      "rank": "genus",
+      "parent": "limonatidae",
+      "scientific": "Limonata",
+      "common": "Lemonades",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "The front-yard stand genus.",
+      "catalog": 74
+    },
+    {
+      "id": "lemonade",
+      "rank": "species",
+      "parent": "limonata",
+      "scientific": "Limonata vulgaris",
+      "common": "Lemonade",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Not juice. Mostly water with sugar and some lemon juice dissolved in, so it sits with soda, not orange juice.",
+      "aliases": [
+        "lemonade",
+        "pink lemonade",
+        "lemonade stand"
+      ],
+      "catalog": 75
+    },
+    {
+      "id": "electrolytae",
+      "rank": "class",
+      "parent": "soluta",
+      "scientific": "Electrolytae",
+      "common": "Sports drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Salts and sugar dissolved for exercise",
+      "short": "Water with electrolytes. The color is not a flavor.",
+      "catalog": 76
+    },
+    {
+      "id": "electrolytae-tranquilliformes",
+      "rank": "order",
+      "parent": "electrolytae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 77
+    },
+    {
+      "id": "electrolytidae",
+      "rank": "family",
+      "parent": "electrolytae-tranquilliformes",
+      "scientific": "Electrolytidae",
+      "common": "Sports drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Sodium, potassium and sugar",
+      "short": "Engineered for sweat replacement.",
+      "catalog": 78
+    },
+    {
+      "id": "athletica",
+      "rank": "genus",
+      "parent": "electrolytidae",
+      "scientific": "Athletica",
+      "common": "Sports drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Sold by color.",
+      "catalog": 79
+    },
+    {
+      "id": "sports-drink",
+      "rank": "species",
+      "parent": "athletica",
+      "scientific": "Athletica vulgaris",
+      "common": "Sports drink",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Salts and sugar dissolved in water. Its purpose is hydration, but the Board sorts drinks by how they are made, not why.",
+      "aliases": [
+        "sports drink",
+        "gatorade",
+        "powerade",
+        "electrolyte drink",
+        "body armor"
+      ],
+      "catalog": 80
+    },
+    {
+      "id": "fermentata",
+      "rank": "phylum",
+      "parent": "liquida",
+      "scientific": "Fermentata",
+      "common": "Fermented drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Microbes did the work",
+      "short": "Yeast or bacteria turned sugar into something more interesting.",
+      "catalog": 81
+    },
+    {
+      "id": "cerealiae",
+      "rank": "class",
+      "parent": "fermentata",
+      "scientific": "Cerealiae",
+      "common": "Grain ferments",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Fermented from grain",
+      "short": "Beer. Sometimes called liquid bread; the Board notes that liquid bread is still not a sandwich.",
+      "catalog": 82
+    },
+    {
+      "id": "cerealiae-spumiformes",
+      "rank": "order",
+      "parent": "cerealiae",
+      "scientific": "Spumiformes",
+      "common": "Sparkling",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Carbonated, naturally or not",
+      "short": "Bubbles. The only thing separating these from their still relatives.",
+      "catalog": 83
+    },
+    {
+      "id": "hordeidae",
+      "rank": "family",
+      "parent": "cerealiae-spumiformes",
+      "scientific": "Hordeidae",
+      "common": "Barley beers",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Malted barley",
+      "short": "Most beer.",
+      "catalog": 84
+    },
+    {
       "id": "cerevisia",
       "rank": "genus",
-      "parent": "inebriata",
+      "parent": "hordeidae",
       "scientific": "Cerevisia",
       "common": "Beers",
-      "trait": "Fermented grain, drunk to unwind",
-      "short": "Sometimes called liquid bread. The Board notes that liquid bread is still not a sandwich."
-    },
-    {
       "status": "ruled",
       "ruled_on": "2026-10-03",
+      "short": "Fermented grain, drunk to unwind.",
+      "catalog": 85
+    },
+    {
       "id": "cerevisia-vulgaris",
       "rank": "species",
       "parent": "cerevisia",
       "scientific": "Cerevisia vulgaris",
       "common": "Beer",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
       "short": "A drink, not a food: its beverage role wins even though it is assembled from grain, hops, yeast and water.",
       "aliases": [
         "beer",
@@ -274,16 +1152,17 @@
         "lager",
         "brew",
         "brewski"
-      ]
+      ],
+      "catalog": 86
     },
     {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
       "id": "cerevisia-vulgaris-industrialis",
       "rank": "variety",
       "parent": "cerevisia-vulgaris",
       "scientific": "C. v. industrialis",
       "common": "Macro lager",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
       "short": "Sold by the 30-rack. Pale, cold and faintly reminiscent of the stadium it was advertised in.",
       "aliases": [
         "macrobrew",
@@ -291,16 +1170,17 @@
         "light beer",
         "domestic beer",
         "cheap beer"
-      ]
+      ],
+      "catalog": 87
     },
     {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
       "id": "cerevisia-vulgaris-barbata",
       "rank": "variety",
       "parent": "cerevisia-vulgaris",
       "scientific": "C. v. barbata",
       "common": "Hazy IPA (microbrew)",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
       "short": "Brewed in a former auto-body shop and served in a stemmed glass. Named after a local landmark or the brewer's dog. Tasting notes available on request, and also without request.",
       "aliases": [
         "microbrew",
@@ -309,18 +1189,220 @@
         "ipa",
         "hazy ipa",
         "hipster beer"
-      ]
+      ],
+      "catalog": 88
     },
     {
-      "id": "nutritia",
+      "id": "vinosae",
       "rank": "class",
-      "parent": "liquida",
-      "scientific": "Nutritia",
-      "common": "Nourishing drinks",
-      "trait": "Drunk for calories",
-      "short": "Plain milk.",
+      "parent": "fermentata",
+      "scientific": "Vinosae",
+      "common": "Fruit ferments",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "trait": "Fermented from fruit",
+      "short": "Wine and cider.",
+      "catalog": 89
+    },
+    {
+      "id": "vinosae-tranquilliformes",
+      "rank": "order",
+      "parent": "vinosae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 90
+    },
+    {
+      "id": "vitidae",
+      "rank": "family",
+      "parent": "vinosae-tranquilliformes",
+      "scientific": "Vitidae",
+      "common": "Grape wines",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Grapes",
+      "short": "Wine as most people mean it.",
+      "catalog": 91
+    },
+    {
+      "id": "vinum",
+      "rank": "genus",
+      "parent": "vitidae",
+      "scientific": "Vinum",
+      "common": "Wines",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Red, white and the arguments between.",
+      "catalog": 92
+    },
+    {
+      "id": "red-wine",
+      "rank": "species",
+      "parent": "vinum",
+      "scientific": "Vinum rubrum",
+      "common": "Red wine",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Fermented with the grape skins on.",
+      "aliases": [
+        "red wine",
+        "wine",
+        "cabernet",
+        "merlot",
+        "pinot noir"
+      ],
+      "catalog": 93
+    },
+    {
+      "id": "white-wine",
+      "rank": "species",
+      "parent": "vinum",
+      "scientific": "Vinum album",
+      "common": "White wine",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Fermented with the skins removed.",
+      "aliases": [
+        "white wine",
+        "chardonnay",
+        "sauvignon blanc",
+        "pinot grigio"
+      ],
+      "catalog": 94
+    },
+    {
+      "id": "vinosae-spumiformes",
+      "rank": "order",
+      "parent": "vinosae",
+      "scientific": "Spumiformes",
+      "common": "Sparkling",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Carbonated, naturally or not",
+      "short": "Bubbles. The only thing separating these from their still relatives.",
+      "catalog": 95
+    },
+    {
+      "id": "spumantidae",
+      "rank": "family",
+      "parent": "vinosae-spumiformes",
+      "scientific": "Spumantidae",
+      "common": "Sparkling wines",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Grapes, with bubbles",
+      "short": "One order away from still wine.",
+      "catalog": 96
+    },
+    {
+      "id": "spumans",
+      "rank": "genus",
+      "parent": "spumantidae",
+      "scientific": "Spumans",
+      "common": "Sparkling wines",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Wine that fizzes.",
+      "catalog": 97
+    },
+    {
+      "id": "sparkling-wine",
+      "rank": "species",
+      "parent": "spumans",
+      "scientific": "Spumans vulgaris",
+      "common": "Sparkling wine",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Wine with bubbles. Champagne is a regional variety, as the French will remind you.",
+      "aliases": [
+        "sparkling wine",
+        "champagne",
+        "prosecco",
+        "cava",
+        "bubbly"
+      ],
+      "catalog": 98
+    },
+    {
+      "id": "miscellae",
+      "rank": "phylum",
+      "parent": "liquida",
+      "scientific": "Miscellae",
+      "common": "Drinks of drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Finished drinks mixed together",
+      "short": "Two drinks combined into a new one with its own name: lattes, cocktails, an Arnold Palmer.",
+      "catalog": 99
+    },
+    {
+      "id": "lactiferae",
+      "rank": "class",
+      "parent": "miscellae",
+      "scientific": "Lactiferae",
+      "common": "Milk mixes",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "A drink mixed with milk",
+      "short": "Lattes and their relatives.",
+      "catalog": 100
+    },
+    {
+      "id": "lactiferae-tranquilliformes",
+      "rank": "order",
+      "parent": "lactiferae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "No bubbles",
+      "short": "Flat by design.",
+      "catalog": 101
+    },
+    {
+      "id": "lattidae",
+      "rank": "family",
+      "parent": "lactiferae-tranquilliformes",
+      "scientific": "Lattidae",
+      "common": "Espresso and milk",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "trait": "Espresso plus steamed milk",
+      "short": "Mostly milk, ordered as coffee.",
+      "catalog": 102
+    },
+    {
+      "id": "lattea",
+      "rank": "genus",
+      "parent": "lattidae",
+      "scientific": "Lattea",
+      "common": "Espresso drinks",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Lattes, cappuccinos, flat whites.",
+      "catalog": 103
+    },
+    {
+      "id": "cafeus-lacteus",
+      "rank": "species",
+      "parent": "lattea",
+      "scientific": "Cafeus lacteus",
+      "common": "Latte",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "short": "Not coffee. Espresso and steamed milk, two finished drinks mixed into one with its own name. Mostly milk by volume.",
+      "aliases": [
+        "latte",
+        "cafe latte",
+        "caffe latte",
+        "cappuccino",
+        "flat white"
+      ],
+      "catalog": 104
     },
     {
       "id": "naturalia",
@@ -331,7 +1413,8 @@
       "trait": "Could the original pick it out of a police lineup?",
       "short": "A single food, dried, salted, pickled or grilled. A cucumber can identify a pickle; flour cannot identify toast.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 105
     },
     {
       "id": "steak",
@@ -349,7 +1432,8 @@
         "sirloin",
         "new york strip",
         "t-bone"
-      ]
+      ],
+      "catalog": 106
     },
     {
       "id": "raisin",
@@ -362,7 +1446,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "raisins"
-      ]
+      ],
+      "catalog": 107
     },
     {
       "id": "pickle",
@@ -378,7 +1463,8 @@
         "dill pickle",
         "pickle spear",
         "gherkin"
-      ]
+      ],
+      "catalog": 108
     },
     {
       "status": "ruled",
@@ -394,7 +1480,8 @@
         "tuna sashimi",
         "maguro",
         "raw fish"
-      ]
+      ],
+      "catalog": 109
     },
     {
       "id": "constructa",
@@ -405,7 +1492,8 @@
       "trait": "The originals can't recognize themselves, or several foods share the job",
       "short": "Where nearly every argument happens. Sorted into phyla by what holds the food together.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 110
     },
     {
       "id": "formata",
@@ -416,7 +1504,8 @@
       "trait": "Ingredients fused into one new mass",
       "short": "The building materials: breads, pastas, sausages and cheeses.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 111
     },
     {
       "id": "panes",
@@ -427,7 +1516,8 @@
       "trait": "Baked, griddled or fried dough",
       "short": "Bread in every form: loaves, buns, rolls, tortillas, fried shells, batter. The only material that makes a sandwich.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 112
     },
     {
       "id": "toast",
@@ -441,7 +1531,8 @@
       "aliases": [
         "toast",
         "bread"
-      ]
+      ],
+      "catalog": 113
     },
     {
       "id": "pastae",
@@ -452,7 +1543,8 @@
       "trait": "Dough cooked in water or steam",
       "short": "Pasta, noodles, dumpling wrappers and steamed buns. Cooked wet, so not bread.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 114
     },
     {
       "id": "farcimina",
@@ -463,7 +1555,8 @@
       "trait": "Meat fused into a new shape",
       "short": "Sausages, franks and meatballs. The frank alone lives here; in a bun it graduates to Involucra.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 115
     },
     {
       "id": "lactata",
@@ -474,7 +1567,8 @@
       "trait": "Milk transformed",
       "short": "Cheese.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 116
     },
     {
       "status": "ruled",
@@ -488,7 +1582,8 @@
       "short": "Sushi rice: vinegared, seasoned and packed until the grains act as one mass. Not bread, because the grain was never ground into dough. Loose steamed rice does not qualify.",
       "aliases": [
         "sushi rice"
-      ]
+      ],
+      "catalog": 117
     },
     {
       "status": "ruled",
@@ -504,7 +1599,8 @@
         "pastry",
         "pie crust",
         "puff pastry"
-      ]
+      ],
+      "catalog": 118
     },
     {
       "id": "involucra",
@@ -515,7 +1611,8 @@
       "trait": "The food is its own plate",
       "short": "A container food holds a filling. What the container is made of decides the class: bread, dough, rice, pastry or a whole food.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 119
     },
     {
       "id": "sandwichae",
@@ -527,7 +1624,8 @@
       "short": "The class this entire website exists to defend. Only bread qualifies as a sandwich container; its cousins in other materials have classes of their own.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 120
     },
     {
       "id": "bifaciformes",
@@ -539,7 +1637,8 @@
       "short": "The classic arrangement your opponents think is the only kind.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 121
     },
     {
       "id": "classicidae",
@@ -551,7 +1650,8 @@
       "short": "Undisputed by everyone, which makes them boring.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 122
     },
     {
       "id": "sandwicus-classicus",
@@ -570,7 +1670,8 @@
         "club",
         "turkey sandwich",
         "ham sandwich"
-      ]
+      ],
+      "catalog": 123
     },
     {
       "id": "trifaciformes",
@@ -582,7 +1683,8 @@
       "short": "Home of the hot dog and the taco, which stand or fall together. Anyone who expels one must expel the other.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 124
     },
     {
       "id": "frankfurtidae",
@@ -595,7 +1697,8 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 125
     },
     {
       "id": "canis",
@@ -608,7 +1711,8 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 126
     },
     {
       "id": "canis-farcitus",
@@ -630,7 +1734,8 @@
         "frankfurter",
         "wiener",
         "weiner"
-      ]
+      ],
+      "catalog": 127
     },
     {
       "id": "canis-farcitus-costcoensis",
@@ -649,7 +1754,8 @@
         "costco",
         "costco hot dog",
         "costco dog"
-      ]
+      ],
+      "catalog": 128
     },
     {
       "id": "canis-farcitus-chicagoensis",
@@ -665,7 +1771,8 @@
       "aliases": [
         "chicago dog",
         "chicago style hot dog"
-      ]
+      ],
+      "catalog": 129
     },
     {
       "id": "canis-farcitus-aquasordidus",
@@ -682,7 +1789,8 @@
         "dirty water dog",
         "street dog",
         "new york hot dog"
-      ]
+      ],
+      "catalog": 130
     },
     {
       "id": "canis-farcitus-sonorensis",
@@ -698,7 +1806,8 @@
       "aliases": [
         "sonoran dog",
         "sonoran hot dog"
-      ]
+      ],
+      "catalog": 131
     },
     {
       "id": "canis-farcitus-nudus",
@@ -713,7 +1822,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "plain hot dog"
-      ]
+      ],
+      "catalog": 132
     },
     {
       "id": "tortilladae",
@@ -725,7 +1835,8 @@
       "short": "The hot dog's next-door neighbors.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 133
     },
     {
       "id": "tacoforma",
@@ -737,7 +1848,8 @@
       "short": "The fold is the moment of speciation. A flat tortilla with toppings is open-faced; fold it and it becomes a sandwich.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 134
     },
     {
       "id": "tacoforma-classicus",
@@ -753,7 +1865,8 @@
       "aliases": [
         "taco",
         "tacos"
-      ]
+      ],
+      "catalog": 135
     },
     {
       "id": "tacoforma-classicus-durus",
@@ -768,7 +1881,8 @@
       "aliases": [
         "hard shell taco",
         "crunchy taco"
-      ]
+      ],
+      "catalog": 136
     },
     {
       "id": "tacoforma-classicus-pastorensis",
@@ -782,7 +1896,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "al pastor"
-      ]
+      ],
+      "catalog": 137
     },
     {
       "id": "tacoforma-classicus-bajaensis",
@@ -796,7 +1911,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "fish taco"
-      ]
+      ],
+      "catalog": 138
     },
     {
       "id": "fissipanidae",
@@ -808,7 +1924,8 @@
       "short": "If these are sandwiches, and everyone agrees they are, the hot dog comes with them.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 139
     },
     {
       "id": "meatball-sub",
@@ -827,7 +1944,8 @@
         "grinder",
         "meatball sub",
         "submarine sandwich"
-      ]
+      ],
+      "catalog": 140
     },
     {
       "id": "lobster-roll",
@@ -841,7 +1959,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "lobster roll"
-      ]
+      ],
+      "catalog": 141
     },
     {
       "id": "totiformes",
@@ -853,7 +1972,8 @@
       "short": "Maximum enclosure. More sandwich than the sandwich.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 142
     },
     {
       "status": "ruled",
@@ -868,7 +1988,8 @@
       "aliases": [
         "dumpling",
         "dumplings"
-      ]
+      ],
+      "catalog": 143
     },
     {
       "status": "ruled",
@@ -884,7 +2005,8 @@
         "potsticker",
         "potstickers",
         "jiaozi"
-      ]
+      ],
+      "catalog": 144
     },
     {
       "status": "ruled",
@@ -900,7 +2022,8 @@
         "tortellini",
         "pierogi",
         "pierogies"
-      ]
+      ],
+      "catalog": 145
     },
     {
       "status": "ruled",
@@ -917,7 +2040,8 @@
         "steamed bun",
         "bao bun",
         "pork bun"
-      ]
+      ],
+      "catalog": 146
     },
     {
       "status": "ruled",
@@ -931,7 +2055,8 @@
       "short": "The sandwich's cousin, not its sibling: the same architecture, but the container is rice, and rice is not bread.",
       "aliases": [
         "sushi"
-      ]
+      ],
+      "catalog": 147
     },
     {
       "status": "ruled",
@@ -942,7 +2067,8 @@
       "scientific": "Makidae",
       "common": "Rolled sushi",
       "trait": "Pressed rice rolled fully around a filling",
-      "short": "Cut a maki roll and the cross-section shows a container on every side with the filling in the middle. A burrito would recognize the shape, but not the material."
+      "short": "Cut a maki roll and the cross-section shows a container on every side with the filling in the middle. A burrito would recognize the shape, but not the material.",
+      "catalog": 148
     },
     {
       "status": "ruled",
@@ -962,7 +2088,8 @@
         "maki",
         "uramaki",
         "roll"
-      ]
+      ],
+      "catalog": 149
     },
     {
       "status": "ruled",
@@ -978,7 +2105,8 @@
         "rice ball",
         "spam musubi",
         "musubi"
-      ]
+      ],
+      "catalog": 150
     },
     {
       "status": "ruled",
@@ -993,7 +2121,8 @@
       "aliases": [
         "pie",
         "pies"
-      ]
+      ],
+      "catalog": 151
     },
     {
       "status": "ruled",
@@ -1007,7 +2136,8 @@
       "aliases": [
         "pot pie",
         "chicken pot pie"
-      ]
+      ],
+      "catalog": 152
     },
     {
       "status": "ruled",
@@ -1023,7 +2153,8 @@
         "empanadas",
         "hand pie",
         "pasty"
-      ]
+      ],
+      "catalog": 153
     },
     {
       "id": "burrito",
@@ -1039,7 +2170,8 @@
         "burrito",
         "burritos",
         "wrap"
-      ]
+      ],
+      "catalog": 154
     },
     {
       "id": "corn-dog",
@@ -1055,7 +2187,8 @@
       "aliases": [
         "corn dog",
         "corndog"
-      ]
+      ],
+      "catalog": 155
     },
     {
       "id": "pseudosandwichae",
@@ -1067,7 +2200,8 @@
       "short": "Nice try.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 156
     },
     {
       "id": "lettuce-wrap",
@@ -1081,7 +2215,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "lettuce wrap"
-      ]
+      ],
+      "catalog": 157
     },
     {
       "id": "banana-split",
@@ -1096,7 +2231,8 @@
       "aliases": [
         "banana split",
         "sundae"
-      ]
+      ],
+      "catalog": 158
     },
     {
       "id": "stratifica",
@@ -1107,7 +2243,8 @@
       "trait": "Layered or topped, no container",
       "short": "Pizza, lasagna, nachos and cake. Where open-faced sandwiches go to think about what they did.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 159
     },
     {
       "id": "apertae",
@@ -1119,7 +2256,8 @@
       "short": "One face of bread is a topping arrangement, not a sandwich.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 160
     },
     {
       "id": "open-faced-sandwich",
@@ -1137,7 +2275,8 @@
         "bruschetta",
         "tartine",
         "avocado toast"
-      ]
+      ],
+      "catalog": 161
     },
     {
       "id": "thin-crust-pizza",
@@ -1153,7 +2292,8 @@
         "pizza",
         "pizza slice",
         "thin crust"
-      ]
+      ],
+      "catalog": 162
     },
     {
       "status": "ruled",
@@ -1169,7 +2309,8 @@
         "nigiri",
         "salmon nigiri",
         "sake nigiri"
-      ]
+      ],
+      "catalog": 163
     },
     {
       "id": "laminatae",
@@ -1180,7 +2321,8 @@
       "trait": "Multiple layers",
       "short": "Lasagna and layer cake.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 164
     },
     {
       "id": "lasagna",
@@ -1197,7 +2339,8 @@
         "lasagna",
         "lasagne",
         "layered casserole"
-      ]
+      ],
+      "catalog": 165
     },
     {
       "id": "immersa",
@@ -1208,7 +2351,8 @@
       "trait": "Solids in a liquid",
       "short": "Soup, stew, ramen and cereal. The class level decides which of them are soup.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 166
     },
     {
       "id": "decocta",
@@ -1220,7 +2364,8 @@
       "short": "Soup. Either the solids and liquid were cooked together, or the liquid is a broth that was simmered from ingredients before they met. Serving it cold later is fine.",
       "verdict": "Soup",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 167
     },
     {
       "id": "chicken-noodle",
@@ -1235,7 +2380,8 @@
       "aliases": [
         "chicken noodle soup",
         "chicken soup"
-      ]
+      ],
+      "catalog": 168
     },
     {
       "id": "clam-chowder",
@@ -1250,7 +2396,8 @@
       "aliases": [
         "chowder",
         "clam chowder"
-      ]
+      ],
+      "catalog": 169
     },
     {
       "status": "ruled",
@@ -1273,7 +2420,8 @@
         "cup ramen",
         "ramen noodles",
         "top ramen"
-      ]
+      ],
+      "catalog": 170
     },
     {
       "status": "ruled",
@@ -1292,7 +2440,8 @@
         "noodle soup"
       ],
       "verdict": "Soup",
-      "long": "Ramen forced the soup rule to grow up. Under the original rule (cooked together after assembly) it would not have been soup, and neither would pho. The Board added a second way in: a liquid that is itself a broth simmered from ingredients. Cereal still fails both tests, because milk is not a broth."
+      "long": "Ramen forced the soup rule to grow up. Under the original rule (cooked together after assembly) it would not have been soup, and neither would pho. The Board added a second way in: a liquid that is itself a broth simmered from ingredients. Cereal still fails both tests, because milk is not a broth.",
+      "catalog": 171
     },
     {
       "id": "pho",
@@ -1308,7 +2457,8 @@
         "pho",
         "pho bo",
         "vietnamese noodle soup"
-      ]
+      ],
+      "catalog": 172
     },
     {
       "id": "oatmeal",
@@ -1325,7 +2475,8 @@
         "porridge",
         "congee",
         "oats"
-      ]
+      ],
+      "catalog": 173
     },
     {
       "id": "cruda",
@@ -1337,12 +2488,25 @@
       "short": "Solids in a liquid that was never a broth and never cooked with them. Not soup.",
       "verdict": "Not soup",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 174
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "natantiformes",
+      "rank": "order",
+      "parent": "cruda",
+      "scientific": "Natantiformes",
+      "common": "Floating solids",
+      "trait": "Solids stay separate in the liquid",
+      "short": "You can still pick the pieces out with a spoon.",
+      "catalog": 175
     },
     {
       "id": "cereal",
       "rank": "species",
-      "parent": "cruda",
+      "parent": "natantiformes",
       "scientific": "Siccus lacteus",
       "common": "Cereal with milk",
       "short": "Not soup. The flakes were toasted and the milk was pasteurized, but they were never cooked together. Not our problem.",
@@ -1356,12 +2520,25 @@
         "cornflakes",
         "froot loops",
         "cheerios"
-      ]
+      ],
+      "catalog": 176
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "emulsiformes",
+      "rank": "order",
+      "parent": "cruda",
+      "scientific": "Emulsiformes",
+      "common": "Blended",
+      "trait": "Raw solids blended into one liquid",
+      "short": "Gazpacho, milkshakes and smoothies: blended cold, never cooked, and not soup.",
+      "catalog": 177
     },
     {
       "id": "gazpacho",
       "rank": "species",
-      "parent": "cruda",
+      "parent": "emulsiformes",
       "scientific": "Gazpachus andalusicus",
       "common": "Gazpacho",
       "short": "Not soup. Traditional gazpacho is raw vegetables blended and served cold, never cooked. The rule holds even when it hurts.",
@@ -1371,7 +2548,47 @@
       "aliases": [
         "gazpacho",
         "cold soup"
-      ]
+      ],
+      "catalog": 178
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "milkshake",
+      "rank": "species",
+      "parent": "emulsiformes",
+      "scientific": "Glacies quassata",
+      "common": "Milkshake",
+      "short": "Not a drink and not soup. Ice cream blended with milk is a dessert, and a dessert wearing a straw is still a dessert. Blended cold and never cooked, it shares an order with gazpacho.",
+      "verdict": "Not soup",
+      "aliases": [
+        "milkshake",
+        "milk shake",
+        "shake",
+        "malt",
+        "frappe"
+      ],
+      "catalog": 179
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "smoothie",
+      "rank": "species",
+      "parent": "emulsiformes",
+      "scientific": "Fructus quassatus",
+      "common": "Yogurt smoothie",
+      "short": "Breakfast, so it is food, even through a straw. Fruit and yogurt blended cold: a close relative of gazpacho, and not soup.",
+      "verdict": "Not soup",
+      "aliases": [
+        "smoothie",
+        "yogurt smoothie",
+        "fruit smoothie",
+        "breakfast shake",
+        "protein shake",
+        "breakfast smoothie"
+      ],
+      "catalog": 180
     },
     {
       "id": "mixta",
@@ -1382,7 +2599,8 @@
       "trait": "Tossed together, no architecture",
       "short": "Salad, fried rice and stir-fry.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 181
     },
     {
       "id": "iactatae",
@@ -1393,7 +2611,8 @@
       "trait": "Tossed raw",
       "short": "Salad.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 182
     },
     {
       "status": "ruled",
@@ -1410,7 +2629,8 @@
         "chicken caesar",
         "chicken caesar salad",
         "salad"
-      ]
+      ],
+      "catalog": 183
     },
     {
       "id": "fervidae",
@@ -1421,7 +2641,8 @@
       "trait": "Combined, then cooked together",
       "short": "Stir-fry, fried rice and mixed casseroles: stirred together, then cooked as one.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 184
     },
     {
       "status": "ruled",
@@ -1439,7 +2660,8 @@
         "tuna noodle casserole",
         "hotdish",
         "green bean casserole"
-      ]
+      ],
+      "catalog": 185
     },
     {
       "id": "incertae-sedis",
@@ -1450,7 +2672,8 @@
       "trait": "Nobody can place it",
       "short": "A real biology term for organisms nobody can place. Ours holds candy corn, Jell-O salad and gas station sushi.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "catalog": 186
     },
     {
       "id": "candy-corn",
@@ -1463,7 +2686,8 @@
       "ruled_on": "2026-10-03",
       "aliases": [
         "candy corn"
-      ]
+      ],
+      "catalog": 187
     },
     {
       "id": "jello-salad",
@@ -1478,7 +2702,8 @@
         "jello salad",
         "jell-o salad",
         "jello"
-      ]
+      ],
+      "catalog": 188
     }
   ]
 }

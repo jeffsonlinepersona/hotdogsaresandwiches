@@ -100,8 +100,8 @@
   }
 
   function catalogNo(n) {
-    var i = nodes.indexOf(n);
-    return 'TE-' + String(i + 1).padStart(4, '0');
+    var num = n.catalog || (nodes.indexOf(n) + 1);
+    return 'TE-' + String(num).padStart(4, '0');
   }
 
   function sketch(n) {

@@ -74,7 +74,23 @@ ok(under('cup-noodles', 'decocta'), 'cup noodles are soup');
 ok(under('shop-ramen', 'decocta') && byId['shop-ramen'].status === 'ruled', 'restaurant ramen is soup (broth clause)');
 ok(under('pho', 'decocta'), 'pho is soup (broth clause)');
 ok(under('gazpacho', 'cruda'), 'gazpacho is still not soup');
-ok(under('cerevisia-vulgaris-barbata', 'liquida'), 'beer is a drink');
+ok(under('cerevisia-vulgaris-barbata', 'fermentata'), 'beer is a fermented drink');
+ok(under('lemonade', 'soluta') && !under('lemonade', 'expressa'), 'lemonade is not juice');
+ok(under('oat-milk', 'pseudolactae') && !under('oat-milk', 'nativa'), 'oat milk is not milk');
+ok(under('cafeus-lacteus', 'miscellae') && !under('cafeus-lacteus', 'infusa'), 'a latte is not coffee');
+ok(under('milkshake', 'cruda') && under('smoothie', 'cruda') && !under('milkshake', 'liquida'), 'milkshakes and smoothies are food, not drinks');
+ok(under('gasosa-aquatica', 'aquae-spumiformes') && under('aqua-pura', 'aquae-tranquilliformes'), 'still vs sparkling differ at order');
+ok(byId['cola-vulgaris-fontana'] && byId['cola-vulgaris-fontana'].rank === 'variety', 'fountain soda is a variety');
+
+// Full depth: every species in a finished kingdom has every rank above it
+const FULL = ['liquida'];
+const need = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus'];
+tax.nodes.filter(n => n.rank === 'species' && FULL.some(k => under(n.id, k))).forEach(n => {
+  const ranks = ancestors(n.id).map(a => byId[a].rank);
+  need.forEach(r => ok(ranks.includes(r), 'full depth: ' + n.id + ' has a ' + r));
+});
+const cats = tax.nodes.map(n => n.catalog);
+ok(cats.every(c => Number.isInteger(c) && c > 0) && new Set(cats).size === cats.length, 'every entry has a unique catalog number');
 
 console.log('4. Every page renders');
 let JSDOM, VirtualConsole;
