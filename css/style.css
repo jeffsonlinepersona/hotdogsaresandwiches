@@ -116,12 +116,11 @@ em, .sci { font-style: italic; }
   .site-nav {
     width: calc(100% + 2 * var(--gutter));
     margin: 0 calc(-1 * var(--gutter));
-    padding: 0 var(--gutter);
-    flex-wrap: nowrap; overflow-x: auto; gap: 22px;
-    scrollbar-width: none; border-top: 1px solid var(--rule);
+    padding: 4px var(--gutter);
+    flex-wrap: wrap; gap: 0 20px;
+    border-top: 1px solid var(--rule);
   }
-  .site-nav::-webkit-scrollbar { display: none; }
-  .site-nav a { white-space: nowrap; padding: 12px 0; }
+  .site-nav a { white-space: nowrap; padding: 9px 0; }
 }
 
 main { flex: 1; outline: none; }
@@ -264,7 +263,7 @@ main { flex: 1; outline: none; }
   min-height: 460px; scroll-behavior: smooth;
 }
 .col {
-  flex: 0 0 280px; border-right: 1px solid var(--rule);
+  flex: 0 0 248px; border-right: 1px solid var(--rule);
   display: flex; flex-direction: column; min-width: 0;
 }
 .col-head {

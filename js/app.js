@@ -294,8 +294,19 @@
     return {
       title: (sel.id === root.id ? 'The Tree' : sel.common + ' · The Tree') + ' · HotDogsAreSandwiches',
       after: function () {
-        var el = document.querySelector('.columns');
-        if (el && el.scrollWidth > el.clientWidth) el.scrollLeft = el.scrollWidth;
+        // Keep the newest column in view; re-run once fonts finish loading,
+        // because column widths change when the web fonts arrive.
+        function toEnd() {
+          var el = document.querySelector('.columns');
+          if (el && el.scrollWidth > el.clientWidth) {
+            el.style.scrollBehavior = 'auto';
+            el.scrollLeft = el.scrollWidth;
+            el.style.scrollBehavior = '';
+          }
+        }
+        toEnd();
+        if (window.requestAnimationFrame) requestAnimationFrame(toEnd);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(toEnd);
       },
       html:
         '<div class="page">' +
