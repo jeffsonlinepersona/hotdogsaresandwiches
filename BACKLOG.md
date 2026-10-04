@@ -23,6 +23,21 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Why Extinct matters:** the Costco hot dog (*C. f. costcoensis*) is defined by its $1.50 price. If Costco ever raises it, that variety goes extinct, and any successor is a new variety. The card should say so with appropriate solemnity.
 - **Data:** new optional fields `history` (list of dated lines), `rulings` (ids of Rulings entries) and `extinct_on` (a date).
 
+### Licensing and credit: keep the options open
+- **Logged:** 2026-10-04
+- **Want:** Jeff gets clear credit for the work and keeps the option to do something with it later (a book, merch, a bigger site). No money expected; this is optionality, not a business plan.
+- **Problem with today's setup:** everything is CC BY 4.0, which lets anyone reuse it *commercially* with credit, and that grant can't be taken back for copies already taken under it. Credit is covered; optionality is not.
+- **Options, roughly from most open to most protected:**
+  1. **CC BY-NC 4.0:** anyone may share and adapt with credit, but not commercially. Jeff keeps the commercial rights. Keeps the friends-and-family sharing spirit.
+  2. **All rights reserved:** "© 2026 Jeff Zalewski." Strongest, but sharing technically needs permission.
+  3. **Split:** content (taxonomy, rules, writing) under one license, site code under an open-source one such as MIT, since the code has little value.
+- **Also on the list:**
+  - A copyright line in the footer and LICENSE.md naming Jeff (today it names only "HotDogsAreSandwiches").
+  - The site name and "Taxonomia Ediblis" as brands: no action now, but the name is the part a trademark would protect if it ever mattered.
+  - Contributor photos: friends license their photos to the site under CC BY today. If the site license changes, the photo checkbox wording should change with it so the site can use photos however it ends up being licensed.
+  - Authorship record: the git history and dated rulings already show who made what and when. The rulings and judgment calls are Jeff's; much of the wording was drafted with AI help, which may matter for how much of the text is protectable.
+- **Note:** not legal advice. If real value ever appears, a short consult with an IP lawyer before acting.
+
 ### Social media links (begrudgingly)
 - **Logged:** 2026-10-04
 - **Want:** links to the site's social accounts, added with the reluctance of a Review Board that would rather be classifying things. Footer icons at minimum, perhaps a line on About ("The Board also posts rulings here, under protest").
