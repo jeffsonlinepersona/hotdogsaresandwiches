@@ -36,17 +36,19 @@
     },
     {
       "id": "sandwich",
-      "title": "The sandwich test",
-      "summary": "A sandwich is a container made from Formata (anything that was dough) touching the filling on two or more sides.",
+      "title": "The container test",
+      "summary": "When one food holds another, the container's material decides the class. A sandwich needs a bread container (baked, griddled or fried dough) on two or more sides.",
       "points": [
-        "Two sides (top and bottom): Bifaciformes, the classic.",
-        "Three sides (hinged bun, split roll, fold): Trifaciformes. The hot dog lives here.",
-        "All sides, sealed: Totiformes. The burrito lives here.",
-        "One side: not a sandwich. It is a topped food in Apertae.",
-        "Pressed sushi rice counts as Formata, so a California roll is a sealed sandwich, like a burrito.",
-        "A container that was never dough (lettuce, banana): Pseudosandwichae. Nice try."
+        "Bread on two sides (top and bottom): Bifaciformes, the classic.",
+        "Bread on three sides (hinged bun, split roll, fold): Trifaciformes. The hot dog lives here.",
+        "Bread on all sides, sealed: Totiformes. The burrito lives here.",
+        "Boiled or steamed dough: Dumplingae. Gyoza, ravioli, and the steamed bao.",
+        "Pressed rice: Sushiae. The California roll.",
+        "Pastry: Pieae. The pot pie.",
+        "A whole food (lettuce, banana): Pseudosandwichae. Nice try.",
+        "Bread on only one side: not a container at all. It is a topped food in Apertae."
       ],
-      "example": "Frying does not matter. A hard-shell taco is still built from dough, so it is still a sandwich."
+      "example": "What is bread? Ground grain made into dough, then baked, griddled or fried. A hard taco shell is fried, so it counts. Sushi rice keeps its grains whole, so a California roll has sandwich architecture but is sushi."
     },
     {
       "id": "stand-or-fall",
@@ -68,6 +70,17 @@
         "Boiling water poured over noodles cooks them in place: cup noodles are soup."
       ],
       "example": "Cereal: the flakes were toasted and the milk pasteurized, but never together. Not soup. Gazpacho falls the same way, and the Board accepts the consequences."
+    },
+    {
+      "id": "vessel",
+      "title": "The vessel does not count",
+      "summary": "Foods are classified by how they are built, not by what they are cooked or served in.",
+      "points": [
+        "A casserole is a pan, not a phylum: layered casseroles go to Stratifica, mixed ones to Mixta.",
+        "A cup of noodles is soup because of what happens inside the cup, not because of the cup.",
+        "A bread bowl is still a bowl. The chowder inside is under review."
+      ],
+      "example": "Lasagna and tuna noodle casserole are both baked in the same dish. One is layered, one is mixed, so they land in different phyla."
     },
     {
       "id": "variety",
@@ -138,11 +151,23 @@
       },
       "container": {
         "question": "What is the container made of?",
-        "help": "Anything that was ever dough counts, fried or not. So does sushi rice pressed into one mass.",
+        "help": "Bread is ground grain made into dough, then baked, griddled or fried. Fried counts.",
         "options": [
           {
-            "label": "Bread, a bun, a tortilla, pressed sushi rice or other dough",
+            "label": "Bread: a bun, roll, tortilla, taco shell or batter",
             "next": "sides"
+          },
+          {
+            "label": "Boiled or steamed dough: a dumpling wrapper, pasta or steamed bun",
+            "result": "dumplingae"
+          },
+          {
+            "label": "Pressed sushi rice",
+            "result": "sushiae"
+          },
+          {
+            "label": "Pastry: pie crust or puff pastry",
+            "result": "pieae"
           },
           {
             "label": "A whole food: lettuce, a pepper, a banana",

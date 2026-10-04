@@ -424,8 +424,8 @@
       "parent": "formata",
       "scientific": "Panes",
       "common": "Breads",
-      "trait": "Baked or griddled dough",
-      "short": "Bread, tortillas and cookies. Toast lives here: flour cannot pick it out of a lineup.",
+      "trait": "Baked, griddled or fried dough",
+      "short": "Bread in every form: loaves, buns, rolls, tortillas, fried shells, batter. The only material that makes a sandwich.",
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
@@ -448,9 +448,9 @@
       "rank": "class",
       "parent": "formata",
       "scientific": "Pastae",
-      "common": "Boiled doughs",
-      "trait": "Dough cooked in water",
-      "short": "Pasta and noodles.",
+      "common": "Boiled and steamed doughs",
+      "trait": "Dough cooked in water or steam",
+      "short": "Pasta, noodles, dumpling wrappers and steamed buns. Cooked wet, so not bread.",
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
@@ -485,9 +485,25 @@
       "scientific": "Oryzae",
       "common": "Pressed rice",
       "trait": "Seasoned rice pressed into one mass",
-      "short": "Sushi rice: vinegared, seasoned and packed until the grains act as one. Loose steamed rice does not qualify.",
+      "short": "Sushi rice: vinegared, seasoned and packed until the grains act as one mass. Not bread, because the grain was never ground into dough. Loose steamed rice does not qualify.",
       "aliases": [
         "sushi rice"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "crustae",
+      "rank": "class",
+      "parent": "formata",
+      "scientific": "Crustae",
+      "common": "Pastry",
+      "trait": "Fat-rich dough baked into a crust",
+      "short": "Shortcrust and puff pastry. Baked like bread, but built from fat as much as flour, which makes it its own material.",
+      "aliases": [
+        "pastry",
+        "pie crust",
+        "puff pastry"
       ]
     },
     {
@@ -497,7 +513,7 @@
       "scientific": "Involucra",
       "common": "Contained foods",
       "trait": "The food is its own plate",
-      "short": "A container food holds a filling. Sandwiches, burritos, dumplings and pot pie.",
+      "short": "A container food holds a filling. What the container is made of decides the class: bread, dough, rice, pastry or a whole food.",
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
@@ -507,8 +523,8 @@
       "parent": "involucra",
       "scientific": "Sandwichae",
       "common": "Sandwiches",
-      "trait": "Container made from Formata, on two or more sides",
-      "short": "The class this entire website exists to defend. Orders are sorted by how many sides the container touches.",
+      "trait": "A bread container (baked, griddled or fried dough) on two or more sides",
+      "short": "The class this entire website exists to defend. Only bread qualifies as a sandwich container; its cousins in other materials have classes of their own.",
       "verdict": "Sandwich",
       "status": "ruled",
       "ruled_on": "2026-10-03"
@@ -840,6 +856,176 @@
       "ruled_on": "2026-10-03"
     },
     {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "dumplingae",
+      "rank": "class",
+      "parent": "involucra",
+      "scientific": "Dumplingae",
+      "common": "Dumplings",
+      "trait": "A container of boiled or steamed dough",
+      "short": "Sandwich architecture in a wet-cooked wrapper. A steamed bun is a dumpling, even when folded like a taco.",
+      "aliases": [
+        "dumpling",
+        "dumplings"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "gyoza",
+      "rank": "species",
+      "parent": "dumplingae",
+      "scientific": "Involucrum japonicum",
+      "common": "Gyoza",
+      "short": "Pleated dough around a filling, steamed and pan-fried. The wrapper was cooked wet first, so it is a dumpling.",
+      "aliases": [
+        "gyoza",
+        "potsticker",
+        "potstickers",
+        "jiaozi"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "ravioli",
+      "rank": "species",
+      "parent": "dumplingae",
+      "scientific": "Involucrum italicum",
+      "common": "Ravioli",
+      "short": "Boiled pasta sealed around a filling. A dumpling with an Italian passport.",
+      "aliases": [
+        "ravioli",
+        "tortellini",
+        "pierogi",
+        "pierogies"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "bao",
+      "rank": "species",
+      "parent": "dumplingae",
+      "scientific": "Involucrum vaporatum",
+      "common": "Bao (steamed bun)",
+      "short": "A folded bao looks like a taco and is not one. The bun is steamed, not baked, so it is a dumpling.",
+      "aliases": [
+        "bao",
+        "gua bao",
+        "steamed bun",
+        "bao bun",
+        "pork bun"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "sushiae",
+      "rank": "class",
+      "parent": "involucra",
+      "scientific": "Sushiae",
+      "common": "Sushi",
+      "trait": "A container of pressed rice",
+      "short": "The sandwich's cousin, not its sibling: the same architecture, but the container is rice, and rice is not bread.",
+      "aliases": [
+        "sushi"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "makidae",
+      "rank": "family",
+      "parent": "sushiae",
+      "scientific": "Makidae",
+      "common": "Rolled sushi",
+      "trait": "Pressed rice rolled fully around a filling",
+      "short": "Cut a maki roll and the cross-section shows a container on every side with the filling in the middle. A burrito would recognize the shape, but not the material."
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "california-roll",
+      "rank": "species",
+      "parent": "makidae",
+      "scientific": "Oryza involuta californiensis",
+      "common": "California roll",
+      "short": "Not a sandwich. Pressed sushi rice encloses crab, avocado and cucumber on every side: sandwich architecture, but the container is rice, not bread. So it is sushi.",
+      "long": "This ruling settled the question that started everything: what is bread? Bread is ground grain made into dough and baked, griddled or fried. Sushi rice keeps its grains whole, so however tightly it is pressed, it is not bread. The California roll is also an inside-out roll, with rice outside and seaweed within, which is why the rice, not the nori, is the container.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "california roll",
+        "sushi",
+        "sushi roll",
+        "maki",
+        "uramaki",
+        "roll"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "onigiri",
+      "rank": "species",
+      "parent": "sushiae",
+      "scientific": "Oryza globosa",
+      "common": "Onigiri (rice ball)",
+      "short": "Pressed rice around a filling, often wrapped in nori. The rice is the container, so it is sushi in the broad sense.",
+      "aliases": [
+        "onigiri",
+        "rice ball",
+        "spam musubi",
+        "musubi"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "pieae",
+      "rank": "class",
+      "parent": "involucra",
+      "scientific": "Pieae",
+      "common": "Pies",
+      "trait": "A container of pastry",
+      "short": "Pastry above and below a filling. Not a sandwich, however hard the pot pie argues.",
+      "aliases": [
+        "pie",
+        "pies"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "chicken-pot-pie",
+      "rank": "species",
+      "parent": "pieae",
+      "scientific": "Crusta gallinacea",
+      "common": "Chicken pot pie",
+      "short": "A stew sealed in pastry. The container decides, and pastry is not bread, so it is a pie.",
+      "aliases": [
+        "pot pie",
+        "chicken pot pie"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "empanada",
+      "rank": "species",
+      "parent": "pieae",
+      "scientific": "Crusta portabilis",
+      "common": "Empanada",
+      "short": "A hand-held pie: pastry folded and sealed around a filling.",
+      "aliases": [
+        "empanada",
+        "empanadas",
+        "hand pie",
+        "pasty"
+      ]
+    },
+    {
       "id": "burrito",
       "rank": "species",
       "parent": "totiformes",
@@ -872,44 +1058,12 @@
       ]
     },
     {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "id": "makidae",
-      "rank": "family",
-      "parent": "totiformes",
-      "scientific": "Makidae",
-      "common": "Rolled sushi",
-      "trait": "Pressed rice rolled fully around a filling",
-      "short": "Cut a maki roll and look at the cross-section: container on every side, filling in the middle. Structurally a burrito.",
-      "verdict": "Sandwich"
-    },
-    {
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "id": "california-roll",
-      "rank": "species",
-      "parent": "makidae",
-      "scientific": "Oryza involuta californiensis",
-      "common": "California roll",
-      "short": "A sandwich. Pressed sushi rice (Formata) encloses crab, avocado and cucumber on all sides, the same structure as a burrito.",
-      "long": "The California roll is an inside-out roll: the rice is on the outside and the seaweed sits inside it. That matters, because the seaweed is a whole food (Naturalia) and would only make a pseudo-sandwich. The rice does the enclosing, and pressed rice qualifies as Formata.",
-      "verdict": "Sandwich",
-      "aliases": [
-        "california roll",
-        "sushi",
-        "sushi roll",
-        "maki",
-        "uramaki",
-        "roll"
-      ]
-    },
-    {
       "id": "pseudosandwichae",
       "rank": "class",
       "parent": "involucra",
       "scientific": "Pseudosandwichae",
       "common": "Pseudo-sandwiches",
-      "trait": "Container is a whole food from Naturalia, not dough",
+      "trait": "A container that is a whole food (Naturalia), not a made material",
       "short": "Nice try.",
       "verdict": "Not a sandwich",
       "status": "ruled",
@@ -1041,7 +1195,8 @@
       "long": "Lasagna has pasta above and below a filling, which looks like a sandwich until you notice there is no container: just flat layers, stacked. Pasta is also boiled dough, not baked, so the question of whether pasta is bread never has to be answered.",
       "aliases": [
         "lasagna",
-        "lasagne"
+        "lasagne",
+        "layered casserole"
       ]
     },
     {
@@ -1245,10 +1400,28 @@
       "parent": "mixta",
       "scientific": "Fervidae",
       "common": "Cooked together",
-      "trait": "Tossed while cooking",
-      "short": "Fried rice and stir-fry.",
+      "trait": "Combined, then cooked together",
+      "short": "Stir-fry, fried rice and mixed casseroles: stirred together, then cooked as one.",
       "status": "ruled",
       "ruled_on": "2026-10-03"
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "tuna-noodle-casserole",
+      "rank": "species",
+      "parent": "fervidae",
+      "scientific": "Patina thunnorum",
+      "common": "Tuna noodle casserole",
+      "short": "Noodles, tuna and sauce stirred together and baked. Mixed, not layered, so it lives in Mixta.",
+      "long": "Casserole is a pan, not a phylum. Casseroles are sorted by how they are built: layered ones, like lasagna or shepherd's pie, go to Stratifica; mixed ones, like this, go to Mixta.",
+      "aliases": [
+        "casserole",
+        "tuna casserole",
+        "tuna noodle casserole",
+        "hotdish",
+        "green bean casserole"
+      ]
     },
     {
       "id": "incertae-sedis",

@@ -15,7 +15,7 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - Rulings page: dated changelog of decisions and reversals (gazpacho, toast, pickles).
 - ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.
 - Analytics: live 2026-10-03 at hotdogsaresandwiches.goatcounter.com (page views, searches, not-found searches).
-- Taxonomy decisions pending: restaurant ramen (soup or not), California roll (sandwich via pressed rice, or not).
+- Taxonomy: container test adopted 2026-10-03 (Sandwichae needs bread; new Dumplingae, Sushiae, Pieae; casseroles sort by structure). Restaurant ramen still pending.
 - Link previews with an image when a card link is texted.
 
 ### Version 3 items

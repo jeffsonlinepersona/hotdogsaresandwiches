@@ -941,10 +941,17 @@
 
   // ---------- Start ----------
 
+  // Data files carry the same version tag as this script, so new rulings show up immediately
+  var ASSET_V = (function () {
+    var s = document.currentScript || document.querySelector('script[src*="js/app.js"]');
+    var m = s && s.src && s.src.match(/[?&]v=([\w.-]+)/);
+    return m ? '?v=' + m[1] : '';
+  })();
+
   function boot() {
     Promise.all([
-      fetch('data/taxonomy.json').then(function (r) { if (!r.ok) throw new Error('taxonomy ' + r.status); return r.json(); }),
-      fetch('data/rules.json').then(function (r) { if (!r.ok) throw new Error('rules ' + r.status); return r.json(); })
+      fetch('data/taxonomy.json' + ASSET_V).then(function (r) { if (!r.ok) throw new Error('taxonomy ' + r.status); return r.json(); }),
+      fetch('data/rules.json' + ASSET_V).then(function (r) { if (!r.ok) throw new Error('rules ' + r.status); return r.json(); })
     ]).then(function (res) {
       indexData(res[0], res[1]);
       startAnalytics();

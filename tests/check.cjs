@@ -63,7 +63,11 @@ ok(under('canis-farcitus', 'sandwichae'), 'hot dog is a sandwich');
 ok(under('tacoforma-classicus', 'sandwichae'), 'taco is a sandwich');
 ok(!under('open-faced-sandwich', 'sandwichae'), 'open-faced sandwich is not a sandwich');
 ok(under('cereal', 'cruda') && !under('cereal', 'decocta'), 'cereal is not soup');
-ok(under('california-roll', 'sandwichae'), 'California roll is a sandwich (pressed rice container)');
+ok(under('california-roll', 'sushiae') && !under('california-roll', 'sandwichae'), 'California roll is sushi, not a sandwich (rice is not bread)');
+ok(under('bao', 'dumplingae') && !under('bao', 'sandwichae'), 'bao is a dumpling (steamed, not baked)');
+ok(under('chicken-pot-pie', 'pieae') && !under('chicken-pot-pie', 'sandwichae'), 'pot pie is a pie, not a sandwich');
+ok(under('tuna-noodle-casserole', 'mixta') && under('lasagna', 'stratifica'), 'casseroles sort by structure');
+ok(under('burrito', 'sandwichae') && under('tacoforma-classicus-durus', 'sandwichae'), 'tortillas and fried shells still count as bread');
 ok(under('salmon-nigiri', 'apertae'), 'nigiri is open-faced');
 ok(under('tuna-sashimi', 'naturalia'), 'sashimi is one food');
 ok(under('cup-noodles', 'decocta'), 'cup noodles are soup');
@@ -97,7 +101,7 @@ w.fetch = (url, opts) => {
   }
   return Promise.resolve({
     ok: true, status: 200,
-    json: () => Promise.resolve(JSON.parse(fs.readFileSync(path.join(ROOT, url), 'utf8')))
+    json: () => Promise.resolve(JSON.parse(fs.readFileSync(path.join(ROOT, url.split('?')[0]), 'utf8')))
   });
 };
 w.eval(appJs);
@@ -260,6 +264,10 @@ async function go(hash) {
   first('california roll', 'california-roll');
   first('sashimi', 'tuna-sashimi');
   first('caesar salad', 'chicken-caesar-salad');
+  first('casserole', 'tuna-noodle-casserole');
+  first('potstickers', 'gyoza');
+  first('bao', 'bao');
+  first('pot pie', 'chicken-pot-pie');
   first('tacos', 'tacoforma-classicus');
   first('cornflakes', 'cereal');
   first('Canis farcitus', 'canis-farcitus');
