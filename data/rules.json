@@ -63,13 +63,14 @@
     {
       "id": "soup",
       "title": "The soup test",
-      "summary": "Soup is solids and liquid that were cooked together after being assembled. It may be served cold afterward.",
+      "summary": "Soup is solids in a liquid where either the two were cooked together after assembly, or the liquid is a broth simmered from ingredients. Either may be served cold later.",
       "points": [
-        "Cooked together: Decocta. Soup.",
-        "Only ever combined cold: Cruda. Not soup.",
-        "Boiling water poured over noodles cooks them in place: cup noodles are soup."
+        "Cooked together after assembly: soup. Chowder, stew, oatmeal.",
+        "Served in a broth simmered from ingredients: soup. Restaurant ramen, pho.",
+        "Boiling water poured over noodles cooks them in place: cup noodles are soup.",
+        "Neither: not soup. Cereal (milk is not a broth), gazpacho (never cooked)."
       ],
-      "example": "Cereal: the flakes were toasted and the milk pasteurized, but never together. Not soup. Gazpacho falls the same way, and the Board accepts the consequences."
+      "example": "Cereal and ramen are both solids in a bowl of liquid. Ramen's liquid is a broth simmered for hours; cereal's is milk from a carton. One is soup, and it is not the cereal."
     },
     {
       "id": "vessel",
@@ -208,15 +209,19 @@
         ]
       },
       "liquid": {
-        "question": "Were the solids and liquid cooked together after they were combined?",
-        "help": "Serving it cold later is fine. What matters is whether they were ever cooked together.",
+        "question": "How did the liquid meet the solids?",
+        "help": "Serving it cold later is fine. What matters is whether it was ever cooked, and whether the liquid is a broth.",
         "options": [
           {
-            "label": "Yes, cooked together",
+            "label": "They were cooked together after being combined",
             "result": "decocta"
           },
           {
-            "label": "No, only ever combined cold",
+            "label": "The liquid is a broth simmered from ingredients, added at the end",
+            "result": "decocta"
+          },
+          {
+            "label": "Neither: a plain liquid like milk, juice or a raw blend",
             "result": "cruda"
           }
         ]

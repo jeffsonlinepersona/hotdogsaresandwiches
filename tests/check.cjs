@@ -71,6 +71,9 @@ ok(under('burrito', 'sandwichae') && under('tacoforma-classicus-durus', 'sandwic
 ok(under('salmon-nigiri', 'apertae'), 'nigiri is open-faced');
 ok(under('tuna-sashimi', 'naturalia'), 'sashimi is one food');
 ok(under('cup-noodles', 'decocta'), 'cup noodles are soup');
+ok(under('shop-ramen', 'decocta') && byId['shop-ramen'].status === 'ruled', 'restaurant ramen is soup (broth clause)');
+ok(under('pho', 'decocta'), 'pho is soup (broth clause)');
+ok(under('gazpacho', 'cruda'), 'gazpacho is still not soup');
 ok(under('cerevisia-vulgaris-barbata', 'liquida'), 'beer is a drink');
 
 console.log('4. Every page renders');
@@ -176,6 +179,8 @@ async function go(hash) {
   m = await walkUI([3, 1, 0, 1]);
   ok(/Trifaciformes/.test(m.textContent), 'hot dog path lands in Trifaciformes');
   m = await walkUI([3, 3, 1]);
+  ok(/Decocta/.test(m.textContent), 'broth path lands in Decocta (ramen)');
+  m = await walkUI([3, 3, 2]);
   ok(/Cruda/.test(m.textContent), 'cereal path lands in Cruda');
 
   // Submit form

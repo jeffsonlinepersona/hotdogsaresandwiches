@@ -1206,7 +1206,7 @@
       "scientific": "Immersa",
       "common": "Solids in liquid",
       "trait": "Solids in a liquid",
-      "short": "Soup, stew and cereal. The class level decides which of them are soup.",
+      "short": "Soup, stew, ramen and cereal. The class level decides which of them are soup.",
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
@@ -1216,8 +1216,8 @@
       "parent": "immersa",
       "scientific": "Decocta",
       "common": "Soups",
-      "trait": "Cooked together after assembly",
-      "short": "Soup. Can be served cold later, as long as it was cooked together first.",
+      "trait": "Cooked together after assembly, or served in a broth simmered from ingredients",
+      "short": "Soup. Either the solids and liquid were cooked together, or the liquid is a broth that was simmered from ingredients before they met. Serving it cold later is fine.",
       "verdict": "Soup",
       "status": "ruled",
       "ruled_on": "2026-10-03"
@@ -1276,20 +1276,38 @@
       ]
     },
     {
-      "status": "pending review",
+      "status": "ruled",
       "ruled_on": "2026-10-03",
       "id": "shop-ramen",
       "rank": "species",
       "parent": "decocta",
       "scientific": "Ramenus tabernae",
       "common": "Ramen (restaurant)",
-      "short": "Pending review. The broth simmers for hours and the noodles boil separately; they only meet in the bowl. Under the strict cooking rule that is not soup. The Board is deliberating.",
+      "short": "Soup. The noodles and broth cook separately and only meet in the bowl, but the broth was simmered from bones and aromatics for hours, and a simmered broth makes a soup.",
       "aliases": [
         "ramen",
         "tonkotsu",
         "shoyu ramen",
         "miso ramen",
         "noodle soup"
+      ],
+      "verdict": "Soup",
+      "long": "Ramen forced the soup rule to grow up. Under the original rule (cooked together after assembly) it would not have been soup, and neither would pho. The Board added a second way in: a liquid that is itself a broth simmered from ingredients. Cereal still fails both tests, because milk is not a broth."
+    },
+    {
+      "id": "pho",
+      "rank": "species",
+      "parent": "decocta",
+      "scientific": "Zupa saigonensis",
+      "common": "Pho",
+      "short": "Soup. Rice noodles and raw beef meet a broth that simmered for hours; the broth clause covers it, and the hot broth finishes cooking the beef anyway.",
+      "verdict": "Soup",
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "pho",
+        "pho bo",
+        "vietnamese noodle soup"
       ]
     },
     {
@@ -1315,8 +1333,8 @@
       "parent": "immersa",
       "scientific": "Cruda",
       "common": "Not soup",
-      "trait": "Never cooked together after assembly",
-      "short": "Solids in liquid that were only ever introduced cold. Not soup.",
+      "trait": "Never cooked together, and the liquid is not a broth",
+      "short": "Solids in a liquid that was never a broth and never cooked with them. Not soup.",
       "verdict": "Not soup",
       "status": "ruled",
       "ruled_on": "2026-10-03"
