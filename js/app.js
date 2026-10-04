@@ -20,7 +20,7 @@
   var PHOTO_EXT = /\.(jpe?g|png|heic|heif|webp)$/i;
 
   // GoatCounter site code (the part before .goatcounter.com). Empty = analytics off.
-  var GOATCOUNTER_CODE = '';
+  var GOATCOUNTER_CODE = 'hotdogsaresandwiches';
 
   var RANKS = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species', 'variety'];
   var PLURAL = {
