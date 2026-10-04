@@ -4,6 +4,25 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 ## Features
 
+### The Rulings page (Frequently Raised Objections)
+- **Logged:** 2026-10-04
+- **Want:** a page of official responses to the arguments people keep making, in the Review Board's semi-serious voice. Part FAQ, part court record. Replaces the "dated changelog" idea below.
+- **Each entry:** the objection as people say it ("Espresso is literally pressed, so it's Expressa"), the Board's ruling, the rule it rests on (linked to the Rules page), the specimens affected (linked to their cards) and the date ruled.
+- **Starter entries:** espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks.
+- **Also holds** a short "Recent rulings" list, newest first, for reversals and new placements.
+- **Guiding principle to quote at the top:** "Follow the logic and rules, even when they challenge our preconceptions." Opening axiom: hot dogs are sandwiches.
+
+### Specimen card extras: history, rulings and status
+- **Logged:** 2026-10-04
+- **Want:** each card gets an optional short history (when it was classified, anything that moved it, e.g. "milkshake: deported from Liquida, 2026-10-03"), links to any Rulings entries about it, and a visible status.
+- **Status options** (cards already carry a `status` field, today only "ruled" or "pending"):
+  - **Ruled:** settled science.
+  - **Pending review:** the Board is deliberating, indefinitely.
+  - **Disputed:** an objection is on file.
+  - **Extinct:** the specimen no longer exists in the wild. The card stays up as a fossil record, with the date of extinction.
+- **Why Extinct matters:** the Costco hot dog (*C. f. costcoensis*) is defined by its $1.50 price. If Costco ever raises it, that variety goes extinct, and any successor is a new variety. The card should say so with appropriate solemnity.
+- **Data:** new optional fields `history` (list of dated lines), `rulings` (ids of Rulings entries) and `extinct_on` (a date).
+
 ### Guided placement in the Submit form
 - **Logged:** 2026-10-03
 - **Want:** the "Proposed placement" field should help people pick a spot in the tree instead of typing it freehand. Options to weigh: a tap-through picker that reuses the tree's drill-down, type-ahead over existing groups, or an inline mini-classifier.
@@ -12,7 +31,7 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 ### Version 2 items (from the requirements doc)
 - **Logged:** 2026-10-03
 - First wild photos on specimen cards.
-- Rulings page: dated changelog of decisions and reversals (gazpacho, toast, pickles).
+- Rulings page: now its own item above (Frequently Raised Objections).
 - ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.
 - Analytics: live 2026-10-03 at hotdogsaresandwiches.goatcounter.com (page views, searches, not-found searches).
 - Taxonomy: container test adopted 2026-10-03 (Sandwichae needs bread; new Dumplingae, Sushiae, Pieae; casseroles sort by structure). Broth clause adopted 2026-10-03: restaurant ramen and pho are soup; cereal and gazpacho still are not.
