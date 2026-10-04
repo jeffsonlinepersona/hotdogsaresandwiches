@@ -23,6 +23,13 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Why Extinct matters:** the Costco hot dog (*C. f. costcoensis*) is defined by its $1.50 price. If Costco ever raises it, that variety goes extinct, and any successor is a new variety. The card should say so with appropriate solemnity.
 - **Data:** new optional fields `history` (list of dated lines), `rulings` (ids of Rulings entries) and `extinct_on` (a date).
 
+### Social media links (begrudgingly)
+- **Logged:** 2026-10-04
+- **Want:** links to the site's social accounts, added with the reluctance of a Review Board that would rather be classifying things. Footer icons at minimum, perhaps a line on About ("The Board also posts rulings here, under protest").
+- **Open questions:** which platforms; the account handles (they need to exist first); whether to add share buttons on specimen cards so a ruling can be posted straight from its card.
+- **Pairs with:** link previews (an image when a card link is shared), already in Version 2 items. Without them, shared links show up as bare text.
+- **Privacy:** plain links only, no platform embeds or tracking scripts, so the site stays cookie-free.
+
 ### Submit form: suggested category, scientific name and field notes
 - **Logged:** 2026-10-04
 - **Want:** let contributors do the Board's paperwork for it. Three new optional fields on Submit a Specimen:
