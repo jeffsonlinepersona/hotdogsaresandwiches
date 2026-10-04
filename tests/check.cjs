@@ -195,7 +195,7 @@ async function go(hash) {
     return f;
   }
   let f2 = await send({ success: 'true', message: 'ok' });
-  ok(lastPost && /formsubmit\.co\/ajax\/jeffsonlinepersona@gmail\.com$/.test(lastPost.url), 'posts to the FormSubmit ajax endpoint');
+  ok(lastPost && /formsubmit\.co\/ajax\/[0-9a-f]{32}$/.test(lastPost.url), 'posts to the FormSubmit ajax endpoint');
   ok(lastPost.opts.body.get('Food') === 'Pop-Tart', 'sends the food name');
   ok(lastPost.opts.body.get('_subject') === 'New specimen: Pop-Tart', 'sends the subject');
   ok(lastPost.opts.body.get('_next') === null, 'drops the redirect field');
@@ -227,12 +227,15 @@ async function go(hash) {
 
   f2 = await send('network');
   ok(/could not reach/.test(f2.querySelector('#form-error').textContent), 'network failure explained');
-  const alt = f2.querySelector('#form-alt a');
-  ok(alt && !f2.querySelector('#form-alt').hidden, 'Email it instead offered');
-  const href = alt ? alt.getAttribute('href') : '';
-  ok(href.startsWith('mailto:jeffsonlinepersona@gmail.com?subject=New%20specimen%3A%20Pop-Tart'), 'mailto has address and subject');
-  ok(/Food%3A%20Pop-Tart/.test(href) && !/_template/.test(href), 'mailto body has the fields, not the hidden ones');
+  const copyBtn = f2.querySelector('#form-alt [data-action="copy-entry"]');
+  ok(copyBtn && !f2.querySelector('#form-alt').hidden, 'Copy my entry offered');
+  let copied = null;
+  Object.defineProperty(w.navigator, 'clipboard', { value: { writeText: t => { copied = t; return Promise.resolve(); } }, configurable: true });
+  copyBtn.click(); await tick();
+  ok(copied && /New specimen: Pop-Tart/.test(copied) && /Food: Pop-Tart/.test(copied) && !/_template/.test(copied), 'copied entry has the fields, not the hidden ones');
+  ok(copyBtn.textContent === 'Copied', 'copy button confirms');
   ok(!f2.querySelector('button[type="submit"]').disabled, 'button re-enabled after network failure');
+  ok(!/[\w.+-]+@[\w-]+\.[a-z]{2,}/i.test(appJs), 'no email address in the site code');
 
   ok(errors.length === 0, 'no script errors' + (errors.length ? ':\n' + errors.join('\n') : ''));
   finish();

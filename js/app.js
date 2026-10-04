@@ -10,7 +10,8 @@
   // Where the Submit form sends entries. FormSubmit emails them to this address.
   // After the first confirmation email, FormSubmit gives a random code: replace the
   // email part with that code to keep the address out of the public source.
-  var FORM_ADDRESS = 'jeffsonlinepersona@gmail.com';
+  // FormSubmit alias for the Review Board's inbox (keeps the real address out of the code)
+  var FORM_ADDRESS = '50632871333cdf089e5f44b8d7b3d40b';
   var FORM_ENDPOINT = 'https://formsubmit.co/' + FORM_ADDRESS;        // fallback if scripts are off
   var FORM_AJAX_ENDPOINT = 'https://formsubmit.co/ajax/' + FORM_ADDRESS; // used by the page
   var MAX_PHOTO_BYTES = 10 * 1024 * 1024; // FormSubmit's limit per submission
@@ -573,6 +574,7 @@
 
   var main = document.getElementById('main');
   var lastRoute = null;
+  var lastEntryText = '';
 
   function render() {
     var r = parseHash();
@@ -629,6 +631,11 @@
     } else if (a === 'restart') {
       resetClassifier();
       render();
+    } else if (a === 'copy-entry') {
+      var done = function () { b.textContent = 'Copied'; };
+      try {
+        navigator.clipboard.writeText(lastEntryText).then(done, function () { window.prompt('Copy your entry:', lastEntryText); });
+      } catch (x) { window.prompt('Copy your entry:', lastEntryText); }
     }
   });
 
@@ -706,15 +713,14 @@
     data.forEach(function (v, k) { body.append(k, v); });
 
     // If FormSubmit can't be reached (some networks and ad blockers block it),
-    // offer a pre-filled email instead so the entry still reaches the Board.
-    function mailtoLink() {
-      var lines = [];
+    // let the visitor copy their entry so nothing typed is lost.
+    function entryText() {
+      var lines = [res.subject];
       data.forEach(function (v, k) {
         if (k.charAt(0) === '_' || typeof v !== 'string' || !v) return;
         lines.push(k + ': ' + v);
       });
-      return 'mailto:' + FORM_ADDRESS + '?subject=' + encodeURIComponent(res.subject) +
-        '&body=' + encodeURIComponent(lines.join('\n'));
+      return lines.join('\n');
     }
 
     function fail(msg) {
@@ -739,10 +745,12 @@
         }
       })
       .catch(function () {
-        fail('Your network could not reach the mail service. Some ad blockers, VPNs and Wi-Fi filters block it.');
+        fail('Your network could not reach the mail service. Some ad blockers, VPNs and Wi-Fi filters block it. ' +
+          'Try turning those off or switching to cellular, then send again.');
+        lastEntryText = entryText();
         var alt = form.querySelector('#form-alt');
-        alt.innerHTML = '<a class="btn btn-ink" href="' + esc(mailtoLink()) + '">Email it instead</a>' +
-          '<span class="hint">Opens your email app with everything filled in.</span>';
+        alt.innerHTML = '<button class="btn" type="button" data-action="copy-entry">Copy my entry</button>' +
+          '<span class="hint">Keeps a copy of what you wrote, just in case.</span>';
         alt.hidden = false;
       });
   });
