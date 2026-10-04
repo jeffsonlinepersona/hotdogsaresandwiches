@@ -12,7 +12,6 @@
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
-
     {
       "id": "condimenta",
       "rank": "kingdom",
@@ -32,7 +31,11 @@
       "common": "Ketchup",
       "short": "Tomato-based supporting cast. Banned from Chicago-style specimens by local statute.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "ketchup",
+        "catsup"
+      ]
     },
     {
       "id": "salt",
@@ -54,7 +57,34 @@
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
-
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "caesar-dressing",
+      "rank": "species",
+      "parent": "condimenta",
+      "scientific": "Condimentum caesarianum",
+      "common": "Caesar dressing",
+      "short": "Anchovy, garlic, parmesan and egg, emulsified. Supporting cast in the chicken Caesar salad.",
+      "aliases": [
+        "caesar dressing",
+        "caesar"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "soy-sauce",
+      "rank": "species",
+      "parent": "condimenta",
+      "scientific": "Glycine fermentata",
+      "common": "Soy sauce",
+      "short": "Supporting cast for sushi and sashimi. Never the star, however much is poured.",
+      "aliases": [
+        "soy sauce",
+        "shoyu"
+      ]
+    },
     {
       "id": "liquida",
       "rank": "kingdom",
@@ -107,7 +137,13 @@
       "common": "Coffee",
       "short": "Add-ins make varieties, not new species: you still order it as coffee. A latte is ordered by a different name, so it is a separate species.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "coffee",
+        "drip coffee",
+        "cup of joe",
+        "joe"
+      ]
     },
     {
       "id": "cafeus-potus-niger",
@@ -117,7 +153,10 @@
       "common": "Coffee, black",
       "short": "Coffee as intended.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "black coffee"
+      ]
     },
     {
       "id": "cafeus-potus-novaeboracensis",
@@ -127,7 +166,75 @@
       "common": "Coffee, regular (New York)",
       "short": "Cream and sugar, by New York definition. Listing a variety is not an endorsement of it.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "regular coffee",
+        "coffee regular",
+        "cream and sugar"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "cafeus-lacteus",
+      "rank": "species",
+      "parent": "excitata",
+      "scientific": "Cafeus lacteus",
+      "common": "Latte",
+      "short": "Espresso and steamed milk. Ordered by its own name, so it is its own species, not a variety of coffee.",
+      "aliases": [
+        "latte",
+        "cafe latte",
+        "caffe latte"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "camellia-infusa",
+      "rank": "species",
+      "parent": "excitata",
+      "scientific": "Camellia infusa",
+      "common": "Tea",
+      "short": "Leaves steeped in hot water. Additions make varieties: you still order it as tea.",
+      "aliases": [
+        "tea",
+        "hot tea",
+        "black tea",
+        "green tea",
+        "cup of tea"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "camellia-infusa-britannica",
+      "rank": "variety",
+      "parent": "camellia-infusa",
+      "scientific": "C. i. britannica",
+      "common": "Tea with milk",
+      "short": "Strong black tea with a splash of milk. Steeping time is a matter of national security.",
+      "aliases": [
+        "english tea",
+        "builders tea",
+        "builder's tea",
+        "tea with milk"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "camellia-infusa-australis",
+      "rank": "variety",
+      "parent": "camellia-infusa",
+      "scientific": "C. i. australis",
+      "common": "Sweet tea",
+      "short": "Iced tea sweetened past the point of debate. Southern variety; served by the gallon.",
+      "aliases": [
+        "sweet tea",
+        "iced tea",
+        "southern sweet tea"
+      ]
     },
     {
       "id": "inebriata",
@@ -141,6 +248,70 @@
       "ruled_on": "2026-10-03"
     },
     {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "cerevisia",
+      "rank": "genus",
+      "parent": "inebriata",
+      "scientific": "Cerevisia",
+      "common": "Beers",
+      "trait": "Fermented grain, drunk to unwind",
+      "short": "Sometimes called liquid bread. The Board notes that liquid bread is still not a sandwich."
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "cerevisia-vulgaris",
+      "rank": "species",
+      "parent": "cerevisia",
+      "scientific": "Cerevisia vulgaris",
+      "common": "Beer",
+      "short": "A drink, not a food: its beverage role wins even though it is assembled from grain, hops, yeast and water.",
+      "aliases": [
+        "beer",
+        "beers",
+        "ale",
+        "lager",
+        "brew",
+        "brewski"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "cerevisia-vulgaris-industrialis",
+      "rank": "variety",
+      "parent": "cerevisia-vulgaris",
+      "scientific": "C. v. industrialis",
+      "common": "Macro lager",
+      "short": "Sold by the 30-rack. Pale, cold and faintly reminiscent of the stadium it was advertised in.",
+      "aliases": [
+        "macrobrew",
+        "macro brew",
+        "light beer",
+        "domestic beer",
+        "cheap beer"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "cerevisia-vulgaris-barbata",
+      "rank": "variety",
+      "parent": "cerevisia-vulgaris",
+      "scientific": "C. v. barbata",
+      "common": "Hazy IPA (microbrew)",
+      "short": "Brewed in a former auto-body shop and served in a stemmed glass. Named after a local landmark or the brewer's dog. Tasting notes available on request, and also without request.",
+      "aliases": [
+        "microbrew",
+        "micro brew",
+        "craft beer",
+        "ipa",
+        "hazy ipa",
+        "hipster beer"
+      ]
+    },
+    {
       "id": "nutritia",
       "rank": "class",
       "parent": "liquida",
@@ -151,7 +322,6 @@
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
-
     {
       "id": "naturalia",
       "rank": "kingdom",
@@ -168,10 +338,18 @@
       "rank": "species",
       "parent": "naturalia",
       "scientific": "Bos assatus",
-      "common": "Steak",
-      "short": "One food, grilled. The salt on top belongs to Condimenta.",
+      "common": "Grilled steak",
+      "short": "One food, grilled. The salt and pepper on top belong to Condimenta; the cow would still recognize it.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "steak",
+        "grilled steak",
+        "ribeye",
+        "sirloin",
+        "new york strip",
+        "t-bone"
+      ]
     },
     {
       "id": "raisin",
@@ -181,7 +359,10 @@
       "common": "Raisin",
       "short": "A grape with life experience.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "raisins"
+      ]
     },
     {
       "id": "pickle",
@@ -191,9 +372,30 @@
       "common": "Pickle",
       "short": "Passes the police lineup test: a cucumber would recognize it instantly.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "pickles",
+        "dill pickle",
+        "pickle spear",
+        "gherkin"
+      ]
     },
-
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "tuna-sashimi",
+      "rank": "species",
+      "parent": "naturalia",
+      "scientific": "Thunnus crudus",
+      "common": "Tuna sashimi (maguro)",
+      "short": "Raw tuna, sliced. One food, still recognizable: the tuna would pick it out of a lineup. The soy sauce and wasabi are Condimenta. Not sushi, because there is no rice.",
+      "aliases": [
+        "sashimi",
+        "tuna sashimi",
+        "maguro",
+        "raw fish"
+      ]
+    },
     {
       "id": "constructa",
       "rank": "kingdom",
@@ -205,7 +407,6 @@
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
-
     {
       "id": "formata",
       "rank": "phylum",
@@ -236,7 +437,11 @@
       "common": "Toast",
       "short": "Bread, toasted. Still constructed, because bread was built from flour, water and yeast.",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "toast",
+        "bread"
+      ]
     },
     {
       "id": "pastae",
@@ -271,7 +476,20 @@
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
-
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "oryzae",
+      "rank": "class",
+      "parent": "formata",
+      "scientific": "Oryzae",
+      "common": "Pressed rice",
+      "trait": "Seasoned rice pressed into one mass",
+      "short": "Sushi rice: vinegared, seasoned and packed until the grains act as one. Loose steamed rice does not qualify.",
+      "aliases": [
+        "sushi rice"
+      ]
+    },
     {
       "id": "involucra",
       "rank": "phylum",
@@ -328,7 +546,15 @@
       "short": "The type specimen. Nobody has ever filed an appeal.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "sandwich",
+        "blt",
+        "club sandwich",
+        "club",
+        "turkey sandwich",
+        "ham sandwich"
+      ]
     },
     {
       "id": "trifaciformes",
@@ -379,7 +605,16 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "hot dog",
+        "hotdog",
+        "hot dogs",
+        "frank",
+        "frankfurter",
+        "wiener",
+        "weiner"
+      ]
     },
     {
       "id": "canis-farcitus-costcoensis",
@@ -393,7 +628,12 @@
       "sketch": "hotdog",
       "featured": true,
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "costco",
+        "costco hot dog",
+        "costco dog"
+      ]
     },
     {
       "id": "canis-farcitus-chicagoensis",
@@ -405,7 +645,11 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "chicago dog",
+        "chicago style hot dog"
+      ]
     },
     {
       "id": "canis-farcitus-aquasordidus",
@@ -417,7 +661,12 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "dirty water dog",
+        "street dog",
+        "new york hot dog"
+      ]
     },
     {
       "id": "canis-farcitus-sonorensis",
@@ -429,7 +678,11 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "sonoran dog",
+        "sonoran hot dog"
+      ]
     },
     {
       "id": "canis-farcitus-nudus",
@@ -441,7 +694,10 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "plain hot dog"
+      ]
     },
     {
       "id": "tortilladae",
@@ -477,7 +733,11 @@
       "long": "A Massachusetts judge ruled in 2006 that one tortilla is not two slices of bread. A hot dog bun is also one piece, so that logic would expel hot dogs too. The Review Board declines to sacrifice the hot dog.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "taco",
+        "tacos"
+      ]
     },
     {
       "id": "tacoforma-classicus-durus",
@@ -488,7 +748,11 @@
       "short": "Fried, not baked. Still Formata: the phylum is about how the food is built, not how it is cooked.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "hard shell taco",
+        "crunchy taco"
+      ]
     },
     {
       "id": "tacoforma-classicus-pastorensis",
@@ -499,7 +763,10 @@
       "short": "Spit-roasted pork, pineapple and a folded tortilla. A sandwich.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "al pastor"
+      ]
     },
     {
       "id": "tacoforma-classicus-bajaensis",
@@ -510,7 +777,10 @@
       "short": "Battered fish, cabbage and crema. A sandwich at the beach.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "fish taco"
+      ]
     },
     {
       "id": "fissipanidae",
@@ -533,7 +803,15 @@
       "short": "A sandwich nobody disputes, built exactly like a hot dog.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "sub",
+        "hoagie",
+        "hero",
+        "grinder",
+        "meatball sub",
+        "submarine sandwich"
+      ]
     },
     {
       "id": "lobster-roll",
@@ -544,7 +822,10 @@
       "short": "A hot dog bun with a better lawyer.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "lobster roll"
+      ]
     },
     {
       "id": "totiformes",
@@ -567,7 +848,12 @@
       "short": "Fully wrapped, so it is more enclosed than a classic sandwich. A Massachusetts court disagreed in 2006; the court was not consulted on hot dogs.",
       "verdict": "Sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "burrito",
+        "burritos",
+        "wrap"
+      ]
     },
     {
       "id": "corn-dog",
@@ -579,7 +865,43 @@
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "corn dog",
+        "corndog"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "makidae",
+      "rank": "family",
+      "parent": "totiformes",
+      "scientific": "Makidae",
+      "common": "Rolled sushi",
+      "trait": "Pressed rice rolled fully around a filling",
+      "short": "Cut a maki roll and look at the cross-section: container on every side, filling in the middle. Structurally a burrito.",
+      "verdict": "Sandwich"
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "california-roll",
+      "rank": "species",
+      "parent": "makidae",
+      "scientific": "Oryza involuta californiensis",
+      "common": "California roll",
+      "short": "A sandwich. Pressed sushi rice (Formata) encloses crab, avocado and cucumber on all sides, the same structure as a burrito.",
+      "long": "The California roll is an inside-out roll: the rice is on the outside and the seaweed sits inside it. That matters, because the seaweed is a whole food (Naturalia) and would only make a pseudo-sandwich. The rice does the enclosing, and pressed rice qualifies as Formata.",
+      "verdict": "Sandwich",
+      "aliases": [
+        "california roll",
+        "sushi",
+        "sushi roll",
+        "maki",
+        "uramaki",
+        "roll"
+      ]
     },
     {
       "id": "pseudosandwichae",
@@ -602,7 +924,10 @@
       "short": "A container, but not a dough-based one. A salad in disguise.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "lettuce wrap"
+      ]
     },
     {
       "id": "banana-split",
@@ -613,9 +938,12 @@
       "short": "Shaped like a hot dog: a split container cradling a filling with condiments. Convergent evolution, not ancestry, because a banana is not bread.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "banana split",
+        "sundae"
+      ]
     },
-
     {
       "id": "stratifica",
       "rank": "phylum",
@@ -648,7 +976,14 @@
       "short": "Not a sandwich. One slice is a topping arrangement. It stands or falls with thin-crust pizza, and nobody calls pizza a sandwich.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "open faced sandwich",
+        "open-faced sandwich",
+        "bruschetta",
+        "tartine",
+        "avocado toast"
+      ]
     },
     {
       "id": "thin-crust-pizza",
@@ -659,7 +994,28 @@
       "short": "One base, toppings on top. Fold a slice, though, and it becomes a sandwich. Own it.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "pizza",
+        "pizza slice",
+        "thin crust"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "salmon-nigiri",
+      "rank": "species",
+      "parent": "apertae",
+      "scientific": "Oryza aperta salmonis",
+      "common": "Salmon nigiri",
+      "short": "Not a sandwich. A pressed-rice base with fish on top: an open-faced sushi, in the same class as thin-crust pizza.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "nigiri",
+        "salmon nigiri",
+        "sake nigiri"
+      ]
     },
     {
       "id": "laminatae",
@@ -681,9 +1037,13 @@
       "short": "Layered, with no container. Not a sandwich, and the \"is pasta bread?\" fight never has to happen.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "long": "Lasagna has pasta above and below a filling, which looks like a sandwich until you notice there is no container: just flat layers, stacked. Pasta is also boiled dough, not baked, so the question of whether pasta is bread never has to be answered.",
+      "aliases": [
+        "lasagna",
+        "lasagne"
+      ]
     },
-
     {
       "id": "immersa",
       "rank": "phylum",
@@ -716,7 +1076,11 @@
       "short": "Soup by any definition.",
       "verdict": "Soup",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "chicken noodle soup",
+        "chicken soup"
+      ]
     },
     {
       "id": "clam-chowder",
@@ -727,7 +1091,51 @@
       "short": "Soup. In a bread bowl it gets complicated; appeals are pending.",
       "verdict": "Soup",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "chowder",
+        "clam chowder"
+      ]
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "cup-noodles",
+      "rank": "species",
+      "parent": "decocta",
+      "scientific": "Ramenus instantaneus",
+      "common": "Instant cup noodles",
+      "short": "Soup. Boiling water is poured over the dried noodles and seasoning, and they cook together in the cup after assembly.",
+      "long": "The contrast with cereal is the whole point: cereal meets cold milk and nothing is cooked; cup noodles meet boiling water and cook in place. Same bowl-and-liquid shape, opposite verdict.",
+      "verdict": "Soup",
+      "aliases": [
+        "cup noodles",
+        "cup o noodles",
+        "cup of noodles",
+        "cup-o-noodles",
+        "instant ramen",
+        "instant noodles",
+        "cup ramen",
+        "ramen noodles",
+        "top ramen"
+      ]
+    },
+    {
+      "status": "pending review",
+      "ruled_on": "2026-10-03",
+      "id": "shop-ramen",
+      "rank": "species",
+      "parent": "decocta",
+      "scientific": "Ramenus tabernae",
+      "common": "Ramen (restaurant)",
+      "short": "Pending review. The broth simmers for hours and the noodles boil separately; they only meet in the bowl. Under the strict cooking rule that is not soup. The Board is deliberating.",
+      "aliases": [
+        "ramen",
+        "tonkotsu",
+        "shoyu ramen",
+        "miso ramen",
+        "noodle soup"
+      ]
     },
     {
       "id": "oatmeal",
@@ -738,7 +1146,13 @@
       "short": "Grain simmered in liquid, the same mechanism as chowder. Soup-adjacent, and the reason cold cereal is not.",
       "verdict": "Soup",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "oatmeal",
+        "porridge",
+        "congee",
+        "oats"
+      ]
     },
     {
       "id": "cruda",
@@ -761,7 +1175,15 @@
       "short": "Not soup. The flakes were toasted and the milk was pasteurized, but they were never cooked together. Not our problem.",
       "verdict": "Not soup",
       "status": "ruled",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "cereal",
+        "cereal and milk",
+        "corn flakes",
+        "cornflakes",
+        "froot loops",
+        "cheerios"
+      ]
     },
     {
       "id": "gazpacho",
@@ -772,9 +1194,12 @@
       "short": "Not soup. Traditional gazpacho is raw vegetables blended and served cold, never cooked. The rule holds even when it hurts.",
       "verdict": "Not soup",
       "status": "ruled",
-      "ruled_on": "2026-10-02"
+      "ruled_on": "2026-10-02",
+      "aliases": [
+        "gazpacho",
+        "cold soup"
+      ]
     },
-
     {
       "id": "mixta",
       "rank": "phylum",
@@ -798,6 +1223,23 @@
       "ruled_on": "2026-10-03"
     },
     {
+      "status": "ruled",
+      "ruled_on": "2026-10-03",
+      "id": "chicken-caesar-salad",
+      "rank": "species",
+      "parent": "iactatae",
+      "scientific": "Lactuca caesariana",
+      "common": "Chicken Caesar salad",
+      "short": "Romaine tossed with Caesar dressing, croutons and grilled chicken. Tossed raw, so it lives in Iactatae; the chicken was cooked first, separately, which does not count.",
+      "long": "A useful test case: it contains a bread (croutons are Panes), a cooked meat and a condiment, yet it is not a sandwich, because nothing contains anything. It is architecture-free, which is the whole point of Mixta.",
+      "aliases": [
+        "caesar salad",
+        "chicken caesar",
+        "chicken caesar salad",
+        "salad"
+      ]
+    },
+    {
       "id": "fervidae",
       "rank": "class",
       "parent": "mixta",
@@ -808,7 +1250,6 @@
       "status": "ruled",
       "ruled_on": "2026-10-03"
     },
-
     {
       "id": "incertae-sedis",
       "rank": "kingdom",
@@ -828,7 +1269,10 @@
       "common": "Candy corn",
       "short": "Under review since roughly 1880.",
       "status": "pending review",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "candy corn"
+      ]
     },
     {
       "id": "jello-salad",
@@ -838,7 +1282,12 @@
       "common": "Jell-O salad",
       "short": "Contains elements of every phylum. The Board has recused itself.",
       "status": "pending review",
-      "ruled_on": "2026-10-03"
+      "ruled_on": "2026-10-03",
+      "aliases": [
+        "jello salad",
+        "jell-o salad",
+        "jello"
+      ]
     }
   ]
 }

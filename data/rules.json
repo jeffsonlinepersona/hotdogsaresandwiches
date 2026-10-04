@@ -43,6 +43,7 @@
         "Three sides (hinged bun, split roll, fold): Trifaciformes. The hot dog lives here.",
         "All sides, sealed: Totiformes. The burrito lives here.",
         "One side: not a sandwich. It is a topped food in Apertae.",
+        "Pressed sushi rice counts as Formata, so a California roll is a sealed sandwich, like a burrito.",
         "A container that was never dough (lettuce, banana): Pseudosandwichae. Nice try."
       ],
       "example": "Frying does not matter. A hard-shell taco is still built from dough, so it is still a sandwich."
@@ -63,7 +64,8 @@
       "summary": "Soup is solids and liquid that were cooked together after being assembled. It may be served cold afterward.",
       "points": [
         "Cooked together: Decocta. Soup.",
-        "Only ever combined cold: Cruda. Not soup."
+        "Only ever combined cold: Cruda. Not soup.",
+        "Boiling water poured over noodles cooks them in place: cup noodles are soup."
       ],
       "example": "Cereal: the flakes were toasted and the milk pasteurized, but never together. Not soup. Gazpacho falls the same way, and the Board accepts the consequences."
     },
@@ -86,55 +88,112 @@
         "question": "What job does it do at the table?",
         "help": "Pick the first one that fits. Order matters.",
         "options": [
-          { "label": "It makes other food better: a seasoning, sauce, dip or spread", "result": "condimenta" },
-          { "label": "You drink it to hydrate, refresh, wake up or unwind", "result": "liquida" },
-          { "label": "It is one food, maybe dried, salted, pickled or grilled, but still recognizable", "result": "naturalia" },
-          { "label": "Several foods combined, or ingredients turned into something new", "next": "phylum" },
-          { "label": "It defies explanation", "result": "incertae-sedis" }
+          {
+            "label": "It makes other food better: a seasoning, sauce, dip or spread",
+            "result": "condimenta"
+          },
+          {
+            "label": "You drink it to hydrate, refresh, wake up or unwind",
+            "result": "liquida"
+          },
+          {
+            "label": "It is one food, maybe dried, salted, pickled or grilled, but still recognizable",
+            "result": "naturalia"
+          },
+          {
+            "label": "Several foods combined, or ingredients turned into something new",
+            "next": "phylum"
+          },
+          {
+            "label": "It defies explanation",
+            "result": "incertae-sedis"
+          }
         ]
       },
       "phylum": {
         "question": "What holds it together?",
         "help": "Constructa is sorted by architecture.",
         "options": [
-          { "label": "Ingredients fused into one new mass (bread, pasta, sausage, cheese)", "result": "formata" },
-          { "label": "One food is the container and holds a filling", "next": "container" },
-          { "label": "Layers or toppings on a base, with no container", "next": "layers" },
-          { "label": "Solids sitting in a liquid", "next": "liquid" },
-          { "label": "Tossed together, no architecture", "result": "mixta" }
+          {
+            "label": "Ingredients fused into one new mass (bread, pasta, sausage, cheese)",
+            "result": "formata"
+          },
+          {
+            "label": "One food is the container and holds a filling",
+            "next": "container"
+          },
+          {
+            "label": "Layers or toppings on a base, with no container",
+            "next": "layers"
+          },
+          {
+            "label": "Solids sitting in a liquid",
+            "next": "liquid"
+          },
+          {
+            "label": "Tossed together, no architecture",
+            "result": "mixta"
+          }
         ]
       },
       "container": {
         "question": "What is the container made of?",
-        "help": "Anything that was ever dough counts, fried or not.",
+        "help": "Anything that was ever dough counts, fried or not. So does sushi rice pressed into one mass.",
         "options": [
-          { "label": "Bread, a bun, a tortilla or other dough", "next": "sides" },
-          { "label": "A whole food: lettuce, a pepper, a banana", "result": "pseudosandwichae" }
+          {
+            "label": "Bread, a bun, a tortilla, pressed sushi rice or other dough",
+            "next": "sides"
+          },
+          {
+            "label": "A whole food: lettuce, a pepper, a banana",
+            "result": "pseudosandwichae"
+          }
         ]
       },
       "sides": {
         "question": "How many sides does the container touch the filling on?",
         "help": "Look at it from the end, like a cross-section.",
         "options": [
-          { "label": "Two: a top and a bottom", "result": "bifaciformes" },
-          { "label": "Three: hinged, split or folded", "result": "trifaciformes" },
-          { "label": "All of them: fully sealed", "result": "totiformes" }
+          {
+            "label": "Two: a top and a bottom",
+            "result": "bifaciformes"
+          },
+          {
+            "label": "Three: hinged, split or folded",
+            "result": "trifaciformes"
+          },
+          {
+            "label": "All of them: fully sealed",
+            "result": "totiformes"
+          }
         ]
       },
       "layers": {
         "question": "One base, or several layers?",
         "help": "",
         "options": [
-          { "label": "One base with toppings on top", "result": "apertae" },
-          { "label": "Several stacked layers", "result": "laminatae" }
+          {
+            "label": "One base with toppings on top",
+            "result": "apertae"
+          },
+          {
+            "label": "Several stacked layers",
+            "result": "laminatae"
+          }
         ]
       },
       "liquid": {
         "question": "Were the solids and liquid cooked together after they were combined?",
         "help": "Serving it cold later is fine. What matters is whether they were ever cooked together.",
         "options": [
-          { "label": "Yes, cooked together", "result": "decocta" },
-          { "label": "No, only ever combined cold", "result": "cruda" }
+          {
+            "label": "Yes, cooked together",
+            "result": "decocta"
+          },
+          {
+            "label": "No, only ever combined cold",
+            "result": "cruda"
+          }
         ]
       }
     }
