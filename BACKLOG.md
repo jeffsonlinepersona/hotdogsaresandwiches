@@ -23,6 +23,15 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Why Extinct matters:** the Costco hot dog (*C. f. costcoensis*) is defined by its $1.50 price. If Costco ever raises it, that variety goes extinct, and any successor is a new variety. The card should say so with appropriate solemnity.
 - **Data:** new optional fields `history` (list of dated lines), `rulings` (ids of Rulings entries) and `extinct_on` (a date).
 
+### Submit form: suggested category, scientific name and field notes
+- **Logged:** 2026-10-04
+- **Want:** let contributors do the Board's paperwork for it. Three new optional fields on Submit a Specimen:
+  - **Suggested category:** a pick list of kingdoms (and, ideally, the groups under them) instead of today's free-text "Proposed placement". Pairs with "Guided placement" below; build them together.
+  - **Suggested scientific name:** free text, with a hint such as "*Canis farcitus costcoensis*. Latin optional; confidence required."
+  - **Field notes:** a longer box for habitat, behavior and sightings, in the style of the card's field notes ("Observed near the exit. Eaten standing.").
+- **Today:** the form has Food, Request type, Proposed placement (free text), Reasoning, Photo, Name and Email. Reasoning is the only long box, so people mix the argument and the field notes together.
+- **Email:** each new field arrives as its own labeled row, so an approved entry can be copied straight into `data/taxonomy.json` (`parent`, `scientific`, `long`).
+
 ### Guided placement in the Submit form
 - **Logged:** 2026-10-03
 - **Want:** the "Proposed placement" field should help people pick a spot in the tree instead of typing it freehand. Options to weigh: a tap-through picker that reuses the tree's drill-down, type-ahead over existing groups, or an inline mini-classifier.
