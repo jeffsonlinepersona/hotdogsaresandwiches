@@ -41,13 +41,13 @@
       "points": [
         "Ready-made by nature (water, animal milk): Nativa.",
         "Squeezed, pressed or strained from a plant (juice, oat milk): Expressa.",
-        "Steeped, then strained (coffee, tea): Infusa.",
+        "Steeped or pushed through, then strained (coffee, espresso, tea): Infusa.",
         "Things dissolved into water (soda, lemonade, sports drinks): Soluta.",
         "Microbes did the work (beer, wine): Fermentata.",
         "Two finished drinks mixed into a new one (latte, cocktails): Miscellae.",
         "Still or sparkling is decided one level down, at order."
       ],
-      "example": "Lemonade is not juice: it is mostly water with things dissolved in. Oat milk is not milk: it is pressed from a plant. A latte is not coffee: it is two drinks mixed. A milkshake is not a drink at all."
+      "example": "Lemonade is not juice: it is mostly water with things dissolved in. Oat milk is not milk: it is pressed from a plant. A latte is not coffee: it is two drinks mixed. A milkshake is not a drink at all. Espresso is not Expressa either: the water gets pressed, not the bean."
     },
     {
       "id": "sandwich",
@@ -105,6 +105,7 @@
       "points": [
         "Coffee with cream and sugar is still coffee: a variety.",
         "A latte is ordered by a different name: a separate species.",
+        "More or less of the same thing is a variety, even with its own name: a doppio, ristretto or lungo is still espresso.",
         "An affogato changes role to dessert: it leaves Liquida entirely."
       ],
       "example": "A Costco hot dog is still ordered as \"a hot dog,\" so it is a variety of Canis farcitus."

@@ -78,6 +78,8 @@ ok(under('cerevisia-vulgaris-barbata', 'fermentata'), 'beer is a fermented drink
 ok(under('lemonade', 'soluta') && !under('lemonade', 'expressa'), 'lemonade is not juice');
 ok(under('oat-milk', 'pseudolactae') && !under('oat-milk', 'nativa'), 'oat milk is not milk');
 ok(under('cafeus-lacteus', 'miscellae') && !under('cafeus-lacteus', 'infusa'), 'a latte is not coffee');
+ok(under('espresso', 'crema') && under('espresso', 'infusa') && !under('espresso', 'expressa') && !under('espresso', 'cafeus'), 'espresso is its own genus in Infusa, not Expressa');
+ok(['crema-ictus-duplex','crema-ictus-contractus','crema-ictus-longus'].every(id => byId[id] && byId[id].parent === 'espresso'), 'doppio, ristretto and lungo are espresso varieties');
 ok(under('milkshake', 'cruda') && under('smoothie', 'cruda') && !under('milkshake', 'liquida'), 'milkshakes and smoothies are food, not drinks');
 ok(under('gasosa-aquatica', 'aquae-spumiformes') && under('aqua-pura', 'aquae-tranquilliformes'), 'still vs sparkling differ at order');
 ok(byId['cola-vulgaris-fontana'] && byId['cola-vulgaris-fontana'].rank === 'variety', 'fountain soda is a variety');

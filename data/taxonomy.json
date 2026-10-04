@@ -625,10 +625,10 @@
       "rank": "genus",
       "parent": "coffeidae",
       "scientific": "Cafeus",
-      "common": "Coffee",
+      "common": "Brewed coffee",
       "status": "ruled",
       "ruled_on": "2026-10-03",
-      "short": "Brewed coffee and espresso.",
+      "short": "Hot water drips or soaks through ground beans, helped only by gravity and patience.",
       "catalog": 48
     },
     {
@@ -679,19 +679,78 @@
       "catalog": 51
     },
     {
+      "id": "crema",
+      "rank": "genus",
+      "parent": "coffeidae",
+      "scientific": "Crema",
+      "common": "Espresso",
+      "short": "Coffee made under pressure, named for the tan foam on top. Its own line on every café menu.",
+      "status": "ruled",
+      "ruled_on": "2026-10-04",
+      "catalog": 189
+    },
+    {
       "id": "espresso",
       "rank": "species",
-      "parent": "cafeus",
-      "scientific": "Cafeus pressus",
+      "parent": "crema",
+      "scientific": "Crema ictus",
       "common": "Espresso",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "short": "Coffee forced through finely ground beans under pressure. Ordered by its own name, so its own species.",
+      "ruled_on": "2026-10-04",
+      "short": "Hot water forced through finely packed grounds under pressure, in about 25 seconds. Ordered by its own name, so its own species.",
       "aliases": [
         "espresso",
-        "shot of espresso"
+        "shot of espresso",
+        "espresso shot",
+        "shot",
+        "solo"
       ],
-      "catalog": 52
+      "catalog": 52,
+      "long": "Not Expressa. In Expressa the food itself gets squeezed (an orange, an oat). Here the beans sit still and the water is pushed through them, which is steeping in a hurry. Order and family stand: no bubbles (crema is foam, not carbonation), and it is still built around the coffee bean."
+    },
+    {
+      "id": "crema-ictus-duplex",
+      "rank": "variety",
+      "parent": "espresso",
+      "scientific": "C. i. duplex",
+      "common": "Espresso, doppio",
+      "short": "Two shots. More of the same thing is a variety.",
+      "aliases": [
+        "doppio",
+        "double espresso",
+        "double shot"
+      ],
+      "status": "ruled",
+      "ruled_on": "2026-10-04",
+      "catalog": 190
+    },
+    {
+      "id": "crema-ictus-contractus",
+      "rank": "variety",
+      "parent": "espresso",
+      "scientific": "C. i. contractus",
+      "common": "Espresso, ristretto",
+      "short": "A short pull: less water, same beans. Has its own name, still the same drink.",
+      "aliases": [
+        "ristretto"
+      ],
+      "status": "ruled",
+      "ruled_on": "2026-10-04",
+      "catalog": 191
+    },
+    {
+      "id": "crema-ictus-longus",
+      "rank": "variety",
+      "parent": "espresso",
+      "scientific": "C. i. longus",
+      "common": "Espresso, lungo",
+      "short": "A long pull: more water through the same puck. Not an Americano, which adds water afterward.",
+      "aliases": [
+        "lungo"
+      ],
+      "status": "ruled",
+      "ruled_on": "2026-10-04",
+      "catalog": 192
     },
     {
       "id": "foliae",
