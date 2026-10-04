@@ -322,6 +322,16 @@
     };
   }
 
+  function evidence(n) {
+    var list = (n.sources || []).filter(function (x) { return x && /^https:\/\//.test(x.url || ''); });
+    if (!list.length) return '';
+    return '<div class="evidence"><span class="eyebrow">Supporting evidence</span><ul>' +
+      list.map(function (x) {
+        return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.title) + '</a>' +
+          (x.note ? '<span class="evidence-note">' + esc(x.note) + '</span>' : '') + '</li>';
+      }).join('') + '</ul></div>';
+  }
+
   function pageSpecimen(id) {
     var n = byId[id];
     if (!n) return pageMissing();
@@ -355,6 +365,7 @@
               ladder(n) +
               '<p class="short">' + esc(n.short) + '</p>' +
               (n.long ? '<p class="long">' + esc(n.long) + '</p>' : '') +
+              evidence(n) +
               meta + members +
               '<div class="btn-row">' +
                 '<a class="btn btn-ink" href="#/submit?' + qs({ type: 'photo', food: food }) + '">Submit a photo</a>' +

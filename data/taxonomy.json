@@ -1802,8 +1802,8 @@
       "parent": "canis-farcitus",
       "scientific": "C. f. costcoensis",
       "common": "Costco Hot Dog",
-      "short": "The food court legend, eaten standing at a metal table near the exit, with a drink and a sense of civic pride. The flagship of the taxonomy.",
-      "long": "Collected in the wild between the checkout lanes and the exit. Habitat: a metal table, never a chair. Diet of the observer: whatever was in the cart. The specimen is still ordered as \"a hot dog,\" which is why it is a variety and not a species of its own.",
+      "short": "The food court legend: a quarter-pound hot dog and a 20-ounce soda for $1.50, a price unchanged since the mid-1980s. The price is part of the specimen. The flagship of the taxonomy.",
+      "long": "Collected in the wild between the checkout lanes and the exit. Habitat: a metal table, never a chair. Diet of the observer: whatever was in the cart. The specimen is still ordered as \"a hot dog,\" which is why it is a variety and not a species of its own. Diagnostic trait: the $1.50 price tag. Should the price ever change, this variety will be declared extinct and any successor described as a new variety. Since April 2026 a bottle of water may stand in for the soda; the Board considers this normal variation. Two Costco CEOs have been asked about the price on the record. Both said no, one more colorfully.",
       "verdict": "Sandwich",
       "sketch": "hotdog",
       "featured": true,
@@ -1814,7 +1814,19 @@
         "costco hot dog",
         "costco dog"
       ],
-      "catalog": 128
+      "catalog": 128,
+      "sources": [
+        {
+          "title": "Costco CEO promises the $1.50 hot dog isn't going away: 'The price will not change as long as I'm around'",
+          "url": "https://finance.yahoo.com/economy/articles/costco-ceo-promises-1-50-110000758.html",
+          "note": "Fortune, via Yahoo Finance, March 2026. Current CEO Ron Vachris."
+        },
+        {
+          "title": "Costco hot dogs have cost $1.50 since the 1980s. Here's why prices aren't changing",
+          "url": "https://www.npr.org/2024/06/03/nx-s1-4990206/costco-hot-dog-price",
+          "note": "NPR, June 2024. Includes co-founder and former CEO Jim Sinegal's warning to his successor about raising the price."
+        }
+      ]
     },
     {
       "id": "canis-farcitus-chicagoensis",

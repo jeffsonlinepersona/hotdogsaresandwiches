@@ -366,6 +366,11 @@ main { flex: 1; outline: none; }
 
 .specimen-body .short { font-size: 18px; }
 .specimen-body .long { font-size: 16px; color: var(--ink-2); }
+.evidence { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 4px 0 8px; }
+.evidence ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.evidence li { font-size: 15px; margin: 0 0 6px; }
+.evidence a { font-weight: 600; }
+.evidence-note { display: block; font-size: 14px; color: var(--ink-2); }
 .members h2 { font-size: 24px; margin-bottom: 8px; }
 .members ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
 .members li a {

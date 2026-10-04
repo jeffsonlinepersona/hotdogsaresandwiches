@@ -78,6 +78,7 @@ ok(under('cerevisia-vulgaris-barbata', 'fermentata'), 'beer is a fermented drink
 ok(under('lemonade', 'soluta') && !under('lemonade', 'expressa'), 'lemonade is not juice');
 ok(under('oat-milk', 'pseudolactae') && !under('oat-milk', 'nativa'), 'oat milk is not milk');
 ok(under('cafeus-lacteus', 'miscellae') && !under('cafeus-lacteus', 'infusa'), 'a latte is not coffee');
+ok(byId['canis-farcitus-costcoensis'].short.includes('$1.50') && (byId['canis-farcitus-costcoensis'].sources || []).length >= 1, 'the Costco dog card states its price and cites evidence');
 ok(under('espresso', 'crema') && under('espresso', 'infusa') && !under('espresso', 'expressa') && !under('espresso', 'cafeus'), 'espresso is its own genus in Infusa, not Expressa');
 ok(['crema-ictus-duplex','crema-ictus-contractus','crema-ictus-longus'].every(id => byId[id] && byId[id].parent === 'espresso'), 'doppio, ristretto and lungo are espresso varieties');
 ok(under('milkshake', 'cruda') && under('smoothie', 'cruda') && !under('milkshake', 'liquida'), 'milkshakes and smoothies are food, not drinks');
