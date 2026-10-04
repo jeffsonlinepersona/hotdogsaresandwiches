@@ -13,7 +13,9 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Logged:** 2026-10-03
 - First wild photos on specimen cards.
 - Rulings page: dated changelog of decisions and reversals (gazpacho, toast, pickles).
-- Search box ("where's pizza?") that jumps to a node.
+- ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.
+- Analytics: built, waiting on Jeff's GoatCounter site code.
+- Taxonomy decisions pending: restaurant ramen (soup or not), California roll (sandwich via pressed rice, or not).
 - Link previews with an image when a card link is texted.
 
 ### Version 3 items

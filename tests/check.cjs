@@ -31,6 +31,7 @@ tax.nodes.forEach(n => {
     if (p) ok(RANKS.indexOf(n.rank) > RANKS.indexOf(p.rank), 'rank order ' + p.id + ' > ' + n.id);
   }
   if (n.photo) ok(fs.existsSync(path.join(ROOT, n.photo)), 'photo file ' + n.photo);
+  if (n.aliases) ok(Array.isArray(n.aliases) && n.aliases.every(a => typeof a === 'string' && a.trim()), 'aliases are a list of names on ' + n.id);
 });
 function ancestors(id) {
   const out = []; let n = byId[id], g = 0;
@@ -62,6 +63,11 @@ ok(under('canis-farcitus', 'sandwichae'), 'hot dog is a sandwich');
 ok(under('tacoforma-classicus', 'sandwichae'), 'taco is a sandwich');
 ok(!under('open-faced-sandwich', 'sandwichae'), 'open-faced sandwich is not a sandwich');
 ok(under('cereal', 'cruda') && !under('cereal', 'decocta'), 'cereal is not soup');
+ok(under('california-roll', 'sandwichae'), 'California roll is a sandwich (pressed rice container)');
+ok(under('salmon-nigiri', 'apertae'), 'nigiri is open-faced');
+ok(under('tuna-sashimi', 'naturalia'), 'sashimi is one food');
+ok(under('cup-noodles', 'decocta'), 'cup noodles are soup');
+ok(under('cerevisia-vulgaris-barbata', 'liquida'), 'beer is a drink');
 
 console.log('4. Every page renders');
 let JSDOM, VirtualConsole;
@@ -236,6 +242,56 @@ async function go(hash) {
   ok(copyBtn.textContent === 'Copied', 'copy button confirms');
   ok(!f2.querySelector('button[type="submit"]').disabled, 'button re-enabled after network failure');
   ok(!/[\w.+-]+@[\w-]+\.[a-z]{2,}/i.test(appJs), 'no email address in the site code');
+
+  // Search
+  const S = q => w.__HDS.searchNodes(q).map(n => n.id);
+  const first = (q, id) => ok(S(q)[0] === id, 'search "' + q + '" → ' + id + ' (got ' + (S(q)[0] || 'nothing') + ')');
+  first('pizza', 'thin-crust-pizza');
+  first('Pizza ', 'thin-crust-pizza');
+  first('pizzza', 'thin-crust-pizza');
+  first('hot dog', 'canis-farcitus');
+  first('hotdogs', 'canis-farcitus');
+  first('costco', 'canis-farcitus-costcoensis');
+  first('cup o noodles', 'cup-noodles');
+  first('Cup-O-Noodles', 'cup-noodles');
+  first('ramen', 'shop-ramen');
+  first('IPA', 'cerevisia-vulgaris-barbata');
+  first('beer', 'cerevisia-vulgaris');
+  first('california roll', 'california-roll');
+  first('sashimi', 'tuna-sashimi');
+  first('caesar salad', 'chicken-caesar-salad');
+  first('tacos', 'tacoforma-classicus');
+  first('cornflakes', 'cereal');
+  first('Canis farcitus', 'canis-farcitus');
+  ok(S('xyzzy plover').length === 0, 'nonsense finds nothing');
+
+  // Analytics events (stubbed GoatCounter)
+  const counted = [];
+  w.__HDS.setAnalytics('test-code');
+  w.goatcounter = { count: v => counted.push(v) };
+  m = await go('#/search?q=xyzzy%20plover');
+  ok(/Nothing in the collection matches/.test(m.textContent), 'no-results page');
+  ok(counted.some(v => v.event && v.path === 'search-not-found/xyzzy-plover'), 'not-found search is logged');
+  ok(m.querySelector('a[href^="#/submit"]').getAttribute('href').includes('food=xyzzy%20plover'), 'no-results offers a pre-filled request');
+  await go('#/search?q=xyzzy%20plover');
+  ok(counted.filter(v => v.path === 'search-not-found/xyzzy-plover').length === 1, 'a repeated miss is logged once');
+  m = await go('#/search?q=pizza');
+  ok(m.querySelectorAll('.results li').length >= 1 && /Thin-crust pizza/.test(m.querySelector('.results li').textContent), 'results page lists pizza first');
+  ok(counted.some(v => v.event && v.path === 'search/pizza'), 'successful search is logged');
+  await go('#/specimen/cereal');
+  ok(counted.some(v => !v.event && v.path === '/specimen/cereal'), 'page views are counted by route');
+  w.__HDS.setAnalytics('');
+
+  // Header search box
+  w.document.getElementById('q').value = 'beer';
+  w.document.getElementById('site-search').dispatchEvent(new w.Event('submit', { bubbles: true, cancelable: true }));
+  await tick();
+  ok(w.location.hash === '#/search?q=beer', 'header search box goes to results');
+
+  // Classify can start with a food from search
+  await go('#/');
+  m = await go('#/classify?food=xyzzy');
+  ok(m.querySelector('#cls-food').value === 'xyzzy', 'classifier pre-fills the food from search');
 
   ok(errors.length === 0, 'no script errors' + (errors.length ? ':\n' + errors.join('\n') : ''));
   finish();

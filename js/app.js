@@ -19,6 +19,9 @@
   var PHOTO_TYPES = ['image/jpeg', 'image/png', 'image/heic', 'image/heif', 'image/webp'];
   var PHOTO_EXT = /\.(jpe?g|png|heic|heif|webp)$/i;
 
+  // GoatCounter site code (the part before .goatcounter.com). Empty = analytics off.
+  var GOATCOUNTER_CODE = '';
+
   var RANKS = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species', 'variety'];
   var PLURAL = {
     kingdom: 'Kingdoms', phylum: 'Phyla', 'class': 'Classes', order: 'Orders',
@@ -559,6 +562,154 @@
     });
   }
 
+  // ---------- Search ----------
+
+  function norm(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/['’]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+  function singular(s) { return s.replace(/\b(\w{3,}?)(es|s)\b/g, function (m, a, b) { return b === 'es' && /(ch|sh|x|z|ss)$/.test(a) ? a : (b === 'es' ? a + 'e' : a); }); }
+
+  function editDistance(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    var prev = [], cur, i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      cur = [i];
+      var rowMin = i;
+      for (j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+        if (cur[j] < rowMin) rowMin = cur[j];
+      }
+      if (rowMin > max) return max + 1;
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+
+  function searchNodes(query) {
+    var q = singular(norm(query));
+    if (!q) return [];
+    var qWords = q.split(' ');
+    var out = [];
+    nodes.forEach(function (n) {
+      if (n.rank === 'domain') return;
+      var names = [n.common, n.scientific].concat(n.aliases || []).map(function (s) { return singular(norm(s)); });
+      var best = 0;
+      names.forEach(function (name, idx) {
+        var bonus = idx < 2 ? 2 : 0; // a real name beats a nickname on ties
+        var s = 0;
+        if (name === q) s = 100;
+        else if (name.indexOf(q) === 0) s = 70;
+        else if ((' ' + name + ' ').indexOf(' ' + q + ' ') >= 0) s = 60;
+        else if (q.length >= 3 && name.indexOf(q) >= 0) s = 45;
+        else if (qWords.length > 1 && qWords.every(function (w) { return (' ' + name + ' ').indexOf(' ' + w) >= 0; })) s = 40;
+        else if (q.length >= 4 && editDistance(q, name, q.length >= 7 ? 2 : 1) <= (q.length >= 7 ? 2 : 1)) s = 35;
+        else if (q.length >= 4 && name.split(' ').some(function (w) { return w.length >= 4 && editDistance(q, w, 1) <= 1; })) s = 25;
+        if (s) best = Math.max(best, s + bonus);
+      });
+      if (best) {
+        // Prefer foods (species, varieties) over groups at equal scores
+        var depth = RANKS.indexOf(n.rank);
+        out.push({ node: n, score: best + depth * 0.1 });
+      }
+    });
+    out.sort(function (a, b) { return b.score - a.score || a.node.common.localeCompare(b.node.common); });
+    return out.slice(0, 25).map(function (x) { return x.node; });
+  }
+
+  function pageSearch(query) {
+    var q = (query.q || '').trim();
+    var results = q ? searchNodes(q) : [];
+    var body;
+    if (!q) {
+      body = '<p class="lede">Type a food in the search box above: a dish, a drink, or a nickname for one.</p>';
+    } else if (!results.length) {
+      logSearchMiss(q);
+      body =
+        '<div class="empty" style="padding:0;margin:0"><span class="eyebrow">No specimen found</span>' +
+        '<h2 style="font-size:40px;line-height:1.1">Nothing in the collection matches “' + esc(q) + '”.</h2>' +
+        '<p class="lede">Either it has not been classified yet, or it does not exist. The Board has been notified of the gap.</p>' +
+        '<div class="btn-row"><a class="btn btn-accent" href="#/classify?' + qs({ food: q }) + '">Classify it yourself</a>' +
+        '<a class="btn" href="#/submit?' + qs({ type: 'new', food: q }) + '">Ask the Board to add it</a></div></div>';
+    } else {
+      logSearchHit(q, results.length);
+      body =
+        '<p class="lede" style="margin-bottom:24px">' + results.length + ' specimen' + (results.length === 1 ? '' : 's') + ' match “' + esc(q) + '”.</p>' +
+        '<ul class="results">' + results.map(function (n) {
+          var path = lineage(n.id).filter(function (x) { return x.rank !== 'domain' && x.id !== n.id; })
+            .map(function (x) { return x.scientific; }).join(' › ');
+          return '<li><a href="#/specimen/' + esc(n.id) + '">' +
+            '<span><span class="c">' + esc(n.common) + '</span> <span class="s">' + esc(n.scientific) + '</span></span>' +
+            badge(n) +
+            '<span class="path">' + esc(cap(n.rank)) + (path ? ' in ' + esc(path) : '') + '</span></a></li>';
+        }).join('') + '</ul>';
+    }
+    return {
+      title: (q ? '“' + q + '” · ' : '') + 'Search · HotDogsAreSandwiches',
+      html:
+        '<div class="page">' +
+          '<header class="page-head"><span class="eyebrow">Search the collection</span>' +
+          '<h1>' + (q ? 'Results' : 'Find a food') + '</h1></header>' +
+          body +
+        '</div>'
+    };
+  }
+
+  // ---------- Analytics (GoatCounter; off until GOATCOUNTER_CODE is set) ----------
+
+  var gcQueue = [];
+  var loggedSearches = {};
+
+  function gcCount(vars) {
+    if (!GOATCOUNTER_CODE) return;
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      try { window.goatcounter.count(vars); } catch (e) { /* never break the page over analytics */ }
+    } else {
+      gcQueue.push(vars);
+    }
+  }
+
+  function startAnalytics() {
+    if (!GOATCOUNTER_CODE || !/^[a-z0-9-]+$/.test(GOATCOUNTER_CODE)) return;
+    window.goatcounter = window.goatcounter || {};
+    window.goatcounter.no_onload = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', 'https://' + GOATCOUNTER_CODE + '.goatcounter.com/count');
+    s.onload = function () { var q = gcQueue; gcQueue = []; q.forEach(gcCount); };
+    document.head.appendChild(s);
+
+    // Public visitor count in the footer (needs "Allow adding visitor counts" in GoatCounter settings)
+    fetch('https://' + GOATCOUNTER_CODE + '.goatcounter.com/counter/TOTAL.json')
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) {
+        var el = document.getElementById('visit-count');
+        if (el && j && j.count) { el.textContent = j.count + ' visits logged by the Board'; el.hidden = false; }
+      })
+      .catch(function () { /* counter not enabled: stay hidden */ });
+  }
+
+  function trackPage(r) {
+    var path = '/' + (r.route === 'home' ? '' : r.route) + (r.id ? '/' + r.id : '');
+    gcCount({ path: path, title: document.title });
+  }
+
+  function logSearchMiss(q) {
+    var key = 'miss:' + norm(q);
+    if (loggedSearches[key]) return;
+    loggedSearches[key] = true;
+    gcCount({ path: 'search-not-found/' + norm(q).slice(0, 60).replace(/ /g, '-'), title: 'Not found: ' + q.slice(0, 60), event: true });
+  }
+
+  function logSearchHit(q, n) {
+    var key = 'hit:' + norm(q);
+    if (loggedSearches[key]) return;
+    loggedSearches[key] = true;
+    gcCount({ path: 'search/' + norm(q).slice(0, 60).replace(/ /g, '-'), title: 'Search: ' + q.slice(0, 60) + ' (' + n + ')', event: true });
+  }
+
   function pageThanks() {
     return {
       title: 'Received · HotDogsAreSandwiches',
@@ -598,15 +749,22 @@
       case 'rules': page = pageRules(); break;
       case 'tree': page = pageTree(r.id); break;
       case 'specimen': page = pageSpecimen(r.id); break;
-      case 'classify': page = pageClassify(); break;
+      case 'classify':
+        if (!cls.started && r.query.food && !cls.food) cls.food = r.query.food;
+        page = pageClassify();
+        break;
       case 'submit': page = pageSubmit(r.query); break;
       case 'thanks': page = pageThanks(); break;
+      case 'search': page = pageSearch(r.query); break;
       default: page = pageMissing();
     }
 
     main.innerHTML = page.html;
     document.title = page.title;
     if (page.after) page.after();
+    var box = document.getElementById('q');
+    if (box && document.activeElement !== box) box.value = r.route === 'search' ? (r.query.q || '') : '';
+    trackPage(r);
 
     var navRoute = r.route === 'specimen' ? 'tree' : r.route;
     document.querySelectorAll('.site-nav a').forEach(function (a) {
@@ -768,6 +926,19 @@
 
   window.addEventListener('hashchange', render);
 
+  var searchForm = document.getElementById('site-search');
+  if (searchForm) {
+    searchForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = document.getElementById('q');
+      var q = input.value.trim();
+      if (!q) { input.focus(); return; }
+      input.blur(); // closes the phone keyboard
+      var target = '#/search?' + qs({ q: q });
+      if (location.hash === target) render(); else location.hash = target;
+    });
+  }
+
   // ---------- Start ----------
 
   function boot() {
@@ -776,6 +947,7 @@
       fetch('data/rules.json').then(function (r) { if (!r.ok) throw new Error('rules ' + r.status); return r.json(); })
     ]).then(function (res) {
       indexData(res[0], res[1]);
+      startAnalytics();
       render();
     }).catch(function (err) {
       main.innerHTML = '<div class="empty"><span class="eyebrow">Error</span><h1>The collection is closed.</h1>' +
@@ -785,7 +957,11 @@
   }
 
   // Exposed for automated checks only
-  window.__HDS = { indexData: indexData, render: render, validateSubmit: validateSubmit, lineage: lineage, byId: function () { return byId; } };
+  window.__HDS = {
+    indexData: indexData, render: render, validateSubmit: validateSubmit, lineage: lineage,
+    byId: function () { return byId; }, searchNodes: searchNodes,
+    setAnalytics: function (code) { GOATCOUNTER_CODE = code; }
+  };
 
   boot();
 })();

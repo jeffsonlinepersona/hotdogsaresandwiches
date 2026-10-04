@@ -32,7 +32,13 @@ Edit `data/taxonomy.json` only. Copy an existing entry and change:
 - `scientific` and `common`: the two names
 - `short`: one or two sentences; `long` is optional field notes
 - `verdict` (optional): Sandwich, Not a sandwich, Soup or Not soup
+- `aliases` (optional): other names people might search for, such as `["cup noodles", "instant ramen"]`
 - `ruled_on`: the date, as YYYY-MM-DD
+
+## Search and analytics
+
+The search box matches common names, scientific names and `aliases`, and tolerates small typos.
+Analytics use [GoatCounter](https://www.goatcounter.com) (no cookies). Set `GOATCOUNTER_CODE` at the top of `js/app.js` to turn them on. Searches that find nothing are logged as events named `search-not-found/<words>`.
 
 ## Adding a photo
 
