@@ -24,7 +24,7 @@ It is a static site on GitHub Pages. No server, no database, no build step.
 
 ## Adding a food
 
-**House rule: full depth.** Every species gets the whole chain: kingdom, phylum, class, order, family, genus, species. If a new food has no home at some level, stop, go up to that level, and decide what belongs there first. `tests/check.cjs` enforces this for each finished kingdom (currently Liquida).
+**House rule: full depth.** Every species gets the whole chain: kingdom, phylum, class, order, family, genus, species. If a new food has no home at some level, stop, go up to that level, and decide what belongs there first. `tests/check.cjs` enforces this for each finished kingdom (currently Liquida and Sandwichae).
 
 What each level means, in plain words:
 
@@ -33,9 +33,9 @@ What each level means, in plain words:
 | Kingdom | What job does it do at the table? |
 | Phylum | What is its basic build (or, for drinks, how was it made)? |
 | Class | What is the key part made of, or how is it made? |
-| Order | What shape or state is it in (sides of bread, still or sparkling)? |
-| Family | What is it built around? |
-| Genus | What would you call the group on a menu? |
+| Order | What shape or state is it in (for sandwiches: slices from a loaf, or a whole piece of bread; for drinks: still or sparkling)? |
+| Family | What is it built around (for sandwiches: what kind of bread)? |
+| Genus | What would you call the group on a menu (for sandwiches: what shape is the filling, such as tube, disc or sheet)? |
 | Species | What do you actually order? |
 | Variety | How is it made your way, still ordered by the same name? |
 

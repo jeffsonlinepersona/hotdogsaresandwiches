@@ -79,6 +79,11 @@ ok(under('lemonade', 'soluta') && !under('lemonade', 'expressa'), 'lemonade is n
 ok(under('oat-milk', 'pseudolactae') && !under('oat-milk', 'nativa'), 'oat milk is not milk');
 ok(under('cafeus-lacteus', 'miscellae') && !under('cafeus-lacteus', 'infusa'), 'a latte is not coffee');
 ok(byId['canis-farcitus-costcoensis'].short.includes('$1.50') && (byId['canis-farcitus-costcoensis'].sources || []).length >= 1, 'the Costco dog card states its price and cites evidence');
+ok(['canis-farcitus','hamburger','meatball-sub','lobster-roll','cold-cut-combo','tacoforma-classicus','burrito','corn-dog'].every(id => under(id, 'integriformes')), 'whole-bread sandwiches share Integriformes');
+ok(under('sandwicus-classicus', 'partiformes') && !under('sandwicus-classicus', 'integriformes'), 'the classic sandwich is part of a loaf');
+ok(under('canis-farcitus', 'panidae') && under('meatball-sub', 'panidae') && under('hamburger', 'panidae'), 'hot dog, meatball sub and burger share the buns-and-rolls family');
+ok(under('canis-farcitus', 'canis') && under('hamburger', 'discus') && under('cold-cut-combo', 'lamina'), 'filling shape decides the sandwich genus');
+ok(!['bifaciformes','trifaciformes','totiformes','frankfurtidae','fissipanidae'].some(id => byId[id]), 'side-counting orders are retired');
 ok(under('espresso', 'crema') && under('espresso', 'infusa') && !under('espresso', 'expressa') && !under('espresso', 'cafeus'), 'espresso is its own genus in Infusa, not Expressa');
 ok(['crema-ictus-duplex','crema-ictus-contractus','crema-ictus-longus'].every(id => byId[id] && byId[id].parent === 'espresso'), 'doppio, ristretto and lungo are espresso varieties');
 ok(under('milkshake', 'cruda') && under('smoothie', 'cruda') && !under('milkshake', 'liquida'), 'milkshakes and smoothies are food, not drinks');
@@ -86,7 +91,7 @@ ok(under('gasosa-aquatica', 'aquae-spumiformes') && under('aqua-pura', 'aquae-tr
 ok(byId['cola-vulgaris-fontana'] && byId['cola-vulgaris-fontana'].rank === 'variety', 'fountain soda is a variety');
 
 // Full depth: every species in a finished kingdom has every rank above it
-const FULL = ['liquida'];
+const FULL = ['liquida', 'sandwichae'];
 const need = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus'];
 tax.nodes.filter(n => n.rank === 'species' && FULL.some(k => under(n.id, k))).forEach(n => {
   const ranks = ancestors(n.id).map(a => byId[a].rank);
@@ -194,9 +199,11 @@ async function go(hash) {
   await explore([]);
   ok(results.size >= 12, 'classifier reaches ' + results.size + ' distinct results');
 
-  // Hot dog path: Constructa > container > dough > three sides
+  // Hot dog path: Constructa > container > bread > whole bun
   m = await walkUI([3, 1, 0, 1]);
-  ok(/Trifaciformes/.test(m.textContent), 'hot dog path lands in Trifaciformes');
+  ok(/Integriformes/.test(m.textContent), 'hot dog path lands in Integriformes');
+  m = await walkUI([3, 1, 0, 0]);
+  ok(/Partiformes/.test(m.textContent), 'sliced-loaf path lands in Partiformes');
   m = await walkUI([3, 3, 1]);
   ok(/Decocta/.test(m.textContent), 'broth path lands in Decocta (ramen)');
   m = await walkUI([3, 3, 2]);

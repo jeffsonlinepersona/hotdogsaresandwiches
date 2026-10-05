@@ -52,11 +52,12 @@
     {
       "id": "sandwich",
       "title": "The container test",
-      "summary": "When one food holds another, the container's material decides the class. A sandwich needs a bread container (baked, griddled or fried dough) on two or more sides.",
+      "summary": "A sandwich is a filling held between bread: bread on opposite sides of the filling. When one food holds another, the container's material decides the class, and sandwiches are then sorted by their bread all the way down.",
       "points": [
-        "Bread on two sides (top and bottom): Bifaciformes, the classic.",
-        "Bread on three sides (hinged bun, split roll, fold): Trifaciformes. The hot dog lives here.",
-        "Bread on all sides, sealed: Totiformes. The burrito lives here.",
+        "Slices taken from a loaf: Partiformes, the classic.",
+        "One whole roll, bun, tortilla or batter coating per sandwich, however it is cut, hinged, folded or sealed: Integriformes. The hot dog, the burger, the taco and the burrito all live here.",
+        "Below that, the kind of bread decides the family (buns and rolls, tortillas, fried batter), and only then does the filling's shape decide the genus: tubes, discs, spheres, chunks, sheets.",
+        "Classify food as prepared, not as eaten. Folding your own pizza slice is proper technique, not reclassification. Cutting a roll in half before or after building the sandwich changes nothing.",
         "Boiled or steamed dough: Dumplingae. Gyoza, ravioli, and the steamed bao.",
         "Pressed rice: Sushiae. The California roll.",
         "Pastry: Pieae. The pot pie.",
@@ -70,7 +71,7 @@
       "title": "They stand or fall together",
       "summary": "Foods with the same structure get the same ruling. You cannot accept one and reject the other.",
       "points": [
-        "Hot dogs and tacos share the three-sided shape. Expel one and the other goes too.",
+        "Hot dogs and tacos are both whole bread around a filling. Expel one and the other goes too, along with the burger.",
         "Open-faced sandwiches and thin-crust pizza share the one-sided shape. Neither is a sandwich."
       ],
       "example": "A court once ruled that one tortilla is not two slices of bread. A hot dog bun is one piece, too."
@@ -172,7 +173,7 @@
         "options": [
           {
             "label": "Bread: a bun, roll, tortilla, taco shell or batter",
-            "next": "sides"
+            "next": "portion"
           },
           {
             "label": "Boiled or steamed dough: a dumpling wrapper, pasta or steamed bun",
@@ -189,24 +190,6 @@
           {
             "label": "A whole food: lettuce, a pepper, a banana",
             "result": "pseudosandwichae"
-          }
-        ]
-      },
-      "sides": {
-        "question": "How many sides does the container touch the filling on?",
-        "help": "Look at it from the end, like a cross-section.",
-        "options": [
-          {
-            "label": "Two: a top and a bottom",
-            "result": "bifaciformes"
-          },
-          {
-            "label": "Three: hinged, split or folded",
-            "result": "trifaciformes"
-          },
-          {
-            "label": "All of them: fully sealed",
-            "result": "totiformes"
           }
         ]
       },
@@ -269,6 +252,20 @@
           {
             "label": "Two finished drinks mixed together: latte, cocktail",
             "result": "miscellae"
+          }
+        ]
+      },
+      "portion": {
+        "question": "How much bread does one sandwich use?",
+        "help": "Ignore any cutting. A roll cut in half before or after is still one roll.",
+        "options": [
+          {
+            "label": "A few slices from a loaf",
+            "result": "partiformes"
+          },
+          {
+            "label": "One whole roll, bun, tortilla or batter coating",
+            "result": "integriformes"
           }
         ]
       }

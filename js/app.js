@@ -28,7 +28,7 @@
     family: 'Families', genus: 'Genera', species: 'Species', variety: 'Varieties'
   };
   var STANDING = [
-    { id: 'canis-farcitus', food: 'Hot dog', why: 'Bun on three sides. Case closed.' },
+    { id: 'canis-farcitus', food: 'Hot dog', why: 'Filling between bread. Case closed.' },
     { id: 'tacoforma-classicus', food: 'Taco', why: 'Same shape as the hot dog. They stand or fall together.' },
     { id: 'open-faced-sandwich', food: 'Open-faced sandwich', why: 'One slice is a topping arrangement.' },
     { id: 'cereal', food: 'Cereal', why: 'Never cooked together. Not our problem.' }
