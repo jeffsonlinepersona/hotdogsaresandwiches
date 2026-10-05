@@ -8,14 +8,14 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Logged:** 2026-10-04
 - **Want:** a page of official responses to the arguments people keep making, in the Review Board's semi-serious voice. Part FAQ, part court record. Replaces the "dated changelog" idea below.
 - **Each entry:** the objection as people say it ("Espresso is literally pressed, so it's Expressa"), the Board's ruling, the rule it rests on (linked to the Rules page), the specimens affected (linked to their cards) and the date ruled.
-- **Starter entries:** espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks.
+- **Starter entries:** espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks; the burger is exactly as much a sandwich as the hot dog; folding your own pizza slice does not make it a sandwich; the Subway 6-inch is still whole bread, just a terrible way of making it.
 - **Also holds** a short "Recent rulings" list, newest first, for reversals and new placements.
 - **Guiding principle to quote at the top:** "Follow the logic and rules, even when they challenge our preconceptions." Opening axiom: hot dogs are sandwiches.
 
 ### Specimen card extras: history, rulings and status
 - **Logged:** 2026-10-04
 - **Want:** each card gets an optional short history (when it was classified, anything that moved it, e.g. "milkshake: deported from Liquida, 2026-10-03"), links to any Rulings entries about it, and a visible status.
-- **Status options** (cards already carry a `status` field, today only "ruled" or "pending"):
+- **Status options** (cards already carry a `status` field, today only "ruled" or "pending review", and the card does not show it yet):
   - **Ruled:** settled science.
   - **Pending review:** the Board is deliberating, indefinitely.
   - **Disputed:** an objection is on file.
@@ -66,15 +66,30 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.
 - Analytics: live 2026-10-03 at hotdogsaresandwiches.goatcounter.com (page views, searches, not-found searches).
 - Taxonomy: container test adopted 2026-10-03 (Sandwichae needs bread; new Dumplingae, Sushiae, Pieae; casseroles sort by structure). Broth clause adopted 2026-10-03: restaurant ramen and pho are soup; cereal and gazpacho still are not.
-- Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03). Next: Constructa outside Sandwichae, Naturalia, Condimenta, Incertae sedis.
+- Sandwich restructure adopted 2026-10-04: a sandwich is a filling between bread; orders by how the bread is portioned (Partiformes: slices from a loaf; Integriformes: whole bread), families by kind of bread, genera by filling shape (tubes, discs, spheres, chunks, sheets). Added the hamburger and the Subway cold cut combo. Preparation, not eating, decides.
+- Espresso given its own genus, *Crema*, in Infusa (2026-10-04). Costco Hot Dog card now states the $1.50 price and cites sources (2026-10-04).
+- Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03), Sandwichae (2026-10-04). Next: the rest of Constructa (Dumplingae, Sushiae, Pieae, Pseudosandwichae, Stratifica, Immersa, Mixta, Formata), Naturalia, Condimenta, Incertae sedis.
+- Agreed but not yet added: hot chocolate and chai (Liquida), bubble tea (Constructa).
+- Ruling needed: Americano, a variety of espresso or a drink of drinks (Miscellae, like the latte).
 - Link previews with an image when a card link is texted.
 
 ### Version 3 items
 - **Logged:** 2026-10-03
 - "Dispute this ruling" opens a dedicated dispute mode (today it pre-fills the form).
 - Optional custom domain.
+- Social media links: see its own item above.
 
 ## Known issues
+
+### Footer visitor count may not show
+- **Logged:** 2026-10-04
+- **Cause:** the footer count reads GoatCounter's public counter, which only works when "Allow adding visitor counts" is turned on in the GoatCounter site settings. Not yet confirmed. The footer stays hidden until the counter answers, so nothing looks broken.
+- **Fix:** Jeff turns the setting on.
+
+### Old links to retired groups show "Specimen escaped"
+- **Logged:** 2026-10-04
+- **Cause:** the 2026-10-04 sandwich restructure retired the old order and family ids (Bifaciformes, Trifaciformes, Totiformes, Frankfurtidae, Fissipanidae, Classicidae, Tacoforma). Food cards kept their ids, so links to foods still work.
+- **Possible fix:** a small redirect map from retired ids to their successors, if anyone ever shared one of those links.
 
 ### FormSubmit blocked on some networks
 - **Logged:** 2026-10-03
