@@ -12,6 +12,13 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Also holds** a short "Recent rulings" list, newest first, for reversals and new placements.
 - **Guiding principle to quote at the top:** "Follow the logic and rules, even when they challenge our preconceptions." Opening axiom: hot dogs are sandwiches.
 
+### Publish the assembly rule on the site
+- **Logged:** 2026-10-05
+- **Want:** the assembly rule ("a combination is classified by the structure it forms, not by its parts; the parts keep their own cards") explained on the site. Written up in the requirements doc and README; where it lives on the site is undecided.
+- **Options:** a Rulings FAQ entry answering "a hot dog is just a sausage and a bun"; rule #10 on the Rules page; or both, with the FAQ linking to the rule.
+- **Content ready:** the rule, the trigger ("built to be eaten as one thing and ordered by one name"), the side-by-side to cooked-together table, the lichen precedent, and the reversibility line (a frank and a disappointed bun).
+- **Optional companion:** add a plain frank and a plain bun to Formata so the parts visibly have cards of their own; the hot dog card could link to both.
+
 ### Specimen card extras: history, rulings and status
 - **Logged:** 2026-10-04
 - **Want:** each card gets an optional short history (when it was classified, anything that moved it, e.g. "milkshake: deported from Liquida, 2026-10-03"), links to any Rulings entries about it, and a visible status.

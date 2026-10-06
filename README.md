@@ -39,6 +39,17 @@ What each level means, in plain words:
 | Species | What do you actually order? |
 | Variety | How is it made your way, still ordered by the same name? |
 
+**The assembly rule.** A combination is classified by the structure it forms, not by its parts; the parts keep their own cards. If it is built to be eaten as one thing and ordered by one name, it is one specimen:
+
+| How the foods meet | Example | Result |
+| --- | --- | --- |
+| Side by side | Frank next to a bun on a plate | Two specimens (a meal, not a food) |
+| One on top of another | Toppings on one slice | Apertae (open-faced) |
+| One holds the other | Frank in a bun | New species (Involucra) |
+| Tossed together | Chicken Caesar salad | Mixta |
+| Cooked together into a liquid | Soup | Decocta |
+| Something added on | Ketchup on the hot dog | Variety, not a new species |
+
 Edit `data/taxonomy.json` only. Copy an existing entry and change:
 
 - `id`: unique, lowercase with dashes (it becomes the card's link)
