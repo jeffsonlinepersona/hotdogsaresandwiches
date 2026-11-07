@@ -32,7 +32,7 @@
         "Food role (meal, course, snack, dessert): Constructa, even if drunk through a straw.",
         "Beverage role (hydrate, refresh, stimulate, intoxicate): Liquida, even if assembled."
       ],
-      "example": "A milkshake is a dessert wearing a straw, so it sits with gazpacho in Immersa. A cocktail is assembled, but it is still a drink."
+      "example": "A milkshake is a dessert wearing a straw, so it sits with gazpacho in Immersa. A cocktail is assembled, but it is still a drink. Bubble tea is chewed, so it sits with cereal."
     },
     {
       "id": "drinks",
@@ -41,13 +41,27 @@
       "points": [
         "Ready-made by nature (water, animal milk): Nativa.",
         "Squeezed, pressed or strained from a plant (juice, oat milk): Expressa.",
-        "Steeped or pushed through, then strained (coffee, espresso, tea): Infusa.",
-        "Things dissolved into water (soda, lemonade, sports drinks): Soluta.",
+        "Steeped or pushed through, then strained (coffee, espresso, tea, chai): Infusa.",
+        "Things dissolved into water or milk (soda, lemonade, sports drinks, hot chocolate): Soluta.",
         "Microbes did the work (beer, wine): Fermentata.",
         "Two finished drinks mixed into a new one (latte, cocktails): Miscellae.",
         "Still or sparkling is decided one level down, at order."
       ],
-      "example": "Lemonade is not juice: it is mostly water with things dissolved in. Oat milk is not milk: it is pressed from a plant. A latte is not coffee: it is two drinks mixed. A milkshake is not a drink at all. Espresso is not Expressa either: the water gets pressed, not the bean."
+      "example": "Lemonade is not juice: it is mostly water with things dissolved in. Oat milk is not milk: it is pressed from a plant. A latte is not coffee: it is two drinks mixed. A milkshake is not a drink at all. Espresso is not Expressa either: the water gets pressed, not the bean. Hot chocolate is not Infusa: the cocoa stays in the cup. Bubble tea is not a drink: you chew it."
+    },
+    {
+      "id": "assembly",
+      "title": "The assembly rule",
+      "summary": "A combination is classified by the structure it forms, not by its parts. If it is built to be eaten as one thing and ordered by one name, it is one specimen. The parts keep their own cards.",
+      "points": [
+        "Side by side (a frank next to a bun on a plate): two specimens. A meal, not a food.",
+        "One on top of another (toppings on one slice): Apertae, open-faced.",
+        "One holds the other (a frank in a bun): a new species, in Involucra.",
+        "Tossed together (chicken Caesar salad): Mixta.",
+        "Cooked together into a liquid: soup, in Decocta.",
+        "Something added on (ketchup on the hot dog): a variety, not a new species."
+      ],
+      "example": "\"A hot dog is just a sausage and a bun.\" And a BLT is just bacon and bread: if assembly does not count, no sandwich exists, including the ones everyone agrees on. Biology agrees. A lichen is a fungus and an alga living as one, and it is named after the fungus, its structural partner. Take the frank out and you have two specimens again: a frank and a disappointed bun. Food speciation is reversible, but only before the first bite."
     },
     {
       "id": "sandwich",

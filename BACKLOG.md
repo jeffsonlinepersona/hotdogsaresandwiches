@@ -8,16 +8,9 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - **Logged:** 2026-10-04
 - **Want:** a page of official responses to the arguments people keep making, in the Review Board's semi-serious voice. Part FAQ, part court record. Replaces the "dated changelog" idea below.
 - **Each entry:** the objection as people say it ("Espresso is literally pressed, so it's Expressa"), the Board's ruling, the rule it rests on (linked to the Rules page), the specimens affected (linked to their cards) and the date ruled.
-- **Starter entries:** espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks; the burger is exactly as much a sandwich as the hot dog; folding your own pizza slice does not make it a sandwich; the Subway 6-inch is still whole bread, just a terrible way of making it.
+- **Starter entries:** a hot dog is not "just a sausage and a bun" (the assembly rule); bubble tea is not a drink; espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks; the burger is exactly as much a sandwich as the hot dog; folding your own pizza slice does not make it a sandwich; the Subway 6-inch is still whole bread, just a terrible way of making it.
 - **Also holds** a short "Recent rulings" list, newest first, for reversals and new placements.
 - **Guiding principle to quote at the top:** "Follow the logic and rules, even when they challenge our preconceptions." Opening axiom: hot dogs are sandwiches.
-
-### Publish the assembly rule on the site
-- **Logged:** 2026-10-05
-- **Want:** the assembly rule ("a combination is classified by the structure it forms, not by its parts; the parts keep their own cards") explained on the site. Written up in the requirements doc and README; where it lives on the site is undecided.
-- **Options:** a Rulings FAQ entry answering "a hot dog is just a sausage and a bun"; rule #10 on the Rules page; or both, with the FAQ linking to the rule.
-- **Content ready:** the rule, the trigger ("built to be eaten as one thing and ordered by one name"), the side-by-side to cooked-together table, the lichen precedent, and the reversibility line (a frank and a disappointed bun).
-- **Optional companion:** add a plain frank and a plain bun to Formata so the parts visibly have cards of their own; the hot dog card could link to both.
 
 ### Specimen card extras: history, rulings and status
 - **Logged:** 2026-10-04
@@ -77,7 +70,8 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 - Sandwich restructure adopted 2026-10-04: a sandwich is a filling between bread; orders by how the bread is portioned (Partiformes: slices from a loaf; Integriformes: whole bread), families by kind of bread, genera by filling shape (tubes, discs, spheres, chunks, sheets). Added the hamburger and the Subway cold cut combo. Preparation, not eating, decides.
 - Espresso given its own genus, *Crema*, in Infusa (2026-10-04). Costco Hot Dog card now states the $1.50 price and cites sources (2026-10-04).
 - Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03), Sandwichae (2026-10-04). Next: the rest of Constructa (Dumplingae, Sushiae, Pieae, Pseudosandwichae, Stratifica, Immersa, Mixta, Formata), Naturalia, Condimenta, Incertae sedis.
-- Agreed but not yet added: hot chocolate and chai (Liquida), bubble tea (Constructa).
+- Done 2026-11-07: hot chocolate (Soluta, which now covers things dissolved into water or milk), chai (Infusa, its own species of tea) and bubble tea (Constructa, floating solids with cereal: you chew it).
+- Done 2026-11-07: the assembly rule is published as rule 5 on the Rules page. Still to do: a Rulings page entry answering "a hot dog is just a sausage and a bun", and optional cards for a plain frank and a plain bun.
 - Ruling needed: Americano, a variety of espresso or a drink of drinks (Miscellae, like the latte).
 - Link previews with an image when a card link is texted.
 

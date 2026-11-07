@@ -90,6 +90,10 @@ ok(under('sandwicus-classicus', 'partiformes') && !under('sandwicus-classicus', 
 ok(under('canis-farcitus', 'panidae') && under('meatball-sub', 'panidae') && under('hamburger', 'panidae'), 'hot dog, meatball sub and burger share the buns-and-rolls family');
 ok(under('canis-farcitus', 'canis') && under('hamburger', 'discus') && under('cold-cut-combo', 'lamina'), 'filling shape decides the sandwich genus');
 ok(!['bifaciformes','trifaciformes','totiformes','frankfurtidae','fissipanidae'].some(id => byId[id]), 'side-counting orders are retired');
+ok(under('hot-chocolate', 'soluta') && under('hot-chocolate', 'liquida') && !under('hot-chocolate', 'infusa'), 'hot chocolate is dissolved, not steeped');
+ok(under('chai', 'infusa') && under('chai', 'camellia'), 'chai is steeped tea, its own species');
+ok(under('bubble-tea', 'natantiformes') && under('bubble-tea', 'constructa') && !under('bubble-tea', 'liquida'), 'bubble tea is chewed, so it floats with cereal');
+ok(rules.rules.some(r => r.id === 'assembly'), 'the assembly rule is published');
 ok(under('espresso', 'crema') && under('espresso', 'infusa') && !under('espresso', 'expressa') && !under('espresso', 'cafeus'), 'espresso is its own genus in Infusa, not Expressa');
 ok(['crema-ictus-duplex','crema-ictus-contractus','crema-ictus-longus'].every(id => byId[id] && byId[id].parent === 'espresso'), 'doppio, ristretto and lungo are espresso varieties');
 ok(under('milkshake', 'cruda') && under('smoothie', 'cruda') && !under('milkshake', 'liquida'), 'milkshakes and smoothies are food, not drinks');

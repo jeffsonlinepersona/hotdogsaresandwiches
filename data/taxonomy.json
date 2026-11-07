@@ -580,8 +580,8 @@
       "common": "Steeped drinks",
       "status": "ruled",
       "ruled_on": "2026-10-03",
-      "trait": "Steeped in hot water, then the solids removed",
-      "short": "Coffee and tea: the flavor was pulled out of something that is then thrown away.",
+      "trait": "Steeped in hot water or milk, then the solids removed",
+      "short": "Coffee, tea and chai: the flavor was pulled out of something that is then thrown away.",
       "catalog": 44
     },
     {
@@ -851,15 +851,33 @@
       "catalog": 59
     },
     {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "chai",
+      "rank": "species",
+      "parent": "camellia",
+      "scientific": "Camellia aromatica",
+      "common": "Chai (masala chai)",
+      "short": "Tea leaves and spices simmered in milk and water, then strained. Still steeped, so still Infusa, and ordered by its own name, so its own species.",
+      "long": "A café chai latte, made from a concentrate topped with steamed milk, is two finished drinks mixed together. It would belong with the latte in Miscellae. Not yet collected.",
+      "aliases": [
+        "chai",
+        "masala chai",
+        "chai tea",
+        "spiced tea"
+      ],
+      "catalog": 213
+    },
+    {
       "id": "soluta",
       "rank": "phylum",
       "parent": "liquida",
       "scientific": "Soluta",
-      "common": "Mixed drinks of water",
+      "common": "Dissolved drinks",
       "status": "ruled",
       "ruled_on": "2026-10-03",
-      "trait": "Things dissolved into water",
-      "short": "Sugar, flavor, salts or syrup dissolved into water. Where the syrup meets the water, in a factory or a fountain, does not matter.",
+      "trait": "Things dissolved into water or milk",
+      "short": "Sugar, flavor, salts, syrup or cocoa dissolved into water or milk. Where the dissolving happens, in a factory, a fountain or a saucepan, does not matter.",
       "catalog": 60
     },
     {
@@ -1135,6 +1153,72 @@
         "body armor"
       ],
       "catalog": 80
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "cacaotae",
+      "rank": "class",
+      "parent": "soluta",
+      "scientific": "Cacaotae",
+      "common": "Cocoa drinks",
+      "trait": "Cocoa and sugar dissolved into hot milk or water",
+      "short": "Chocolate, drunk. Nothing is steeped and thrown away, so it is not Infusa: the cocoa stays in the cup.",
+      "catalog": 208
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "cacaotae-tranquilliformes",
+      "rank": "order",
+      "parent": "cacaotae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "trait": "No bubbles",
+      "short": "Flat by design. A whipped topping is foam, not carbonation.",
+      "catalog": 209
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "chocolatidae",
+      "rank": "family",
+      "parent": "cacaotae-tranquilliformes",
+      "scientific": "Chocolatidae",
+      "common": "Chocolates",
+      "trait": "Built around the cacao bean",
+      "short": "The family of everything that starts as a cacao bean and ends as a mug.",
+      "catalog": 210
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "theobroma",
+      "rank": "genus",
+      "parent": "chocolatidae",
+      "scientific": "Theobroma",
+      "common": "Hot chocolates",
+      "short": "Named for the cacao tree, Theobroma: \"food of the gods.\" The gods have not commented on its classification.",
+      "catalog": 211
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "hot-chocolate",
+      "rank": "species",
+      "parent": "theobroma",
+      "scientific": "Theobroma calidum",
+      "common": "Hot chocolate",
+      "short": "Cocoa and sugar dissolved into hot milk or water. A drink: it is sipped to warm up, not eaten as a course.",
+      "long": "Whether made from a packet, a tin of cocoa or melted chocolate, it is still ordered as hot chocolate, so those are preparations, not species. Marshmallows are an add-in and make a variety.",
+      "aliases": [
+        "hot chocolate",
+        "hot cocoa",
+        "cocoa",
+        "hot choc",
+        "drinking chocolate"
+      ],
+      "catalog": 212
     },
     {
       "id": "fermentata",
@@ -2715,6 +2799,27 @@
         "cheerios"
       ],
       "catalog": 176
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-07",
+      "id": "bubble-tea",
+      "rank": "species",
+      "parent": "natantiformes",
+      "scientific": "Margarita camelliae",
+      "common": "Bubble tea (boba)",
+      "verdict": "Not soup",
+      "short": "Chewy tapioca pearls floating in sweet milk tea. You chew it, so it is food, not a drink, and it shares an order with cereal: solids floating in a cold liquid that was never cooked with them.",
+      "long": "The tea alone is a drink. The pearls change its role: like the milkshake, it left Liquida by requiring effort. The extra-wide straw is a vessel and does not count.",
+      "aliases": [
+        "bubble tea",
+        "boba",
+        "boba tea",
+        "pearl milk tea",
+        "boba milk tea",
+        "tapioca tea"
+      ],
+      "catalog": 214
     },
     {
       "status": "ruled",
