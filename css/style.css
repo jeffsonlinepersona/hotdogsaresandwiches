@@ -349,6 +349,25 @@ main { flex: 1; outline: none; }
 .specimen-figure figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; padding: 0 16px; }
 .specimen-figure svg { width: 70%; max-width: 300px; height: auto; color: var(--ink); }
 
+.specimen-media { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+/* Plate: the primary illustration, shown whole at its own shape (layout A) */
+.specimen-figure.plate { background: none; border: 0; aspect-ratio: auto; display: block; color: var(--muted); }
+.specimen-figure.plate img { display: block; width: 100%; height: auto; object-fit: initial; box-shadow: 0 1px 2px rgba(28,27,23,0.12), 0 10px 28px rgba(28,27,23,0.10); }
+.specimen-figure.plate figcaption { text-align: left; padding: 12px 0 0; line-height: 1.5; }
+/* Mat: every photograph, in the same fixed frame (layout B) */
+.mat { display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+  background: var(--well); border: 1px solid var(--rule); aspect-ratio: 4 / 5; padding: 7%; }
+.specimen-figure .mat img, .mat img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.specimen-figure.matted { background: none; border: 0; aspect-ratio: auto; display: block; }
+.mat-label { display: block; background: var(--card); border: 1px solid var(--rule); border-top: 0; padding: 10px 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--muted); text-align: left; text-transform: none; line-height: 1.5; }
+.specimen-gallery h2 { font-size: 22px; margin-bottom: 10px; border-top: 1px solid var(--ink); padding-top: 12px; }
+.specimen-gallery ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.specimen-gallery a { display: block; text-decoration: none; color: inherit; }
+.specimen-gallery a:hover .mat { border-color: var(--ink); }
+.specimen-gallery .mat { padding: 8%; }
+.specimen-gallery .mat-label { font-size: 10px; padding: 8px 10px; }
+
 .specimen-body { display: flex; flex-direction: column; gap: 20px; }
 .specimen-head .rank-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .specimen-head h1 { font-size: clamp(38px, 5vw, 56px); line-height: 1.03; margin-top: 10px; }
@@ -382,10 +401,17 @@ main { flex: 1; outline: none; }
 
 @media (max-width: 900px) {
   .specimen { grid-template-columns: 1fr; gap: 28px; }
+  /* On one column: plate, then the text, then the field photographs */
+  .specimen-media { display: contents; }
+  .specimen-media > figure { order: 1; }
+  .specimen-body { order: 2; }
+  .specimen-gallery { order: 3; }
 }
 @media (max-width: 760px) {
   .page.specimen-page { padding-top: 0; }
   .specimen-figure { margin: 0 calc(-1 * var(--gutter)); border-left: 0; border-right: 0; aspect-ratio: 16 / 10; }
+  .specimen-figure.plate, .specimen-figure.matted { margin: 0; aspect-ratio: auto; }
+  .specimen-media { padding-top: 20px; }
   .specimen-body .btn-row .btn { flex: 1 1 100%; }
 }
 

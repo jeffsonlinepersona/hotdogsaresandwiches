@@ -332,19 +332,65 @@
       }).join('') + '</ul></div>';
   }
 
+  function specimenImages(n) {
+    if (n.images && n.images.length) return n.images;
+    if (n.photo) return [{ src: n.photo, kind: 'photo', credit: n.photo_credit }];
+    return [];
+  }
+
+  function imgTag(im, alt) {
+    return '<img src="' + esc(im.src) + '" alt="' + esc(alt) + '"' +
+      (im.w && im.h ? ' width="' + im.w + '" height="' + im.h + '"' : '') + ' loading="lazy" decoding="async">';
+  }
+
+  function photoCaption(im, label) {
+    return esc(label) + ' · Photographed in the wild by ' + esc(im.credit || 'an anonymous field researcher') +
+      (im.date ? ' · ' + esc(fmtDate(im.date)) : '');
+  }
+
+  function specimenMedia(n, imgs) {
+    if (!imgs.length) {
+      return '<div class="specimen-media"><figure class="specimen-figure">' + sketch(n) +
+        '<figcaption>Not yet photographed in the wild</figcaption></figure></div>';
+    }
+    var first = imgs[0], rest = imgs.slice(1), primary, photoNo = 0;
+    if (first.kind === 'plate') {
+      primary = '<figure class="specimen-figure plate">' + imgTag(first, n.common + ', an illustrated plate drawn from a wild specimen') +
+        '<figcaption>' + esc(first.label || 'Plate') + ' · Illustration after a wild specimen photographed by ' +
+        esc(first.credit || 'an anonymous field researcher') + ' · CC BY 4.0</figcaption></figure>';
+    } else {
+      photoNo = 1;
+      primary = '<figure class="specimen-figure matted"><div class="mat">' + imgTag(first, n.common + ', photographed in the wild') + '</div>' +
+        '<figcaption class="mat-label">' + photoCaption(first, 'Photo 1') + ' · CC BY 4.0</figcaption></figure>';
+    }
+    var gallery = rest.length
+      ? '<section class="specimen-gallery" aria-label="Field photographs"><h2>Field photographs</h2><ul>' +
+          rest.map(function (im) {
+            photoNo += 1;
+            var label = 'Photo ' + photoNo;
+            return '<li><a href="' + esc(im.src) + '" target="_blank" rel="noopener" aria-label="' + esc(label) + ', open full size">' +
+              '<span class="mat">' + imgTag(im, n.common + ', ' + label.toLowerCase()) + '</span>' +
+              '<span class="mat-label">' + photoCaption(im, label) + '</span></a></li>';
+          }).join('') + '</ul></section>'
+      : '';
+    return '<div class="specimen-media">' + primary + gallery + '</div>';
+  }
+
   function pageSpecimen(id) {
     var n = byId[id];
     if (!n) return pageMissing();
     var children = kids[n.id];
-    var fig = n.photo
-      ? '<figure class="specimen-figure has-photo"><img src="' + esc(n.photo) + '" alt="' + esc(n.common) + ', photographed in the wild">' +
-        '<figcaption>Photographed in the wild by ' + esc(n.photo_credit || 'an anonymous field researcher') + ' · CC BY 4.0</figcaption></figure>'
-      : '<figure class="specimen-figure">' + sketch(n) + '<figcaption>Not yet photographed in the wild</figcaption></figure>';
+    // Images: an optional list. The primary image comes first. A "plate"
+    // (an illustration adapted from a wild specimen) is shown whole, at its own
+    // shape. Photographs always sit in a fixed mat so cards keep one shape.
+    var imgs = specimenImages(n);
+    var fig = specimenMedia(n, imgs);
+    var collector = imgs.length ? (imgs[0].credit || 'Anonymous') : '';
 
     var meta = '<dl class="kv" style="grid-template-columns:120px minmax(0,1fr)">' +
       '<dt>Catalog</dt><dd>' + esc(catalogNo(n)) + '</dd>' +
       (n.trait ? '<dt>Defining trait</dt><dd>' + esc(n.trait) + '</dd>' : '') +
-      '<dt>Collected by</dt><dd>' + esc(n.photo ? (n.photo_credit || 'Anonymous') : 'Awaiting a wild specimen') + '</dd>' +
+      '<dt>Collected by</dt><dd>' + esc(imgs.length ? collector : 'Awaiting a wild specimen') + '</dd>' +
       '<dt>Ruled</dt><dd>' + esc(fmtDate(n.ruled_on)) + '</dd></dl>';
 
     var members = children.length

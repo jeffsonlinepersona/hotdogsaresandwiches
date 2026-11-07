@@ -68,7 +68,8 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 ### Version 2 items (from the requirements doc)
 - **Logged:** 2026-10-03
-- First wild photos on specimen cards.
+- ~~First wild photos on specimen cards~~ Done 2026-11-07: the Costco Hot Dog has Plate I (an illustration adapted from Jeff's photo) as its primary image and the photo in a mat under "Field photographs". Rule: primary image is a plate shown whole (layout A); every photo is matted (layout B).
+- Plates for future specimens: each approved photo gets an adapted illustration set in the plate format before publishing. Jeff makes the illustration; the plate frame and caption are composed to match Plate I.
 - Rulings page: now its own item above (Frequently Raised Objections).
 - ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.
 - Analytics: live 2026-10-03 at hotdogsaresandwiches.goatcounter.com (page views, searches, not-found searches).

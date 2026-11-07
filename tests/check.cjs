@@ -31,6 +31,12 @@ tax.nodes.forEach(n => {
     if (p) ok(RANKS.indexOf(n.rank) > RANKS.indexOf(p.rank), 'rank order ' + p.id + ' > ' + n.id);
   }
   if (n.photo) ok(fs.existsSync(path.join(ROOT, n.photo)), 'photo file ' + n.photo);
+  (n.images || []).forEach((im, i) => {
+    ok(fs.existsSync(path.join(ROOT, im.src)), 'image file ' + im.src);
+    ok(im.kind === 'plate' || im.kind === 'photo', 'image kind is plate or photo: ' + im.src);
+    ok(im.kind !== 'plate' || i === 0, 'a plate is only ever the primary image: ' + im.src);
+    ok(!!im.credit, 'image has a credit: ' + im.src);
+  });
   if (n.aliases) ok(Array.isArray(n.aliases) && n.aliases.every(a => typeof a === 'string' && a.trim()), 'aliases are a list of names on ' + n.id);
 });
 function ancestors(id) {
@@ -164,6 +170,9 @@ async function go(hash) {
   ok(/Costco Hot Dog/.test(m.textContent), 'Costco card title');
   ok(/Sandwichae/.test(m.querySelector('.ladder').textContent), 'Costco ladder includes Sandwichae');
 
+  ok(m.querySelector('.specimen-figure.plate img[src="images/costco-hot-dog-plate.jpg"]'), 'Costco card shows the plate whole as its primary image');
+  ok(m.querySelectorAll('.specimen-gallery .mat img').length === 1, 'Costco field photo sits in a mat in the gallery');
+  ok(/Illustration after a wild specimen photographed by jeffsonlinepersona/.test(m.textContent), 'plate is credited as an illustration');
   m = await go('#/tree/canis-farcitus-costcoensis');
   ok(m.querySelectorAll('.col').length >= 7, 'tree shows all columns down to the variety');
   ok(m.querySelector('.preview'), 'tree shows the leaf preview');

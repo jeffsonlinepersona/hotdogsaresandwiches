@@ -1840,6 +1840,25 @@
           "url": "https://www.npr.org/2024/06/03/nx-s1-4990206/costco-hot-dog-price",
           "note": "NPR, June 2024. Includes co-founder and former CEO Jim Sinegal's warning to his successor about raising the price."
         }
+      ],
+      "images": [
+        {
+          "src": "images/costco-hot-dog-plate.jpg",
+          "kind": "plate",
+          "label": "Pl. I",
+          "credit": "jeffsonlinepersona",
+          "date": "2026-10-11",
+          "w": 1200,
+          "h": 1692
+        },
+        {
+          "src": "images/costco-hot-dog-photo-1.jpg",
+          "kind": "photo",
+          "credit": "jeffsonlinepersona",
+          "date": "2026-10-11",
+          "w": 1200,
+          "h": 1600
+        }
       ]
     },
     {

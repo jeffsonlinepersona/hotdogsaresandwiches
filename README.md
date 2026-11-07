@@ -68,7 +68,21 @@ Analytics use [GoatCounter](https://www.goatcounter.com) (no cookies). Set `GOAT
 
 ## Adding a photo
 
-Save it in `images/`, resized to about 1600 px wide with location data removed, then add `"photo": "images/<file>.jpg"` and `"photo_credit": "<name>"` to the entry.
+Each card can list `images`, primary first:
+
+```json
+"images": [
+  { "src": "images/costco-hot-dog-plate.jpg", "kind": "plate", "label": "Pl. I",
+    "credit": "jeffsonlinepersona", "date": "2026-10-11", "w": 1200, "h": 1692 },
+  { "src": "images/costco-hot-dog-photo-1.jpg", "kind": "photo",
+    "credit": "jeffsonlinepersona", "date": "2026-10-11", "w": 1200, "h": 1600 }
+]
+```
+
+- **House rule: the primary image of a new specimen is a plate**, an illustration adapted from the wild photo in the Taxonomia Ediblis plate format (ruled border, "Pl." number and catalog number, Latin name and figure legend). A plate is shown whole at its own shape. Only the first image may be a plate.
+- **Every photograph sits in a mat**, the same fixed frame whatever its orientation, so cards keep one shape. Photos after the first appear under "Field photographs".
+- Save images in `images/` as JPEG, about 1200 to 1600 px on the long side, with location data removed. Give `w` and `h` so the page does not jump while loading.
+- Older entries may still use `photo` and `photo_credit`; they show as a single matted photo.
 
 ## Submissions
 
