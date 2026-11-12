@@ -1479,7 +1479,7 @@
       "status": "ruled",
       "ruled_on": "2026-10-03",
       "trait": "Finished drinks mixed together",
-      "short": "Two drinks combined into a new one with its own name: lattes, cocktails, an Arnold Palmer.",
+      "short": "Two finished drinks combined in real proportion into a new one with its own name: lattes, americanos, cocktails, an Arnold Palmer. A splash into a drink that keeps its name is an add-in instead.",
       "catalog": 99
     },
     {
@@ -1546,6 +1546,157 @@
         "flat white"
       ],
       "catalog": 104
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "aquiferae",
+      "rank": "class",
+      "parent": "miscellae",
+      "scientific": "Aquiferae",
+      "common": "Water mixes",
+      "trait": "A finished drink mixed with water, still or sparkling",
+      "short": "Drinks of drinks where the second drink is water. Not to be confused with a drink that was only ever watered back to itself: see the restoration rule.",
+      "catalog": 254
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "aquiferae-tranquilliformes",
+      "rank": "order",
+      "parent": "aquiferae",
+      "scientific": "Tranquilliformes",
+      "common": "Still",
+      "trait": "No bubbles",
+      "short": "Flat water, flat out.",
+      "catalog": 255
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "americanidae",
+      "rank": "family",
+      "parent": "aquiferae-tranquilliformes",
+      "scientific": "Americanidae",
+      "common": "Espresso and water",
+      "trait": "Espresso plus hot water",
+      "short": "Built around the espresso shot, lengthened after the fact.",
+      "catalog": 256
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "americana",
+      "rank": "genus",
+      "parent": "americanidae",
+      "scientific": "Americana",
+      "common": "Americanos",
+      "short": "Espresso, made long on purpose. Not a lungo: a lungo pushes more water through the grounds, an americano adds water to the finished shot.",
+      "catalog": 257
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "americano",
+      "rank": "species",
+      "parent": "americana",
+      "scientific": "Americana diluta",
+      "common": "Americano",
+      "short": "Espresso, then hot water: two finished drinks mixed into a new one and ordered by its own name. A drink of drinks, in the same family tree as the latte, with the good sense to skip the milk.",
+      "long": "Legend holds that American soldiers in wartime Italy found espresso too strong and watered it down to taste like home, and that the name was a jab. The record is murkier: the Oxford English Dictionary traces café americano to mid-1950s Central American Spanish and defines it, without ceremony, as \"a derisive term for mild coffee.\" Either way, it was an insult. The Board notes that Americans have a long tradition of taking an insult and printing it on a T-shirt. \"Yankee Doodle\" began as a British song mocking the colonists, and the colonists adopted it as their own. The americano is the same move in a cup. Told our coffee was weak, we named it after ourselves and ordered a large. The species name, diluta, means \"watered down.\" It is worn with pride. For the record: neener neener.",
+      "aliases": [
+        "americano",
+        "caffe americano",
+        "caffè americano",
+        "cafe americano",
+        "americano coffee"
+      ],
+      "sources": [
+        {
+          "title": "Caffè americano",
+          "url": "https://en.wikipedia.org/wiki/Caff%C3%A8_americano",
+          "note": "Wikipedia. The wartime story as popular belief; the OED's mid-1950s Central American Spanish origin and its definition, \"a derisive term for mild coffee.\""
+        }
+      ],
+      "catalog": 258
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "americano-long-black",
+      "rank": "variety",
+      "parent": "americano",
+      "scientific": "A. d. antipodum",
+      "common": "Long black",
+      "short": "Water first, then espresso on top, which keeps the crema. From Australia and New Zealand, hence antipodum. The order of pouring is a preparation detail, so it is a variety, not a species.",
+      "aliases": [
+        "long black"
+      ],
+      "catalog": 259
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "americano-iced",
+      "rank": "variety",
+      "parent": "americano",
+      "scientific": "A. d. glacialis",
+      "common": "Iced americano",
+      "short": "Espresso, cold water, ice. Ice is water that has been to the freezer, so nothing new was added.",
+      "aliases": [
+        "iced americano"
+      ],
+      "catalog": 260
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "aquiferae-spumiformes",
+      "rank": "order",
+      "parent": "aquiferae",
+      "scientific": "Spumiformes",
+      "common": "Sparkling",
+      "trait": "Bubbles from the mixer",
+      "short": "Where the water arrives carbonated.",
+      "catalog": 261
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "tonicidae",
+      "rank": "family",
+      "parent": "aquiferae-spumiformes",
+      "scientific": "Tonicidae",
+      "common": "Espresso and tonic",
+      "trait": "Espresso over tonic water",
+      "short": "The americano's sparkling cousin.",
+      "catalog": 262
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "tonica",
+      "rank": "genus",
+      "parent": "tonicidae",
+      "scientific": "Tonica",
+      "common": "Espresso tonics",
+      "short": "Bitter on bitter, with bubbles.",
+      "catalog": 263
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "espresso-tonic",
+      "rank": "species",
+      "parent": "tonica",
+      "scientific": "Tonica espressa",
+      "common": "Espresso tonic",
+      "short": "A shot of espresso poured over tonic water and ice. Two finished drinks, one sparkling, mixed under a new name. Species inquirenda: known from reports, not yet collected by the Board.",
+      "aliases": [
+        "espresso tonic",
+        "coffee tonic"
+      ],
+      "catalog": 264
     },
     {
       "id": "naturalia",

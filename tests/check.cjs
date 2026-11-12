@@ -100,6 +100,11 @@ ok(byId['pepperoni-pineapple-pizza'].rank === 'variety', 'pepperoni and pineappl
 ok(!/becomes a sandwich/.test(byId['thin-crust-pizza'].short), 'folding a slice does not make it a sandwich');
 tax.nodes.filter(n => n.status === 'species inquirenda').forEach(n => ok(n.rank === 'species' && /Species inquirenda/.test(n.short), 'stub is a species and says so: ' + n.id));
 ok(tax.nodes.every(n => ['ruled', 'pending review', 'species inquirenda'].includes(n.status)), 'every status is known');
+ok(under('americano', 'miscellae') && !under('americano', 'infusa') && under('americano', 'aquiferae'), 'an americano is a drink of drinks');
+ok(byId['americano-long-black'].parent === 'americano' && byId['americano-iced'].parent === 'americano', 'long black and iced americano are varieties');
+ok(under('crema-ictus-longus', 'infusa'), 'a lungo is still an infusion: water through the grounds, not into the shot');
+ok(under('orange-juice', 'expressa'), 'restoration rule: orange juice stays juice');
+ok(rules.rules.find(r => r.id === 'drinks').points.some(p => /Restoration rule/.test(p)), 'the restoration rule is published');
 ok(under('hot-chocolate', 'soluta') && under('hot-chocolate', 'liquida') && !under('hot-chocolate', 'infusa'), 'hot chocolate is dissolved, not steeped');
 ok(under('chai', 'infusa') && under('chai', 'camellia'), 'chai is steeped tea, its own species');
 ok(under('bubble-tea', 'natantiformes') && under('bubble-tea', 'constructa') && !under('bubble-tea', 'liquida'), 'bubble tea is chewed, so it floats with cereal');

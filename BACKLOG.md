@@ -6,20 +6,24 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-12):** pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
+- **Last session (2026-11-12):** Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
 - **Waiting on Jeff:**
   1. License: switch to CC BY-NC 4.0 and add a copyright line naming Jeff, or keep CC BY 4.0. The only time-sensitive item.
-  2. Americano: a variety of espresso, or a drink of drinks (Miscellae) like the latte.
-  3. GoatCounter: turn on "Allow adding visitor counts" so the footer counter shows.
-- **Up next, smallest first:** a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
+  2. GoatCounter: turn on "Allow adding visitor counts" so the footer counter shows.
+- **Up next, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
 
 ## Features
+
+### Frozen concentrated orange juice
+- **Logged:** 2026-11-12
+- **Want:** a card for orange juice from concentrate as a variety of orange juice, showing the restoration rule at work (the water was taken out, then put back: restored, not made). Pairs with a later look at cold brew concentrate, which was brewed strong on purpose rather than dewatered, so it may land differently.
+- **Tone note:** include a subtle nod to *Trading Places* and the art of winning a bet by cornering the FCOJ market. Keep it a wink for those who know, for example a field note that the Board does not trade frozen concentrated orange juice futures and advises against it on the first Thursday of any month; or a "market report" line in place of a habitat. No names or quotes from the film.
 
 ### The Rulings page (Frequently Raised Objections)
 - **Logged:** 2026-10-04
 - **Want:** a page of official responses to the arguments people keep making, in the Review Board's semi-serious voice. Part FAQ, part court record. Replaces the "dated changelog" idea below.
 - **Each entry:** the objection as people say it ("Espresso is literally pressed, so it's Expressa"), the Board's ruling, the rule it rests on (linked to the Rules page), the specimens affected (linked to their cards) and the date ruled.
-- **Starter entries:** pineapple belongs on pizza; deep dish is a pizza (considered and ruled); the calzone is a sandwich; a hot dog is not "just a sausage and a bun" (the assembly rule); bubble tea is not a drink; espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks; the burger is exactly as much a sandwich as the hot dog; folding your own pizza slice does not make it a sandwich; the Subway 6-inch is still whole bread, just a terrible way of making it.
+- **Starter entries:** the americano is a drink of drinks, and the insult is ours now; pineapple belongs on pizza; deep dish is a pizza (considered and ruled); the calzone is a sandwich; a hot dog is not "just a sausage and a bun" (the assembly rule); bubble tea is not a drink; espresso is not Expressa; tacos are sandwiches; an open-faced sandwich is not; cereal is not soup; ramen is soup (the broth clause); lemonade is not juice; milkshakes are not drinks; the burger is exactly as much a sandwich as the hot dog; folding your own pizza slice does not make it a sandwich; the Subway 6-inch is still whole bread, just a terrible way of making it.
 - **Also holds** a short "Recent rulings" list, newest first, for reversals and new placements.
 - **Guiding principle to quote at the top:** "Follow the logic and rules, even when they challenge our preconceptions." Opening axiom: hot dogs are sandwiches.
 
@@ -84,7 +88,7 @@ Updated at the end of every working session, so the next one can start here.
 - Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03), Sandwichae (2026-10-04), Apertae (2026-11-12). Next: the rest of Constructa (Dumplingae, Sushiae, Pieae, Pseudosandwichae, Stratifica, Immersa, Mixta, Formata), Naturalia, Condimenta, Incertae sedis.
 - Done 2026-11-07: hot chocolate (Soluta, which now covers things dissolved into water or milk), chai (Infusa, its own species of tea) and bubble tea (Constructa, floating solids with cereal: you chew it).
 - Done 2026-11-07: the assembly rule is published as rule 5 on the Rules page. Still to do: a Rulings page entry answering "a hot dog is just a sausage and a bun", and optional cards for a plain frank and a plain bun.
-- Ruling needed: Americano, a variety of espresso or a drink of drinks (Miscellae, like the latte).
+- Done 2026-11-12: the Americano is a drink of drinks (Miscellae > Aquiferae, water mixes): Americana diluta, worn with pride. Long black and iced americano are varieties; espresso tonic is a stub. New restoration rule: water put back where it was taken out restores a drink, so orange juice from concentrate stays juice. Variety rule now separates a splash (add-in) from real proportion under a new name (drink of drinks).
 - Link previews with an image when a card link is texted.
 
 ### Version 3 items
