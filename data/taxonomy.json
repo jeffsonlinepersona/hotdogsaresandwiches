@@ -1835,7 +1835,7 @@
       "parent": "sandwichae",
       "scientific": "Integriformes",
       "common": "Whole-bread sandwiches",
-      "trait": "One whole roll, bun, tortilla or coating per sandwich, however it is cut, hinged, folded or sealed",
+      "trait": "One whole roll, bun, tortilla, pizza dough or coating per sandwich, however it is cut, hinged, folded or sealed",
       "short": "Home of the hot dog, the burger, the sub, the taco and the burrito. The bread was made for this sandwich and nothing else.",
       "long": "A hamburger bun is cut all the way through and a hot dog bun is hinged; both are whole buns, so both are here. Cutting a roll in half before building the sandwich is the same as cutting the sandwich in half after: a more complicated way to reach the same result.",
       "verdict": "Sandwich",
@@ -2288,6 +2288,93 @@
     },
     {
       "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "calzonidae",
+      "rank": "family",
+      "parent": "integriformes",
+      "scientific": "Calzonidae",
+      "common": "Pizza dough",
+      "trait": "Pizza dough folded, rolled or lidded over a filling before baking",
+      "short": "Pizza that the baker closed. Sealed before baking is preparation, so it is bread on both sides of a filling: a sandwich. The rules are the rules.",
+      "verdict": "Sandwich",
+      "catalog": 248
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "farsura",
+      "rank": "genus",
+      "parent": "calzonidae",
+      "scientific": "Farsura",
+      "common": "Loose fill",
+      "trait": "A heap of cheese and fillings",
+      "short": "Ricotta, mozzarella, meats and vegetables, sealed in.",
+      "verdict": "Sandwich",
+      "catalog": 249
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "calzone",
+      "rank": "species",
+      "parent": "farsura",
+      "scientific": "Farsura plicata",
+      "common": "Calzone",
+      "short": "A sandwich. Pizza dough folded and sealed before baking, the same move as a taco's fold, made by the baker. Whole bread on both sides of the filling.",
+      "verdict": "Sandwich",
+      "aliases": [
+        "calzone",
+        "calzones",
+        "panzerotti"
+      ],
+      "catalog": 250
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "stuffed-pizza",
+      "rank": "species",
+      "parent": "farsura",
+      "scientific": "Farsura chicagoensis",
+      "common": "Chicago stuffed pizza",
+      "short": "A sandwich. Unlike deep dish, it has a second, thin crust on top of the filling, with sauce over that: bread on both sides of the filling.",
+      "verdict": "Sandwich",
+      "aliases": [
+        "stuffed pizza",
+        "chicago stuffed pizza"
+      ],
+      "catalog": 251
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "spira",
+      "rank": "genus",
+      "parent": "calzonidae",
+      "scientific": "Spira",
+      "common": "Rolled sheets",
+      "trait": "Sheets of meat and cheese rolled up in the dough",
+      "short": "Cold cuts in a spiral.",
+      "verdict": "Sandwich",
+      "catalog": 252
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "stromboli",
+      "rank": "species",
+      "parent": "spira",
+      "scientific": "Spira strombolii",
+      "common": "Stromboli",
+      "short": "A sandwich. Pizza dough rolled around meats and cheese and baked. A sealed, whole bread, like the burrito.",
+      "verdict": "Sandwich",
+      "aliases": [
+        "stromboli"
+      ],
+      "catalog": 253
+    },
+    {
+      "status": "ruled",
       "ruled_on": "2026-10-03",
       "id": "dumplingae",
       "rank": "class",
@@ -2530,22 +2617,60 @@
       "scientific": "Apertae",
       "common": "Topped foods",
       "trait": "One base, toppings on top",
-      "short": "One face of bread is a topping arrangement, not a sandwich.",
+      "short": "One base, toppings on top. Sorted like sandwiches: a slice from a loaf, or a whole base made for the dish, then the kind of base.",
       "verdict": "Not a sandwich",
       "status": "ruled",
       "ruled_on": "2026-10-03",
       "catalog": 160
     },
     {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "apertae-partiformes",
+      "rank": "order",
+      "parent": "apertae",
+      "scientific": "Partiformes",
+      "common": "Part of a loaf",
+      "trait": "Toppings on a slice cut from a larger loaf",
+      "short": "The open-faced cousins of the classic sandwich. The bread was a loaf before it was a base.",
+      "verdict": "Not a sandwich",
+      "catalog": 215
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "tostidae",
+      "rank": "family",
+      "parent": "apertae-partiformes",
+      "scientific": "Tostidae",
+      "common": "Bread slices",
+      "trait": "A slice or half of an existing loaf",
+      "short": "Toast, with ambitions.",
+      "verdict": "Not a sandwich",
+      "catalog": 216
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "panis",
+      "rank": "genus",
+      "parent": "tostidae",
+      "scientific": "Panis",
+      "common": "Topped bread",
+      "short": "Open-faced sandwiches, bruschetta, and the French bread pizza that thinks it is a pizza.",
+      "verdict": "Not a sandwich",
+      "catalog": 217
+    },
+    {
       "id": "open-faced-sandwich",
       "rank": "species",
-      "parent": "apertae",
+      "parent": "panis",
       "scientific": "Panis apertus",
       "common": "Open-faced sandwich",
-      "short": "Not a sandwich. One slice is a topping arrangement. It stands or falls with thin-crust pizza, and nobody calls pizza a sandwich.",
+      "short": "Not a sandwich. One slice is a topping arrangement. It stands or falls with the pizza, and nobody calls pizza a sandwich.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-12",
       "aliases": [
         "open faced sandwich",
         "open-faced sandwich",
@@ -2556,31 +2681,525 @@
       "catalog": 161
     },
     {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "french-bread-pizza",
+      "rank": "species",
+      "parent": "panis",
+      "scientific": "Panis gallicus",
+      "common": "French bread pizza",
+      "short": "Not a pizza. A split loaf with pizza toppings: the base decides, and its base is part of a loaf. It stands with the open-faced sandwich.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "french bread pizza",
+        "pizza bread"
+      ],
+      "catalog": 218
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "apertae-integriformes",
+      "rank": "order",
+      "parent": "apertae",
+      "scientific": "Integriformes",
+      "common": "Whole base",
+      "trait": "One whole base made for this dish: a pizza crust, a pad of rice",
+      "short": "Every pizza lives here. The base was made for these toppings and nothing else.",
+      "verdict": "Not a sandwich",
+      "catalog": 219
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "pizzidae",
+      "rank": "family",
+      "parent": "apertae-integriformes",
+      "scientific": "Pizzidae",
+      "common": "Hand-shaped crusts",
+      "trait": "Dough stretched or tossed by hand; nothing shapes it but the baker",
+      "short": "Stretched, tossed and slid into the oven. A screen or tray underneath shapes nothing, so it does not count.",
+      "verdict": "Not a sandwich",
+      "catalog": 220
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "ornata",
+      "rank": "genus",
+      "parent": "pizzidae",
+      "scientific": "Ornata",
+      "common": "Hand-shaped pizzas",
+      "short": "Round, flat and adorned. The genus most people picture when they hear \"pizza.\"",
+      "verdict": "Not a sandwich",
+      "catalog": 221
+    },
+    {
       "id": "thin-crust-pizza",
       "rank": "species",
-      "parent": "apertae",
+      "parent": "ornata",
       "scientific": "Ornata neapolitana",
-      "common": "Thin-crust pizza",
-      "short": "One base, toppings on top. Fold a slice, though, and it becomes a sandwich. Own it.",
+      "common": "Neapolitan pizza",
+      "short": "The original: a soft, thin, blistered crust from a very hot oven, with few toppings. One base, toppings on top. Folding a slice is proper technique, not reclassification: it is folded by the eater, not the baker.",
       "verdict": "Not a sandwich",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-12",
       "aliases": [
         "pizza",
-        "pizza slice",
-        "thin crust"
+        "neapolitan pizza",
+        "neapolitan",
+        "thin crust pizza",
+        "thin-crust pizza",
+        "pizza napoletana"
       ],
       "catalog": 162
     },
     {
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-12",
+      "id": "margherita-pizza",
+      "rank": "variety",
+      "parent": "thin-crust-pizza",
+      "scientific": "O. n. reginae",
+      "common": "Margherita pizza",
+      "short": "Tomato, mozzarella and basil. Named, by tradition, for a queen, hence reginae.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "margherita",
+        "margarita pizza",
+        "margherita pizza"
+      ],
+      "catalog": 235
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "marinara-pizza",
+      "rank": "variety",
+      "parent": "thin-crust-pizza",
+      "scientific": "O. n. nautarum",
+      "common": "Marinara pizza",
+      "short": "Tomato, garlic, oregano, olive oil, and no cheese. Named for sailors, hence nautarum. No seafood was involved.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "marinara pizza",
+        "pizza marinara"
+      ],
+      "catalog": 236
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "new-york-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata eboracensis",
+      "common": "New York pizza",
+      "short": "Large, thin, foldable slices from a big hand-tossed pie. The fold is proper technique and changes nothing: it is folded by the eater, not the baker.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "new york pizza",
+        "ny pizza",
+        "new york slice",
+        "ny slice",
+        "slice"
+      ],
+      "catalog": 226
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "new-york-pizza-cheese",
+      "rank": "variety",
+      "parent": "new-york-pizza",
+      "scientific": "O. e. simplex",
+      "common": "New York pizza, plain cheese",
+      "short": "The control group. Sauce and mozzarella.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "cheese pizza",
+        "plain slice"
+      ],
+      "catalog": 227
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "new-york-pizza-pepperoni",
+      "rank": "variety",
+      "parent": "new-york-pizza",
+      "scientific": "O. e. piperata",
+      "common": "New York pizza, pepperoni",
+      "short": "Pepperoni cupping into small grease reservoirs. A variety, ordered as \"a pepperoni slice.\"",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "pepperoni pizza",
+        "pepperoni slice"
+      ],
+      "catalog": 228
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "north-american-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata americana",
+      "common": "North American pizza",
+      "short": "The hand-tossed pie of delivery menus and pizza parlors across the continent: medium crust, cut in wedges, topped generously. Type locality of the Hawaiian.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "hand tossed pizza",
+        "hand-tossed pizza",
+        "delivery pizza",
+        "american pizza"
+      ],
+      "catalog": 229
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "hawaiian-pizza",
+      "rank": "variety",
+      "parent": "north-american-pizza",
+      "scientific": "O. a. hawaiiensis",
+      "common": "Hawaiian pizza",
+      "verdict": "Not a sandwich",
+      "short": "Pineapple belongs on pizza. The Board has examined the objection and finds it to be a preference in a lab coat.",
+      "long": "Topped foods admit any topping on any base, and no rule, here or anywhere, says fruit may not ride on a pizza. The tomato is a fruit, and nobody has disputed the marinara. The pairing is also sound on its own terms: pineapple brings sweetness and acid, ham brings salt and fat, the same balance as a glazed ham, which nobody calls a crime. Classified as a variety, not a species, because it is still ordered as a pizza. Type locality: the Satellite Restaurant in Chatham, Ontario, where Sam Panopoulos is credited with inventing it in the 1960s and naming it after the brand of canned pineapple he used. It is therefore Canadian, and named after a can. Disputes may be filed using the button below; the Board will read them with a slice in hand.",
+      "aliases": [
+        "hawaiian pizza",
+        "hawaiian",
+        "ham and pineapple",
+        "pineapple pizza",
+        "ham pineapple pizza"
+      ],
+      "sources": [
+        {
+          "title": "Hawaiian Pizza",
+          "url": "https://www.thecanadianencyclopedia.ca/en/article/hawaiian-pizza",
+          "note": "The Canadian Encyclopedia. Credits Sam Panopoulos at the Satellite Restaurant in Chatham, Ontario, and the canned-pineapple name."
+        }
+      ],
+      "catalog": 230
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "pepperoni-pineapple-pizza",
+      "rank": "variety",
+      "parent": "north-american-pizza",
+      "scientific": "O. a. ananassina",
+      "common": "Pepperoni and pineapple pizza",
+      "short": "The Hawaiian's bolder relative. Pepperoni's heat and salt against pineapple's sweetness. The Board considers this the variety's finest form.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "pepperoni pineapple",
+        "pepperoni and pineapple",
+        "pineapple pepperoni"
+      ],
+      "catalog": 231
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "supreme-pizza",
+      "rank": "variety",
+      "parent": "north-american-pizza",
+      "scientific": "O. a. suprema",
+      "common": "Supreme pizza",
+      "short": "Everything at once: sausage, pepperoni, peppers, onions, olives, mushrooms. Still ordered as a pizza, so still a variety.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "supreme",
+        "supreme pizza",
+        "combination pizza",
+        "combo pizza",
+        "deluxe pizza"
+      ],
+      "catalog": 232
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "stuffed-crust-pizza",
+      "rank": "variety",
+      "parent": "north-american-pizza",
+      "scientific": "O. a. farcimarginata",
+      "common": "Stuffed-crust pizza",
+      "short": "Cheese rolled into the rim. The rim is a tiny sealed sandwich, but the assembly rule classifies the structure the whole thing forms: an open-faced pie with a fancy edge.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "stuffed crust",
+        "stuffed crust pizza"
+      ],
+      "catalog": 233
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "tavern-style-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata tabernaria",
+      "common": "Chicago tavern-style pizza",
+      "short": "Chicago's other pizza: a thin, crisp, cracker-like crust, cut in squares. The squares do not make it a species (cutting never counts); the crust does.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "tavern style pizza",
+        "tavern-style pizza",
+        "chicago thin crust",
+        "party cut pizza"
+      ],
+      "catalog": 234
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "new-haven-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata novoportuensis",
+      "common": "New Haven pizza (apizza)",
+      "short": "Thin, charred and oblong, from coal-fired ovens in New Haven, Connecticut. Its best-known variety is the white clam pie. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "new haven pizza",
+        "apizza",
+        "white clam pizza",
+        "clam pie"
+      ],
+      "catalog": 237
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "st-louis-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata ludovicensis",
+      "common": "St. Louis pizza",
+      "short": "A cracker-thin crust made without yeast, topped with Provel (a processed blend of cheddar, Swiss and provolone) and cut in squares. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "st louis pizza",
+        "saint louis pizza",
+        "provel pizza"
+      ],
+      "catalog": 238
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "roman-tonda-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata romana",
+      "common": "Roman pizza (tonda)",
+      "short": "Rome's round pizza: rolled very thin and baked crisp. Not to be confused with its pan-shaped namesake, Roman al taglio. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "roman pizza",
+        "pizza tonda",
+        "pizza romana"
+      ],
+      "catalog": 239
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "quad-cities-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata quadricivitatis",
+      "common": "Quad Cities pizza",
+      "short": "From the cities on the Iowa–Illinois border: a crust with malt in it, cut into strips with scissors. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "quad cities pizza",
+        "quad city pizza"
+      ],
+      "catalog": 240
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "ohio-valley-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata ohioensis",
+      "common": "Ohio Valley pizza",
+      "short": "Baked with sauce, then topped with cold cheese and toppings after it leaves the oven. Late toppings are still toppings: one base, toppings on top. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "ohio valley pizza",
+        "cold cheese pizza"
+      ],
+      "catalog": 241
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "california-pizza",
+      "rank": "species",
+      "parent": "ornata",
+      "scientific": "Ornata californica",
+      "common": "California-style pizza",
+      "short": "A thin hand-shaped crust as a stage for unconventional toppings, BBQ chicken being the classic. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "california pizza",
+        "california style pizza",
+        "bbq chicken pizza"
+      ],
+      "catalog": 242
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "sartaginidae",
+      "rank": "family",
+      "parent": "apertae-integriformes",
+      "scientific": "Sartaginidae",
+      "common": "Pan-shaped crusts",
+      "trait": "The pan shapes the crust: it rises up the sides and takes the pan's form",
+      "short": "Pizzas that took the shape of their container. Baking in a pan is not enough; the pan has to do the shaping.",
+      "verdict": "Not a sandwich",
+      "catalog": 222
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "sartago",
+      "rank": "genus",
+      "parent": "sartaginidae",
+      "scientific": "Sartago",
+      "common": "Pan pizzas",
+      "short": "Named for the Latin for frying pan. Thick, square, crisp-edged or deep.",
+      "verdict": "Not a sandwich",
+      "catalog": 223
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "detroit-pizza",
+      "rank": "species",
+      "parent": "sartago",
+      "scientific": "Sartago detroitensis",
+      "common": "Detroit pizza",
+      "short": "Rectangular, thick and airy, baked in a steel pan with cheese pushed to the edges until it fries into a crisp, caramelized frame. Sauce often goes on top.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "detroit pizza",
+        "detroit style pizza",
+        "detroit-style"
+      ],
+      "catalog": 243
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "deep-dish-pizza",
+      "rank": "species",
+      "parent": "sartago",
+      "scientific": "Sartago profunda",
+      "common": "Chicago deep dish",
+      "short": "Considered and ruled: a pizza. The crust rises up the pan's walls, but walls around an open top are a rim, not \"between.\" The Board heard the casserole and pie arguments and moved on.",
+      "long": "Built upside down from the usual order: crust, cheese, fillings, then sauce on top. Ordered as a pizza, eaten with a knife and fork, defended with conviction. Its cousin with a top crust, Chicago stuffed pizza, has bread on both sides of the filling and is a sandwich.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "deep dish",
+        "deep dish pizza",
+        "chicago deep dish",
+        "chicago pizza"
+      ],
+      "catalog": 244
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "sicilian-pizza",
+      "rank": "species",
+      "parent": "sartago",
+      "scientific": "Sartago sicula",
+      "common": "Sicilian pizza",
+      "short": "Thick, spongy and square, baked in a sheet pan that shapes it.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "sicilian pizza",
+        "sicilian slice",
+        "square slice"
+      ],
+      "catalog": 245
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "grandma-pizza",
+      "rank": "species",
+      "parent": "sartago",
+      "scientific": "Sartago aviae",
+      "common": "Grandma pizza",
+      "short": "Thinner than Sicilian, pressed into an oiled sheet pan, with sauce dotted over the cheese. Aviae: of the grandmother.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "grandma pizza",
+        "grandma pie",
+        "grandma slice"
+      ],
+      "catalog": 246
+    },
+    {
+      "status": "species inquirenda",
+      "ruled_on": "2026-11-12",
+      "id": "roman-al-taglio-pizza",
+      "rank": "species",
+      "parent": "sartago",
+      "scientific": "Sartago romana",
+      "common": "Roman pizza (al taglio)",
+      "short": "Baked in long rectangular pans, sold by weight and cut with scissors. Shares a city with Roman tonda, but the pan shapes it, so it lives with the pan pizzas. Species inquirenda: known from reports, not yet collected by the Board.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "pizza al taglio",
+        "al taglio",
+        "roman pan pizza"
+      ],
+      "catalog": 247
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "nigiridae",
+      "rank": "family",
+      "parent": "apertae-integriformes",
+      "scientific": "Nigiridae",
+      "common": "Formed rice",
+      "trait": "Rice pressed by hand into a base for one piece",
+      "short": "Rice keeps its grains, so it is not bread, but the logic is the same: a whole base made for its topping.",
+      "verdict": "Not a sandwich",
+      "catalog": 224
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
+      "id": "oryza",
+      "rank": "genus",
+      "parent": "nigiridae",
+      "scientific": "Oryza",
+      "common": "Nigiri",
+      "short": "Fish on rice. Open-faced sushi.",
+      "verdict": "Not a sandwich",
+      "catalog": 225
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-12",
       "id": "salmon-nigiri",
       "rank": "species",
-      "parent": "apertae",
+      "parent": "oryza",
       "scientific": "Oryza aperta salmonis",
       "common": "Salmon nigiri",
-      "short": "Not a sandwich. A pressed-rice base with fish on top: an open-faced sushi, in the same class as thin-crust pizza.",
+      "short": "Not a sandwich. A pressed-rice base with fish on top: an open-faced sushi, in the same order as the pizza.",
       "verdict": "Not a sandwich",
       "aliases": [
         "nigiri",

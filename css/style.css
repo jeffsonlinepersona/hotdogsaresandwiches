@@ -197,6 +197,8 @@ main { flex: 1; outline: none; }
   background: var(--accent); color: var(--on-accent);
 }
 .badge-no { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.stub-notice { border: 1px dashed var(--muted); background: var(--card); padding: 12px 14px; font-size: 15px; color: var(--ink-2); }
+.stub-notice a { font-weight: 600; }
 .badge-pending { background: transparent; color: var(--muted); border: 1px dashed var(--muted); }
 
 /* ---------- Home ---------- */

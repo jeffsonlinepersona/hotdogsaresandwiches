@@ -93,6 +93,7 @@
 
   function badge(n) {
     if (n.status === 'pending review') return '<span class="badge badge-pending">Pending review</span>';
+    if (n.status === 'species inquirenda') return '<span class="badge badge-pending badge-inquirenda" title="Known from reports, not yet collected">Species inquirenda</span>';
     var v = verdictOf(n);
     if (!v) return '';
     var negative = /^not /i.test(v);
@@ -391,7 +392,7 @@
       '<dt>Catalog</dt><dd>' + esc(catalogNo(n)) + '</dd>' +
       (n.trait ? '<dt>Defining trait</dt><dd>' + esc(n.trait) + '</dd>' : '') +
       '<dt>Collected by</dt><dd>' + esc(imgs.length ? collector : 'Awaiting a wild specimen') + '</dd>' +
-      '<dt>Ruled</dt><dd>' + esc(fmtDate(n.ruled_on)) + '</dd></dl>';
+      '<dt>' + (n.status === 'species inquirenda' ? 'Recorded' : 'Ruled') + '</dt><dd>' + esc(fmtDate(n.ruled_on)) + '</dd></dl>';
 
     var members = children.length
       ? '<section class="members"><h2>Members</h2><ul>' + children.map(function (c) {
@@ -409,7 +410,11 @@
               '<div class="specimen-head"><div class="rank-row"><span class="eyebrow">' + esc(n.rank) + '</span>' + badge(n) + '</div>' +
               '<h1>' + esc(n.common) + '</h1><div class="sci">' + esc(n.scientific) + '</div></div>' +
               ladder(n) +
-              '<p class="short">' + esc(n.short) + '</p>' +
+              (n.status === 'species inquirenda'
+                ? '<aside class="stub-notice"><strong>This specimen is a species inquirenda:</strong> known from reports, not yet collected by the Review Board. ' +
+                  'In real taxonomy the term marks a species that needs further inquiry. You can help by <a href="#/submit?' + qs({ type: 'photo', food: n.common }) + '">submitting a wild photo</a>.</aside>'
+                : '') +
+              '<p class="short">' + esc(n.status === 'species inquirenda' ? n.short.replace(/\s*Species inquirenda:.*$/, '') : n.short) + '</p>' +
               (n.long ? '<p class="long">' + esc(n.long) + '</p>' : '') +
               evidence(n) +
               meta + members +

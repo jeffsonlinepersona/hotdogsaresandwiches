@@ -90,6 +90,16 @@ ok(under('sandwicus-classicus', 'partiformes') && !under('sandwicus-classicus', 
 ok(under('canis-farcitus', 'panidae') && under('meatball-sub', 'panidae') && under('hamburger', 'panidae'), 'hot dog, meatball sub and burger share the buns-and-rolls family');
 ok(under('canis-farcitus', 'canis') && under('hamburger', 'discus') && under('cold-cut-combo', 'lamina'), 'filling shape decides the sandwich genus');
 ok(!['bifaciformes','trifaciformes','totiformes','frankfurtidae','fissipanidae'].some(id => byId[id]), 'side-counting orders are retired');
+ok(['thin-crust-pizza','new-york-pizza','north-american-pizza','tavern-style-pizza'].every(id => under(id, 'pizzidae')), 'hand-shaped pizzas share a family');
+ok(['detroit-pizza','deep-dish-pizza','sicilian-pizza','grandma-pizza','roman-al-taglio-pizza'].every(id => under(id, 'sartaginidae')), 'pan-shaped pizzas share a family');
+ok(under('deep-dish-pizza', 'apertae') && !under('deep-dish-pizza', 'sandwichae'), 'deep dish is considered and ruled a pizza');
+ok(['calzone','stromboli','stuffed-pizza'].every(id => under(id, 'integriformes') && under(id, 'sandwichae')), 'pizza dough sealed by the baker is a sandwich');
+ok(under('french-bread-pizza', 'apertae-partiformes') && under('open-faced-sandwich', 'apertae-partiformes'), 'part-of-a-loaf bases stand with the open-faced sandwich');
+ok(under('hawaiian-pizza', 'north-american-pizza') && byId['hawaiian-pizza'].rank === 'variety' && /Pineapple belongs on pizza/.test(byId['hawaiian-pizza'].short), 'pineapple belongs on pizza');
+ok(byId['pepperoni-pineapple-pizza'].rank === 'variety', 'pepperoni and pineapple is a variety');
+ok(!/becomes a sandwich/.test(byId['thin-crust-pizza'].short), 'folding a slice does not make it a sandwich');
+tax.nodes.filter(n => n.status === 'species inquirenda').forEach(n => ok(n.rank === 'species' && /Species inquirenda/.test(n.short), 'stub is a species and says so: ' + n.id));
+ok(tax.nodes.every(n => ['ruled', 'pending review', 'species inquirenda'].includes(n.status)), 'every status is known');
 ok(under('hot-chocolate', 'soluta') && under('hot-chocolate', 'liquida') && !under('hot-chocolate', 'infusa'), 'hot chocolate is dissolved, not steeped');
 ok(under('chai', 'infusa') && under('chai', 'camellia'), 'chai is steeped tea, its own species');
 ok(under('bubble-tea', 'natantiformes') && under('bubble-tea', 'constructa') && !under('bubble-tea', 'liquida'), 'bubble tea is chewed, so it floats with cereal');
@@ -101,7 +111,7 @@ ok(under('gasosa-aquatica', 'aquae-spumiformes') && under('aqua-pura', 'aquae-tr
 ok(byId['cola-vulgaris-fontana'] && byId['cola-vulgaris-fontana'].rank === 'variety', 'fountain soda is a variety');
 
 // Full depth: every species in a finished kingdom has every rank above it
-const FULL = ['liquida', 'sandwichae'];
+const FULL = ['liquida', 'sandwichae', 'apertae'];
 const need = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus'];
 tax.nodes.filter(n => n.rank === 'species' && FULL.some(k => under(n.id, k))).forEach(n => {
   const ranks = ancestors(n.id).map(a => byId[a].rank);
@@ -177,6 +187,8 @@ async function go(hash) {
   ok(m.querySelector('.specimen-figure.plate img[src="images/costco-hot-dog-plate.jpg"]'), 'Costco card shows the plate whole as its primary image');
   ok(m.querySelectorAll('.specimen-gallery .mat img').length === 1, 'Costco field photo sits in a mat in the gallery');
   ok(/Illustration after a wild specimen photographed by jeffsonlinepersona/.test(m.textContent), 'plate is credited as an illustration');
+  m = await go('#/specimen/st-louis-pizza');
+  ok(m.querySelector('.stub-notice') && m.querySelector('.badge-inquirenda'), 'stub card shows the species inquirenda notice');
   m = await go('#/tree/canis-farcitus-costcoensis');
   ok(m.querySelectorAll('.col').length >= 7, 'tree shows all columns down to the variety');
   ok(m.querySelector('.preview'), 'tree shows the leaf preview');
@@ -217,6 +229,8 @@ async function go(hash) {
   ok(/Integriformes/.test(m.textContent), 'hot dog path lands in Integriformes');
   m = await walkUI([3, 1, 0, 0]);
   ok(/Partiformes/.test(m.textContent), 'sliced-loaf path lands in Partiformes');
+  m = await walkUI([3, 2, 0, 1]);
+  ok(/Integriformes/.test(m.textContent), 'pizza path lands in whole-base topped foods');
   m = await walkUI([3, 3, 1]);
   ok(/Decocta/.test(m.textContent), 'broth path lands in Decocta (ramen)');
   m = await walkUI([3, 3, 2]);
@@ -328,7 +342,7 @@ async function go(hash) {
   await go('#/search?q=xyzzy%20plover');
   ok(counted.filter(v => v.path === 'search-not-found/xyzzy-plover').length === 1, 'a repeated miss is logged once');
   m = await go('#/search?q=pizza');
-  ok(m.querySelectorAll('.results li').length >= 1 && /Thin-crust pizza/.test(m.querySelector('.results li').textContent), 'results page lists pizza first');
+  ok(m.querySelectorAll('.results li').length >= 1 && /Neapolitan pizza/.test(m.querySelector('.results li').textContent), 'results page lists pizza first');
   ok(counted.some(v => v.event && v.path === 'search/pizza'), 'successful search is logged');
   await go('#/specimen/cereal');
   ok(counted.some(v => !v.event && v.path === '/specimen/cereal'), 'page views are counted by route');

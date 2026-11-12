@@ -69,9 +69,10 @@
       "summary": "A sandwich is a filling held between bread: bread on opposite sides of the filling. When one food holds another, the container's material decides the class, and sandwiches are then sorted by their bread all the way down.",
       "points": [
         "Slices taken from a loaf: Partiformes, the classic.",
-        "One whole roll, bun, tortilla or batter coating per sandwich, however it is cut, hinged, folded or sealed: Integriformes. The hot dog, the burger, the taco and the burrito all live here.",
+        "One whole roll, bun, tortilla, pizza dough or batter coating per sandwich, however it is cut, hinged, folded or sealed: Integriformes. The hot dog, the burger, the taco, the burrito and the calzone all live here.",
         "Below that, the kind of bread decides the family (buns and rolls, tortillas, fried batter), and only then does the filling's shape decide the genus: tubes, discs, spheres, chunks, sheets.",
         "Classify food as prepared, not as eaten. Folding your own pizza slice is proper technique, not reclassification. Cutting a roll in half before or after building the sandwich changes nothing.",
+        "Topped foods are sorted the same way: a slice from a loaf (the open-faced sandwich), or a whole base made for the dish (every pizza). Then the kind of base: hand-shaped crust, pan-shaped crust, formed rice.",
         "Boiled or steamed dough: Dumplingae. Gyoza, ravioli, and the steamed bao.",
         "Pressed rice: Sushiae. The California roll.",
         "Pastry: Pieae. The pot pie.",
@@ -86,7 +87,8 @@
       "summary": "Foods with the same structure get the same ruling. You cannot accept one and reject the other.",
       "points": [
         "Hot dogs and tacos are both whole bread around a filling. Expel one and the other goes too, along with the burger.",
-        "Open-faced sandwiches and thin-crust pizza share the one-sided shape. Neither is a sandwich."
+        "Open-faced sandwiches and pizza share the one-sided shape. Neither is a sandwich.",
+        "A pizza folded by the eater is still a pizza. A pizza folded by the baker is a calzone, and a calzone is a sandwich."
       ],
       "example": "A court once ruled that one tortilla is not two slices of bread. A hot dog bun is one piece, too."
     },
@@ -121,7 +123,8 @@
         "Coffee with cream and sugar is still coffee: a variety.",
         "A latte is ordered by a different name: a separate species.",
         "More or less of the same thing is a variety, even with its own name: a doppio, ristretto or lungo is still espresso.",
-        "An affogato changes role to dessert: it leaves Liquida entirely."
+        "An affogato changes role to dessert: it leaves Liquida entirely.",
+        "A topping combination found on many styles is described once, under the style where it was first recorded: its type locality. A Hawaiian on a Detroit crust is the same variety, found in another habitat."
       ],
       "example": "A Costco hot dog is still ordered as \"a hot dog,\" so it is a variety of Canis farcitus."
     }
@@ -213,7 +216,7 @@
         "options": [
           {
             "label": "One base with toppings on top",
-            "result": "apertae"
+            "next": "base"
           },
           {
             "label": "Several stacked layers",
@@ -280,6 +283,20 @@
           {
             "label": "One whole roll, bun, tortilla or batter coating",
             "result": "integriformes"
+          }
+        ]
+      },
+      "base": {
+        "question": "What is the base?",
+        "help": "Ignore any cutting or folding by the eater.",
+        "options": [
+          {
+            "label": "A slice cut from a larger loaf",
+            "result": "apertae-partiformes"
+          },
+          {
+            "label": "A whole base made for this dish: a pizza crust, a pad of rice",
+            "result": "apertae-integriformes"
           }
         ]
       }
