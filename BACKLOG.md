@@ -2,6 +2,17 @@
 
 Planned work and known issues, newest first within each section. Bugs carry a root-cause note, not just the symptom.
 
+## Where we left off
+
+Updated at the end of every working session, so the next one can start here.
+
+- **Last session (2026-11-12):** pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
+- **Waiting on Jeff:**
+  1. License: switch to CC BY-NC 4.0 and add a copyright line naming Jeff, or keep CC BY 4.0. The only time-sensitive item.
+  2. Americano: a variety of espresso, or a drink of drinks (Miscellae) like the latte.
+  3. GoatCounter: turn on "Allow adding visitor counts" so the footer counter shows.
+- **Up next, smallest first:** a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
+
 ## Features
 
 ### The Rulings page (Frequently Raised Objections)
@@ -15,7 +26,7 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 ### Specimen card extras: history, rulings and status
 - **Logged:** 2026-10-04
 - **Want:** each card gets an optional short history (when it was classified, anything that moved it, e.g. "milkshake: deported from Liquida, 2026-10-03"), links to any Rulings entries about it, and a visible status.
-- **Status options** (cards already carry a `status` field, today only "ruled" or "pending review", and the card does not show it yet):
+- **Status options** (cards already carry a `status` field: "ruled", "pending review" or "species inquirenda" for stubs. Since 2026-11-12 the card shows a badge for the last two, and stubs show a notice):
   - **Ruled:** settled science.
   - **Pending review:** the Board is deliberating, indefinitely.
   - **Disputed:** an objection is on file.
