@@ -42,15 +42,15 @@ Updated at the end of every working session, so the next one can start here.
 - **Done:** content and plates switched to CC BY-NC 4.0, with "© 2026 The Taxonomic Review Board (jeffsonlinepersona)" in the footer, About page and LICENSE.md. Contributor photos stay CC BY 4.0 (the broader grant keeps the site's options open). Site code is MIT. Anything copied before 12 November 2026 keeps CC BY.
 - **Name choice:** the blended credit keeps separation and can be upgraded to Jeff's real name at any time; the reverse is impossible.
 - **Authorship:** from 2026-11-12 every commit is authored by jeffsonlinepersona (rulings, editorial selection, overall direction), with Claude as co-author. Earlier commits list Claude as author; ownership rests on the GitHub account, the dated rulings and the requirements doc.
+- **Settled:** Jeff has confirmed his employment agreement does not restrict this project.
 - **Still open, for a one-hour consult with an IP lawyer if real value ever appears.** Questions:
-  1. Employment IP or invention-assignment agreement: does it reach a humor site made on personal time and equipment, unrelated to the employer's business? Does California Labor Code §2870 cover it? Check any outside-activities policy too. (Most important; applies whatever name is used.)
-  2. Is CC BY-NC 4.0 right for these goals, or would something else serve better?
-  3. Register now, and what exactly? The site changes constantly: snapshots, the plates, or the written rulings?
-  4. How to describe AI-assisted material in a registration (AI-generated parts are disclosed and excluded; human selection, arrangement and edits can be claimed).
-  5. Who should contributors license photos to: Jeff, or an LLC later? Is the checkbox wording ("to HotDogsAreSandwiches", not a legal person) enough?
-  6. Is the site name worth a trademark search, and at what point would it matter?
-  7. Pseudonymous registration versus real name: what changes in practice?
-- **Bring:** the site link and LICENSE.md; the photo checkbox text; the employment IP agreement and outside-activities policy; a paragraph on which parts are Jeff's and which had AI help; one sentence on what future optionality means (a book, merch).
+  1. Is CC BY-NC 4.0 right for these goals, or would something else serve better?
+  2. Register now, and what exactly? The site changes constantly: snapshots, the plates, or the written rulings?
+  3. How to describe AI-assisted material in a registration (AI-generated parts are disclosed and excluded; human selection, arrangement and edits can be claimed).
+  4. Who should contributors license photos to: Jeff, or an LLC later? Is the checkbox wording ("to HotDogsAreSandwiches", not a legal person) enough?
+  5. Is the site name worth a trademark search, and at what point would it matter?
+  6. Pseudonymous registration versus real name: what changes in practice?
+- **Bring:** the site link and LICENSE.md; the photo checkbox text; a paragraph on which parts are Jeff's and which had AI help; one sentence on what future optionality means (a book, merch).
 - **Not legal advice.**
 
 ### Social media links (begrudgingly)
