@@ -748,7 +748,7 @@
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (j) {
         var el = document.getElementById('visit-count');
-        if (el && j && j.count) { el.textContent = ' · ' + j.count + ' visits logged by the Board'; el.hidden = false; }
+        if (el && j && j.count) { el.textContent = j.count + ' visits logged by the Board'; el.hidden = false; }
       })
       .catch(function () { /* counter not enabled: stay hidden */ });
   }
