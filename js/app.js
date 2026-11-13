@@ -223,7 +223,7 @@
             '<h2>Contribute</h2>' +
             '<p>Found a food that is not in the tree? <a href="#/classify">Run it through the classifier</a>, then <a href="#/submit">submit it</a>. Photos must be your own: wild specimens only, no stock images.</p>' +
             '<h2>License</h2>' +
-            '<p>The taxonomy, rules, descriptions and photos are licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>. Share and adapt them freely, with credit.</p>' +
+            '<p>© 2026 The Taxonomic Review Board (jeffsonlinepersona). The taxonomy, rules, descriptions and plates are licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license">CC BY-NC 4.0</a>: share and adapt them freely, with credit, for anything non-commercial. Contributor photos stay <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, credited to their photographers. Details in the <a href="https://github.com/jeffsonlinepersona/hotdogsaresandwiches/blob/main/LICENSE.md">license</a>.</p>' +
           '</div>' +
         '</div>'
     };
@@ -358,7 +358,7 @@
     if (first.kind === 'plate') {
       primary = '<figure class="specimen-figure plate">' + imgTag(first, n.common + ', an illustrated plate drawn from a wild specimen') +
         '<figcaption>' + esc(first.label || 'Plate') + ' · Illustration after a wild specimen photographed by ' +
-        esc(first.credit || 'an anonymous field researcher') + ' · CC BY 4.0</figcaption></figure>';
+        esc(first.credit || 'an anonymous field researcher') + ' · CC BY-NC 4.0</figcaption></figure>';
     } else {
       photoNo = 1;
       primary = '<figure class="specimen-figure matted"><div class="mat">' + imgTag(first, n.common + ', photographed in the wild') + '</div>' +

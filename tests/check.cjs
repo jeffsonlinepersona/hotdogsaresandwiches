@@ -100,6 +100,7 @@ ok(byId['pepperoni-pineapple-pizza'].rank === 'variety', 'pepperoni and pineappl
 ok(!/becomes a sandwich/.test(byId['thin-crust-pizza'].short), 'folding a slice does not make it a sandwich');
 tax.nodes.filter(n => n.status === 'species inquirenda').forEach(n => ok(n.rank === 'species' && /Species inquirenda/.test(n.short), 'stub is a species and says so: ' + n.id));
 ok(tax.nodes.every(n => ['ruled', 'pending review', 'species inquirenda'].includes(n.status)), 'every status is known');
+ok(/by-nc\/4\.0/.test(fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')) && /Taxonomic Review Board \(jeffsonlinepersona\)/.test(fs.readFileSync(path.join(ROOT, 'LICENSE.md'), 'utf8')), 'license is CC BY-NC with the Board credit');
 ok(under('americano', 'miscellae') && !under('americano', 'infusa') && under('americano', 'aquiferae'), 'an americano is a drink of drinks');
 ok(byId['americano-long-black'].parent === 'americano' && byId['americano-iced'].parent === 'americano', 'long black and iced americano are varieties');
 ok(under('crema-ictus-longus', 'infusa'), 'a lungo is still an infusion: water through the grounds, not into the shot');

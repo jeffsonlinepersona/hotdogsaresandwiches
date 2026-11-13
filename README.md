@@ -91,4 +91,6 @@ The Submit a Specimen form emails entries through [FormSubmit](https://formsubmi
 
 ## License
 
-Content and photos: [CC BY 4.0](LICENSE.md).
+© 2026 The Taxonomic Review Board (jeffsonlinepersona). Content and plates: CC BY-NC 4.0. Contributor photos: CC BY 4.0. Code: MIT. Details in [LICENSE.md](LICENSE.md).
+
+Commits are authored by jeffsonlinepersona, who makes the rulings, editorial selection and overall direction; Claude is credited as co-author on work it helped build.

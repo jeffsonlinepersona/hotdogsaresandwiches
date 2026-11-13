@@ -6,10 +6,9 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-12):** Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
+- **Last session (2026-11-12):** license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
 - **Waiting on Jeff:**
-  1. License: switch to CC BY-NC 4.0 and add a copyright line naming Jeff, or keep CC BY 4.0. The only time-sensitive item.
-  2. GoatCounter: turn on "Allow adding visitor counts" so the footer counter shows.
+  1. GoatCounter: turn on "Allow adding visitor counts" so the footer counter shows.
 - **Up next, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
 
 ## Features
@@ -39,19 +38,20 @@ Updated at the end of every working session, so the next one can start here.
 - **Data:** new optional fields `history` (list of dated lines), `rulings` (ids of Rulings entries) and `extinct_on` (a date).
 
 ### Licensing and credit: keep the options open
-- **Logged:** 2026-10-04
-- **Want:** Jeff gets clear credit for the work and keeps the option to do something with it later (a book, merch, a bigger site). No money expected; this is optionality, not a business plan.
-- **Problem with today's setup:** everything is CC BY 4.0, which lets anyone reuse it *commercially* with credit, and that grant can't be taken back for copies already taken under it. Credit is covered; optionality is not.
-- **Options, roughly from most open to most protected:**
-  1. **CC BY-NC 4.0:** anyone may share and adapt with credit, but not commercially. Jeff keeps the commercial rights. Keeps the friends-and-family sharing spirit.
-  2. **All rights reserved:** "© 2026 Jeff Zalewski." Strongest, but sharing technically needs permission.
-  3. **Split:** content (taxonomy, rules, writing) under one license, site code under an open-source one such as MIT, since the code has little value.
-- **Also on the list:**
-  - A copyright line in the footer and LICENSE.md naming Jeff (today it names only "HotDogsAreSandwiches").
-  - The site name and "Taxonomia Ediblis" as brands: no action now, but the name is the part a trademark would protect if it ever mattered.
-  - Contributor photos: friends license their photos to the site under CC BY today. If the site license changes, the photo checkbox wording should change with it so the site can use photos however it ends up being licensed.
-  - Authorship record: the git history and dated rulings already show who made what and when. The rulings and judgment calls are Jeff's; much of the wording was drafted with AI help, which may matter for how much of the text is protectable.
-- **Note:** not legal advice. If real value ever appears, a short consult with an IP lawyer before acting.
+- **Logged:** 2026-10-04. **Decided 2026-11-12.**
+- **Done:** content and plates switched to CC BY-NC 4.0, with "© 2026 The Taxonomic Review Board (jeffsonlinepersona)" in the footer, About page and LICENSE.md. Contributor photos stay CC BY 4.0 (the broader grant keeps the site's options open). Site code is MIT. Anything copied before 12 November 2026 keeps CC BY.
+- **Name choice:** the blended credit keeps separation and can be upgraded to Jeff's real name at any time; the reverse is impossible.
+- **Authorship:** from 2026-11-12 every commit is authored by jeffsonlinepersona (rulings, editorial selection, overall direction), with Claude as co-author. Earlier commits list Claude as author; ownership rests on the GitHub account, the dated rulings and the requirements doc.
+- **Still open, for a one-hour consult with an IP lawyer if real value ever appears.** Questions:
+  1. Employment IP or invention-assignment agreement: does it reach a humor site made on personal time and equipment, unrelated to the employer's business? Does California Labor Code §2870 cover it? Check any outside-activities policy too. (Most important; applies whatever name is used.)
+  2. Is CC BY-NC 4.0 right for these goals, or would something else serve better?
+  3. Register now, and what exactly? The site changes constantly: snapshots, the plates, or the written rulings?
+  4. How to describe AI-assisted material in a registration (AI-generated parts are disclosed and excluded; human selection, arrangement and edits can be claimed).
+  5. Who should contributors license photos to: Jeff, or an LLC later? Is the checkbox wording ("to HotDogsAreSandwiches", not a legal person) enough?
+  6. Is the site name worth a trademark search, and at what point would it matter?
+  7. Pseudonymous registration versus real name: what changes in practice?
+- **Bring:** the site link and LICENSE.md; the photo checkbox text; the employment IP agreement and outside-activities policy; a paragraph on which parts are Jeff's and which had AI help; one sentence on what future optionality means (a book, merch).
+- **Not legal advice.**
 
 ### Social media links (begrudgingly)
 - **Logged:** 2026-10-04
