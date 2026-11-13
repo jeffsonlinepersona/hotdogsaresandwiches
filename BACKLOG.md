@@ -6,9 +6,8 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-12):** license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
-- **Waiting on Jeff:**
-  1. GoatCounter: turn on "Allow adding visitor counts" so the footer counter shows.
+- **Last session (2026-11-12):** short list cleared: GoatCounter visitor counts turned on; license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
+- **Waiting on Jeff:** nothing.
 - **Up next, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
 
 ## Features
@@ -99,10 +98,10 @@ Updated at the end of every working session, so the next one can start here.
 
 ## Known issues
 
-### Footer visitor count may not show
-- **Logged:** 2026-10-04
-- **Cause:** the footer count reads GoatCounter's public counter, which only works when "Allow adding visitor counts" is turned on in the GoatCounter site settings. Not yet confirmed. The footer stays hidden until the counter answers, so nothing looks broken.
-- **Fix:** Jeff turns the setting on.
+### Footer visitor count may not show (fixed)
+- **Logged:** 2026-10-04. **Fixed:** 2026-11-12.
+- **Cause:** the footer count reads GoatCounter's public counter, which only works when "Allow adding visitor counts" is turned on in the GoatCounter site settings.
+- **Fix:** Jeff turned the setting on. The public total is intentional: visitors are meant to see it.
 
 ### Old links to retired groups show "Specimen escaped"
 - **Logged:** 2026-10-04
