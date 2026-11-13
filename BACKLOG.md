@@ -7,10 +7,27 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 Updated at the end of every working session, so the next one can start here.
 
 - **Last session (2026-11-12):** short list cleared: GoatCounter visitor counts turned on; license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
-- **Waiting on Jeff:** nothing.
-- **Up next, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
+- **Waiting on Jeff:** the Condimenta proposal (below, under Features): four decisions, then build.
+- **Up next, smallest first:** Condimenta full-depth build, once Jeff decides; orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
 
 ## Features
+
+### Condimenta: full depth (proposal, awaiting decisions)
+- **Logged:** 2026-11-12. **Goal:** every kingdom gets at least one species classified all the way down; Condimenta first, then Naturalia and Incertae sedis.
+- **Proposed phylum question: how was it made?** (mirrors Liquida). Form (dry, pourable, spreadable) fails as a phylum because texture is a continuum (Sriracha vs Tabasco), so it moves down to order, like still vs sparkling. Phyla, with names that avoid existing ones:
+  - **Crystallina** (purified to crystals): salt, sugar, MSG.
+  - **Contrita** (ground, pounded or chopped): pepper, spice blends, mustard, pesto, salsa, relish, guacamole.
+  - **Zymota** (fermented): soy sauce, fish sauce, vinegar, miso, aged hot sauces.
+  - **Emulsa** (emulsified): mayonnaise, Caesar, ranch, aioli, vinaigrette.
+  - **Reducta** (cooked down): ketchup, BBQ sauce, jam, chutney.
+- **Rules to add or write down:**
+  - **Last transforming step decides** when methods stack: MSG is fermented then purified, so Crystallina; soy sauce is fermented then strained (finishing, not transforming), so Zymota. Already true in Liquida (beer is steeped, then fermented: Fermentata).
+  - **Hot sauce splits by method, correctly:** Tabasco (aged, fermented) is Zymota; Frank's (cooked, blended) is Reducta.
+  - **Applied vs side:** a condiment is applied to other food; a side is eaten alongside it. Relish is a condiment; a pickle spear is Naturalia. A lemon wedge squeezed on fish is a condiment (role beats ingredients). Cooked into a dish, a condiment becomes an ingredient (assembly rule).
+  - **Dips (future ruling):** is the chip a food or a spoon? Proposed: a spoon, so salsa is a condiment. A Rulings page candidate.
+- **First build:** the existing five (salt, MSG, soy sauce, Caesar dressing, ketchup) plus mustard and relish, which appear on Plate I (its legend already names mustard *Sinapis*). Caesar's genus needs renaming from the generic *Condimentum* (proposed *Caesaria*). Varieties: low-sodium soy sauce and tamari, curry ketchup, yellow and Dijon mustard.
+- **Decisions for Jeff:** (1) phylum by method, form at order; (2) write the last-transforming-step rule onto the Rules page; (3) add the applied-vs-side clarification to the condiment test; (4) add mustard and relish.
+- **After this:** Naturalia needs its own phylum question (steak, pickle, raisin, tuna sashimi), and Incertae sedis (candy corn, Jell-O salad) needs at least one full chain.
 
 ### Frozen concentrated orange juice
 - **Logged:** 2026-11-12
