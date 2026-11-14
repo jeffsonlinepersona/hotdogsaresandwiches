@@ -3249,6 +3249,37 @@
     },
     {
       "status": "ruled",
+      "ruled_on": "2026-11-13",
+      "id": "detroit-pizza-meat-lovers",
+      "rank": "variety",
+      "parent": "detroit-pizza",
+      "scientific": "S. d. carnivora",
+      "common": "Detroit pizza, meat lovers",
+      "short": "Pepperoni, diced bacon and more, on a thick, airy crust with a caramelized cheese frame. Still ordered as a Detroit pizza, so a variety: carnivora, the meat-eating one.",
+      "long": "Plate II shows the specimen entire, a cross-section of the crust (about 3.8 cm tall, mostly air), the pepperoni, the diced bacon, the cheese and sauce, and the burnt cheese edge that defines the species. The Board notes that the edge is the point.",
+      "verdict": "Not a sandwich",
+      "aliases": [
+        "meat lovers detroit",
+        "meat lovers pizza",
+        "meat lovers",
+        "meat lover's pizza"
+      ],
+      "catalog": 265,
+      "images": [
+        {
+          "src": "images/detroit-meat-lovers-plate.jpg",
+          "kind": "plate",
+          "label": "Pl. II",
+          "credit": "jeffsonlinepersona",
+          "caption": "Illustration by jeffsonlinepersona",
+          "date": "2026-11-13",
+          "w": 1200,
+          "h": 1657
+        }
+      ]
+    },
+    {
+      "status": "ruled",
       "ruled_on": "2026-11-12",
       "id": "deep-dish-pizza",
       "rank": "species",

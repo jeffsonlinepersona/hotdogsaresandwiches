@@ -6,8 +6,9 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-12):** short list cleared: GoatCounter visitor counts turned on; license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
-- **Waiting on Jeff:** the Condimenta proposal (below, under Features): four decisions, then build.
+- **Last session (2026-11-13):** Plate II added: the meat lovers Detroit pizza (new variety *S. d. carnivora*), from Jeff's illustration. Footer redesign options are on a canvas (A ledger, B admission stub, C inventory stamp; Claude recommends B), awaiting Jeff's pick.
+- **Session before (2026-11-12):** short list cleared: GoatCounter visitor counts turned on; license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
+- **Waiting on Jeff:** (1) the Condimenta proposal (below, under Features): four decisions, then build; (2) footer design: pick A, B or C on the "Footer and visitor counter options" canvas.
 - **Up next, smallest first:** Condimenta full-depth build, once Jeff decides; orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
 
 ## Features
@@ -93,6 +94,7 @@ Updated at the end of every working session, so the next one can start here.
 ### Version 2 items (from the requirements doc)
 - **Logged:** 2026-10-03
 - ~~First wild photos on specimen cards~~ Done 2026-11-07: the Costco Hot Dog has Plate I (an illustration adapted from Jeff's photo) as its primary image and the photo in a mat under "Field photographs". Rule: primary image is a plate shown whole (layout A); every photo is matted (layout B).
+- Done 2026-11-13: Plate II, meat lovers Detroit pizza (S. d. carnivora), illustration by Jeff, no field photo. Cards can now carry their own plate caption.
 - Plates for future specimens: each approved photo gets an adapted illustration set in the plate format before publishing. Jeff makes the illustration; the plate frame and caption are composed to match Plate I.
 - Rulings page: now its own item above (Frequently Raised Objections).
 - ~~Search box~~ Done 2026-10-03: header search with typo tolerance and aliases; misses logged to analytics.

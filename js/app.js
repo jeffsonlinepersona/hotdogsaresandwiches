@@ -357,8 +357,8 @@
     var first = imgs[0], rest = imgs.slice(1), primary, photoNo = 0;
     if (first.kind === 'plate') {
       primary = '<figure class="specimen-figure plate">' + imgTag(first, n.common + ', an illustrated plate drawn from a wild specimen') +
-        '<figcaption>' + esc(first.label || 'Plate') + ' · Illustration after a wild specimen photographed by ' +
-        esc(first.credit || 'an anonymous field researcher') + ' · CC BY-NC 4.0</figcaption></figure>';
+        '<figcaption>' + esc(first.label || 'Plate') + ' · ' + (first.caption ? esc(first.caption) : 'Illustration after a wild specimen photographed by ' +
+        esc(first.credit || 'an anonymous field researcher')) + ' · CC BY-NC 4.0</figcaption></figure>';
     } else {
       photoNo = 1;
       primary = '<figure class="specimen-figure matted"><div class="mat">' + imgTag(first, n.common + ', photographed in the wild') + '</div>' +

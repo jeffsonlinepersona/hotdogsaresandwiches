@@ -193,6 +193,8 @@ async function go(hash) {
   ok(m.querySelector('.specimen-figure.plate img[src="images/costco-hot-dog-plate.jpg"]'), 'Costco card shows the plate whole as its primary image');
   ok(m.querySelectorAll('.specimen-gallery .mat img').length === 1, 'Costco field photo sits in a mat in the gallery');
   ok(/Illustration after a wild specimen photographed by jeffsonlinepersona/.test(m.textContent), 'plate is credited as an illustration');
+  m = await go('#/specimen/detroit-pizza-meat-lovers');
+  ok(m.querySelector('.specimen-figure.plate img[src="images/detroit-meat-lovers-plate.jpg"]') && /Pl\. II · Illustration by jeffsonlinepersona/.test(m.textContent), 'Plate II shows on the meat lovers Detroit card');
   m = await go('#/specimen/st-louis-pizza');
   ok(m.querySelector('.stub-notice') && m.querySelector('.badge-inquirenda'), 'stub card shows the species inquirenda notice');
   m = await go('#/tree/canis-farcitus-costcoensis');
