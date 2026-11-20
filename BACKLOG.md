@@ -6,10 +6,11 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-19, late):** associations built (steak frites, the Costco combo, the burger combo), with the association rule and the separate-bites test; French fries added to Naturalia. Before that, footer rebuilt as design B, the admission ticket: the GoatCounter total on a ticket stub, brand on the left, a "Dispatches from the Board" column on the right that is empty until social links are added (one line each in `SOCIAL_LINKS` in js/app.js).
+- **Last session (2026-11-19, late):** Plate III (steak frites, from Jeff's illustration) and his field photo added to the steak frites association; herb butter noted as applied. Also, associations built (steak frites, the Costco combo, the burger combo), with the association rule and the separate-bites test; French fries added to Naturalia. Before that, footer rebuilt as design B, the admission ticket: the GoatCounter total on a ticket stub, brand on the left, a "Dispatches from the Board" column on the right that is empty until social links are added (one line each in `SOCIAL_LINKS` in js/app.js).
 - **Earlier that day:** kingdom rules adopted (made vs grown, the table rule, the condiment test); Condimenta and Naturalia built to full depth; salt moved to Naturalia; PB&J added with jam and jelly varieties. 89 new entries.
-- **Waiting on Jeff:** (1) Plate III for steak frites; (2) social accounts: set up and send the handles (suggestions under Features, Social links).
-- **Up next, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts; the footer is ready); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
+- **Waiting on Jeff:** (1) the French fries plate (in progress); (2) social accounts: set up and send the handles (suggestions under Features, Social links).
+- **Up next, top of the list:** add Jeff's French fries plate (Pl. IV) to the fries card (*Solanum frictum*, TE-0359) when it arrives, in the house plate format (scratchpad script plate5.py: crop his title, frame with Pl. N · TAXONOMIA EDIBLIS · TE-####, official name below).
+- **Then, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts; the footer is ready); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
 
 ## Features
 
@@ -23,7 +24,7 @@ Updated at the end of every working session, so the next one can start here.
 ### ~~Steak frites, and combo meals as associations~~ Done 2026-11-19
 - **Ruled:** the menu name never creates a specimen. Foods served together that the eater can take in separate bites form an **association** (card outside the tree, named after dominant members with -etum). Jeff's refinement of the test: *can the eater take separate bites?* Steak frites and chicken and waffles (stacked or not) are associations; poutine is one specimen. Condiments on the plate are applied, not members; inedible extras are commensals.
 - **Built:** the association rule on the Rules page; an Associations page (`#/associations`) and cards (`#/association/<id>`); "Commonly found with" on member cards; associations in search. French fries added to Naturalia (*Solanum frictum*, full depth). Associations: steak frites (*Bovo-Solanetum*), the Costco combo (*Cani-Coletum costcoense*, type association of the Costco hot dog), the burger combo (*Disco-Solanetum*).
-- **Still open:** Plate III (steak frites) from Jeff, which goes in the association's `images`; fish and chips (battered fish needs a ruling first: is batter a coating that makes it assembled?); chicken and waffles cards (needs fried chicken and the waffle in the tree).
+- **Still open:** fish and chips (battered fish needs a ruling first: is batter a coating that makes it assembled?); chicken and waffles cards (needs fried chicken and the waffle in the tree).
 
 ### Frozen concentrated orange juice
 - **Logged:** 2026-11-12

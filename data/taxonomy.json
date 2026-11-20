@@ -5004,7 +5004,7 @@
       "catalog": 360,
       "ruled_on": "2026-11-19",
       "short": "Steak and fries, served together and eaten in separate bites. Two species living side by side: an association, not a new species. The menu name never creates a specimen.",
-      "long": "Named in the ecologists' style, after its dominant members (Bos and Solanum) with the ending -etum, as a beech wood is a Fagetum. Béarnaise, when present, is a condiment applied to the steak, not a member.",
+      "long": "Named in the ecologists' style, after its dominant members (Bos and Solanum) with the ending -etum, as a beech wood is a Fagetum. The herb butter on the steak (and béarnaise, where served) is a condiment applied to the steak, not a member. The parsley is visiting.",
       "members": [
         {
           "id": "steak",
@@ -5016,6 +5016,7 @@
         }
       ],
       "applied": [
+        "Herb butter",
         "Béarnaise sauce"
       ],
       "aliases": [
@@ -5023,6 +5024,25 @@
         "steak frits",
         "steak and fries",
         "steak et frites"
+      ],
+      "images": [
+        {
+          "src": "images/steak-frites-plate.jpg",
+          "kind": "plate",
+          "label": "Pl. III",
+          "credit": "jeffsonlinepersona",
+          "caption": "Illustration by jeffsonlinepersona",
+          "date": "2026-11-19",
+          "w": 1200,
+          "h": 1557
+        },
+        {
+          "src": "images/steak-frites-photo-1.jpg",
+          "kind": "photo",
+          "credit": "jeffsonlinepersona",
+          "w": 1600,
+          "h": 1200
+        }
       ]
     },
     {
