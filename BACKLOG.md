@@ -6,24 +6,19 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-13):** Plate II added: the meat lovers Detroit pizza (new variety *S. d. carnivora*), from Jeff's illustration. Footer redesign options are on a canvas (A ledger, B admission stub, C inventory stamp; Claude recommends B), awaiting Jeff's pick.
-- **Session before (2026-11-12):** short list cleared: GoatCounter visitor counts turned on; license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
-- **Waiting on Jeff:** (00) kingdom rules: made vs grown, and the table rule (under Features); (0) steak frites and combo meals as associations (under Features): four decisions; (1) the Condimenta proposal (below, under Features): four decisions, then build; (2) footer design: pick A, B or C on the "Footer and visitor counter options" canvas.
-- **Up next, smallest first:** steak frites and associations (high priority, plate in progress); Condimenta full-depth build, once Jeff decides; orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
+- **Last session (2026-11-19):** kingdom rules adopted (made vs grown, the table rule, the condiment test); Condimenta and Naturalia built to full depth; salt moved to Naturalia; PB&J added with jam and jelly varieties. 89 new entries.
+- **Session before (2026-11-13):** Plate II added: the meat lovers Detroit pizza (new variety *S. d. carnivora*), from Jeff's illustration. Footer redesign options are on a canvas (A ledger, B admission stub, C inventory stamp; Claude recommends B), awaiting Jeff's pick.
+- **Waiting on Jeff:** (1) steak frites and combo meals as associations (under Features): four decisions; (2) footer design: pick A, B or C on the "Footer and visitor counter options" canvas.
+- **Up next, smallest first:** steak frites and associations (high priority, plate in progress); orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
 
 ## Features
 
-### Kingdom rules: made vs grown, and the table rule (proposal, supersedes the reorder idea)
-- **Logged:** 2026-11-19. Prompted by the lemon on fish and chips; refined the same evening.
-- **Keep the original key order** (Condimenta, Liquida, Naturalia, Constructa, Incertae sedis). Change two definitions and add one rule:
-  1. **Condimenta: made to be applied to other food, never the star.** "Made" means it fails the police lineup: extracted, refined, fermented or combined from several foods. Grown things are never condiments, so they fall through to Naturalia.
-  2. **Naturalia: one whole food, or one nature made** (salt, honey), bossed around (cut, dried, cooked, ground, smashed, pickled, preserved) but still recognizable. Smashing the whole food passes; extracting a part (juice, oil, refined sugar) fails, which matches Expressa in Liquida.
-  3. **The table rule** (generalizes the pizza-folding ruling): nothing the eater does at the table changes a classification. Squeezing a lemon, folding a slice, sprinkling salt, dunking a cookie: the food stays what it was when it arrived.
-- **Results:** lemon, parsley, oregano, peppercorns, salt, honey, peanut butter and jam are Naturalia; ketchup, mustard, MSG, sugar, vinegar, soy sauce, ranch, olive oil, butter, jelly, guacamole, salsa and spice blends are Condimenta; pepperoni and cheese stay Constructa (eaten as a serving); carrots in soup stay carrots (assembly rule).
-- **Naturalia structure falls out of this:** the genus is the real genus of the living source, which the existing names already follow (Bos, Vitis, Cucumis, Thunnus). Peanut butter is a species in Arachis beside the peanut, as the raisin sits in Vitis beside the grape; creamy and crunchy are varieties. Phylum by origin (plant, animal, fungus, mineral) still to design.
-- **Hard case to rule on:** pickle relish (chopped pickle plus sweetener: does the cucumber still recognize it?).
-- **PB&J:** a classic sandwich with two Naturalia (peanut butter, jam) or a Naturalia and a Condimenta (jelly) between slices; needs a "spreads" genus.
-- **Decisions for Jeff:** (1) adopt the three rules; (2) Naturalia genus = real genus of the source; (3) relish; (4) build together with Condimenta full depth and PB&J.
+### ~~Kingdom rules, Condimenta and Naturalia at full depth, PB&J~~ Done 2026-11-19
+- **Rules adopted (in principle; may be reconsidered as Naturalia grows):** Condimenta = made (fails the lineup: extracted, refined, fermented or combined) to be applied, never the star. Naturalia = one whole food or one nature made (salt, honey), bossed around but recognizable; smashing passes, extracting a part fails. The table rule: nothing the eater does at the table changes a classification. The condiment test: phylum by method, last transforming step decides, form at order. All on the Rules page; the classifier asks the method and origin questions.
+- **Condimenta:** five phyla (Crystallina, Contrita, Zymota, Emulsa, Reducta). Species: MSG, yellow and Dijon mustard, sweet pickle relish (made, therefore a condiment), soy sauce (low-sodium, tamari), mayonnaise, Caesar dressing (now *Caesaria cardiniana*), ketchup (curry ketchup), grape jelly.
+- **Naturalia:** phyla by origin (Vegetabilia, Animata, Mineralia), class by part, order by what was done, family and genus real. Species: lemon (*Citrus limon*), raisin, pickle, strawberry jam, peanut butter (creamy, crunchy), steak, tuna sashimi, honey, salt (moved from Condimenta).
+- **PB&J:** new genus *Linimentum* (spread fillings) in Segmentidae; jam and jelly are varieties. A condiment can join an assembled food (mayo in deviled eggs).
+- **Still open:** a fungus phylum when the first mushroom arrives; more condiments (vinegar, sugar, ranch, salsa, guacamole, spice blends, olive oil, butter) and natural foods (parsley, oregano, peppercorns, fries) as cards.
 
 ### Steak frites, and combo meals as associations (proposal; high priority)
 - **Logged:** 2026-11-15. Jeff is preparing the field-guide plate, so this is near the top.
@@ -33,27 +28,10 @@ Updated at the end of every working session, so the next one can start here.
 - **The test for "one thing" vs association:** are the foods built to be eaten in the same bite? Steak and fries are separate bites, so an association. Poutine (fries, gravy and curds combined) and a rice bowl (toppings on one base) are one specimen. Chicken and waffles depends on how it is served: stacked is topped (Apertae), side by side is an association; classify as typically prepared.
 - **Pressure points found:**
   - **The Costco hot dog:** its diagnostic $1.50 price covers the hot dog *and* the soda, a combo. Proposed: the variety stays a hot dog; the card names the soda as an associated species and the $1.50 combo as its type association. "Extinct if the price changes" still holds.
-  - **Condiments on the plate** (béarnaise with steak frites) stay applied condiments, not association members, per the applied-vs-side rule in the Condimenta proposal.
+  - **Condiments on the plate** (béarnaise with steak frites) stay applied condiments, not association members, per the condiment test and the table rule.
   - **Inedible members** (a kids' meal toy) are noted as commensals and never classified.
-- **Build needs:** fries in the tree (proposed Naturalia: a potato would recognize its fries in a police lineup, unlike mashed potatoes), which forces the Naturalia phylum question and helps the every-kingdom-full-depth goal; a small data list of associations; "commonly found with" on member cards; an Associations page or section; Plate III for steak frites.
+- **Build needs:** fries in the tree (proposed Naturalia: a potato would recognize its fries in a police lineup, unlike mashed potatoes), which fits the new Naturalia structure (Vegetabilia, Solanaceae, Solanum) and helps the every-kingdom-full-depth goal; a small data list of associations; "commonly found with" on member cards; an Associations page or section; Plate III for steak frites.
 - **Decisions for Jeff:** (1) adopt "the menu name never creates a specimen" as written; (2) associations as the concept and term; (3) the same-bite test; (4) the Costco handling.
-
-### Condimenta: full depth (proposal, awaiting decisions)
-- **Logged:** 2026-11-12. **Goal:** every kingdom gets at least one species classified all the way down; Condimenta first, then Naturalia and Incertae sedis.
-- **Proposed phylum question: how was it made?** (mirrors Liquida). Form (dry, pourable, spreadable) fails as a phylum because texture is a continuum (Sriracha vs Tabasco), so it moves down to order, like still vs sparkling. Phyla, with names that avoid existing ones:
-  - **Crystallina** (purified to crystals): salt, sugar, MSG.
-  - **Contrita** (ground, pounded or chopped): pepper, spice blends, mustard, pesto, salsa, relish, guacamole.
-  - **Zymota** (fermented): soy sauce, fish sauce, vinegar, miso, aged hot sauces.
-  - **Emulsa** (emulsified): mayonnaise, Caesar, ranch, aioli, vinaigrette.
-  - **Reducta** (cooked down): ketchup, BBQ sauce, jam, chutney.
-- **Rules to add or write down:**
-  - **Last transforming step decides** when methods stack: MSG is fermented then purified, so Crystallina; soy sauce is fermented then strained (finishing, not transforming), so Zymota. Already true in Liquida (beer is steeped, then fermented: Fermentata).
-  - **Hot sauce splits by method, correctly:** Tabasco (aged, fermented) is Zymota; Frank's (cooked, blended) is Reducta.
-  - **Applied vs side:** a condiment is applied to other food; a side is eaten alongside it. Relish is a condiment; a pickle spear is Naturalia. A lemon wedge squeezed on fish is a condiment (role beats ingredients). Cooked into a dish, a condiment becomes an ingredient (assembly rule).
-  - **Dips (future ruling):** is the chip a food or a spoon? Proposed: a spoon, so salsa is a condiment. A Rulings page candidate.
-- **First build:** the existing five (salt, MSG, soy sauce, Caesar dressing, ketchup) plus mustard and relish, which appear on Plate I (its legend already names mustard *Sinapis*). Caesar's genus needs renaming from the generic *Condimentum* (proposed *Caesaria*). Varieties: low-sodium soy sauce and tamari, curry ketchup, yellow and Dijon mustard.
-- **Decisions for Jeff:** (1) phylum by method, form at order; (2) write the last-transforming-step rule onto the Rules page; (3) add the applied-vs-side clarification to the condiment test; (4) add mustard and relish.
-- **After this:** Naturalia needs its own phylum question (steak, pickle, raisin, tuna sashimi), and Incertae sedis (candy corn, Jell-O salad) needs at least one full chain.
 
 ### Frozen concentrated orange juice
 - **Logged:** 2026-11-12
@@ -128,7 +106,7 @@ Updated at the end of every working session, so the next one can start here.
 - Sandwich restructure adopted 2026-10-04: a sandwich is a filling between bread; orders by how the bread is portioned (Partiformes: slices from a loaf; Integriformes: whole bread), families by kind of bread, genera by filling shape (tubes, discs, spheres, chunks, sheets). Added the hamburger and the Subway cold cut combo. Preparation, not eating, decides.
 - Espresso given its own genus, *Crema*, in Infusa (2026-10-04). Costco Hot Dog card now states the $1.50 price and cites sources (2026-10-04).
 - Pizza built out 2026-11-12: Apertae now mirrors the sandwiches (part of a loaf vs whole base, then hand-shaped vs pan-shaped crust). 8 styles with full cards, 7 stubs, toppings as varieties (Hawaiian: pineapple belongs on pizza). Deep dish ruled a pizza; calzone, stromboli and Chicago stuffed pizza ruled sandwiches. New status `species inquirenda` for stubs.
-- Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03), Sandwichae (2026-10-04), Apertae (2026-11-12). Next: the rest of Constructa (Dumplingae, Sushiae, Pieae, Pseudosandwichae, Stratifica, Immersa, Mixta, Formata), Naturalia, Condimenta, Incertae sedis.
+- Full-depth pass, kingdom by kingdom (every species gets every rank). Done: Liquida (2026-10-03), Sandwichae (2026-10-04), Apertae (2026-11-12), Condimenta and Naturalia (2026-11-19). Next: the rest of Constructa (Dumplingae, Sushiae, Pieae, Pseudosandwichae, Stratifica, Immersa, Mixta, Formata), Incertae sedis.
 - Done 2026-11-07: hot chocolate (Soluta, which now covers things dissolved into water or milk), chai (Infusa, its own species of tea) and bubble tea (Constructa, floating solids with cereal: you chew it).
 - Done 2026-11-07: the assembly rule is published as rule 5 on the Rules page. Still to do: a Rulings page entry answering "a hot dog is just a sausage and a bun", and optional cards for a plain frank and a plain bun.
 - Done 2026-11-12: the Americano is a drink of drinks (Miscellae > Aquiferae, water mixes): Americana diluta, worn with pride. Long black and iced americano are varieties; espresso tonic is a stub. New restoration rule: water put back where it was taken out restores a drink, so orange juice from concentrate stays juice. Variety rule now separates a splash (add-in) from real proportion under a new name (drink of drinks).

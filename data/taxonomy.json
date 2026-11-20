@@ -19,58 +19,463 @@
       "parent": "ediblia",
       "scientific": "Condimenta",
       "common": "The supporting cast",
-      "trait": "Exists to make other food better, never the star",
-      "short": "Seasonings, sauces, dips and spreads. Checked first, because ketchup will try to claim it is a meal.",
+      "trait": "Made to be applied to other food, never the star",
+      "short": "Sauces, dressings, spreads and blends: things that were made, by extracting, refining, fermenting or combining, so the original would not recognize them. Grown things are never condiments, however they are used. Checked first, because ketchup will try to claim it is a meal.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-19",
       "catalog": 2
     },
     {
-      "id": "ketchup",
-      "rank": "species",
-      "parent": "condimenta",
-      "scientific": "Lycopersica rubra",
-      "common": "Ketchup",
-      "short": "Tomato-based supporting cast. Banned from Chicago-style specimens by local statute.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "aliases": [
-        "ketchup",
-        "catsup"
-      ],
-      "catalog": 3
+      "ruled_on": "2026-11-19",
+      "id": "crystallina",
+      "rank": "phylum",
+      "parent": "condimenta",
+      "scientific": "Crystallina",
+      "common": "Purified to crystals",
+      "trait": "Refined until one substance is left",
+      "short": "The original would not recognize the result. Sugar from cane, MSG from fermented sugar beets or corn.",
+      "catalog": 266
     },
     {
-      "id": "salt",
-      "rank": "species",
-      "parent": "condimenta",
-      "scientific": "Sal communis",
-      "common": "Salt",
-      "short": "A seasoning. Salting a steak does not make the steak a constructed food; the salt is merely visiting.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "catalog": 4
+      "ruled_on": "2026-11-19",
+      "id": "glutamatae",
+      "rank": "class",
+      "parent": "crystallina",
+      "scientific": "Glutamatae",
+      "common": "Glutamates",
+      "trait": "Salts of glutamate, the savory one",
+      "short": "Umami, purified.",
+      "catalog": 267
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "glutamatae-siccae",
+      "rank": "order",
+      "parent": "glutamatae",
+      "scientific": "Siccae",
+      "common": "Dry",
+      "trait": "Grains, powders and crystals",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 268
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "glutamidae",
+      "rank": "family",
+      "parent": "glutamatae-siccae",
+      "scientific": "Glutamidae",
+      "common": "Glutamate seasonings",
+      "trait": "Built around glutamate",
+      "short": "Supporting cast with an unfair reputation.",
+      "catalog": 269
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "glutamas",
+      "rank": "genus",
+      "parent": "glutamidae",
+      "scientific": "Glutamas",
+      "common": "MSG and relatives",
+      "short": "Monosodium glutamate and its seasoning kin.",
+      "catalog": 270
     },
     {
       "id": "msg",
       "rank": "species",
-      "parent": "condimenta",
+      "parent": "glutamas",
       "scientific": "Glutamas sodicus",
       "common": "MSG",
-      "short": "Made by fermentation and chemically the same glutamate found in tomatoes. Supporting cast with an unfair reputation.",
+      "short": "Fermented, then purified to crystals: the last transforming step decides, so it sits with the crystals. Chemically the same glutamate found in tomatoes. Supporting cast with an unfair reputation.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "catalog": 5
+      "ruled_on": "2026-11-19",
+      "catalog": 5,
+      "aliases": [
+        "msg",
+        "monosodium glutamate",
+        "accent"
+      ]
     },
     {
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-19",
+      "id": "contrita",
+      "rank": "phylum",
+      "parent": "condimenta",
+      "scientific": "Contrita",
+      "common": "Ground, pounded or chopped",
+      "trait": "Several foods ground, pounded or chopped together",
+      "short": "Mustard, relish, pesto, salsa, guacamole and spice blends. One food ground alone is still a single food (peanut butter); grind it together with others and it was made.",
+      "catalog": 271
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "seminae",
+      "rank": "class",
+      "parent": "contrita",
+      "scientific": "Seminae",
+      "common": "Seed pastes",
+      "trait": "Ground seeds, wetted and seasoned",
+      "short": "Mustard, mostly.",
+      "catalog": 272
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "seminae-pastosae",
+      "rank": "order",
+      "parent": "seminae",
+      "scientific": "Pastosae",
+      "common": "Spreadable",
+      "trait": "Spooned or spread",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 273
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "sinapidae",
+      "rank": "family",
+      "parent": "seminae-pastosae",
+      "scientific": "Sinapidae",
+      "common": "Mustards",
+      "trait": "Built around the mustard seed",
+      "short": "Ground seed, vinegar, salt and opinions.",
+      "catalog": 274
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "sinapis",
+      "rank": "genus",
+      "parent": "sinapidae",
+      "scientific": "Sinapis",
+      "common": "Mustards",
+      "short": "Named on Plate I before it had a card: Fig. 4, Sinapis (praeparata).",
+      "catalog": 275
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "yellow-mustard",
+      "rank": "species",
+      "parent": "sinapis",
+      "scientific": "Sinapis lutea",
+      "common": "Yellow mustard",
+      "short": "Mild, bright yellow from turmeric, and the official mustard of Plate I. Made, so a condiment.",
+      "aliases": [
+        "mustard",
+        "yellow mustard",
+        "ballpark mustard",
+        "american mustard"
+      ],
+      "catalog": 276
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "dijon-mustard",
+      "rank": "species",
+      "parent": "sinapis",
+      "scientific": "Sinapis divionensis",
+      "common": "Dijon mustard",
+      "short": "Sharper, made with brown seeds and wine or verjuice. Divionensis: of Dijon.",
+      "aliases": [
+        "dijon",
+        "dijon mustard"
+      ],
+      "catalog": 277
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "conditae",
+      "rank": "class",
+      "parent": "contrita",
+      "scientific": "Conditae",
+      "common": "Chopped preserves",
+      "trait": "Pickled vegetables chopped with sugar and spice",
+      "short": "Relish and its relatives.",
+      "catalog": 278
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "conditae-pastosae",
+      "rank": "order",
+      "parent": "conditae",
+      "scientific": "Pastosae",
+      "common": "Spreadable",
+      "trait": "Spooned or spread",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 279
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "relishidae",
+      "rank": "family",
+      "parent": "conditae-pastosae",
+      "scientific": "Relishidae",
+      "common": "Relishes",
+      "trait": "Built around chopped pickle",
+      "short": "A pickle that has been through something.",
+      "catalog": 280
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "condita",
+      "rank": "genus",
+      "parent": "relishidae",
+      "scientific": "Condita",
+      "common": "Relishes",
+      "short": "Chopped, sweetened, spooned.",
+      "catalog": 281
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "pickle-relish",
+      "rank": "species",
+      "parent": "condita",
+      "scientific": "Condita dulcis",
+      "common": "Sweet pickle relish",
+      "short": "Definitely made, and therefore a condiment. The pickle is a single food; chop it with sugar and spice and the cucumber can no longer pick it out of a lineup. Rules are rules. Fig. 3 on Plate I.",
+      "aliases": [
+        "relish",
+        "pickle relish",
+        "sweet relish",
+        "hot dog relish"
+      ],
+      "catalog": 282
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "zymota",
+      "rank": "phylum",
+      "parent": "condimenta",
+      "scientific": "Zymota",
+      "common": "Fermented",
+      "trait": "Microbes did the work",
+      "short": "Soy sauce, fish sauce, vinegar, miso and aged hot sauces. The condiment cousins of beer and wine.",
+      "catalog": 283
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "glycinae",
+      "rank": "class",
+      "parent": "zymota",
+      "scientific": "Glycinae",
+      "common": "Soy ferments",
+      "trait": "Fermented soybeans and wheat",
+      "short": "Soy sauce and miso.",
+      "catalog": 284
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "glycinae-fluidae",
+      "rank": "order",
+      "parent": "glycinae",
+      "scientific": "Fluidae",
+      "common": "Pourable",
+      "trait": "Poured, drizzled or squeezed",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 285
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "shoyuidae",
+      "rank": "family",
+      "parent": "glycinae-fluidae",
+      "scientific": "Shoyuidae",
+      "common": "Soy sauces",
+      "trait": "Built around fermented soy",
+      "short": "Pressed and strained after fermenting; straining is finishing, not transforming.",
+      "catalog": 286
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "glycine",
+      "rank": "genus",
+      "parent": "shoyuidae",
+      "scientific": "Glycine",
+      "common": "Soy sauces",
+      "short": "Borrowed from the real soybean genus, as is customary when the soybean is involved.",
+      "catalog": 287
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "soy-sauce",
+      "rank": "species",
+      "parent": "glycine",
+      "scientific": "Glycine fermentata",
+      "common": "Soy sauce",
+      "short": "Fermented, then pressed and strained. Supporting cast for sushi and sashimi. Never the star, however much is poured.",
+      "aliases": [
+        "soy sauce",
+        "shoyu"
+      ],
+      "catalog": 7
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "soy-sauce-low-sodium",
+      "rank": "variety",
+      "parent": "soy-sauce",
+      "scientific": "G. f. tenuis",
+      "common": "Soy sauce, low-sodium",
+      "short": "Less salt, same ferment. More or less of the same thing is a variety.",
+      "aliases": [
+        "low sodium soy sauce",
+        "lite soy sauce"
+      ],
+      "catalog": 288
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "soy-sauce-tamari",
+      "rank": "variety",
+      "parent": "soy-sauce",
+      "scientific": "G. f. tamari",
+      "common": "Tamari",
+      "short": "Made with little or no wheat. Its own name, the same ferment: a variety.",
+      "aliases": [
+        "tamari"
+      ],
+      "catalog": 289
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "emulsa",
+      "rank": "phylum",
+      "parent": "condimenta",
+      "scientific": "Emulsa",
+      "common": "Emulsified",
+      "trait": "Oil and water forced to agree",
+      "short": "Mayonnaise, Caesar, ranch, aioli and vinaigrette.",
+      "catalog": 290
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "ovatae",
+      "rank": "class",
+      "parent": "emulsa",
+      "scientific": "Ovatae",
+      "common": "Egg emulsions",
+      "trait": "Held together by egg yolk",
+      "short": "Mayonnaise and the dressings built on it.",
+      "catalog": 291
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "ovatae-pastosae",
+      "rank": "order",
+      "parent": "ovatae",
+      "scientific": "Pastosae",
+      "common": "Spreadable",
+      "trait": "Spooned or spread",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 292
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "mahonidae",
+      "rank": "family",
+      "parent": "ovatae-pastosae",
+      "scientific": "Mahonidae",
+      "common": "Mayonnaises",
+      "trait": "Built around oil and yolk",
+      "short": "Named for Mahón, which the sauce's most popular origin story credits.",
+      "catalog": 293
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "mahonesa",
+      "rank": "genus",
+      "parent": "mahonidae",
+      "scientific": "Mahonesa",
+      "common": "Mayonnaises",
+      "short": "Mayonnaise and aioli.",
+      "catalog": 294
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "mayonnaise",
+      "rank": "species",
+      "parent": "mahonesa",
+      "scientific": "Mahonesa vulgaris",
+      "common": "Mayonnaise",
+      "short": "Oil and egg yolk, emulsified. A condiment, and also an ingredient: deviled eggs call for it, and nothing in the rules forbids a condiment from joining an assembled food.",
+      "aliases": [
+        "mayonnaise",
+        "mayo"
+      ],
+      "catalog": 295
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "ovatae-fluidae",
+      "rank": "order",
+      "parent": "ovatae",
+      "scientific": "Fluidae",
+      "common": "Pourable",
+      "trait": "Poured, drizzled or squeezed",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 296
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "caesaridae",
+      "rank": "family",
+      "parent": "ovatae-fluidae",
+      "scientific": "Caesaridae",
+      "common": "Caesar dressings",
+      "trait": "Built around anchovy, garlic, parmesan and yolk",
+      "short": "Pourable, barely.",
+      "catalog": 297
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "caesaria",
+      "rank": "genus",
+      "parent": "caesaridae",
+      "scientific": "Caesaria",
+      "common": "Caesar dressings",
+      "short": "Renamed from the generic Condimentum.",
+      "catalog": 298
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
       "id": "caesar-dressing",
       "rank": "species",
-      "parent": "condimenta",
-      "scientific": "Condimentum caesarianum",
+      "parent": "caesaria",
+      "scientific": "Caesaria cardiniana",
       "common": "Caesar dressing",
-      "short": "Anchovy, garlic, parmesan and egg, emulsified. Supporting cast in the chicken Caesar salad.",
+      "short": "Anchovy, garlic, parmesan and egg, emulsified. Supporting cast in the chicken Caesar salad. Cardiniana honours Caesar Cardini, usually credited with the salad.",
       "aliases": [
         "caesar dressing",
         "caesar"
@@ -79,18 +484,154 @@
     },
     {
       "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "id": "soy-sauce",
-      "rank": "species",
+      "ruled_on": "2026-11-19",
+      "id": "reducta",
+      "rank": "phylum",
       "parent": "condimenta",
-      "scientific": "Glycine fermentata",
-      "common": "Soy sauce",
-      "short": "Supporting cast for sushi and sashimi. Never the star, however much is poured.",
+      "scientific": "Reducta",
+      "common": "Cooked down",
+      "trait": "Cooked until it thickens",
+      "short": "Ketchup, BBQ sauce, jelly and chutney.",
+      "catalog": 299
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "lycopersicae",
+      "rank": "class",
+      "parent": "reducta",
+      "scientific": "Lycopersicae",
+      "common": "Tomato sauces",
+      "trait": "Tomatoes, cooked down with sugar and vinegar",
+      "short": "Ketchup and its relatives.",
+      "catalog": 300
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "lycopersicae-fluidae",
+      "rank": "order",
+      "parent": "lycopersicae",
+      "scientific": "Fluidae",
+      "common": "Pourable",
+      "trait": "Poured, drizzled or squeezed",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 301
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "catsupidae",
+      "rank": "family",
+      "parent": "lycopersicae-fluidae",
+      "scientific": "Catsupidae",
+      "common": "Ketchups",
+      "trait": "Built around the tomato",
+      "short": "Spelled either way.",
+      "catalog": 302
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "lycopersica",
+      "rank": "genus",
+      "parent": "catsupidae",
+      "scientific": "Lycopersica",
+      "common": "Ketchups",
+      "short": "Tomato, reduced.",
+      "catalog": 303
+    },
+    {
+      "id": "ketchup",
+      "rank": "species",
+      "parent": "lycopersica",
+      "scientific": "Lycopersica rubra",
+      "common": "Ketchup",
+      "short": "Tomatoes cooked down with sugar and vinegar: made, so a condiment. Banned from Chicago-style specimens by local statute.",
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
       "aliases": [
-        "soy sauce",
-        "shoyu"
+        "ketchup",
+        "catsup"
       ],
-      "catalog": 7
+      "catalog": 3
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "curry-ketchup",
+      "rank": "variety",
+      "parent": "ketchup",
+      "scientific": "L. r. currica",
+      "common": "Curry ketchup",
+      "short": "Ketchup with curry spices, as served on currywurst. An add-in, so a variety.",
+      "aliases": [
+        "curry ketchup",
+        "currywurst sauce"
+      ],
+      "catalog": 304
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fructae",
+      "rank": "class",
+      "parent": "reducta",
+      "scientific": "Fructae",
+      "common": "Fruit sauces and jellies",
+      "trait": "Fruit juice or pulp cooked down with sugar",
+      "short": "Jelly, and other fruit that lost its identity.",
+      "catalog": 305
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fructae-pastosae",
+      "rank": "order",
+      "parent": "fructae",
+      "scientific": "Pastosae",
+      "common": "Spreadable",
+      "trait": "Spooned or spread",
+      "short": "Form is decided here, not at phylum: texture is a sliding scale.",
+      "catalog": 306
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "gelatinidae",
+      "rank": "family",
+      "parent": "fructae-pastosae",
+      "scientific": "Gelatinidae",
+      "common": "Jellies",
+      "trait": "Built around strained fruit juice, set",
+      "short": "Jam that lost its identity.",
+      "catalog": 307
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "gelata",
+      "rank": "genus",
+      "parent": "gelatinidae",
+      "scientific": "Gelata",
+      "common": "Jellies",
+      "short": "Clear, set, and unrecognizable to the fruit.",
+      "catalog": 308
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "grape-jelly",
+      "rank": "species",
+      "parent": "gelata",
+      "scientific": "Gelata uvarum",
+      "common": "Grape jelly",
+      "short": "Juice extracted, strained and set with pectin. The grape would not pick it out of a lineup, so it was made: a condiment. Jam keeps its fruit and stays a single food.",
+      "aliases": [
+        "jelly",
+        "grape jelly"
+      ],
+      "catalog": 309
     },
     {
       "id": "liquida",
@@ -1704,21 +2245,389 @@
       "parent": "ediblia",
       "scientific": "Naturalia",
       "common": "One food, bossed around but recognizable",
-      "trait": "Could the original pick it out of a police lineup?",
-      "short": "A single food, dried, salted, pickled or grilled. A cucumber can identify a pickle; flour cannot identify toast.",
+      "trait": "One whole food, or one nature made, still recognizable to the original",
+      "short": "A single food, cut, dried, cooked, ground, smashed, pickled or preserved, that the original would still pick out of a police lineup. Salt and honey count: nature made them. Smashing the whole food passes; extracting a part (juice, oil, refined sugar) fails. The genus is the real genus of the living source.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-19",
       "catalog": 105
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "vegetabilia",
+      "rank": "phylum",
+      "parent": "naturalia",
+      "scientific": "Vegetabilia",
+      "common": "From plants",
+      "trait": "Grown on a plant",
+      "short": "Fruits, seeds, leaves and roots.",
+      "catalog": 310
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fructus",
+      "rank": "class",
+      "parent": "vegetabilia",
+      "scientific": "Fructus",
+      "common": "Fruits",
+      "trait": "The fruit of the plant, botanically speaking",
+      "short": "Includes the cucumber, botanically a fruit, and the lemon, emotionally a fruit.",
+      "catalog": 313
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fructus-crudiformes",
+      "rank": "order",
+      "parent": "fructus",
+      "scientific": "Crudiformes",
+      "common": "Raw",
+      "trait": "As picked",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 319
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "rutaceae",
+      "rank": "family",
+      "parent": "fructus-crudiformes",
+      "scientific": "Rutaceae",
+      "common": "Citrus family",
+      "trait": "The real family of citrus",
+      "short": "Lemons, limes, oranges.",
+      "catalog": 327
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "citrus",
+      "rank": "genus",
+      "parent": "rutaceae",
+      "scientific": "Citrus",
+      "common": "Citrus",
+      "short": "The real genus of the lemon.",
+      "catalog": 328
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "lemon",
+      "rank": "species",
+      "parent": "citrus",
+      "scientific": "Citrus limon",
+      "common": "Lemon",
+      "short": "A lemon is a lemon, before and after you squeeze it over fish and chips. The table rule: nothing the eater does at the table changes a classification. Its Latin name is the real one.",
+      "aliases": [
+        "lemon",
+        "lemons",
+        "lemon wedge",
+        "lemon slice"
+      ],
+      "catalog": 329
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fructus-siccatiformes",
+      "rank": "order",
+      "parent": "fructus",
+      "scientific": "Siccatiformes",
+      "common": "Dried",
+      "trait": "Dried until it shrinks",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 320
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "vitaceae",
+      "rank": "family",
+      "parent": "fructus-siccatiformes",
+      "scientific": "Vitaceae",
+      "common": "Grape family",
+      "trait": "The real family of the grape",
+      "short": "Grapes, and grapes with life experience.",
+      "catalog": 330
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "vitis",
+      "rank": "genus",
+      "parent": "vitaceae",
+      "scientific": "Vitis",
+      "common": "Grapes",
+      "short": "The real genus of the grape.",
+      "catalog": 331
+    },
+    {
+      "id": "raisin",
+      "rank": "species",
+      "parent": "vitis",
+      "scientific": "Vitis siccata",
+      "common": "Raisin",
+      "short": "A grape with life experience.",
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "aliases": [
+        "raisins"
+      ],
+      "catalog": 107
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fructus-conditiformes",
+      "rank": "order",
+      "parent": "fructus",
+      "scientific": "Conditiformes",
+      "common": "Preserved",
+      "trait": "Pickled in brine, or cooked in sugar to keep",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 321
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "cucurbitaceae",
+      "rank": "family",
+      "parent": "fructus-conditiformes",
+      "scientific": "Cucurbitaceae",
+      "common": "Gourd family",
+      "trait": "The real family of the cucumber",
+      "short": "Cucumbers, squash, melons.",
+      "catalog": 332
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "cucumis",
+      "rank": "genus",
+      "parent": "cucurbitaceae",
+      "scientific": "Cucumis",
+      "common": "Cucumbers",
+      "short": "The real genus of the cucumber.",
+      "catalog": 333
+    },
+    {
+      "id": "pickle",
+      "rank": "species",
+      "parent": "cucumis",
+      "scientific": "Cucumis conditus",
+      "common": "Pickle",
+      "short": "Passes the police lineup test: a cucumber would recognize it instantly. Chop it with sugar and spice, though, and it becomes relish, a condiment.",
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "aliases": [
+        "pickles",
+        "dill pickle",
+        "pickle spear",
+        "gherkin"
+      ],
+      "catalog": 108
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "rosaceae",
+      "rank": "family",
+      "parent": "fructus-conditiformes",
+      "scientific": "Rosaceae",
+      "common": "Rose family",
+      "trait": "The real family of the strawberry",
+      "short": "Strawberries, apples, almonds and roses.",
+      "catalog": 334
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fragaria",
+      "rank": "genus",
+      "parent": "rosaceae",
+      "scientific": "Fragaria",
+      "common": "Strawberries",
+      "short": "The real genus of the strawberry.",
+      "catalog": 335
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "strawberry-jam",
+      "rank": "species",
+      "parent": "fragaria",
+      "scientific": "Fragaria conservata",
+      "common": "Strawberry jam",
+      "short": "Strawberries cooked with sugar to keep them. The fruit is still in there, and the strawberry would recognize the chunks: a single food. Strain out the fruit and set the juice, and you have jelly, a condiment.",
+      "aliases": [
+        "jam",
+        "strawberry jam",
+        "preserves",
+        "strawberry preserves"
+      ],
+      "catalog": 336
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "semina",
+      "rank": "class",
+      "parent": "vegetabilia",
+      "scientific": "Semina",
+      "common": "Seeds and nuts",
+      "trait": "The seed of the plant",
+      "short": "Including the peanut, which is a legume pretending to be a nut.",
+      "catalog": 314
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "semina-contusiformes",
+      "rank": "order",
+      "parent": "semina",
+      "scientific": "Contusiformes",
+      "common": "Smashed",
+      "trait": "Ground or smashed, the whole food and nothing else",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 322
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fabaceae",
+      "rank": "family",
+      "parent": "semina-contusiformes",
+      "scientific": "Fabaceae",
+      "common": "Legume family",
+      "trait": "The real family of the peanut",
+      "short": "Peas, beans and peanuts.",
+      "catalog": 337
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "arachis",
+      "rank": "genus",
+      "parent": "fabaceae",
+      "scientific": "Arachis",
+      "common": "Peanuts",
+      "short": "The real genus of the peanut.",
+      "catalog": 338
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "peanut-butter",
+      "rank": "species",
+      "parent": "arachis",
+      "scientific": "Arachis contusa",
+      "common": "Peanut butter",
+      "short": "Peanuts that have been smashed a great deal. Still one food, and the peanut knows it: smashing the whole food passes the lineup; extracting a part (like peanut oil) would not.",
+      "aliases": [
+        "peanut butter",
+        "pb"
+      ],
+      "catalog": 339
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "peanut-butter-creamy",
+      "rank": "variety",
+      "parent": "peanut-butter",
+      "scientific": "A. c. levis",
+      "common": "Peanut butter, creamy",
+      "short": "Smashed until smooth. A variety, like a cut of steak.",
+      "aliases": [
+        "creamy peanut butter",
+        "smooth peanut butter"
+      ],
+      "catalog": 340
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "peanut-butter-crunchy",
+      "rank": "variety",
+      "parent": "peanut-butter",
+      "scientific": "A. c. granulosa",
+      "common": "Peanut butter, crunchy",
+      "short": "Smashed, with some peanut left in pieces. Still the same food, still a variety.",
+      "aliases": [
+        "crunchy peanut butter",
+        "chunky peanut butter"
+      ],
+      "catalog": 341
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "animata",
+      "rank": "phylum",
+      "parent": "naturalia",
+      "scientific": "Animata",
+      "common": "From animals",
+      "trait": "From an animal, or made by one",
+      "short": "Meat, fish, and what bees make.",
+      "catalog": 311
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "carnes",
+      "rank": "class",
+      "parent": "animata",
+      "scientific": "Carnes",
+      "common": "Meat",
+      "trait": "Muscle of land animals",
+      "short": "Steak and friends.",
+      "catalog": 315
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "carnes-assatiformes",
+      "rank": "order",
+      "parent": "carnes",
+      "scientific": "Assatiformes",
+      "common": "Cooked",
+      "trait": "Grilled, roasted or seared",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 323
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "bovidae",
+      "rank": "family",
+      "parent": "carnes-assatiformes",
+      "scientific": "Bovidae",
+      "common": "Cattle family",
+      "trait": "The real family of cattle",
+      "short": "Cows, and therefore steak.",
+      "catalog": 342
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "bos",
+      "rank": "genus",
+      "parent": "bovidae",
+      "scientific": "Bos",
+      "common": "Cattle",
+      "short": "The real genus of cattle.",
+      "catalog": 343
     },
     {
       "id": "steak",
       "rank": "species",
-      "parent": "naturalia",
+      "parent": "bos",
       "scientific": "Bos assatus",
       "common": "Grilled steak",
-      "short": "One food, grilled. The salt and pepper on top belong to Condimenta; the cow would still recognize it.",
+      "short": "One food, grilled. The salt and pepper on top are single foods visiting, and the cow would still recognize it. Cuts such as ribeye and sirloin are varieties, not species.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-19",
       "aliases": [
         "steak",
         "grilled steak",
@@ -1730,45 +2639,61 @@
       "catalog": 106
     },
     {
-      "id": "raisin",
-      "rank": "species",
-      "parent": "naturalia",
-      "scientific": "Vitis siccata",
-      "common": "Raisin",
-      "short": "A grape with life experience.",
       "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "aliases": [
-        "raisins"
-      ],
-      "catalog": 107
-    },
-    {
-      "id": "pickle",
-      "rank": "species",
-      "parent": "naturalia",
-      "scientific": "Cucumis conditus",
-      "common": "Pickle",
-      "short": "Passes the police lineup test: a cucumber would recognize it instantly.",
-      "status": "ruled",
-      "ruled_on": "2026-10-03",
-      "aliases": [
-        "pickles",
-        "dill pickle",
-        "pickle spear",
-        "gherkin"
-      ],
-      "catalog": 108
+      "ruled_on": "2026-11-19",
+      "id": "pisces",
+      "rank": "class",
+      "parent": "animata",
+      "scientific": "Pisces",
+      "common": "Fish",
+      "trait": "From fish",
+      "short": "Raw or otherwise.",
+      "catalog": 316
     },
     {
       "status": "ruled",
-      "ruled_on": "2026-10-03",
+      "ruled_on": "2026-11-19",
+      "id": "pisces-crudiformes",
+      "rank": "order",
+      "parent": "pisces",
+      "scientific": "Crudiformes",
+      "common": "Raw",
+      "trait": "Raw, sliced",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 324
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "scombridae",
+      "rank": "family",
+      "parent": "pisces-crudiformes",
+      "scientific": "Scombridae",
+      "common": "Mackerel family",
+      "trait": "The real family of tuna",
+      "short": "Tunas and mackerels.",
+      "catalog": 344
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "thunnus",
+      "rank": "genus",
+      "parent": "scombridae",
+      "scientific": "Thunnus",
+      "common": "Tunas",
+      "short": "The real genus of tuna.",
+      "catalog": 345
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
       "id": "tuna-sashimi",
       "rank": "species",
-      "parent": "naturalia",
+      "parent": "thunnus",
       "scientific": "Thunnus crudus",
       "common": "Tuna sashimi (maguro)",
-      "short": "Raw tuna, sliced. One food, still recognizable: the tuna would pick it out of a lineup. The soy sauce and wasabi are Condimenta. Not sushi, because there is no rice.",
+      "short": "Raw tuna, sliced. One food, still recognizable: the tuna would pick it out of a lineup. The soy sauce is a condiment; real wasabi is a grated root and a single food, while the usual green paste was made. Not sushi, because there is no rice.",
       "aliases": [
         "sashimi",
         "tuna sashimi",
@@ -1776,6 +2701,143 @@
         "raw fish"
       ],
       "catalog": 109
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "apiaria",
+      "rank": "class",
+      "parent": "animata",
+      "scientific": "Apiaria",
+      "common": "Bee-made",
+      "trait": "Made by bees",
+      "short": "Honey: nectar, bossed around by bees.",
+      "catalog": 317
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "apiaria-crudiformes",
+      "rank": "order",
+      "parent": "apiaria",
+      "scientific": "Crudiformes",
+      "common": "Raw",
+      "trait": "As the bees left it",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 325
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "apidae",
+      "rank": "family",
+      "parent": "apiaria-crudiformes",
+      "scientific": "Apidae",
+      "common": "Bee family",
+      "trait": "The real family of the honey bee",
+      "short": "Bees, which did all the work.",
+      "catalog": 346
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "apis",
+      "rank": "genus",
+      "parent": "apidae",
+      "scientific": "Apis",
+      "common": "Honey bees",
+      "short": "The real genus of the honey bee.",
+      "catalog": 347
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "honey",
+      "rank": "species",
+      "parent": "apis",
+      "scientific": "Apis mellita",
+      "common": "Honey",
+      "short": "Nectar, bossed around by bees, still recognizable. Nature made it, so it is a single food, wherever it gets drizzled.",
+      "aliases": [
+        "honey"
+      ],
+      "catalog": 348
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "mineralia",
+      "rank": "phylum",
+      "parent": "naturalia",
+      "scientific": "Mineralia",
+      "common": "From the earth",
+      "trait": "Neither grown nor caught",
+      "short": "Salt, chiefly. Nature made it.",
+      "catalog": 312
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "sales",
+      "rank": "class",
+      "parent": "mineralia",
+      "scientific": "Sales",
+      "common": "Salts",
+      "trait": "Mineral salts",
+      "short": "Salt is salt.",
+      "catalog": 318
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "sales-crudiformes",
+      "rank": "order",
+      "parent": "sales",
+      "scientific": "Crudiformes",
+      "common": "As found",
+      "trait": "Mined or evaporated, otherwise untouched",
+      "short": "The order says what was done to it. Whatever it was, the original still knows it.",
+      "catalog": 326
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "halitidae",
+      "rank": "family",
+      "parent": "sales-crudiformes",
+      "scientific": "Halitidae",
+      "common": "Halite",
+      "trait": "Rock salt and sea salt, the mineral halite",
+      "short": "The salt family, mineralogically.",
+      "catalog": 349
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "sal",
+      "rank": "genus",
+      "parent": "halitidae",
+      "scientific": "Sal",
+      "common": "Salts",
+      "short": "Table salt, sea salt, kosher salt.",
+      "catalog": 350
+    },
+    {
+      "id": "salt",
+      "rank": "species",
+      "parent": "sal",
+      "scientific": "Sal communis",
+      "common": "Salt",
+      "short": "Salt is salt: nature made it, and it is recognizably itself, so it is a single food, not a condiment. Salting a steak does not make the steak a constructed food; the salt is merely visiting.",
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "catalog": 4,
+      "aliases": [
+        "salt",
+        "table salt",
+        "sea salt",
+        "kosher salt"
+      ]
     },
     {
       "id": "constructa",
@@ -1979,6 +3041,69 @@
         "ham sandwich"
       ],
       "catalog": 123
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "linimentum",
+      "rank": "genus",
+      "parent": "segmentidae",
+      "scientific": "Linimentum",
+      "common": "Spread fillings",
+      "short": "Fillings spread rather than stacked. The filling's shape decides the genus, and a spread is a shape.",
+      "catalog": 351,
+      "trait": "A filling spread on the slices",
+      "verdict": "Sandwich"
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "pbj",
+      "rank": "species",
+      "parent": "linimentum",
+      "scientific": "Linimentum arachidis",
+      "common": "Peanut butter and jelly sandwich",
+      "verdict": "Sandwich",
+      "short": "A sandwich: two slices from a loaf with spreads between them. Not bread with condiments: the peanut butter is a single food, and the second spread decides the variety.",
+      "aliases": [
+        "pbj",
+        "pb&j",
+        "pb and j",
+        "peanut butter and jelly",
+        "peanut butter and jam",
+        "peanut butter sandwich"
+      ],
+      "catalog": 352
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "pbj-jam",
+      "rank": "variety",
+      "parent": "pbj",
+      "scientific": "L. a. conservata",
+      "common": "PB&J, made with jam",
+      "verdict": "Sandwich",
+      "short": "Two single foods between bread: peanut butter and strawberry jam.",
+      "aliases": [
+        "peanut butter and jam sandwich"
+      ],
+      "catalog": 353
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "pbj-jelly",
+      "rank": "variety",
+      "parent": "pbj",
+      "scientific": "L. a. gelata",
+      "common": "PB&J, made with jelly",
+      "verdict": "Sandwich",
+      "short": "A single food and a condiment between bread. Nothing in the rules forbids a condiment from joining an assembled food.",
+      "aliases": [
+        "peanut butter and jelly sandwich"
+      ],
+      "catalog": 354
     },
     {
       "id": "integriformes",

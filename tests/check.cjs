@@ -116,8 +116,17 @@ ok(under('milkshake', 'cruda') && under('smoothie', 'cruda') && !under('milkshak
 ok(under('gasosa-aquatica', 'aquae-spumiformes') && under('aqua-pura', 'aquae-tranquilliformes'), 'still vs sparkling differ at order');
 ok(byId['cola-vulgaris-fontana'] && byId['cola-vulgaris-fontana'].rank === 'variety', 'fountain soda is a variety');
 
+ok(['lemon','salt','honey','strawberry-jam','peanut-butter','pickle','raisin','steak','tuna-sashimi'].every(id => under(id, 'naturalia')), 'grown and nature-made foods are Naturalia (lemon, salt, honey, jam, peanut butter)');
+ok(['ketchup','msg','yellow-mustard','dijon-mustard','pickle-relish','soy-sauce','mayonnaise','caesar-dressing','grape-jelly'].every(id => under(id, 'condimenta')), 'made things applied to food are Condimenta');
+ok(under('pickle-relish', 'contrita') && under('pickle', 'naturalia'), 'pickle relish is made; the pickle is not');
+ok(under('grape-jelly', 'reducta') && under('strawberry-jam', 'naturalia'), 'jelly is a condiment, jam is a single food');
+ok(under('msg', 'crystallina') && !under('msg', 'zymota'), 'the last transforming step decides: MSG is crystals');
+ok(under('peanut-butter', 'arachis') && under('steak', 'bos') && byId['lemon'].scientific === 'Citrus limon', 'Naturalia genera are real genera');
+ok(under('pbj', 'segmentidae') && ['pbj-jam','pbj-jelly'].every(id => byId[id].parent === 'pbj'), 'PB&J is a sandwich; jam or jelly is a variety');
+ok(rules.rules.some(r => r.id === 'table') && rules.rules.some(r => r.id === 'condiments'), 'the table rule and condiment test are published');
+
 // Full depth: every species in a finished kingdom has every rank above it
-const FULL = ['liquida', 'sandwichae', 'apertae'];
+const FULL = ['liquida', 'sandwichae', 'apertae', 'condimenta', 'naturalia'];
 const need = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus'];
 tax.nodes.filter(n => n.rank === 'species' && FULL.some(k => under(n.id, k))).forEach(n => {
   const ranks = ancestors(n.id).map(a => byId[a].rank);

@@ -6,13 +6,13 @@
       "title": "The placement key",
       "summary": "Five kingdoms, checked in order. The first one that matches wins.",
       "points": [
-        "Condimenta: exists to make other food better, never the star.",
+        "Condimenta: made to be applied to other food, never the star. \"Made\" means extracted, refined, fermented or combined, so the original would not recognize it. Grown things are never condiments.",
         "Liquida: has a beverage role (hydrate, refresh, stimulate, intoxicate).",
-        "Naturalia: one food, bossed around but still recognizable.",
+        "Naturalia: one whole food, or one nature made (salt, honey), bossed around but still recognizable.",
         "Constructa: assembled food, where the originals can't recognize themselves or several foods share the job.",
         "Incertae sedis: nobody can place it. Pending review, indefinitely."
       ],
-      "example": "Orange juice is a single ingredient, but it is drunk, so Liquida wins before Naturalia is checked."
+      "example": "Orange juice is a single ingredient, but it is drunk, so Liquida wins before Naturalia is checked. A lemon is never made, so Condimenta passes it by and it lands in Naturalia, however it is used."
     },
     {
       "id": "lineup",
@@ -20,9 +20,24 @@
       "summary": "Could the original food pick the result out of a police lineup? If yes, it is Naturalia. If no, it is Constructa.",
       "points": [
         "A cucumber can identify a pickle, so pickles are Naturalia.",
-        "Flour cannot identify toast, so toast is Constructa."
+        "Flour cannot identify toast, so toast is Constructa.",
+        "Smashing the whole food passes: peanut butter is still peanuts. Extracting a part fails: juice, oil and refined sugar are made.",
+        "Nature-made counts as one food: salt, honey.",
+        "In Naturalia the family and genus are the real ones of the living source: Bos, Vitis, Citrus, Arachis."
       ],
       "example": "A raisin is a grape with life experience. The grape would know."
+    },
+    {
+      "id": "table",
+      "title": "The table rule",
+      "summary": "Nothing the eater does at the table changes a classification. A food is what it was when it arrived.",
+      "points": [
+        "A lemon squeezed over fish and chips is still a lemon.",
+        "A New York slice folded by the eater is still a pizza. Folded by the baker, it is a calzone, and a calzone is a sandwich.",
+        "Salt sprinkled on a steak is salt visiting a steak.",
+        "A cookie dunked in milk is still a cookie. The milk is still milk."
+      ],
+      "example": "The baker's choices count; the eater's do not. That is why the calzone is a sandwich and the folded slice is not."
     },
     {
       "id": "role",
@@ -49,6 +64,21 @@
         "Still or sparkling is decided one level down, at order."
       ],
       "example": "Lemonade is not juice: it is mostly water with things dissolved in. Oat milk is not milk: it is pressed from a plant. A latte is not coffee: it is two drinks mixed. A milkshake is not a drink at all. Espresso is not Expressa either: the water gets pressed, not the bean. Hot chocolate is not Infusa: the cocoa stays in the cup. Bubble tea is not a drink: you chew it. An americano is a drink of drinks: espresso plus water, a finished drink plus a finished drink."
+    },
+    {
+      "id": "condiments",
+      "title": "The condiment test",
+      "summary": "Condiments are sorted by how they were made, like drinks. When methods stack, the last transforming step decides.",
+      "points": [
+        "Purified to crystals (sugar, MSG): Crystallina.",
+        "Several foods ground, pounded or chopped together (mustard, relish, salsa): Contrita.",
+        "Fermented (soy sauce, vinegar): Zymota.",
+        "Emulsified (mayonnaise, Caesar): Emulsa.",
+        "Cooked down (ketchup, jelly): Reducta.",
+        "Form (dry, pourable, spreadable) is decided one level down, at order.",
+        "Finishing steps such as straining and bottling do not count. MSG is fermented, then purified: it sits with the crystals."
+      ],
+      "example": "Hot sauce splits, correctly: an aged, fermented one is Zymota; a cooked and blended one is Reducta. Same shelf, different method. And jelly is jam that lost its identity."
     },
     {
       "id": "assembly",
@@ -138,16 +168,16 @@
         "help": "Pick the first one that fits. Order matters.",
         "options": [
           {
-            "label": "It makes other food better: a seasoning, sauce, dip or spread",
-            "result": "condimenta"
+            "label": "It was made to go on other food: a sauce, dressing, jelly or spice blend (not something grown, like salt or a lemon)",
+            "next": "condiment"
           },
           {
             "label": "You drink it to hydrate, refresh, wake up or unwind",
             "next": "drink"
           },
           {
-            "label": "It is one food, maybe dried, salted, pickled or grilled, but still recognizable",
-            "result": "naturalia"
+            "label": "It is one food, or one nature made (salt, honey): maybe dried, ground, pickled or grilled, but still recognizable",
+            "next": "natural"
           },
           {
             "label": "Several foods combined, or ingredients turned into something new",
@@ -298,6 +328,50 @@
           {
             "label": "A whole base made for this dish: a pizza crust, a pad of rice",
             "result": "apertae-integriformes"
+          }
+        ]
+      },
+      "condiment": {
+        "question": "How was it made?",
+        "help": "Pick the last step that changed it. Straining and bottling do not count.",
+        "options": [
+          {
+            "label": "Purified to crystals: sugar, MSG",
+            "result": "crystallina"
+          },
+          {
+            "label": "Several foods ground, pounded or chopped together: mustard, relish, salsa",
+            "result": "contrita"
+          },
+          {
+            "label": "Fermented: soy sauce, vinegar, aged hot sauce",
+            "result": "zymota"
+          },
+          {
+            "label": "Emulsified: mayonnaise, Caesar, ranch",
+            "result": "emulsa"
+          },
+          {
+            "label": "Cooked down: ketchup, jelly, BBQ sauce",
+            "result": "reducta"
+          }
+        ]
+      },
+      "natural": {
+        "question": "Where does it come from?",
+        "help": "",
+        "options": [
+          {
+            "label": "A plant: fruit, seed, nut, leaf or root",
+            "result": "vegetabilia"
+          },
+          {
+            "label": "An animal, or made by one: meat, fish, honey",
+            "result": "animata"
+          },
+          {
+            "label": "The earth: salt",
+            "result": "mineralia"
           }
         ]
       }
