@@ -8,10 +8,19 @@ Updated at the end of every working session, so the next one can start here.
 
 - **Last session (2026-11-13):** Plate II added: the meat lovers Detroit pizza (new variety *S. d. carnivora*), from Jeff's illustration. Footer redesign options are on a canvas (A ledger, B admission stub, C inventory stamp; Claude recommends B), awaiting Jeff's pick.
 - **Session before (2026-11-12):** short list cleared: GoatCounter visitor counts turned on; license switched to CC BY-NC 4.0 with a blended credit (lawyer questions saved under Licensing); commits now authored by jeffsonlinepersona. Earlier the same day: Americano ruled a drink of drinks, with its history card and the new restoration rule. Before that, the same day: pizza built to full depth (8 styles, 7 stubs, Hawaiian card: pineapple belongs on pizza). Calzone, stromboli and Chicago stuffed pizza ruled sandwiches; deep dish ruled a pizza. New `species inquirenda` status for stubs.
-- **Waiting on Jeff:** (0) steak frites and combo meals as associations (under Features): four decisions; (1) the Condimenta proposal (below, under Features): four decisions, then build; (2) footer design: pick A, B or C on the "Footer and visitor counter options" canvas.
+- **Waiting on Jeff:** (00) kingdom order, the single-food test, honey, peanut butter and jelly (under Features); (0) steak frites and combo meals as associations (under Features): four decisions; (1) the Condimenta proposal (below, under Features): four decisions, then build; (2) footer design: pick A, B or C on the "Footer and visitor counter options" canvas.
 - **Up next, smallest first:** steak frites and associations (high priority, plate in progress); Condimenta full-depth build, once Jeff decides; orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa, Naturalia and Condimenta.
 
 ## Features
+
+### Kingdom order and the single-food test: lemon, honey, peanut butter, jelly (proposal)
+- **Logged:** 2026-11-19. Prompted by a lemon squeezed over fish and chips counting as a condiment.
+- **Proposed key order:** Liquida > Naturalia > Condimenta > Constructa > Incertae sedis (today Condimenta is first). A lemon is a lemon first. Condiments stay ahead of assembled food, so ketchup still lands in Condimenta without changing the Constructa test.
+- **Guardrail:** Condimenta keeps "never the star": made to be applied to other food and not eaten as a serving on its own. Without it, assembled toppings (pepperoni, bacon bits) would be swallowed by Condimenta.
+- **Single-food test, written down:** one food, plus salt, sugar, vinegar or spices only in seasoning or preserving amounts; it may be dried, salted, pickled, cooked, ground or pressed, as long as the original would still pick it out of a police lineup. Refining into crystals (sugar, MSG) fails the lineup.
+- **Consequences:** salt and a lemon wedge become Naturalia; honey Naturalia (nectar, bossed around by bees); peanut butter Naturalia (ground peanuts and salt); jam Naturalia (the strawberry recognizes the chunks); jelly Condimenta (strained and set, the grape would not know it); ground pepper and olive oil Naturalia if grinding and pressing count as bossing around (decision); PB&J a classic sandwich (slices from a loaf; spread filling, needs a new genus).
+- **Changes needed:** Rules page placement key, kingdom question in the classifier and its checks, About page kingdom list, steak and salt card wording, the Condimenta proposal (purified-crystals group keeps sugar and MSG, loses salt).
+- **Decisions for Jeff:** (1) the new order; (2) the single-food test wording, including whether grinding and pressing count; (3) the jam/jelly split; (4) PB&J's genus for spreads.
 
 ### Steak frites, and combo meals as associations (proposal; high priority)
 - **Logged:** 2026-11-15. Jeff is preparing the field-guide plate, so this is near the top.
