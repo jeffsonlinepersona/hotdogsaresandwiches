@@ -743,14 +743,51 @@
     s.onload = function () { var q = gcQueue; gcQueue = []; q.forEach(gcCount); };
     document.head.appendChild(s);
 
-    // Public visitor count in the footer (needs "Allow adding visitor counts" in GoatCounter settings)
+    // Public visitor count on the footer ticket (needs "Allow adding visitor counts" in GoatCounter settings)
     fetch('https://' + GOATCOUNTER_CODE + '.goatcounter.com/counter/TOTAL.json')
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (j) {
-        var el = document.getElementById('visit-count');
-        if (el && j && j.count) { el.textContent = j.count + ' visits logged by the Board'; el.hidden = false; }
+        var n = parseInt(String(j && j.count || '').replace(/[^0-9]/g, ''), 10);
+        if (!n) throw new Error('no count');
+        var digits = String(n); while (digits.length < 6) digits = '0' + digits;
+        document.getElementById('visit-count').textContent = digits;
+        document.getElementById('ticket').setAttribute('aria-label', 'Admission ticket: ' + n + ' visits logged since 3 October 2026');
       })
-      .catch(function () { /* counter not enabled: stay hidden */ });
+      .catch(function () {
+        var note = document.getElementById('visit-note');
+        if (note) note.textContent = 'The ledger is closed for inventory. Admission remains free.';
+      });
+  }
+
+  // Footer social links. Add an entry and it appears; leave the list empty and the footer says so.
+  // icon: instagram, tiktok, threads, bluesky, youtube, x, mastodon, reddit, email, or anything else for a generic link.
+  // name is read aloud by screen readers; label is what shows (keep it short: the icon names the platform).
+  var SOCIAL_LINKS = [
+    // { icon: 'instagram', name: 'Instagram', label: '@hotdogsaresandwiches', url: 'https://www.instagram.com/hotdogsaresandwiches/' },
+    // { icon: 'email', name: 'Email', label: 'Write to the Board', url: 'mailto:board@example.com' },
+  ];
+  var SOCIAL_ICONS = {
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/>',
+    tiktok: '<path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.6 2.2 4.2 5 4.5"/>',
+    threads: '<path d="M16.5 11c-.3-3-2-4.5-4.5-4.5-3 0-5 2.3-5 5.5s2 5.5 5 5.5c2.6 0 4.5-1.5 4.5-3.6 0-2-1.8-3-4-3-1.7 0-2.8.8-2.8 2s1 1.9 2.3 1.9"/>',
+    bluesky: '<path d="M12 11c-1.8-3.4-5-6-6.8-6C3.6 5 4 8 4.5 10c.6 2.2 2.8 3 5 2.6-3.6 1-3.4 3.6-1.4 5 2 1.4 3.2-1.4 3.9-3.6.7 2.2 1.9 5 3.9 3.6s2.2-4-1.4-5c2.2.4 4.4-.4 5-2.6.5-2 .9-5-.7-5-1.8 0-5 2.6-6.8 6z"/>',
+    youtube: '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/>',
+    x: '<path d="M4 4l16 16M20 4L4 20"/>',
+    mastodon: '<path d="M4 4h16v12H8l-4 4z"/>',
+    reddit: '<circle cx="12" cy="14" r="6.5"/><circle cx="18.5" cy="5.5" r="1.5"/><path d="M12 7.5l1.2-4 5.3 2"/>',
+    email: '<path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/>',
+    link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'
+  };
+  function renderSocialLinks() {
+    var box = document.getElementById('social-links'), aside = document.getElementById('social-aside');
+    if (!box) return;
+    box.innerHTML = SOCIAL_LINKS.map(function (s) {
+      var icon = SOCIAL_ICONS[s.icon] || SOCIAL_ICONS.link;
+      var ext = /^https?:/.test(s.url) ? ' rel="me noopener" target="_blank"' : '';
+      var aria = s.name ? ' aria-label="' + esc(s.name + ': ' + s.label) + '"' : '';
+      return '<a href="' + esc(s.url) + '"' + ext + aria + '><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + icon + '</svg><span>' + esc(s.label) + '</span></a>';
+    }).join('');
+    if (aside && SOCIAL_LINKS.length) aside.textContent = 'Rulings posted here, under protest.';
   }
 
   function trackPage(r) {
@@ -1016,6 +1053,7 @@
       fetch('data/rules.json' + ASSET_V).then(function (r) { if (!r.ok) throw new Error('rules ' + r.status); return r.json(); })
     ]).then(function (res) {
       indexData(res[0], res[1]);
+      renderSocialLinks();
       startAnalytics();
       render();
     }).catch(function (err) {

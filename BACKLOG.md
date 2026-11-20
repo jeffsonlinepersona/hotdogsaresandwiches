@@ -6,10 +6,10 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-19):** kingdom rules adopted (made vs grown, the table rule, the condiment test); Condimenta and Naturalia built to full depth; salt moved to Naturalia; PB&J added with jam and jelly varieties. 89 new entries.
-- **Session before (2026-11-13):** Plate II added: the meat lovers Detroit pizza (new variety *S. d. carnivora*), from Jeff's illustration. Footer redesign options are on a canvas (A ledger, B admission stub, C inventory stamp; Claude recommends B), awaiting Jeff's pick.
-- **Waiting on Jeff:** (1) steak frites and combo meals as associations (under Features): four decisions; (2) footer design: pick A, B or C on the "Footer and visitor counter options" canvas.
-- **Up next, smallest first:** steak frites and associations (high priority, plate in progress); orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
+- **Last session (2026-11-19, later):** footer rebuilt as design B, the admission ticket: the GoatCounter total on a ticket stub, brand on the left, a "Dispatches from the Board" column on the right that is empty until social links are added (one line each in `SOCIAL_LINKS` in js/app.js).
+- **Earlier that day:** kingdom rules adopted (made vs grown, the table rule, the condiment test); Condimenta and Naturalia built to full depth; salt moved to Naturalia; PB&J added with jam and jelly varieties. 89 new entries.
+- **Waiting on Jeff:** (1) steak frites and combo meals as associations (under Features): four decisions; (2) social accounts: set up and send the handles (suggestions under Features, Social links).
+- **Up next, smallest first:** steak frites and associations (high priority, plate in progress); orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts; the footer is ready); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
 
 ## Features
 
@@ -76,7 +76,9 @@ Updated at the end of every working session, so the next one can start here.
 ### Social media links (begrudgingly)
 - **Logged:** 2026-10-04
 - **Want:** links to the site's social accounts, added with the reluctance of a Review Board that would rather be classifying things. Footer icons at minimum, perhaps a line on About ("The Board also posts rulings here, under protest").
-- **Open questions:** which platforms; the account handles (they need to exist first); whether to add share buttons on specimen cards so a ruling can be posted straight from its card.
+- **Footer ready (2026-11-19):** add one line per account to `SOCIAL_LINKS` in js/app.js (icons built in for Instagram, TikTok, Threads, Bluesky, YouTube, X, Mastodon, Reddit, email). With none, the footer says the Board is deliberating.
+- **Suggested accounts (Jeff to set up):** Instagram first (the plates and specimen photos are the content); Threads comes with it for text rulings; Bluesky for the same rulings to a crowd that enjoys a pedantic argument; a dedicated contact email for "Write to the Board". Reserve the same handle on TikTok and YouTube without posting. Skip X and Facebook for now. Use one handle everywhere, ideally @hotdogsaresandwiches.
+- **Open questions:** whether to add share buttons on specimen cards so a ruling can be posted straight from its card.
 - **Pairs with:** link previews (an image when a card link is shared), already in Version 2 items. Without them, shared links show up as bare text.
 - **Privacy:** plain links only, no platform embeds or tracking scripts, so the site stays cookie-free.
 
