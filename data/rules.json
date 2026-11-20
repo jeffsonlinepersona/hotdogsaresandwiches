@@ -85,7 +85,7 @@
       "title": "The assembly rule",
       "summary": "A combination is classified by the structure it forms, not by its parts. If it is built to be eaten as one thing and ordered by one name, it is one specimen. The parts keep their own cards.",
       "points": [
-        "Side by side (a frank next to a bun on a plate): two specimens. A meal, not a food.",
+        "Side by side (a frank next to a bun on a plate): two specimens. A meal, not a food. Served together on purpose, it is an association (see the next rule).",
         "One on top of another (toppings on one slice): Apertae, open-faced.",
         "One holds the other (a frank in a bun): a new species, in Involucra.",
         "Tossed together (chicken Caesar salad): Mixta.",
@@ -93,6 +93,25 @@
         "Something added on (ketchup on the hot dog): a variety, not a new species."
       ],
       "example": "\"A hot dog is just a sausage and a bun.\" And a BLT is just bacon and bread: if assembly does not count, no sandwich exists, including the ones everyone agrees on. Biology agrees. A lichen is a fungus and an alga living as one, and it is named after the fungus, its structural partner. Take the frank out and you have two specimens again: a frank and a disappointed bun. Food speciation is reversible, but only before the first bite."
+    },
+    {
+      "id": "associations",
+      "title": "The association rule",
+      "summary": "The menu name never creates a specimen. It only names one the structure test has already found. Foods served together that the eater can still take in separate bites form an association, not a species.",
+      "points": [
+        "The test: can the eater take separate bites? If yes, an association. If not, one specimen, placed by the assembly rule.",
+        "Steak frites: the steak and the fries are separate bites. An association.",
+        "Poutine: the gravy and curds cannot be eaten apart from the fries. One specimen.",
+        "Chicken and waffles: separate bites, whether stacked or side by side. An association, whatever the plating. Resting one food on another does not join them; baking, melting, saucing, wrapping or holding does.",
+        "Picking the pepperoni off a pizza is not a separate bite. It is dismantling a specimen, and the table rule ignores it.",
+        "Members keep their own cards and their own classification. The association gets a card outside the tree, named as ecologists name plant associations: after its dominant members, ending in -etum (a beech wood is a Fagetum).",
+        "Condiments on the plate (béarnaise with steak frites) are applied, not members. Inedible members, such as a kids' meal toy, are commensals: noted, never classified."
+      ],
+      "example": "The Costco hot dog's diagnostic $1.50 buys a hot dog and a soda. The hot dog is still the variety; the $1.50 deal is its type association. If the price changes, both go extinct together.",
+      "link": {
+        "href": "#/associations",
+        "label": "See the associations"
+      }
     },
     {
       "id": "sandwich",

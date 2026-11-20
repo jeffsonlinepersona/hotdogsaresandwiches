@@ -36,7 +36,7 @@
 
   // ---------- Data ----------
 
-  var nodes = [], byId = {}, kids = {}, rules = null, root = null;
+  var nodes = [], byId = {}, kids = {}, rules = null, root = null, assocs = [], assocById = {};
 
   function indexData(tax, rul) {
     nodes = tax.nodes;
@@ -44,6 +44,9 @@
     byId = {};
     kids = {};
     nodes.forEach(function (n) { byId[n.id] = n; kids[n.id] = []; });
+    assocs = (tax.associations || []).filter(function (a) { return a && a.id && Array.isArray(a.members); });
+    assocById = {};
+    assocs.forEach(function (a) { a.isAssociation = true; assocById[a.id] = a; });
     nodes.forEach(function (n) {
       if (n.parent && kids[n.parent]) kids[n.parent].push(n);
       if (!n.parent) root = n;
@@ -234,7 +237,8 @@
       return '<article class="rule" id="rule-' + esc(r.id) + '">' +
         '<div class="rule-num">' + (i + 1) + '</div>' +
         '<div><h2>' + esc(r.title) + '</h2><p class="summary">' + esc(r.summary) + '</p>' +
-        '<ul>' + r.points.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></div>' +
+        '<ul>' + r.points.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
+        (r.link && /^#\//.test(r.link.href) ? '<a class="rule-link" href="' + esc(r.link.href) + '">' + esc(r.link.label) + ' →</a>' : '') + '</div>' +
         '<aside class="example"><span class="eyebrow">Example</span><span>' + esc(r.example) + '</span></aside>' +
       '</article>';
     }).join('');
@@ -400,6 +404,15 @@
         }).join('') + '</ul></section>'
       : '';
 
+    var found = assocs.filter(function (a) { return a.members.some(function (m) { return m.id === n.id; }); });
+    var foundWith = found.length
+      ? '<section class="members found-with"><h2>Commonly found with</h2><ul>' + found.map(function (a) {
+          var others = a.members.filter(function (m) { return m.id !== n.id && byId[m.id]; })
+            .map(function (m) { return byId[m.id].common; }).join(', ');
+          return '<li><a href="#/association/' + esc(a.id) + '"><span class="c">' + esc(others) + '</span><span class="s">in ' + esc(a.common) + ' (<em>' + esc(a.scientific) + '</em>)</span></a></li>';
+        }).join('') + '</ul></section>'
+      : '';
+
     var food = n.common;
     return {
       title: n.common + ' (' + n.scientific + ') · HotDogsAreSandwiches',
@@ -417,12 +430,71 @@
               '<p class="short">' + esc(n.status === 'species inquirenda' ? n.short.replace(/\s*Species inquirenda:.*$/, '') : n.short) + '</p>' +
               (n.long ? '<p class="long">' + esc(n.long) + '</p>' : '') +
               evidence(n) +
-              meta + members +
+              meta + members + foundWith +
               '<div class="btn-row">' +
                 '<a class="btn btn-ink" href="#/submit?' + qs({ type: 'photo', food: food }) + '">Submit a photo</a>' +
                 '<a class="btn" href="#/submit?' + qs({ type: 'dispute', food: food }) + '">Dispute this ruling</a>' +
               '</div>' +
               '<a href="#/tree/' + esc(n.id) + '" style="font-size:14px;color:var(--muted)">Show in the tree →</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>'
+    };
+  }
+
+  function pageAssociations() {
+    var list = assocs.map(function (a) {
+      var names = a.members.filter(function (m) { return byId[m.id]; }).map(function (m) { return byId[m.id].common; }).join(' + ');
+      return '<li><a href="#/association/' + esc(a.id) + '">' +
+        '<span><span class="c">' + esc(a.common) + '</span> <span class="s">' + esc(a.scientific) + '</span></span>' +
+        '<span class="path">' + esc(names) + '</span></a></li>';
+    }).join('');
+    return {
+      title: 'Associations · HotDogsAreSandwiches',
+      html:
+        '<div class="page">' +
+          '<header class="page-head"><span class="eyebrow">Associations</span>' +
+          '<h1>Species that are found together.</h1>' +
+          '<p class="lede">Combo meals, recorded the way ecologists record plants that grow together: as associations. Each member keeps its own place in the tree. See <a href="#/rules">the association rule</a>.</p></header>' +
+          '<ul class="results">' + list + '</ul>' +
+        '</div>'
+    };
+  }
+
+  function pageAssociation(id) {
+    if (!id) return pageAssociations();
+    var a = assocById[id];
+    if (!a) return pageMissing();
+    var imgs = specimenImages(a);
+    var fig = specimenMedia(a, imgs);
+    var memberList = '<section class="members"><h2>Members</h2><ul>' + a.members.filter(function (m) { return byId[m.id]; }).map(function (m) {
+      var x = byId[m.id];
+      var k = lineage(x.id).filter(function (y) { return y.rank === 'kingdom'; })[0];
+      return '<li><a href="#/specimen/' + esc(x.id) + '"><span class="c">' + esc(x.common) + '</span><span class="s"><em>' + esc(x.scientific) + '</em>' +
+        ' · ' + esc(m.role || 'Member') + (k ? ' · ' + esc(k.scientific) : '') + '</span></a></li>';
+    }).join('') + '</ul></section>';
+    var meta = '<dl class="kv" style="grid-template-columns:120px minmax(0,1fr)">' +
+      '<dt>Catalog</dt><dd>' + esc(catalogNo(a)) + '</dd>' +
+      '<dt>Members</dt><dd>' + a.members.length + ' species, eaten in separate bites</dd>' +
+      ((a.applied || []).length ? '<dt>Applied</dt><dd>' + esc(a.applied.join(', ')) + ' (condiments, not members)</dd>' : '') +
+      '<dt>Collected by</dt><dd>' + esc(imgs.length ? (imgs[0].credit || 'Anonymous') : 'Awaiting a wild specimen') + '</dd>' +
+      '<dt>Ruled</dt><dd>' + esc(fmtDate(a.ruled_on)) + '</dd></dl>';
+    return {
+      title: a.common + ' (' + a.scientific + ') · HotDogsAreSandwiches',
+      html:
+        '<div class="page specimen-page">' +
+          '<div class="specimen">' + fig +
+            '<div class="specimen-body">' +
+              '<div class="specimen-head"><div class="rank-row"><span class="eyebrow">Association</span><span class="badge">Not a species</span></div>' +
+              '<h1>' + esc(a.common) + '</h1><div class="sci">' + esc(a.scientific) + '</div></div>' +
+              '<p class="short">' + esc(a.short) + '</p>' +
+              (a.long ? '<p class="long">' + esc(a.long) + '</p>' : '') +
+              memberList + meta +
+              '<div class="btn-row">' +
+                '<a class="btn btn-ink" href="#/submit?' + qs({ type: 'photo', food: a.common }) + '">Submit a photo</a>' +
+                '<a class="btn" href="#/submit?' + qs({ type: 'dispute', food: a.common }) + '">Dispute this ruling</a>' +
+              '</div>' +
+              '<a href="#/associations" style="font-size:14px;color:var(--muted)">All associations →</a>' +
             '</div>' +
           '</div>' +
         '</div>'
@@ -654,7 +726,7 @@
     if (!q) return [];
     var qWords = q.split(' ');
     var out = [];
-    nodes.forEach(function (n) {
+    nodes.concat(assocs).forEach(function (n) {
       if (n.rank === 'domain') return;
       var names = [n.common, n.scientific].concat(n.aliases || []).map(function (s) { return singular(norm(s)); });
       var best = 0;
@@ -672,7 +744,7 @@
       });
       if (best) {
         // Prefer foods (species, varieties) over groups at equal scores
-        var depth = RANKS.indexOf(n.rank);
+        var depth = n.isAssociation ? RANKS.length : RANKS.indexOf(n.rank);
         out.push({ node: n, score: best + depth * 0.1 });
       }
     });
@@ -697,8 +769,14 @@
     } else {
       logSearchHit(q, results.length);
       body =
-        '<p class="lede" style="margin-bottom:24px">' + results.length + (results.length === 1 ? ' specimen matches' : ' specimens match') + ' “' + esc(q) + '”.</p>' +
+        '<p class="lede" style="margin-bottom:24px">' + results.length + (results.length === 1 ? ' entry matches' : ' entries match') + ' “' + esc(q) + '”.</p>' +
         '<ul class="results">' + results.map(function (n) {
+          if (n.isAssociation) {
+            return '<li><a href="#/association/' + esc(n.id) + '">' +
+              '<span><span class="c">' + esc(n.common) + '</span> <span class="s">' + esc(n.scientific) + '</span></span>' +
+              '<span class="badge">Association</span><span class="path">Found together: ' +
+              esc(n.members.filter(function (m) { return byId[m.id]; }).map(function (m) { return byId[m.id].common; }).join(' + ')) + '</span></a></li>';
+          }
           var path = lineage(n.id).filter(function (x) { return x.rank !== 'domain' && x.id !== n.id; })
             .map(function (x) { return x.scientific; }).join(' › ');
           return '<li><a href="#/specimen/' + esc(n.id) + '">' +
@@ -848,6 +926,8 @@
       case 'rules': page = pageRules(); break;
       case 'tree': page = pageTree(r.id); break;
       case 'specimen': page = pageSpecimen(r.id); break;
+      case 'association': page = pageAssociation(r.id); break;
+      case 'associations': page = pageAssociations(); break;
       case 'classify':
         if (!cls.started && r.query.food && !cls.food) cls.food = r.query.food;
         page = pageClassify();
@@ -865,7 +945,7 @@
     if (box && document.activeElement !== box) box.value = r.route === 'search' ? (r.query.q || '') : '';
     trackPage(r);
 
-    var navRoute = r.route === 'specimen' ? 'tree' : r.route;
+    var navRoute = (r.route === 'specimen' || r.route === 'association' || r.route === 'associations') ? 'tree' : r.route;
     document.querySelectorAll('.site-nav a').forEach(function (a) {
       if (a.getAttribute('data-route') === navRoute) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');

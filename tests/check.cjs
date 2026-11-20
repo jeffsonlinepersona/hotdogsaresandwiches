@@ -125,6 +125,16 @@ ok(under('peanut-butter', 'arachis') && under('steak', 'bos') && byId['lemon'].s
 ok(under('pbj', 'segmentidae') && ['pbj-jam','pbj-jelly'].every(id => byId[id].parent === 'pbj'), 'PB&J is a sandwich; jam or jelly is a variety');
 ok(rules.rules.some(r => r.id === 'table') && rules.rules.some(r => r.id === 'condiments'), 'the table rule and condiment test are published');
 
+const A = tax.associations || [];
+ok(A.length >= 3 && A.every(a => a.members.length >= 2 && a.members.every(m => byId[m.id])), 'every association lists at least two real members');
+ok(A.every(a => /etum\b/.test(a.scientific)), 'association names end in -etum, as ecologists name them');
+ok(A.every(a => !byId[a.id]), 'associations are not in the tree');
+const sf = A.find(a => a.id === 'steak-frites');
+ok(sf && sf.members.some(m => m.id === 'steak') && sf.members.some(m => m.id === 'fries'), 'steak frites is an association of steak and fries, not a species');
+ok(A.find(a => a.id === 'costco-combo').members.some(m => m.id === 'canis-farcitus-costcoensis') && byId['canis-farcitus-costcoensis'].rank === 'variety', 'the Costco combo is the type association; the hot dog stays a variety');
+ok(under('fries', 'naturalia') && under('fries', 'solanum'), 'fries are a single food: the potato knows them');
+const ar = rules.rules.find(r => r.id === 'associations');
+ok(ar && /menu name never creates a specimen/i.test(ar.summary) && ar.points.some(p => /separate bites/.test(p)) && ar.points.some(p => /Chicken and waffles/.test(p)), 'the association rule is published with the separate-bites test');
 // Full depth: every species in a finished kingdom has every rank above it
 const FULL = ['liquida', 'sandwichae', 'apertae', 'condimenta', 'naturalia'];
 const need = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus'];
@@ -132,7 +142,7 @@ tax.nodes.filter(n => n.rank === 'species' && FULL.some(k => under(n.id, k))).fo
   const ranks = ancestors(n.id).map(a => byId[a].rank);
   need.forEach(r => ok(ranks.includes(r), 'full depth: ' + n.id + ' has a ' + r));
 });
-const cats = tax.nodes.map(n => n.catalog);
+const cats = tax.nodes.map(n => n.catalog).concat((tax.associations || []).map(a => a.catalog));
 ok(cats.every(c => Number.isInteger(c) && c > 0) && new Set(cats).size === cats.length, 'every entry has a unique catalog number');
 
 console.log('4. Every page renders');
@@ -185,6 +195,8 @@ async function go(hash) {
   const routes = ['#/', '#/about', '#/rules', '#/tree', '#/classify', '#/submit', '#/thanks',
     '#/submit?type=dispute&food=Hot%20dog', '#/specimen/nope', '#/bogus'];
   tax.nodes.forEach(n => { routes.push('#/tree/' + n.id); routes.push('#/specimen/' + n.id); });
+  routes.push('#/associations', '#/association/nope');
+  (tax.associations || []).forEach(a => routes.push('#/association/' + a.id));
   for (const r of routes) {
     const m = await go(r);
     ok(m.innerHTML.length > 200, 'content on ' + r);

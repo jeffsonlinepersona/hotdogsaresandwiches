@@ -319,6 +319,7 @@ main { flex: 1; outline: none; }
 .rule h2 { font-size: 30px; line-height: 1.15; margin-bottom: 10px; }
 .rule .summary { font-size: 17px; color: var(--ink-2); margin-bottom: 14px; }
 .rule ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.rule-link { display: inline-block; margin-top: 14px; font-size: 15px; }
 .rule .example {
   align-self: start; background: var(--card); border: 1px solid var(--rule);
   padding: 18px 20px; font-size: 15px; display: flex; flex-direction: column; gap: 8px;

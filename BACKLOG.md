@@ -6,10 +6,10 @@ Planned work and known issues, newest first within each section. Bugs carry a ro
 
 Updated at the end of every working session, so the next one can start here.
 
-- **Last session (2026-11-19, later):** footer rebuilt as design B, the admission ticket: the GoatCounter total on a ticket stub, brand on the left, a "Dispatches from the Board" column on the right that is empty until social links are added (one line each in `SOCIAL_LINKS` in js/app.js).
+- **Last session (2026-11-19, late):** associations built (steak frites, the Costco combo, the burger combo), with the association rule and the separate-bites test; French fries added to Naturalia. Before that, footer rebuilt as design B, the admission ticket: the GoatCounter total on a ticket stub, brand on the left, a "Dispatches from the Board" column on the right that is empty until social links are added (one line each in `SOCIAL_LINKS` in js/app.js).
 - **Earlier that day:** kingdom rules adopted (made vs grown, the table rule, the condiment test); Condimenta and Naturalia built to full depth; salt moved to Naturalia; PB&J added with jam and jelly varieties. 89 new entries.
-- **Waiting on Jeff:** (1) steak frites and combo meals as associations (under Features): four decisions; (2) social accounts: set up and send the handles (suggestions under Features, Social links).
-- **Up next, smallest first:** steak frites and associations (high priority, plate in progress); orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts; the footer is ready); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
+- **Waiting on Jeff:** (1) Plate III for steak frites; (2) social accounts: set up and send the handles (suggestions under Features, Social links).
+- **Up next, smallest first:** orange juice from concentrate (with the Trading Places nod); a redirect map for retired sandwich group links; plain frank and plain bun cards; social links (needs accounts; the footer is ready); link previews; card extras (history, status, Extinct); Submit form upgrades with guided placement; the Rulings page; the full-depth pass for the rest of Constructa and Incertae sedis.
 
 ## Features
 
@@ -20,18 +20,10 @@ Updated at the end of every working session, so the next one can start here.
 - **PB&J:** new genus *Linimentum* (spread fillings) in Segmentidae; jam and jelly are varieties. A condiment can join an assembled food (mayo in deviled eggs).
 - **Still open:** a fungus phylum when the first mushroom arrives; more condiments (vinegar, sugar, ranch, salsa, guacamole, spice blends, olive oil, butter) and natural foods (parsley, oregano, peppercorns, fries) as cards.
 
-### Steak frites, and combo meals as associations (proposal; high priority)
-- **Logged:** 2026-11-15. Jeff is preparing the field-guide plate, so this is near the top.
-- **Problem:** "what you order on a menu" would make every combo meal a new species (steak frites, a burger combo, fish and chips). Jeff's position: a combination meal is not a species.
-- **The rule already half-exists:** the assembly rule's first line says side by side is "two specimens. A meal, not a food." What is missing is saying outright that **the menu-name test only names a specimen the structure test has already found; it never creates one.** A single menu line for two separate foods is a combo, not a species.
-- **Proposed: associations.** Ecology names a group of species that live together without merging an *association* (plant ecologists even give them Latin names ending in -etum, such as Fagetum, a beech wood). Field guides list "associated species" for the same reason: the clownfish and its anemone live together and stay two species. Contrast the lichen, where fungus and alga do merge into one structure (the assembly rule). Combo meals become associations: they get a name and a card of their own outside the tree, listing their member species, and each member's card says "commonly found with". Proposed names: steak frites as *Bovi-frietetum*, fish and chips, the burger combo.
-- **The test for "one thing" vs association:** are the foods built to be eaten in the same bite? Steak and fries are separate bites, so an association. Poutine (fries, gravy and curds combined) and a rice bowl (toppings on one base) are one specimen. Chicken and waffles depends on how it is served: stacked is topped (Apertae), side by side is an association; classify as typically prepared.
-- **Pressure points found:**
-  - **The Costco hot dog:** its diagnostic $1.50 price covers the hot dog *and* the soda, a combo. Proposed: the variety stays a hot dog; the card names the soda as an associated species and the $1.50 combo as its type association. "Extinct if the price changes" still holds.
-  - **Condiments on the plate** (béarnaise with steak frites) stay applied condiments, not association members, per the condiment test and the table rule.
-  - **Inedible members** (a kids' meal toy) are noted as commensals and never classified.
-- **Build needs:** fries in the tree (proposed Naturalia: a potato would recognize its fries in a police lineup, unlike mashed potatoes), which fits the new Naturalia structure (Vegetabilia, Solanaceae, Solanum) and helps the every-kingdom-full-depth goal; a small data list of associations; "commonly found with" on member cards; an Associations page or section; Plate III for steak frites.
-- **Decisions for Jeff:** (1) adopt "the menu name never creates a specimen" as written; (2) associations as the concept and term; (3) the same-bite test; (4) the Costco handling.
+### ~~Steak frites, and combo meals as associations~~ Done 2026-11-19
+- **Ruled:** the menu name never creates a specimen. Foods served together that the eater can take in separate bites form an **association** (card outside the tree, named after dominant members with -etum). Jeff's refinement of the test: *can the eater take separate bites?* Steak frites and chicken and waffles (stacked or not) are associations; poutine is one specimen. Condiments on the plate are applied, not members; inedible extras are commensals.
+- **Built:** the association rule on the Rules page; an Associations page (`#/associations`) and cards (`#/association/<id>`); "Commonly found with" on member cards; associations in search. French fries added to Naturalia (*Solanum frictum*, full depth). Associations: steak frites (*Bovo-Solanetum*), the Costco combo (*Cani-Coletum costcoense*, type association of the Costco hot dog), the burger combo (*Disco-Solanetum*).
+- **Still open:** Plate III (steak frites) from Jeff, which goes in the association's `images`; fish and chips (battered fish needs a ruling first: is batter a coating that makes it assembled?); chicken and waffles cards (needs fried chicken and the waffle in the tree).
 
 ### Frozen concentrated orange juice
 - **Logged:** 2026-11-12

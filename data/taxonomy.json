@@ -1,5 +1,5 @@
 {
-  "_readme": "Every entry is one node in the tree. To add a food: copy an entry, give it a unique id, set parent to an existing id, and fill in the fields. Ranks in order: domain, kingdom, phylum, class, order, family, genus, species, variety. A node may skip ranks.",
+  "_readme": "Every entry is one node in the tree. To add a food: copy an entry, give it a unique id, set parent to an existing id, and fill in the fields. Ranks in order: domain, kingdom, phylum, class, order, family, genus, species, variety. A node may skip ranks. Associations (combo meals) live in the separate \"associations\" list: foods served together but eaten in separate bites. Each lists its member ids; members keep their own place in the tree.",
   "nodes": [
     {
       "id": "ediblia",
@@ -2563,6 +2563,72 @@
     {
       "status": "ruled",
       "ruled_on": "2026-11-19",
+      "id": "tubera",
+      "rank": "class",
+      "parent": "vegetabilia",
+      "scientific": "Tubera",
+      "common": "Tubers",
+      "trait": "The swollen underground part of the plant",
+      "short": "Potatoes, mostly. Botanically a stem, emotionally a side.",
+      "catalog": 355
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "tubera-frixiformes",
+      "rank": "order",
+      "parent": "tubera",
+      "scientific": "Frixiformes",
+      "common": "Fried",
+      "trait": "Cut and fried in oil",
+      "short": "The order says what was done to it. The oil is how it was cooked, not an ingredient.",
+      "catalog": 356
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "solanaceae",
+      "rank": "family",
+      "parent": "tubera-frixiformes",
+      "scientific": "Solanaceae",
+      "common": "Nightshade family",
+      "trait": "The real family of the potato",
+      "short": "Potatoes, tomatoes, peppers and eggplants.",
+      "catalog": 357
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "solanum",
+      "rank": "genus",
+      "parent": "solanaceae",
+      "scientific": "Solanum",
+      "common": "Potatoes",
+      "short": "The real genus of the potato.",
+      "catalog": 358
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
+      "id": "fries",
+      "rank": "species",
+      "parent": "solanum",
+      "scientific": "Solanum frictum",
+      "common": "French fries",
+      "short": "Potatoes, cut and fried. A potato would pick its fries out of a police lineup, so they are a single food; the salt is visiting. Mashed potatoes are another matter: the butter and milk make them combined. Found in the wild beside steak and burgers, in associations.",
+      "aliases": [
+        "fries",
+        "french fries",
+        "frites",
+        "pommes frites",
+        "french fry",
+        "chips (uk)"
+      ],
+      "catalog": 359
+    },
+    {
+      "status": "ruled",
+      "ruled_on": "2026-11-19",
       "id": "animata",
       "rank": "phylum",
       "parent": "naturalia",
@@ -3176,7 +3242,7 @@
       "parent": "canis-farcitus",
       "scientific": "C. f. costcoensis",
       "common": "Costco Hot Dog",
-      "short": "The food court legend: a quarter-pound hot dog and a 20-ounce soda for $1.50, a price unchanged since the mid-1980s. The price is part of the specimen. The flagship of the taxonomy.",
+      "short": "The food court legend: a quarter-pound hot dog and a 20-ounce soda for $1.50, a price unchanged since the mid-1980s. The price is part of the specimen. The $1.50 buys a hot dog and a soda, two specimens, so the deal itself is recorded as the type association of this variety: the Costco combo. The flagship of the taxonomy.",
       "long": "Collected in the wild between the checkout lanes and the exit. Habitat: a metal table, never a chair. Diet of the observer: whatever was in the cart. The specimen is still ordered as \"a hot dog,\" which is why it is a variety and not a species of its own. Diagnostic trait: the $1.50 price tag. Should the price ever change, this variety will be declared extinct and any successor described as a new variety. Since April 2026 a bottle of water may stand in for the soda; the Board considers this normal variation. Two Costco CEOs have been asked about the price on the record. Both said no, one more colorfully.",
       "verdict": "Sandwich",
       "sketch": "hotdog",
@@ -4928,6 +4994,91 @@
         "jello"
       ],
       "catalog": 188
+    }
+  ],
+  "associations": [
+    {
+      "id": "steak-frites",
+      "scientific": "Bovo-Solanetum",
+      "common": "Steak frites",
+      "catalog": 360,
+      "ruled_on": "2026-11-19",
+      "short": "Steak and fries, served together and eaten in separate bites. Two species living side by side: an association, not a new species. The menu name never creates a specimen.",
+      "long": "Named in the ecologists' style, after its dominant members (Bos and Solanum) with the ending -etum, as a beech wood is a Fagetum. Béarnaise, when present, is a condiment applied to the steak, not a member.",
+      "members": [
+        {
+          "id": "steak",
+          "role": "Dominant"
+        },
+        {
+          "id": "fries",
+          "role": "Co-dominant"
+        }
+      ],
+      "applied": [
+        "Béarnaise sauce"
+      ],
+      "aliases": [
+        "steak frites",
+        "steak frits",
+        "steak and fries",
+        "steak et frites"
+      ]
+    },
+    {
+      "id": "costco-combo",
+      "scientific": "Cani-Coletum costcoense",
+      "common": "The Costco combo",
+      "catalog": 361,
+      "ruled_on": "2026-11-19",
+      "short": "A quarter-pound hot dog and a 20-ounce soda for $1.50. The type association of the Costco hot dog: the price that defines the variety buys both. If the price changes, the variety goes extinct, and its type association with it.",
+      "long": "The soda is a fountain cola, poured by the member of the public. The hot dog is still a sandwich.",
+      "members": [
+        {
+          "id": "canis-farcitus-costcoensis",
+          "role": "Dominant"
+        },
+        {
+          "id": "cola-vulgaris-fontana",
+          "role": "Associate"
+        }
+      ],
+      "aliases": [
+        "costco combo",
+        "costco hot dog and soda",
+        "costco hot dog combo",
+        "hot dog and soda"
+      ]
+    },
+    {
+      "id": "burger-combo",
+      "scientific": "Disco-Solanetum",
+      "common": "The burger combo",
+      "catalog": 362,
+      "ruled_on": "2026-11-19",
+      "short": "A hamburger, fries and a fountain soda, ordered as one item and eaten as three. An association: every member can be eaten in separate bites, and each keeps its own classification.",
+      "long": "Named after its two dominant members, Discus and Solanum, as ecologists do. The soda is an associate. Any toy in the bag is a commensal: noted, never classified.",
+      "members": [
+        {
+          "id": "hamburger",
+          "role": "Dominant"
+        },
+        {
+          "id": "fries",
+          "role": "Co-dominant"
+        },
+        {
+          "id": "cola-vulgaris-fontana",
+          "role": "Associate"
+        }
+      ],
+      "aliases": [
+        "burger combo",
+        "combo meal",
+        "value meal",
+        "burger and fries",
+        "number one"
+      ]
     }
   ]
 }

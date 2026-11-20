@@ -39,6 +39,8 @@ What each level means, in plain words:
 | Species | What do you actually order? |
 | Variety | How is it made your way, still ordered by the same name? A topping combination found on many styles lives under the style where it was first recorded (its type locality). |
 
+**Associations.** The menu name never creates a specimen. Foods served together that the eater can take in separate bites (steak frites, a burger combo) form an association: a card outside the tree, kept in the `associations` list in `data/taxonomy.json`, named after its dominant members with the ending -etum. Members keep their own place in the tree.
+
 **The assembly rule.** A combination is classified by the structure it forms, not by its parts; the parts keep their own cards. If it is built to be eaten as one thing and ordered by one name, it is one specimen:
 
 | How the foods meet | Example | Result |
