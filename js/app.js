@@ -764,7 +764,7 @@
   // name is read aloud by screen readers; label is what shows (keep it short: the icon names the platform).
   var SOCIAL_LINKS = [
     // { icon: 'instagram', name: 'Instagram', label: '@hotdogsaresandwiches', url: 'https://www.instagram.com/hotdogsaresandwiches/' },
-    // { icon: 'email', name: 'Email', label: 'Write to the Board', url: 'mailto:board@example.com' },
+    // { icon: 'email', name: 'Email', label: 'Write to the Board', url: 'mailto:(the Board address)' },
   ];
   var SOCIAL_ICONS = {
     instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/>',
