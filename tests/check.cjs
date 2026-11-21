@@ -195,7 +195,7 @@ async function go(hash) {
   const routes = ['#/', '#/about', '#/rules', '#/tree', '#/classify', '#/submit', '#/thanks',
     '#/submit?type=dispute&food=Hot%20dog', '#/specimen/nope', '#/bogus'];
   tax.nodes.forEach(n => { routes.push('#/tree/' + n.id); routes.push('#/specimen/' + n.id); });
-  routes.push('#/associations', '#/association/nope');
+  routes.push('#/associations', '#/association/nope', '#/catalog');
   (tax.associations || []).forEach(a => routes.push('#/association/' + a.id));
   for (const r of routes) {
     const m = await go(r);
@@ -206,6 +206,12 @@ async function go(hash) {
 
   let m = await go('#/specimen/nope');
   ok(/escaped/i.test(m.textContent), 'unknown specimen shows the escaped page');
+
+  m = await go('#/catalog');
+  const specimenCount = tax.nodes.filter(n => n.rank === 'species' || n.rank === 'variety').length + (tax.associations || []).length;
+  ok(m.querySelectorAll('.register tbody tr').length === specimenCount, 'the Catalog lists every species, variety and association');
+  ok(/TE-0128/.test(m.textContent) && /Desiderata/.test(m.textContent), 'the Catalog shows catalog numbers and desiderata');
+  ok(m.querySelector('.register tbody tr .mark-plate'), 'illustrated entries carry a plate mark');
 
   m = await go('#/specimen/canis-farcitus-costcoensis');
   ok(/Costco Hot Dog/.test(m.textContent), 'Costco card title');

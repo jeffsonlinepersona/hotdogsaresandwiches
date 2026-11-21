@@ -1,5 +1,5 @@
 {
-  "_readme": "Every entry is one node in the tree. To add a food: copy an entry, give it a unique id, set parent to an existing id, and fill in the fields. Ranks in order: domain, kingdom, phylum, class, order, family, genus, species, variety. A node may skip ranks. Associations (combo meals) live in the separate \"associations\" list: foods served together but eaten in separate bites. Each lists its member ids; members keep their own place in the tree.",
+  "_readme": "Every entry is one node in the tree. To add a food: copy an entry, give it a unique id, set parent to an existing id, and fill in the fields. Ranks in order: domain, kingdom, phylum, class, order, family, genus, species, variety. A node may skip ranks. Associations (combo meals) live in the separate \"associations\" list: foods served together but eaten in separate bites. Each lists its member ids; members keep their own place in the tree. Desiderata (foods known to the Board but not yet collected) live in the \"desiderata\" list and appear at the foot of the Catalog page.",
   "nodes": [
     {
       "id": "ediblia",
@@ -5099,6 +5099,83 @@
         "burger and fries",
         "number one"
       ]
+    }
+  ],
+  "desiderata": [
+    {
+      "name": "Fish and chips",
+      "reason": "An association in waiting. Battered fish needs a ruling first: is batter a coating, or an assembly?",
+      "logged": "2026-11-19"
+    },
+    {
+      "name": "Chicken and waffles",
+      "reason": "Ruled an association, stacked or not. Neither member (fried chicken, the waffle) is yet in the collection.",
+      "logged": "2026-11-19"
+    },
+    {
+      "name": "Poutine",
+      "reason": "Ruled one specimen: the gravy and curds cannot be eaten apart from the fries. Placement not yet determined.",
+      "logged": "2026-11-19"
+    },
+    {
+      "name": "Mashed potatoes",
+      "reason": "Not Naturalia: the butter and milk make them combined. Placement pending.",
+      "logged": "2026-11-19"
+    },
+    {
+      "name": "Any mushroom",
+      "reason": "Requires a new phylum in Naturalia. The Board has not yet met a fungus.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Orange juice from concentrate",
+      "reason": "Restored, not made: a variety of orange juice. The Board does not trade the futures.",
+      "logged": "2026-11-12"
+    },
+    {
+      "name": "Cold brew concentrate",
+      "reason": "Brewed strong on purpose rather than dewatered. May not be restored at all.",
+      "logged": "2026-11-12"
+    },
+    {
+      "name": "The plain frank",
+      "reason": "Parent of the hot dog. A specimen in its own right, until it meets a bun.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "The plain bun",
+      "reason": "The other parent. Disappointed, by all accounts.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Vinegar",
+      "reason": "Condimenta, fermented. Ruled in principle; card not yet written.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Table sugar",
+      "reason": "Condimenta, purified to crystals. Ruled in principle.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Ranch dressing",
+      "reason": "Condimenta, emulsified. Ruled in principle.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Salsa and guacamole",
+      "reason": "Condimenta, chopped or pounded together. Ruled in principle.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Olive oil and butter",
+      "reason": "Condimenta: extracted from their sources, so made. Ruled in principle.",
+      "logged": "2026-11-20"
+    },
+    {
+      "name": "Parsley, oregano and peppercorns",
+      "reason": "Naturalia: grown, and recognizable however they are used. Ruled in principle.",
+      "logged": "2026-11-20"
     }
   ]
 }

@@ -36,7 +36,7 @@
 
   // ---------- Data ----------
 
-  var nodes = [], byId = {}, kids = {}, rules = null, root = null, assocs = [], assocById = {};
+  var nodes = [], byId = {}, kids = {}, rules = null, root = null, assocs = [], assocById = {}, desiderata = [];
 
   function indexData(tax, rul) {
     nodes = tax.nodes;
@@ -46,6 +46,7 @@
     nodes.forEach(function (n) { byId[n.id] = n; kids[n.id] = []; });
     assocs = (tax.associations || []).filter(function (a) { return a && a.id && Array.isArray(a.members); });
     assocById = {};
+    desiderata = (tax.desiderata || []).filter(function (d) { return d && d.name; });
     assocs.forEach(function (a) { a.isAssociation = true; assocById[a.id] = a; });
     nodes.forEach(function (n) {
       if (n.parent && kids[n.parent]) kids[n.parent].push(n);
@@ -439,6 +440,124 @@
             '</div>' +
           '</div>' +
         '</div>'
+    };
+  }
+
+  // ---------- The Catalog: a register of accessions ----------
+
+  function fmtShort(iso) {
+    if (!iso) return '';
+    var m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var p = iso.split('-');
+    return Number(p[2]) + ' ' + m[Number(p[1]) - 1] + ' ' + p[0];
+  }
+
+  // Registers spell names out in full: "L. b. integrum" becomes "Lac bovinum var. integrum"
+  function fullName(n) {
+    if (n.rank !== 'variety' || !byId[n.parent]) return n.scientific;
+    var parts = String(n.scientific).split(' ');
+    return byId[n.parent].scientific + ' var. ' + parts[parts.length - 1];
+  }
+
+  function catalogEntries() {
+    var list = nodes.filter(function (n) { return n.rank === 'species' || n.rank === 'variety'; }).concat(assocs);
+    return list.slice().sort(function (a, b) { return (a.catalog || 0) - (b.catalog || 0); });
+  }
+
+  function pageCatalog() {
+    var entries = catalogEntries();
+    var kingdoms = nodes.filter(function (n) { return n.rank === 'kingdom'; });
+    var illustrated = 0, photographed = 0, inquirenda = 0;
+    var rows = entries.map(function (n) {
+      var href = n.isAssociation ? '#/association/' + n.id : '#/specimen/' + n.id;
+      var line = n.isAssociation ? [] : lineage(n.id);
+      var k = line.filter(function (x) { return x.rank === 'kingdom'; })[0];
+      var c = line.filter(function (x) { return x.rank === 'class'; })[0];
+      var place = n.isAssociation ? 'Association' : [k && k.scientific, c && c.scientific].filter(Boolean).join(' › ');
+      var imgs = specimenImages(n);
+      var plate = imgs.filter(function (im) { return im.kind === 'plate'; })[0];
+      var photos = imgs.filter(function (im) { return im.kind !== 'plate'; }).length;
+      if (plate) illustrated++;
+      if (photos) photographed++;
+      var marks = (plate ? '<span class="mark mark-plate" title="Illustrated plate">' + esc(plate.label || 'Pl.') + '</span>' : '') +
+        (photos ? '<span class="mark" title="' + photos + ' field photograph' + (photos > 1 ? 's' : '') + '">Ph.' + (photos > 1 ? ' ×' + photos : '') + '</span>' : '');
+      var remark = '';
+      if (n.status === 'species inquirenda') { remark = '<span class="stamp">Inquirenda</span>'; inquirenda++; }
+      else if (n.status === 'pending review') remark = '<span class="stamp">Pending review</span>';
+      else if (n.isAssociation) remark = '<span class="remark">Not a species</span>';
+      var rank = n.isAssociation ? 'assoc.' : (n.rank === 'variety' ? 'var.' : 'sp.');
+      var q = [n.common, n.scientific, fullName(n), catalogNo(n), place].concat(n.aliases || []).join(' ').toLowerCase();
+      return '<tr data-k="' + esc(n.isAssociation ? 'association' : (k ? k.id : '')) + '" data-m="' + (imgs.length ? 1 : 0) + '" data-q="' + esc(q) + '">' +
+        '<td class="cat-no"><a href="' + esc(href) + '">' + esc(catalogNo(n)) + '</a></td>' +
+        '<td class="cat-name"><a href="' + esc(href) + '"><em>' + esc(fullName(n)) + '</em></a><span>' + esc(n.common) + '</span></td>' +
+        '<td class="cat-rank">' + rank + '</td>' +
+        '<td class="cat-place">' + esc(place) + '</td>' +
+        '<td class="cat-mat">' + (marks || '<span class="nil" aria-label="None">—</span>') + '</td>' +
+        '<td class="cat-date">' + esc(fmtShort(n.ruled_on)) + '</td>' +
+        '<td class="cat-remarks">' + remark + '</td>' +
+      '</tr>';
+    }).join('');
+
+    var des = desiderata.map(function (d, i) {
+      return '<li><span class="des-no">D.' + (i + 1) + '</span><span class="des-name">' + esc(d.name) + '</span>' +
+        '<span class="des-reason">' + esc(d.reason) + '</span>' +
+        '<a class="des-link" href="#/submit?' + qs({ type: 'new', food: d.name }) + '">Collect it</a></li>';
+    }).join('');
+
+    var kOpts = kingdoms.map(function (k) { return '<option value="' + esc(k.id) + '">' + esc(k.scientific) + '</option>'; }).join('') +
+      (assocs.length ? '<option value="association">Associations</option>' : '');
+
+    return {
+      title: 'The Catalog · HotDogsAreSandwiches',
+      html:
+        '<div class="page catalog-page">' +
+          '<header class="page-head"><span class="eyebrow">The Catalog</span>' +
+          '<h1>Register of accessions.</h1>' +
+          '<p class="lede">Every specimen in the collection, numbered in the order the Board received it. Higher ranks live in <a href="#/tree">the tree</a>; this is the specimen room.</p></header>' +
+          '<div class="ledger">' +
+            '<div class="ledger-head">' +
+              '<span>Taxonomia Ediblis</span><span class="ledger-title">Register of Accessions · Vol. I</span><span>Opened 3 Oct. 2026</span>' +
+            '</div>' +
+            '<dl class="ledger-tally">' +
+              '<div><dt>Entries</dt><dd>' + entries.length + '</dd></div>' +
+              '<div><dt>Illustrated</dt><dd>' + illustrated + '</dd></div>' +
+              '<div><dt>Photographed</dt><dd>' + photographed + '</dd></div>' +
+              '<div><dt>Inquirenda</dt><dd>' + inquirenda + '</dd></div>' +
+              '<div><dt>Desiderata</dt><dd>' + desiderata.length + '</dd></div>' +
+            '</dl>' +
+            '<div class="ledger-tools">' +
+              '<div class="field"><label for="cat-q">Find in the register</label><input type="text" id="cat-q" placeholder="Name, number or kingdom" autocomplete="off"></div>' +
+              '<div class="field"><label for="cat-k">Kingdom</label><select id="cat-k"><option value="">All kingdoms</option>' + kOpts + '</select></div>' +
+              '<div class="field"><label for="cat-m">Material</label><select id="cat-m"><option value="">All entries</option><option value="1">Illustrated or photographed</option><option value="0">Awaiting a wild specimen</option></select></div>' +
+            '</div>' +
+            '<p class="ledger-count" id="cat-count" aria-live="polite">' + entries.length + ' entries</p>' +
+            '<table class="register"><thead><tr>' +
+              '<th scope="col">Cat. no.</th><th scope="col">Name</th><th scope="col">Rank</th><th scope="col">Placement</th>' +
+              '<th scope="col">Material</th><th scope="col">Ruled</th><th scope="col">Remarks</th>' +
+            '</tr></thead><tbody>' + rows + '</tbody></table>' +
+            '<p class="ledger-empty" id="cat-empty" hidden>No entry in the register matches. <a href="#/submit">Ask the Board to add it.</a></p>' +
+            '<p class="ledger-key"><span class="mark mark-plate">Pl.</span> illustrated plate · <span class="mark">Ph.</span> field photograph · <span class="stamp">Inquirenda</span> known from reports, not yet collected</p>' +
+          '</div>' +
+          (des ? '<section class="desiderata" aria-labelledby="des-h">' +
+            '<h2 id="des-h">Desiderata</h2>' +
+            '<p class="lede">Known to the Board, not yet in the collection. Museums keep a list of wanted specimens under this name. Field researchers are invited to collect.</p>' +
+            '<ol>' + des + '</ol></section>' : '') +
+        '</div>',
+      after: function () {
+        var q = document.getElementById('cat-q'), k = document.getElementById('cat-k'), m = document.getElementById('cat-m');
+        var rowsEl = main.querySelectorAll('.register tbody tr');
+        function apply() {
+          var term = q.value.trim().toLowerCase(), kv = k.value, mv = m.value, shown = 0;
+          rowsEl.forEach(function (tr) {
+            var ok = (!term || tr.getAttribute('data-q').indexOf(term) >= 0) &&
+              (!kv || tr.getAttribute('data-k') === kv) && (!mv || tr.getAttribute('data-m') === mv);
+            tr.hidden = !ok; if (ok) shown++;
+          });
+          document.getElementById('cat-count').textContent = shown === rowsEl.length ? shown + ' entries' : shown + ' of ' + rowsEl.length + ' entries';
+          document.getElementById('cat-empty').hidden = shown > 0;
+        }
+        [q, k, m].forEach(function (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); });
+      }
     };
   }
 
@@ -928,6 +1047,7 @@
       case 'specimen': page = pageSpecimen(r.id); break;
       case 'association': page = pageAssociation(r.id); break;
       case 'associations': page = pageAssociations(); break;
+      case 'catalog': page = pageCatalog(); break;
       case 'classify':
         if (!cls.started && r.query.food && !cls.food) cls.food = r.query.food;
         page = pageClassify();
